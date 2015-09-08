@@ -9,9 +9,12 @@ import org.json.JSONException;
 import org.json.JSONTokener;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 
@@ -42,13 +45,14 @@ public class JSONSerializer {
     }
 
 
-    public ArrayList<Joke> loadCategory(String fileName){
+    public ArrayList<Joke> loadCategory(String fileName) throws IOException {
 
         BufferedReader reader = null;
         ArrayList<Joke> arrayList = new ArrayList<Joke>();
 
         try{
-            reader = new BufferedReader(new InputStreamReader(mContext.getAssets().open(fileName)));
+            InputStream in = mContext.openFileInput(fileName);
+            reader = new BufferedReader(new InputStreamReader(in));
             StringBuilder jsonString = new StringBuilder();
             String line = null;
 
@@ -65,20 +69,30 @@ public class JSONSerializer {
             e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
+        } finally {
+            if(reader != null)
+                reader.close();
         }
 
         return arrayList;
     }
 
-    public void saveCategory(ArrayList<Joke> array, String fileName) throws JSONException {
+    public void saveCategory(ArrayList<Joke> array, String fileName) throws JSONException, IOException {
 
-        JSONArray jsonArray= new JSONArray();
+        JSONArray jsonArray = new JSONArray();
         for(Joke joke : array)
             jsonArray.put(joke.toJSON());
 
         Writer writer = null;
+        try{
+            OutputStream out = mContext.openFileOutput(fileName, Context.MODE_PRIVATE);
+            writer = new OutputStreamWriter(out);
+            writer.write(jsonArray.toString());
 
-
+        } finally {
+            if(writer != null)
+                writer.close();
+        }
 
 
     }

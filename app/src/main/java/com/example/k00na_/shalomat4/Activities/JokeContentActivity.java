@@ -19,6 +19,7 @@ import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -64,7 +65,11 @@ public class JokeContentActivity extends AppCompatActivity {
         gettingTheIntent();
         getSupportActionBar().setTitle(mCategoryTitle);
 
-        mCurrentCategory = setupCategory(mCurrentCategoryNum);
+        try {
+            mCurrentCategory = setupCategory(mCurrentCategoryNum);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         mViewPager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
             @Override
@@ -102,7 +107,7 @@ public class JokeContentActivity extends AppCompatActivity {
 
     }
 
-    private ArrayList<Joke> setupCategory(int catNum){
+    private ArrayList<Joke> setupCategory(int catNum) throws IOException {
 
         JSONSerializer serializer = new JSONSerializer(this);
         String fileName = "";

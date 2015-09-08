@@ -16,7 +16,12 @@ import android.widget.Toast;
 
 import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
 import com.example.k00na_.shalomat4.Model.GlobalState;
+import com.example.k00na_.shalomat4.Util.CreateFilesForCategories;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
+
+import org.json.JSONException;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,24 +38,41 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         globalState = (GlobalState) getApplicationContext();
-        setupGlobalState();
+        try {
+            setupGlobalState();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         setupViews();
         navigationListener();
         actionBarDrawerToggleSetup();
 
 
         if (numOfVisits() == 0) {
+
+            CreateFilesForCategories createFiles = new CreateFilesForCategories(this);
+            try {
+                createFiles.createAllJokes();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
             Toast.makeText(this, "First visit; wellcome!", Toast.LENGTH_LONG).show();
             mDrawerLayout.openDrawer(Gravity.LEFT);
             incrementAndSaveVisits();
+
+
         } else{
             Toast.makeText(this, "Num of entries: " + numOfVisits(), Toast.LENGTH_LONG).show();
+            incrementAndSaveVisits();
         }
 
         navigationListener();
 
-
     }
+
 
     private void setupViews() {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.ourDrawerLayout);
@@ -234,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setupGlobalState(){
+    private void setupGlobalState() throws IOException {
 
         JSONSerializer serializer = new JSONSerializer(this);
         globalState.setBlondinkeGlobal(serializer.loadCategory(JSONSerializer.BLONDINKE_FILENAME));
