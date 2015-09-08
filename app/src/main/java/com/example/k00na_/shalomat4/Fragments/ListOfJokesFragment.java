@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,6 +71,7 @@ public class ListOfJokesFragment extends Fragment{
         mCurrentCategoryTitle = getArguments().getString(CATEGORY_TITLE_KEY);
         mCurrentJokeList = getCurrentJokeList(mCurrentCategoryInt);
         // SETUP ADAPTER&RECYCLER_VIEW
+        Log.i("alo", "Is the first joke favorited? " + mCurrentJokeList.get(0).isFavorited());
         mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
 
 
@@ -113,8 +115,12 @@ public class ListOfJokesFragment extends Fragment{
     @Override
     public void onResume() {
         super.onResume();
+
         GlobalState globalState = (GlobalState)getActivity().getApplicationContext();
-        mCurrentJokeList = globalState.getBlondinkeGlobal();
+        mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
+        mCurrentJokeList = getCurrentJokeList(mCurrentCategoryInt);
+        mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
+        mRecyclerView.setAdapter(mListOfJokesAdapter);
 
     }
 }

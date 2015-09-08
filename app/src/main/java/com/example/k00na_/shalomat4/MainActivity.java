@@ -229,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, ListOfJokesFragment.newInstance(menuItemID, getSupportActionBar().getTitle().toString()))
+                .addToBackStack(null)
                 .commit();
 
     }
@@ -238,6 +239,10 @@ public class MainActivity extends AppCompatActivity {
         JSONSerializer serializer = new JSONSerializer(this);
         globalState.setBlondinkeGlobal(serializer.loadCategory(JSONSerializer.BLONDINKE_FILENAME));
 
+
+
     }
+
+
 
 }

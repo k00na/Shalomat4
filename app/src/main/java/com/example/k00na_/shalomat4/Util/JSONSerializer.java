@@ -11,6 +11,8 @@ import org.json.JSONTokener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.Writer;
 import java.util.ArrayList;
 
 /**
@@ -66,6 +68,19 @@ public class JSONSerializer {
         }
 
         return arrayList;
+    }
+
+    public void saveCategory(ArrayList<Joke> array, String fileName) throws JSONException {
+
+        JSONArray jsonArray= new JSONArray();
+        for(Joke joke : array)
+            jsonArray.put(joke.toJSON());
+
+        Writer writer = null;
+
+
+
+
     }
 
 

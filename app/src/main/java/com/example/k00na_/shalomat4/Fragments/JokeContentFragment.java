@@ -185,4 +185,11 @@ public class JokeContentFragment extends Fragment{
         return fileName;
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+
+
+
+    }
 }

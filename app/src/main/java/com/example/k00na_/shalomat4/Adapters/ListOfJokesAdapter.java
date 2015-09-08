@@ -100,6 +100,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
 
     }
 
+
     private String shrinkText(String text){
 
         int textSize = text.length();

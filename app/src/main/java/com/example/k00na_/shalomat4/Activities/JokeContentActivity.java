@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.example.k00na_.shalomat4.Fragments.JokeContentFragment;
 import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
+import com.example.k00na_.shalomat4.MainActivity;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
@@ -55,6 +56,7 @@ public class JokeContentActivity extends AppCompatActivity {
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 onBackPressed();
             }
         });
