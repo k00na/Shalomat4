@@ -67,12 +67,12 @@ public class ListOfJokesFragment extends Fragment{
         mCurrentJokeList = getCurrentJokeList(mCurrentCategoryInt);
         // SETUP ADAPTER&RECYCLER_VIEW
         mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
-        mRecyclerView.setAdapter(mListOfJokesAdapter);
+
 
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(llm);
-
+        mRecyclerView.setAdapter(mListOfJokesAdapter);
 
 
 

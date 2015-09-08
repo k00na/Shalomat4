@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
                     case (R.id.blondinke_navigation): {
                         Toast.makeText(getApplicationContext(), "Blondinke", Toast.LENGTH_LONG).show();
-                        mToolbar.setTitle(R.string.blondinkeNav);
+                        getSupportActionBar().setTitle(R.string.blondinkeNav);
 
                         displayListOfJokes(R.id.blondinke_navigation);
 
@@ -229,7 +229,6 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, ListOfJokesFragment.newInstance(menuItemID, getSupportActionBar().getTitle().toString()))
-                .addToBackStack(null)
                 .commit();
 
     }

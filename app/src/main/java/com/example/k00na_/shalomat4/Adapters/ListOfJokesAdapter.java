@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.k00na_.shalomat4.Activities.JokeContentActivity;
 import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
@@ -48,7 +49,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         View v = LayoutInflater.from(mContext).inflate(R.layout.joke_view_holder, parent, false);
         HolderThingy holderThingy = new HolderThingy(v);
 
-        return null;
+        return holderThingy;
     }
 
     @Override
@@ -71,7 +72,6 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         holderThingy.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 setupIntent(mJokeArrayList.get(position).getJokeID());
 
             }
@@ -93,7 +93,6 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
 
         Intent intent = new Intent(mContext.getApplicationContext(), JokeContentActivity.class);
         intent.putExtra("jokeIDForContentFragment", jokeID);
-        intent.putExtra("currentJokeIndex", intent);
         intent.putExtra(ListOfJokesFragment.CATEGORY_TITLE_KEY, mCurrentCategoryTitle);
         intent.putExtra("currentCategoryInt", mCurrentCategoryNum);
         mContext.startActivity(intent);

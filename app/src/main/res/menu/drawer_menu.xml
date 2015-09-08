@@ -73,6 +73,12 @@
             android:title="@string/priljubljeniVici"
             ></item>
 
+        <item
+            android:icon="@drawable/ic_send_black_24dp"
+            android:id="@+id/vsivici_navigation"
+            android:title="@string/vsivici">
+
+        </item>
     </group>
 
 </menu>
