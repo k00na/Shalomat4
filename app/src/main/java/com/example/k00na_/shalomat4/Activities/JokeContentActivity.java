@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.k00na_.shalomat4.Fragments.JokeContentFragment;
 import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
@@ -30,9 +31,13 @@ public class JokeContentActivity extends AppCompatActivity {
     private TextView jokeContent;
     private Toolbar mToolbar;
     private ArrayList<Joke> mCurrentCategory;
+    private Context activityContext;
+
+    // primitives and strings
     private int mCurrentCategoryNum;
     private UUID mJokeID;
-    private Context activityContext;
+    private String mCategoryTitle;
+
 
 
     @Override
@@ -54,47 +59,40 @@ public class JokeContentActivity extends AppCompatActivity {
             }
         });
 
-        Intent i = getIntent();
-
-
-        mJokeID = (UUID) i.getSerializableExtra("jokeIDForContentFragment");
-        String currentTitle = i.getStringExtra(ListOfJokesFragment.CATEGORY_TITLE_KEY);
-        mCurrentCategoryNum = i.getIntExtra("currentCategoryInt", 0);
-
+        gettingTheIntent();
+        getSupportActionBar().setTitle(mCategoryTitle);
 
         mCurrentCategory = setupCategory(mCurrentCategoryNum);
 
-        TextView testText = (TextView)findViewById(R.id.testtext);
-        String content = "";
-
-        for(int j = 0; j <mCurrentCategory.size(); j++){
-
-            if(mCurrentCategory.get(j).getJokeID().equals(mJokeID)) {
-                content = mCurrentCategory.get(j).getJokeContent();
-                break;
-            }
-
-        }
-
-        testText.setText(content);
 
 
 
 
 
-/*
+
+
         mViewPager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                return null;
+                Joke joke = mCurrentCategory.get(position);
+
+                return JokeContentFragment.newInstance(joke.getJokeID(), mCurrentCategoryNum, position);
             }
 
             @Override
             public int getCount() {
-                return 0;
+                return mCurrentCategory.size();
             }
         });
-        */
+
+        for(int j = 0; j<mCurrentCategory.size(); j++){
+
+            if(mCurrentCategory.get(j).getJokeID().equals(mJokeID))
+                mViewPager.setCurrentItem(j);
+        }
+
+
+
 
 
     }
@@ -103,10 +101,8 @@ public class JokeContentActivity extends AppCompatActivity {
 
         Intent i = getIntent();
 
-
         mJokeID = (UUID) i.getSerializableExtra("jokeIDForContentFragment");
-        int currentJokeIndex = i.getIntExtra("currentJokeIndex", 0);
-        String currentTitle = i.getStringExtra(ListOfJokesFragment.CATEGORY_TITLE_KEY);
+        mCategoryTitle = i.getStringExtra(ListOfJokesFragment.CATEGORY_TITLE_KEY);
         mCurrentCategoryNum = i.getIntExtra("currentCategoryInt", 0);
 
     }
