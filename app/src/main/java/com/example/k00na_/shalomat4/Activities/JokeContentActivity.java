@@ -64,13 +64,6 @@ public class JokeContentActivity extends AppCompatActivity {
 
         mCurrentCategory = setupCategory(mCurrentCategoryNum);
 
-
-
-
-
-
-
-
         mViewPager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {

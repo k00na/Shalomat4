@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.k00na_.shalomat4.Model.GlobalState;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
@@ -56,6 +57,22 @@ public class JokeContentFragment extends Fragment{
         getBundleAndSetupData();
         setupViews(v);
 
+        saveToFavFAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GlobalState globalState = (GlobalState)getActivity().getApplicationContext();
+
+                saveToFavFAB.setTitle("Shranjeno! ;-)");
+                String fileName = getFileNameForCategory(currentCatNum);
+                mCurrentJoke.setIsFavorited(true);
+                globalState.setBlondinkeGlobal(mCurrentCategory);
+
+
+
+
+            }
+        });
+
 
         return v;
     }
@@ -92,19 +109,80 @@ public class JokeContentFragment extends Fragment{
 
     private ArrayList<Joke> currentJokeList(int catNum){
 
-        JSONSerializer serializer = new JSONSerializer(getActivity());
+       // JSONSerializer serializer = new JSONSerializer(getActivity());
+       // String fileName = getFileNameForCategory(catNum);
+        GlobalState globalState = (GlobalState)getActivity().getApplicationContext();
+        ArrayList<Joke> currentArray = new ArrayList<Joke>();
+
+        switch (catNum) {
+
+            case (R.id.blondinke_navigation): {
+                currentArray = globalState.getBlondinkeGlobal();
+                break;
+            }
+        }
+
+        return currentArray;
+    }
+
+    private String getFileNameForCategory(int catNum){
+
         String fileName = "";
 
         switch (catNum){
 
             case(R.id.blondinke_navigation):{
                 fileName = JSONSerializer.BLONDINKE_FILENAME;
+                        break;
+            }
+            case(R.id.policaji_navigation):{
+                fileName = JSONSerializer.POLICAJI_FILENAME;
+                        break;
+            }
+            case(R.id.tvojamama_navigation):{
+                fileName = JSONSerializer.TVOJAMAMA_FILENAME;
+                        break;
+            }
+            case(R.id.gostilniske_navigation):{
+                fileName = JSONSerializer.GOSTILNSIKE_FILENAME;
+                break;
+            }
+            case(R.id.janezek_navigation):{
+                fileName = JSONSerializer.JANEZEK_FILENAME;
+                break;
+            }
+            case(R.id.mujohaso_navigation):{
+                fileName = JSONSerializer.MUJOHASO_FILENAME;
+                break;
+            }
+            case(R.id.crnihumor_navigation):{
+                fileName = JSONSerializer.CRNIHUMOR_FILENAME;
+                break;
+            }
+            case(R.id.tasce_navigation):{
+                fileName = JSONSerializer.TASCE_FILENAME;
+                break;
+            }
+            case(R.id.politicnivici_navigation):{
+                fileName = JSONSerializer.POLITICNI_FILENAME;
+                break;
+            }
+            case(R.id.yugovici_navigation):{
+                fileName = JSONSerializer.YUGO_FILENAME;
+                break;
+            }
+            case(R.id.vsivici_navigation):{
+                fileName = JSONSerializer.VSIVICI_FILENAME;
+                break;
+            }
+            case(R.id.priljubljeni_navigation):{
+                fileName = JSONSerializer.PRILJUBLJENI_FILENAME;
                 break;
             }
 
-        }
 
-        return serializer.loadCategory(fileName);
+        }
+        return fileName;
     }
 
 }

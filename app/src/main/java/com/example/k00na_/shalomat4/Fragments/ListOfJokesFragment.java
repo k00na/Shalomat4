@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.k00na_.shalomat4.Adapters.ListOfJokesAdapter;
+import com.example.k00na_.shalomat4.Model.GlobalState;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
@@ -30,6 +31,7 @@ public class ListOfJokesFragment extends Fragment{
     private ArrayList<Joke> mCurrentJokeList;
     private ListOfJokesAdapter mListOfJokesAdapter;
     private RecyclerView mRecyclerView;
+    GlobalState globalState;
 
 
     private TextView mTestingTextView;
@@ -48,6 +50,8 @@ public class ListOfJokesFragment extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        globalState = (GlobalState)getActivity().getApplicationContext();
 
     //    mCurrentCategoryInt = getArguments().getInt(CATEGORY_KEY);
      //   mCurrentCategoryTitle = getArguments().getString(CATEGORY_TITLE_KEY);
@@ -86,22 +90,31 @@ public class ListOfJokesFragment extends Fragment{
 
     private ArrayList<Joke> getCurrentJokeList(int currentCategoryInt){
 
-        JSONSerializer serializer = new JSONSerializer(getActivity());
-      //  ArrayList<Joke> currentJokes = new ArrayList<Joke>();
+       // JSONSerializer serializer = new JSONSerializer(getActivity());
+        ArrayList<Joke> currentJokes = new ArrayList<Joke>();
         String fileName = "";
+
 
         switch (currentCategoryInt){
 
             case(R.id.blondinke_navigation):{
-                fileName = JSONSerializer.BLONDINKE_FILENAME;
+                currentJokes = globalState.getBlondinkeGlobal();
                 break;
             }
 
         }
 
+        return currentJokes;
 
+        //return serializer.loadCategory(fileName);
 
-        return serializer.loadCategory(fileName);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        GlobalState globalState = (GlobalState)getActivity().getApplicationContext();
+        mCurrentJokeList = globalState.getBlondinkeGlobal();
+
+    }
 }

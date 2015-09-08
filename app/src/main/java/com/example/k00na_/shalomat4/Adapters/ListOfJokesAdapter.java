@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.k00na_.shalomat4.Activities.JokeContentActivity;
 import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
+import com.example.k00na_.shalomat4.Model.GlobalState;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
@@ -116,19 +117,22 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
 
     private ArrayList<Joke> currentJokeList(int catNum){
 
-        JSONSerializer serializer = new JSONSerializer(mContext);
-        String fileName = "";
+       // JSONSerializer serializer = new JSONSerializer(mContext);
+      //  String fileName = "";
+        ArrayList<Joke> currentArray = new ArrayList<Joke>();
+        GlobalState globalState = (GlobalState)mContext.getApplicationContext();
 
         switch (catNum){
 
             case(R.id.blondinke_navigation):{
-                fileName = JSONSerializer.BLONDINKE_FILENAME;
+                currentArray = globalState.getBlondinkeGlobal();
                 break;
             }
 
         }
 
-        return serializer.loadCategory(fileName);
+        //return serializer.loadCategory(fileName);
+        return currentArray;
     }
 
 

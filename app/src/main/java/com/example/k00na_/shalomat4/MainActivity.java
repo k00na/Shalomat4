@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
 import com.example.k00na_.shalomat4.Model.GlobalState;
+import com.example.k00na_.shalomat4.Util.JSONSerializer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         globalState = (GlobalState) getApplicationContext();
-
+        setupGlobalState();
         setupViews();
         navigationListener();
         actionBarDrawerToggleSetup();
@@ -87,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
                     case (R.id.crnihumor_navigation): {
                         Toast.makeText(getApplicationContext(), "Črni humor", Toast.LENGTH_LONG).show();
                         mToolbar.setTitle(R.string.crnihumorNav);
-
 
 
                         return true;
@@ -230,6 +230,13 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, ListOfJokesFragment.newInstance(menuItemID, getSupportActionBar().getTitle().toString()))
                 .commit();
+
+    }
+
+    private void setupGlobalState(){
+
+        JSONSerializer serializer = new JSONSerializer(this);
+        globalState.setBlondinkeGlobal(serializer.loadCategory(JSONSerializer.BLONDINKE_FILENAME));
 
     }
 
