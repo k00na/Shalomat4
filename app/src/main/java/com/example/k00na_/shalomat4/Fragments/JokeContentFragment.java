@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,9 @@ import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -54,31 +58,42 @@ public class JokeContentFragment extends Fragment{
 
         View v = inflater.inflate(R.layout.joke_content_fragment, container, false);
 
-        getBundleAndSetupData();
+        try {
+            getBundleAndSetupData();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         setupViews(v);
 
         saveToFavFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GlobalState globalState = (GlobalState)getActivity().getApplicationContext();
-
+                JSONSerializer serializer = new JSONSerializer(getActivity());
                 saveToFavFAB.setTitle("Shranjeno! ;-)");
                 String fileName = getFileNameForCategory(currentCatNum);
                 mCurrentJoke.setIsFavorited(true);
-                globalState.setBlondinkeGlobal(mCurrentCategory);
+                try {
+                    serializer.saveCategory(mCurrentCategory, fileName);
+                    if(serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
+                        serializer.createPriljubljene(mCurrentJoke);
+                    else
+                        serializer.addToPriljubljene(mCurrentJoke);
 
-
-
+                    Log.i("favSize", "Fav array size: " + serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
             }
         });
-
 
         return v;
     }
 
 
-    private void getBundleAndSetupData(){
+    private void getBundleAndSetupData() throws IOException {
         Bundle bundle = getArguments();
         jokeID = (UUID) bundle.getSerializable("jokeID");
         currentCatNum = bundle.getInt("currentCatNum");
@@ -107,22 +122,26 @@ public class JokeContentFragment extends Fragment{
 
     }
 
-    private ArrayList<Joke> currentJokeList(int catNum){
+    private ArrayList<Joke> currentJokeList(int catNum) throws IOException {
 
-       // JSONSerializer serializer = new JSONSerializer(getActivity());
-       // String fileName = getFileNameForCategory(catNum);
-        GlobalState globalState = (GlobalState)getActivity().getApplicationContext();
+        JSONSerializer serializer = new JSONSerializer(getActivity());
+        String fileName = getFileNameForCategory(catNum);
         ArrayList<Joke> currentArray = new ArrayList<Joke>();
 
         switch (catNum) {
 
             case (R.id.blondinke_navigation): {
-                currentArray = globalState.getBlondinkeGlobal();
+                fileName = JSONSerializer.BLONDINKE_FILENAME;
                 break;
             }
+            case(R.id.gostilniske_navigation):{
+                fileName = JSONSerializer.GOSTILNSIKE_FILENAME;
+            }
+
+
         }
 
-        return currentArray;
+        return serializer.loadCategory(fileName);
     }
 
     private String getFileNameForCategory(int catNum){

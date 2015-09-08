@@ -97,6 +97,98 @@ public class JSONSerializer {
 
     }
 
+    public void createPriljubljene(Joke joke) throws IOException, JSONException{
+
+        JSONArray favJokes = new JSONArray();
+        favJokes.put(joke.toJSON());
+        joke.setIsFavorited(true);
+
+
+        Writer writer = null;
+        try{
+            OutputStream out = mContext.openFileOutput(CreateFilesForCategories.PRILJUBLJENI_FILENAME, Context.MODE_PRIVATE);
+            writer = new OutputStreamWriter(out);
+            writer.write(favJokes.toString());
+
+        } finally {
+            if(writer != null)
+                writer.close();
+        }
+
+    }
+
+    public void addToPriljubljene(Joke joke) throws IOException, JSONException{
+
+        // naredi JSONArray. V njega se izpiše ves dosedanji šit z branjem iz file-a.
+        // nato se v ta array doda trenuten joke in tako se potem ta posodobljen array zapiše v file.
+        JSONArray jsonArray = new JSONArray();
+
+        // 1. dobi JSONArray iz fajla za priljubljene
+
+        ArrayList<Joke> jokeArray = new ArrayList<Joke>();
+        BufferedReader reader = null;
+        try{
+            InputStream in = mContext.openFileInput(CreateFilesForCategories.PRILJUBLJENI_FILENAME);
+            reader = new BufferedReader(new InputStreamReader(in));
+            StringBuilder jsonString = new StringBuilder();
+            String line = null;
+
+            while((line = reader.readLine()) != null)
+                jsonString.append(line);
+
+            jsonArray = (JSONArray) new JSONTokener(jsonString.toString()).nextValue();
+
+            jsonArray.put(joke.toJSON());
+
+        } catch (FileNotFoundException fnfe){
+
+        } finally {
+            if(reader != null)
+                reader.close();
+        }
+
+        Writer writer = null;
+
+        if(jsonArray.length()==0)
+            jsonArray.put(joke.toJSON());
+
+        try{
+            OutputStream out = mContext.openFileOutput(CreateFilesForCategories.PRILJUBLJENI_FILENAME, Context.MODE_PRIVATE);
+            writer = new OutputStreamWriter(out);
+            writer.write(jsonArray.toString());
+        }finally {
+            if(writer!=null)
+                writer.close();
+        }
+
+    }
+
+    public ArrayList<Joke> loadFavorites() throws IOException, JSONException{
+
+        ArrayList<Joke> arrayList = new ArrayList<>();
+        BufferedReader reader = null;
+
+        try{
+            InputStream in = mContext.openFileInput(CreateFilesForCategories.PRILJUBLJENI_FILENAME);
+            reader = new BufferedReader(new InputStreamReader(in));
+            StringBuilder jsonString = new StringBuilder();
+            String line = null;
+            while((line = reader.readLine()) != null)
+                jsonString.append(line);
+
+            JSONArray array = (JSONArray) new JSONTokener(jsonString.toString()).nextValue();
+
+            for(int i = 0; i < array.length(); i++){
+                arrayList.add(new Joke(array.getJSONObject(i))); // <-- btw, ful kul line!
+            }
+        } catch (FileNotFoundException fnfe){
+
+        }finally {
+            if(reader != null)
+                reader.close();
+        }
+        return arrayList;
+    }
 
 
 

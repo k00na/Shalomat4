@@ -37,12 +37,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        globalState = (GlobalState) getApplicationContext();
-        try {
-            setupGlobalState();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        globalState = (GlobalState)getApplicationContext();
+
         setupViews();
         navigationListener();
         actionBarDrawerToggleSetup();
@@ -51,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         if (numOfVisits() == 0) {
 
             CreateFilesForCategories createFiles = new CreateFilesForCategories(this);
+            Toast.makeText(this, "Files created", Toast.LENGTH_SHORT).show();
             try {
                 createFiles.createAllJokes();
             } catch (IOException e) {
@@ -118,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     case (R.id.gostilniske_navigation): {
                         Toast.makeText(getApplicationContext(), "Gostilniške", Toast.LENGTH_LONG).show();
                         mToolbar.setTitle(R.string.gostilniskeNav);
-
+                        displayListOfJokes(R.id.gostilniske_navigation);
                         return true;
                     }
 
@@ -127,6 +124,18 @@ public class MainActivity extends AppCompatActivity {
                         mToolbar.setTitle(R.string.janezNav);
                         return true;
                     }
+                    case (R.id.priljubljeni_navigation):{
+                        JSONSerializer serializer = new JSONSerializer(getApplicationContext());
+                        try {
+                            if(serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
+                                Toast.makeText(getApplicationContext(), "Prazna kategorija", Toast.LENGTH_LONG).show();
+                            else
+                                displayListOfJokes(R.id.priljubljeni_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
 
                     case (R.id.mujohaso_navigation): {
                         Toast.makeText(getApplicationContext(), "Mujo&Haso", Toast.LENGTH_LONG).show();

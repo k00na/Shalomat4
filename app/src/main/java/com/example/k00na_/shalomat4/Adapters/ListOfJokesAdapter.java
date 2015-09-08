@@ -18,6 +18,7 @@ import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -32,7 +33,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
     private ArrayList<Joke> mJokeArrayList;
 
 
-    public ListOfJokesAdapter(int currentCategoryNum, String currentCategoryTitle, Context c){
+    public ListOfJokesAdapter(int currentCategoryNum, String currentCategoryTitle, Context c) throws IOException {
 
         mCurrentCategoryNum = currentCategoryNum;
         mCurrentCategoryTitle = currentCategoryTitle;
@@ -116,24 +117,27 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         return text;
     }
 
-    private ArrayList<Joke> currentJokeList(int catNum){
+    private ArrayList<Joke> currentJokeList(int catNum) throws IOException {
 
-       // JSONSerializer serializer = new JSONSerializer(mContext);
-      //  String fileName = "";
+        JSONSerializer serializer = new JSONSerializer(mContext);
+       String fileName = "";
         ArrayList<Joke> currentArray = new ArrayList<Joke>();
         GlobalState globalState = (GlobalState)mContext.getApplicationContext();
 
         switch (catNum){
 
             case(R.id.blondinke_navigation):{
-                currentArray = globalState.getBlondinkeGlobal();
+                fileName = JSONSerializer.BLONDINKE_FILENAME;
                 break;
+            }
+            case(R.id.gostilniske_navigation):{
+                fileName = JSONSerializer.GOSTILNSIKE_FILENAME;
             }
 
         }
 
-        //return serializer.loadCategory(fileName);
-        return currentArray;
+        return serializer.loadCategory(fileName);
+
     }
 
 

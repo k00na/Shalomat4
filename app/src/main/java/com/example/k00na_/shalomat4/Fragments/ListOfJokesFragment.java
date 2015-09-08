@@ -17,7 +17,10 @@ import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
 
+import org.json.JSONException;
+
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -66,49 +69,63 @@ public class ListOfJokesFragment extends Fragment{
         View v = inflater.inflate(R.layout.list_of_jokes_fragment, container, false);
         mRecyclerView = (RecyclerView)v.findViewById(R.id.recyclerViewID);
 
-        // GET DATA:
+        /*
+            GET DATA
+         */
+
         mCurrentCategoryInt = getArguments().getInt(CATEGORY_KEY);
         mCurrentCategoryTitle = getArguments().getString(CATEGORY_TITLE_KEY);
-        mCurrentJokeList = getCurrentJokeList(mCurrentCategoryInt);
-        // SETUP ADAPTER&RECYCLER_VIEW
-        Log.i("alo", "Is the first joke favorited? " + mCurrentJokeList.get(0).isFavorited());
-        mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
 
+        try {
+            mCurrentJokeList = getCurrentJokeList(mCurrentCategoryInt);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        /*
+            SETUP ADAPTER & RECYCLERVIEW
+         */
 
+        try {
+            mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(llm);
         mRecyclerView.setAdapter(mListOfJokesAdapter);
 
-
-
-   //     mTestingTextView.setText("" + mCurrentJokeList.get(2).getJokeContent());
-
         return v;
-
-
     }
 
 
-    private ArrayList<Joke> getCurrentJokeList(int currentCategoryInt){
+    private ArrayList<Joke> getCurrentJokeList(int currentCategoryInt) throws IOException, JSONException {
 
-       // JSONSerializer serializer = new JSONSerializer(getActivity());
-        ArrayList<Joke> currentJokes = new ArrayList<Joke>();
+        JSONSerializer serializer = new JSONSerializer(getActivity());
         String fileName = "";
 
 
         switch (currentCategoryInt){
 
             case(R.id.blondinke_navigation):{
-                currentJokes = globalState.getBlondinkeGlobal();
+                fileName = JSONSerializer.BLONDINKE_FILENAME;
                 break;
             }
+            case(R.id.gostilniske_navigation):{
+                fileName = JSONSerializer.GOSTILNSIKE_FILENAME;
+            }
+            case (R.id.priljubljeni_navigation):{
+                return serializer.loadFavorites();
+            }
+
 
         }
 
-        return currentJokes;
 
-        //return serializer.loadCategory(fileName);
+        return serializer.loadCategory(fileName);
+
 
     }
 
@@ -116,10 +133,23 @@ public class ListOfJokesFragment extends Fragment{
     public void onResume() {
         super.onResume();
 
-        GlobalState globalState = (GlobalState)getActivity().getApplicationContext();
-        mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
-        mCurrentJokeList = getCurrentJokeList(mCurrentCategoryInt);
-        mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
+        try {
+            mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            mCurrentJokeList = getCurrentJokeList(mCurrentCategoryInt);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        try {
+            mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         mRecyclerView.setAdapter(mListOfJokesAdapter);
 
     }
