@@ -1,5 +1,6 @@
 package com.example.k00na_.shalomat4.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -74,7 +75,7 @@ public class JokeContentFragment extends Fragment{
                 mCurrentJoke.setIsFavorited(true);
                 try {
                     serializer.saveCategory(mCurrentCategory, fileName);
-                    if(serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
+                    if (serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
                         serializer.createPriljubljene(mCurrentJoke);
                     else
                         serializer.addToPriljubljene(mCurrentJoke);
@@ -85,6 +86,18 @@ public class JokeContentFragment extends Fragment{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+
+            }
+        });
+
+        sendSmsFAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent smsIntent = new Intent(Intent.ACTION_SEND);
+                smsIntent.setType("text/plain");
+                smsIntent.putExtra(Intent.EXTRA_TEXT, "" + mCurrentJoke.getJokeContent()+"\n" + "\n" + "Poslano s Šalomatom :Đ");
+                startActivity(smsIntent);
 
             }
         });

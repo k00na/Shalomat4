@@ -129,11 +129,15 @@ public class MainActivity extends AppCompatActivity {
                         try {
                             if(serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
                                 Toast.makeText(getApplicationContext(), "Prazna kategorija", Toast.LENGTH_LONG).show();
-                            else
+                            else {
+                                Toast.makeText(getApplicationContext(), "YOYO", Toast.LENGTH_LONG).show();
+                                mToolbar.setTitle(R.string.pribljubljeniNav);
                                 displayListOfJokes(R.id.priljubljeni_navigation);
+                            }
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
+                        return true;
                     }
 
 
@@ -146,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
                     case (R.id.policaji_navigation): {
                         Toast.makeText(getApplicationContext(), "Policaji", Toast.LENGTH_LONG).show();
                         mToolbar.setTitle(R.string.policajiNav);
-                        //  commitThatShit(R.id.policaji_navigation);
                         return true;
                     }
 
@@ -170,29 +173,13 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     }
-
-                    /*
-                    case(R.id.priljubljeni_navigation):{
-                        JSONSerializer serializer = new JSONSerializer(getApplicationContext(), CreateFilesForCategories.PRILJUBLJENI_FILENAME);
-                        try {
-                            if(serializer.loadFavorites().size()==0){
-                                Toast.makeText(getApplicationContext(), "Prazna kategorija!", Toast.LENGTH_LONG).show();
-                            }
-                            else {
-                                mToolbar.setTitle(R.string.pribljubljeniNav);
-                                commitThatShit(R.id.priljubljeni_navigation);
-                            }
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
+                    case (R.id.vsivici_navigation):{
+                        mToolbar.setTitle(R.string.vsivici);
+                        displayListOfJokes(R.id.vsivici_navigation);
                     }
-                    */
 
                     default: {
-                        Toast.makeText(getApplicationContext(), "This shouldnt be happening...", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "No such category...", Toast.LENGTH_LONG).show();
                         return true;
                     }
 

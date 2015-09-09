@@ -115,15 +115,17 @@ public class ListOfJokesFragment extends Fragment{
             }
             case(R.id.gostilniske_navigation):{
                 fileName = JSONSerializer.GOSTILNSIKE_FILENAME;
+                break;
             }
             case (R.id.priljubljeni_navigation):{
-                return serializer.loadFavorites();
+                fileName = JSONSerializer.PRILJUBLJENI_FILENAME;
+                break;
             }
 
 
         }
 
-
+        Log.i("fav", "Size iz: " + serializer.loadCategory(fileName).size());
         return serializer.loadCategory(fileName);
 
 

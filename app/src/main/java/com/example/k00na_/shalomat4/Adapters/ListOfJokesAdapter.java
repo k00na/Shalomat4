@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import com.example.k00na_.shalomat4.Model.GlobalState;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
+
+import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -57,17 +60,18 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
     @Override
     public void onBindViewHolder(HolderThingy holderThingy, final int position) {
 
-        if(mCurrentCategoryNum == R.id.priljubljeni_navigation) {
-            holderThingy.favoritedIcon.setVisibility(View.GONE);
-            holderThingy.categoryTitle.setVisibility(View.VISIBLE);
+        if(mCurrentCategoryNum != R.id.priljubljeni_navigation) {
+            holderThingy.favoritedIcon.setVisibility(View.VISIBLE);
+            holderThingy.categoryTitle.setVisibility(View.INVISIBLE);
         }
+
 
         if(mJokeArrayList.get(position).isFavorited() == true)
             holderThingy.favoritedIcon.setImageResource(R.drawable.ic_star_black_24dp);
 
         String shrunkenJokePreview = shrinkText(mJokeArrayList.get(position).getJokeContent());
 
-        holderThingy.categoryTitle.setText(mJokeArrayList.get(position).getJokeCategoryTitle());
+        holderThingy.categoryTitle.setText("" + mJokeArrayList.get(position).getJokeCategoryTitle());
         holderThingy.jokePreviewText.setText(shrunkenJokePreview);
 
 
@@ -120,9 +124,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
     private ArrayList<Joke> currentJokeList(int catNum) throws IOException {
 
         JSONSerializer serializer = new JSONSerializer(mContext);
-       String fileName = "";
-        ArrayList<Joke> currentArray = new ArrayList<Joke>();
-        GlobalState globalState = (GlobalState)mContext.getApplicationContext();
+        String fileName = "";
 
         switch (catNum){
 
@@ -132,9 +134,19 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             }
             case(R.id.gostilniske_navigation):{
                 fileName = JSONSerializer.GOSTILNSIKE_FILENAME;
+                break;
+            }
+
+            case(R.id.priljubljeni_navigation):{
+               fileName = JSONSerializer.PRILJUBLJENI_FILENAME;
+                break;
+            }
+            case(R.id.vsivici_navigation):{
+                fileName = JSONSerializer.VSIVICI_FILENAME;
             }
 
         }
+
 
         return serializer.loadCategory(fileName);
 
