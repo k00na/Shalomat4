@@ -8,13 +8,11 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.k00na_.shalomat4.Fragments.JokeContentFragment;
 import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
-import com.example.k00na_.shalomat4.MainActivity;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
@@ -154,7 +152,7 @@ public class JokeContentActivity extends AppCompatActivity {
                 fileName = JSONSerializer.PRILJUBLJENI_FILENAME;
                 break;
             }
-            case(R.id.vsivici_navigation):{
+            case(R.id.nakljucni_navigation):{
                 fileName = JSONSerializer.VSIVICI_FILENAME;
                 break;
             }

@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.k00na_.shalomat4.Model.GlobalState;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
@@ -208,7 +207,7 @@ public class JokeContentFragment extends Fragment{
                 fileName = JSONSerializer.YUGO_FILENAME;
                 break;
             }
-            case(R.id.vsivici_navigation):{
+            case(R.id.nakljucni_navigation):{
                 fileName = JSONSerializer.VSIVICI_FILENAME;
                 break;
             }
