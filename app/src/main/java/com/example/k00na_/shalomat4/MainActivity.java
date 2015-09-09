@@ -58,21 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-<<<<<<< HEAD
-            JSONSerializer serializer = new JSONSerializer(this);
-            try {
-                serializer.createVsiVici();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
 
-=======
             displayListOfJokes(R.id.nakljucni_navigation);
->>>>>>> SwipeToRefresh
             Toast.makeText(this, "First visit; wellcome!", Toast.LENGTH_LONG).show();
-            displayListOfJokes(R.id.vsivici_navigation);
+            displayListOfJokes(R.id.nakljucni_navigation);
             mDrawerLayout.openDrawer(Gravity.LEFT);
             incrementAndSaveVisits();
 
@@ -190,16 +179,13 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     }
-<<<<<<< HEAD
-                    case (R.id.vsivici_navigation):{
-                        mToolbar.setTitle(R.string.vsivici);
-                        displayListOfJokes(R.id.vsivici_navigation);
-                        return true;
-=======
+
+
+
                     case (R.id.nakljucni_navigation):{
                         mToolbar.setTitle(R.string.nakljucniVici);
                         displayListOfJokes(R.id.nakljucni_navigation);
->>>>>>> SwipeToRefresh
+
                     }
 
                     default: {

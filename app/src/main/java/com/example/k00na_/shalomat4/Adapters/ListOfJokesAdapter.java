@@ -39,21 +39,18 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         mCurrentCategoryTitle = currentCategoryTitle;
         mContext = c;
 
-<<<<<<< HEAD
-        if(currentCategoryNum != R.id.vsivici_navigation)
+        if(currentCategoryNum != R.id.nakljucni_navigation)
             mJokeArrayList = currentJokeList(currentCategoryNum);
-        else if (currentCategoryNum == R.id.vsivici_navigation){
+        else if (currentCategoryNum == R.id.nakljucni_navigation){
             ArrayList<Joke> randomisedArray = currentJokeList(currentCategoryNum);
             Collections.shuffle(randomisedArray);
             mJokeArrayList = randomisedArray;
 
 
         }
-=======
         mJokeArrayList = currentJokeList(currentCategoryNum);
         Collections.shuffle(mJokeArrayList);
 
->>>>>>> SwipeToRefresh
 
     }
 
@@ -71,9 +68,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
     @Override
     public void onBindViewHolder(HolderThingy holderThingy, final int position) {
 
-<<<<<<< HEAD
-        if(mCurrentCategoryNum != R.id.priljubljeni_navigation && mCurrentCategoryNum != R.id.vsivici_navigation) {
-=======
+        if(mCurrentCategoryNum != R.id.priljubljeni_navigation && mCurrentCategoryNum != R.id.nakljucni_navigation) {
 
         if(mCurrentCategoryNum == R.id.priljubljeni_navigation){
             holderThingy.favoritedIcon.setVisibility(View.INVISIBLE);
@@ -82,7 +77,6 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             holderThingy.favoritedIcon.setVisibility(View.INVISIBLE);
             holderThingy.categoryTitle.setVisibility(View.VISIBLE);
         } else{
->>>>>>> SwipeToRefresh
             holderThingy.favoritedIcon.setVisibility(View.VISIBLE);
             holderThingy.categoryTitle.setVisibility(View.INVISIBLE);
         }
@@ -110,9 +104,8 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         });
 
 
-    }
+    }}
 
-    @Override
     public int getItemCount() {
         return mJokeArrayList.size();
     }

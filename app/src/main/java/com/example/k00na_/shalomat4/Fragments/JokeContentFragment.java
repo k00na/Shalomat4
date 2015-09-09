@@ -150,7 +150,7 @@ public class JokeContentFragment extends Fragment{
                 fileName = JSONSerializer.GOSTILNSIKE_FILENAME;
                 break;
             }
-            case(R.id.vsivici_navigation):{
+            case(R.id.nakljucni_navigation):{
                     fileName = JSONSerializer.VSIVICI_FILENAME;
                 break;
             }

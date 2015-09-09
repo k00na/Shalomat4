@@ -97,21 +97,14 @@ public class JSONSerializer {
 
     }
 
-<<<<<<< HEAD
-    public void createVsiVici() throws IOException, JSONException {
-        ArrayList<Joke> vsiViciArray = new ArrayList<Joke>();
-        vsiViciArray.addAll(loadCategory(BLONDINKE_FILENAME));
-        vsiViciArray.addAll(loadCategory(GOSTILNSIKE_FILENAME));
 
 
-=======
     public void createVsiViciCategory() throws IOException, JSONException {
 
         ArrayList<Joke> vsiViciArray = new ArrayList<>();
 
         vsiViciArray.addAll(loadCategory(BLONDINKE_FILENAME));
         vsiViciArray.addAll(loadCategory(GOSTILNSIKE_FILENAME));
->>>>>>> SwipeToRefresh
 
         saveCategory(vsiViciArray, VSIVICI_FILENAME);
 
