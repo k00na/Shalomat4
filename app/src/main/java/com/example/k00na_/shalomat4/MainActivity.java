@@ -126,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
                     case (R.id.janezek_navigation): {
                         Toast.makeText(getApplicationContext(), "Janezek", Toast.LENGTH_LONG).show();
                         mToolbar.setTitle(R.string.janezNav);
+                        displayListOfJokes(R.id.janezek_navigation);
                         return true;
                     }
                     case (R.id.priljubljeni_navigation):{

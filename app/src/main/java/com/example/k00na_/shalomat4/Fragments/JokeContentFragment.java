@@ -151,6 +151,7 @@ public class JokeContentFragment extends Fragment{
             }
 
 
+
         }
 
         return serializer.loadCategory(fileName);

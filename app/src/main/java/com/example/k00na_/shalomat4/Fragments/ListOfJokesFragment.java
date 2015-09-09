@@ -78,6 +78,7 @@ public class ListOfJokesFragment extends Fragment{
 
         try {
             mCurrentJokeList = getCurrentJokeList(mCurrentCategoryInt);
+            Log.i("yoyo", "Janezek size: " + mCurrentJokeList.size());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (JSONException e) {
@@ -120,6 +121,9 @@ public class ListOfJokesFragment extends Fragment{
             case (R.id.priljubljeni_navigation):{
                 fileName = JSONSerializer.PRILJUBLJENI_FILENAME;
                 break;
+            }
+            case (R.id.janezek_navigation):{
+                fileName = JSONSerializer.JANEZEK_FILENAME;
             }
 
 
