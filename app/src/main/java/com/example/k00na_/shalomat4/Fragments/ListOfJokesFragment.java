@@ -75,14 +75,14 @@ public class ListOfJokesFragment extends Fragment{
 
         mCurrentCategoryInt = getArguments().getInt(CATEGORY_KEY);
         mCurrentCategoryTitle = getArguments().getString(CATEGORY_TITLE_KEY);
-
+        /*
         try {
             mCurrentJokeList = getCurrentJokeList(mCurrentCategoryInt);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        } */
         /*
             SETUP ADAPTER & RECYCLERVIEW
          */
@@ -100,7 +100,7 @@ public class ListOfJokesFragment extends Fragment{
         return v;
     }
 
-
+/*
     private ArrayList<Joke> getCurrentJokeList(int currentCategoryInt) throws IOException, JSONException {
 
         JSONSerializer serializer = new JSONSerializer(getActivity());
@@ -121,15 +121,19 @@ public class ListOfJokesFragment extends Fragment{
                 fileName = JSONSerializer.PRILJUBLJENI_FILENAME;
                 break;
             }
+            case (R.id.vsivici_navigation):{
+                fileName = JSONSerializer.VSIVICI_FILENAME;
+                break;
+            }
 
 
         }
 
-        Log.i("fav", "Size iz: " + serializer.loadCategory(fileName).size());
         return serializer.loadCategory(fileName);
 
 
     }
+    */
 
     @Override
     public void onResume() {
@@ -140,18 +144,7 @@ public class ListOfJokesFragment extends Fragment{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try {
-            mCurrentJokeList = getCurrentJokeList(mCurrentCategoryInt);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        try {
-            mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
         mRecyclerView.setAdapter(mListOfJokesAdapter);
 
     }

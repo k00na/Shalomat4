@@ -149,6 +149,11 @@ public class JokeContentFragment extends Fragment{
             }
             case(R.id.gostilniske_navigation):{
                 fileName = JSONSerializer.GOSTILNSIKE_FILENAME;
+                break;
+            }
+            case(R.id.vsivici_navigation):{
+                    fileName = JSONSerializer.VSIVICI_FILENAME;
+                break;
             }
 
 

@@ -23,6 +23,7 @@ import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.UUID;
 
 /**
@@ -42,7 +43,15 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         mCurrentCategoryTitle = currentCategoryTitle;
         mContext = c;
 
-        mJokeArrayList = currentJokeList(currentCategoryNum);
+        if(currentCategoryNum != R.id.vsivici_navigation)
+            mJokeArrayList = currentJokeList(currentCategoryNum);
+        else if (currentCategoryNum == R.id.vsivici_navigation){
+            ArrayList<Joke> randomisedArray = currentJokeList(currentCategoryNum);
+            Collections.shuffle(randomisedArray);
+            mJokeArrayList = randomisedArray;
+
+
+        }
 
     }
 
@@ -60,7 +69,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
     @Override
     public void onBindViewHolder(HolderThingy holderThingy, final int position) {
 
-        if(mCurrentCategoryNum != R.id.priljubljeni_navigation) {
+        if(mCurrentCategoryNum != R.id.priljubljeni_navigation && mCurrentCategoryNum != R.id.vsivici_navigation) {
             holderThingy.favoritedIcon.setVisibility(View.VISIBLE);
             holderThingy.categoryTitle.setVisibility(View.INVISIBLE);
         }

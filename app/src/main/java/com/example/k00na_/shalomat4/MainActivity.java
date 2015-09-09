@@ -56,7 +56,17 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
+            JSONSerializer serializer = new JSONSerializer(this);
+            try {
+                serializer.createVsiVici();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
             Toast.makeText(this, "First visit; wellcome!", Toast.LENGTH_LONG).show();
+            displayListOfJokes(R.id.vsivici_navigation);
             mDrawerLayout.openDrawer(Gravity.LEFT);
             incrementAndSaveVisits();
 
@@ -176,6 +186,7 @@ public class MainActivity extends AppCompatActivity {
                     case (R.id.vsivici_navigation):{
                         mToolbar.setTitle(R.string.vsivici);
                         displayListOfJokes(R.id.vsivici_navigation);
+                        return true;
                     }
 
                     default: {
