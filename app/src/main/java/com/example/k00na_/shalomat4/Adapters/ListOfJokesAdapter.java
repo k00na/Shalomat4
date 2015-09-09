@@ -10,19 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.k00na_.shalomat4.Activities.JokeContentActivity;
 import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
-import com.example.k00na_.shalomat4.Model.GlobalState;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
 
-import org.json.JSONException;
-
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.UUID;
 
 /**
@@ -43,6 +40,8 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         mContext = c;
 
         mJokeArrayList = currentJokeList(currentCategoryNum);
+        Collections.shuffle(mJokeArrayList);
+
 
     }
 
@@ -60,18 +59,29 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
     @Override
     public void onBindViewHolder(HolderThingy holderThingy, final int position) {
 
-        if(mCurrentCategoryNum != R.id.priljubljeni_navigation) {
+
+        if(mCurrentCategoryNum == R.id.priljubljeni_navigation){
+            holderThingy.favoritedIcon.setVisibility(View.INVISIBLE);
+            holderThingy.categoryTitle.setVisibility(View.VISIBLE);
+        } else if (mCurrentCategoryNum == R.id.nakljucni_navigation){
+            holderThingy.favoritedIcon.setVisibility(View.INVISIBLE);
+            holderThingy.categoryTitle.setVisibility(View.VISIBLE);
+        } else{
             holderThingy.favoritedIcon.setVisibility(View.VISIBLE);
             holderThingy.categoryTitle.setVisibility(View.INVISIBLE);
         }
 
 
-        if(mJokeArrayList.get(position).isFavorited() == true)
+        if(mJokeArrayList.get(position).isFavorited() == true) {
             holderThingy.favoritedIcon.setImageResource(R.drawable.ic_star_black_24dp);
+            Log.i("check1", "Is " + position + " favorited? A:" + mJokeArrayList.get(position).isFavorited());
+        } else{
+            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_star_border_black_24dp);
+        }
 
         String shrunkenJokePreview = shrinkText(mJokeArrayList.get(position).getJokeContent());
 
-        holderThingy.categoryTitle.setText("" + mJokeArrayList.get(position).getJokeCategoryTitle());
+        holderThingy.categoryTitle.setText("" + getCategoryTitle(mJokeArrayList.get(position).getJokeCategoryTitle()));
         holderThingy.jokePreviewText.setText(shrunkenJokePreview);
 
 
@@ -94,6 +104,60 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
     /*
         CUSTOM METHODS DOWNBELLOW
      */
+
+    private String getCategoryTitle(String fName){
+
+        String categoryName = "";
+
+        switch (fName){
+
+            case(JSONSerializer.BLONDINKE_FILENAME):{
+                categoryName = "Blondinke";
+                break;
+            }
+            case(JSONSerializer.POLICAJI_FILENAME):{
+                categoryName = "Policaji";
+                break;
+            }
+            case(JSONSerializer.TVOJAMAMA_FILENAME):{
+                categoryName = "Tvoja Mama";
+                break;
+            }
+            case(JSONSerializer.GOSTILNSIKE_FILENAME):{
+                categoryName = "Gostilniški";
+                break;
+            }
+            case(JSONSerializer.JANEZEK_FILENAME):{
+                categoryName = "Janezek";
+                break;
+            }
+            case(JSONSerializer.MUJOHASO_FILENAME):{
+                categoryName = "Mujo in Haso";
+                break;
+            }
+            case(JSONSerializer.CRNIHUMOR_FILENAME):{
+                categoryName = "Črni Humor";
+                break;
+            }
+            case(JSONSerializer.TASCE_FILENAME):{
+                categoryName = "Tašče";
+                break;
+            }
+            case(JSONSerializer.POLITICNI_FILENAME):{
+                categoryName = "Politični" ;
+                break;
+            }
+            case(JSONSerializer.YUGO_FILENAME):{
+                categoryName = "Yugo";
+                break;
+            }
+
+        }
+
+        return categoryName;
+    }
+
+
 
     private void setupIntent(UUID jokeID){
 
@@ -141,7 +205,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
                fileName = JSONSerializer.PRILJUBLJENI_FILENAME;
                 break;
             }
-            case(R.id.vsivici_navigation):{
+            case(R.id.nakljucni_navigation):{
                 fileName = JSONSerializer.VSIVICI_FILENAME;
             }
 

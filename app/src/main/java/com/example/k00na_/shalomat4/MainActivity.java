@@ -47,21 +47,25 @@ public class MainActivity extends AppCompatActivity {
         if (numOfVisits() == 0) {
 
             CreateFilesForCategories createFiles = new CreateFilesForCategories(this);
+            JSONSerializer serializer = new JSONSerializer(this);
             Toast.makeText(this, "Files created", Toast.LENGTH_SHORT).show();
             try {
                 createFiles.createAllJokes();
+                serializer.createVsiViciCategory();
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
+            displayListOfJokes(R.id.nakljucni_navigation);
             Toast.makeText(this, "First visit; wellcome!", Toast.LENGTH_LONG).show();
             mDrawerLayout.openDrawer(Gravity.LEFT);
             incrementAndSaveVisits();
 
 
         } else{
+            displayListOfJokes(R.id.nakljucni_navigation);
             Toast.makeText(this, "Num of entries: " + numOfVisits(), Toast.LENGTH_LONG).show();
             incrementAndSaveVisits();
         }
@@ -173,9 +177,9 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     }
-                    case (R.id.vsivici_navigation):{
-                        mToolbar.setTitle(R.string.vsivici);
-                        displayListOfJokes(R.id.vsivici_navigation);
+                    case (R.id.nakljucni_navigation):{
+                        mToolbar.setTitle(R.string.nakljucniVici);
+                        displayListOfJokes(R.id.nakljucni_navigation);
                     }
 
                     default: {

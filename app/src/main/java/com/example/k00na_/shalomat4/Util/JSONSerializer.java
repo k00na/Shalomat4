@@ -97,6 +97,19 @@ public class JSONSerializer {
 
     }
 
+    public void createVsiViciCategory() throws IOException, JSONException {
+
+        ArrayList<Joke> vsiViciArray = new ArrayList<>();
+
+        vsiViciArray.addAll(loadCategory(BLONDINKE_FILENAME));
+        vsiViciArray.addAll(loadCategory(GOSTILNSIKE_FILENAME));
+
+        saveCategory(vsiViciArray, VSIVICI_FILENAME);
+
+
+
+    }
+
     public void createPriljubljene(Joke joke) throws IOException, JSONException{
 
         JSONArray favJokes = new JSONArray();

@@ -5,12 +5,6 @@
 
     <group android:checkableBehavior="single" android:id="@+id/main_group">
 
-        <item
-            android:icon="@drawable/ic_send_black_24dp"
-            android:id="@+id/nakljucni_navigation"
-            android:title="@string/nakljucniNav"></item>
-
-
     <item
         android:icon="@drawable/ic_send_black_24dp"
         android:id="@+id/blondinke_navigation"
@@ -75,8 +69,8 @@
 
         <item
             android:icon="@drawable/ic_send_black_24dp"
-            android:id="@+id/vsivici_navigation"
-            android:title="@string/vsivici">
+            android:id="@+id/nakljucni_navigation"
+            android:title="@string/nakljucniVici">
 
         </item>
     </group>
