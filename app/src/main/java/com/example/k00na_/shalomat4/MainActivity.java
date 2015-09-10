@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,12 +17,14 @@ import android.widget.Toast;
 
 import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
 import com.example.k00na_.shalomat4.Model.GlobalState;
+import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.Util.CreateFilesForCategories;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
 
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,15 +42,26 @@ public class MainActivity extends AppCompatActivity {
 
         globalState = (GlobalState)getApplicationContext();
 
+        try {
+            setupGlobalState();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+
         setupViews();
         navigationListener();
         actionBarDrawerToggleSetup();
 
+        CreateFilesForCategories createFiles = new CreateFilesForCategories(this);
+        JSONSerializer serializer = new JSONSerializer(this);
 
         if (numOfVisits() == 0) {
 
-            CreateFilesForCategories createFiles = new CreateFilesForCategories(this);
-            JSONSerializer serializer = new JSONSerializer(this);
+
             Toast.makeText(this, "Files created", Toast.LENGTH_SHORT).show();
             try {
                 createFiles.createAllJokes();
@@ -68,6 +82,12 @@ public class MainActivity extends AppCompatActivity {
             displayListOfJokes(R.id.nakljucni_navigation);
             Toast.makeText(this, "Num of entries: " + numOfVisits(), Toast.LENGTH_LONG).show();
             incrementAndSaveVisits();
+        }
+
+        try {
+            Log.i("hey", "Janezek, first joke: " + serializer.loadCategory(JSONSerializer.JANEZEK_FILENAME).get(15).getJokeContent());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         navigationListener();
@@ -126,13 +146,14 @@ public class MainActivity extends AppCompatActivity {
                     case (R.id.janezek_navigation): {
                         Toast.makeText(getApplicationContext(), "Janezek", Toast.LENGTH_LONG).show();
                         getSupportActionBar().setTitle(R.string.janezNav);
+                        Log.i("curCat", "Curr Cat, MainActivity: " + R.id.janezek_navigation);
                         displayListOfJokes(R.id.janezek_navigation);
                         return true;
                     }
-                    case (R.id.priljubljeni_navigation):{
+                    case (R.id.priljubljeni_navigation): {
                         JSONSerializer serializer = new JSONSerializer(getApplicationContext());
                         try {
-                            if(serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
+                            if (serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
                                 Toast.makeText(getApplicationContext(), "Prazna kategorija", Toast.LENGTH_LONG).show();
                             else {
                                 Toast.makeText(getApplicationContext(), "YOYO", Toast.LENGTH_LONG).show();
@@ -180,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     }
-                    case (R.id.nakljucni_navigation):{
+                    case (R.id.nakljucni_navigation): {
                         mToolbar.setTitle(R.string.nakljucniVici);
                         displayListOfJokes(R.id.nakljucni_navigation);
                     }
@@ -263,6 +284,7 @@ public class MainActivity extends AppCompatActivity {
 
         JSONSerializer serializer = new JSONSerializer(this);
         globalState.setBlondinkeGlobal(serializer.loadCategory(JSONSerializer.BLONDINKE_FILENAME));
+        globalState.setJanezekGlobal(serializer.loadCategory(JSONSerializer.JANEZEK_FILENAME));
 
 
 

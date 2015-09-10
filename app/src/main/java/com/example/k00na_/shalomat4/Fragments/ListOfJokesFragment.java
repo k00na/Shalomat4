@@ -74,24 +74,20 @@ public class ListOfJokesFragment extends Fragment{
          */
 
         mCurrentCategoryInt = getArguments().getInt(CATEGORY_KEY);
+        Log.i("curCat", "Curr Cat, ListOfJokesFragment: " + mCurrentCategoryInt);
         mCurrentCategoryTitle = getArguments().getString(CATEGORY_TITLE_KEY);
 
-        try {
-            mCurrentJokeList = getCurrentJokeList(mCurrentCategoryInt);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+
         /*
             SETUP ADAPTER & RECYCLERVIEW
          */
-
         try {
             mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(llm);
@@ -101,44 +97,7 @@ public class ListOfJokesFragment extends Fragment{
     }
 
 
-    private ArrayList<Joke> getCurrentJokeList(int currentCategoryInt) throws IOException, JSONException {
 
-        JSONSerializer serializer = new JSONSerializer(getActivity());
-        String fileName = "";
-
-
-        switch (currentCategoryInt){
-
-            case(R.id.blondinke_navigation):{
-                fileName = JSONSerializer.BLONDINKE_FILENAME;
-                break;
-            }
-            case(R.id.gostilniske_navigation):{
-                fileName = JSONSerializer.GOSTILNSIKE_FILENAME;
-                break;
-            }
-            case (R.id.priljubljeni_navigation):{
-                fileName = JSONSerializer.PRILJUBLJENI_FILENAME;
-                break;
-            }
-            case (R.id.janezek_navigation):{
-                fileName = JSONSerializer.JANEZEK_FILENAME;
-            }
-            case(R.id.policaji_navigation):{
-                fileName = JSONSerializer.POLICAJI_FILENAME;
-            }
-            case(R.id.tvojamama_navigation):{
-                fileName = JSONSerializer.TVOJAMAMA_FILENAME;
-            }
-
-
-        }
-
-        Log.i("curcat", "Current cat. size iz: " + serializer.loadCategory(fileName).size());
-        return serializer.loadCategory(fileName);
-
-
-    }
 
     @Override
     public void onResume() {

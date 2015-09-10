@@ -20,6 +20,7 @@ import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.UUID;
 
 /**
@@ -64,6 +65,12 @@ public class JokeContentFragment extends Fragment{
             e.printStackTrace();
         }
         setupViews(v);
+
+        if(mCurrentJoke.isFavorited()== true){
+            saveToFavFAB.setVisibility(View.GONE);
+        } else {
+            saveToFavFAB.setVisibility(View.VISIBLE);
+        }
 
         saveToFavFAB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,6 +118,7 @@ public class JokeContentFragment extends Fragment{
         currentCatNum = bundle.getInt("currentCatNum");
         currentJokeNum = bundle.getInt("indexNum", 0);
         mCurrentCategory = currentJokeList(currentCatNum);
+        Collections.shuffle(mCurrentCategory);
 
         for(int i = 0; i<mCurrentCategory.size(); i++){
             if(mCurrentCategory.get(i).getJokeID().equals(jokeID)){
@@ -138,7 +146,7 @@ public class JokeContentFragment extends Fragment{
 
         JSONSerializer serializer = new JSONSerializer(getActivity());
         String fileName = getFileNameForCategory(catNum);
-        ArrayList<Joke> currentArray = new ArrayList<Joke>();
+
 
 
         return serializer.loadCategory(fileName);

@@ -38,7 +38,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         mCurrentCategoryNum = currentCategoryNum;
         mCurrentCategoryTitle = currentCategoryTitle;
         mContext = c;
-
+        Log.i("curCat", "Curr Cat, ListOfJokesAdapter: " + mCurrentCategoryNum);
         mJokeArrayList = currentJokeList(currentCategoryNum);
         Collections.shuffle(mJokeArrayList);
 
@@ -73,10 +73,10 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
 
 
         if(mJokeArrayList.get(position).isFavorited() == true) {
-            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_star_black_24dp);
+            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_favorite_black_48dp);
             Log.i("check1", "Is " + position + " favorited? A:" + mJokeArrayList.get(position).isFavorited());
         } else{
-            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_star_border_black_24dp);
+            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_favorite_border_black_48dp);
         }
 
         String shrunkenJokePreview = shrinkText(mJokeArrayList.get(position).getJokeContent());
@@ -207,15 +207,19 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             }
             case(R.id.nakljucni_navigation):{
                 fileName = JSONSerializer.VSIVICI_FILENAME;
+                break;
             }
             case(R.id.janezek_navigation):{
                 fileName = JSONSerializer.JANEZEK_FILENAME;
+                break;
             }
             case(R.id.policaji_navigation):{
                 fileName = JSONSerializer.POLICAJI_FILENAME;
+                break;
             }
             case(R.id.tvojamama_navigation):{
                 fileName = JSONSerializer.TVOJAMAMA_FILENAME;
+                break;
             }
 
         }
@@ -245,5 +249,6 @@ class HolderThingy extends RecyclerView.ViewHolder{
         jokePreviewText = (TextView)itemView.findViewById(R.id.jokePreviewTextID);
         //rating = (TextView)itemView.findViewById(R.id.ratingText);
         favoritedIcon = (ImageView)itemView.findViewById(R.id.favoritedIcon);
+        favoritedIcon.setPadding(10, mCardView.getHeight()/2, 10, mCardView.getHeight()/2 - favoritedIcon.getHeight());
     }
 }

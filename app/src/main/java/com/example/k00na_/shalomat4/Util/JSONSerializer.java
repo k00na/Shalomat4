@@ -28,14 +28,14 @@ public class JSONSerializer {
     public static final String BLONDINKE_FILENAME = "blondinke.json";
     public static final String GOSTILNSIKE_FILENAME = "gostilniske.json";
     public static final String PRILJUBLJENI_FILENAME = "priljubljeni.json";
-    public static final String TVOJAMAMA_FILENAME = "TVOJAMAMA.json";
-    public static final String JANEZEK_FILENAME = "JANEZEK_.json";
-    public static final String MUJOHASO_FILENAME = "MUJOHASO.json";
-    public static final String CRNIHUMOR_FILENAME = "CRNIHUMOR.json";
-    public static final String TASCE_FILENAME = "TASCE.json";
-    public static final String POLITICNI_FILENAME = "POLITICNI.json";
-    public static final String YUGO_FILENAME = "YUGO.json";
-    public static final String VSIVICI_FILENAME = "VSIVICI.json";
+    public static final String TVOJAMAMA_FILENAME = "tvojamama.json";
+    public static final String JANEZEK_FILENAME = "janezek.json";
+    public static final String MUJOHASO_FILENAME = "mujohaso.json";
+    public static final String CRNIHUMOR_FILENAME = "crnihumor.json";
+    public static final String TASCE_FILENAME = "tasce.json";
+    public static final String POLITICNI_FILENAME = "politicni.json";
+    public static final String YUGO_FILENAME = "yugo.json";
+    public static final String VSIVICI_FILENAME = "vsivici.json";
 
 
 

@@ -11,12 +11,21 @@ public class GlobalState extends Application {
 
     private int numOfVisits;
     private ArrayList<Joke> blondinkeGlobal;
+    private ArrayList<Joke> janezekGlobal;
 
 
 
     /*
         GETTERS AND SETTERS
      */
+
+    public ArrayList<Joke> getJanezekGlobal() {
+        return janezekGlobal;
+    }
+
+    public void setJanezekGlobal(ArrayList<Joke> janezekGlobal) {
+        this.janezekGlobal = janezekGlobal;
+    }
 
     public ArrayList<Joke> getBlondinkeGlobal() {
         return blondinkeGlobal;

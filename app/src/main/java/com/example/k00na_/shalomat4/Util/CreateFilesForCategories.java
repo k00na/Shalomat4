@@ -28,12 +28,18 @@ import java.util.ArrayList;
 public class CreateFilesForCategories {
 
     private static Context mContext;
-    public static final String POLICAJI_FILENAME = "policaji.json";
-    public static final String BLONDINKE_FILENAME = "blondinke.json";
-    public static final String GOSTILNSIKE_FILENAME = "gostilniske.json";
-    public static final String PRILJUBLJENI_FILENAME = "priljubljeni.json";
-        public static final String JANEZEK_FILENAME = "janezek.json";
+        public static final String POLICAJI_FILENAME = "policaji.json";
+        public static final String BLONDINKE_FILENAME = "blondinke.json";
+        public static final String GOSTILNSIKE_FILENAME = "gostilniske.json";
+        public static final String PRILJUBLJENI_FILENAME = "priljubljeni.json";
         public static final String TVOJAMAMA_FILENAME = "tvojamama.json";
+        public static final String JANEZEK_FILENAME = "janezek.json";
+        public static final String MUJOHASO_FILENAME = "mujohaso.json";
+        public static final String CRNIHUMOR_FILENAME = "crnihumor.json";
+        public static final String TASCE_FILENAME = "tasce.json";
+        public static final String POLITICNI_FILENAME = "politicni.json";
+        public static final String YUGO_FILENAME = "yugo.json";
+        public static final String VSIVICI_FILENAME = "vsivici.json";
 
 
     static String[] policaji = {"Prvi vic policaji policaji, Prvi vic policaji policaji, Prvi  policaji policaji, Prvi vic, Prvi vic, Prvi vic, Prvi vic, Prvi vic, Prvi vic, Prvi vic, Prvi vic, ",
@@ -270,7 +276,7 @@ public class CreateFilesForCategories {
 
     public void createAllJokes() throws IOException, JSONException {
 
-                createCategory(janezek2, JANEZEK_FILENAME);
+                createCategory(janezek, JANEZEK_FILENAME);
                 createCategory(blodninke, BLONDINKE_FILENAME);
                 createCategory(policaji, POLICAJI_FILENAME);
                 createCategory(gostilniske, GOSTILNSIKE_FILENAME);

@@ -19,6 +19,7 @@ import com.example.k00na_.shalomat4.Util.JSONSerializer;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.UUID;
 
 /**
@@ -65,6 +66,7 @@ public class JokeContentActivity extends AppCompatActivity {
 
         try {
             mCurrentCategory = setupCategory(mCurrentCategoryNum);
+            Collections.shuffle(mCurrentCategory);
         } catch (IOException e) {
             e.printStackTrace();
         }
