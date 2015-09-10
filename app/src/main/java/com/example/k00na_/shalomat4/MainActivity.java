@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
                     case (R.id.janezek_navigation): {
                         Toast.makeText(getApplicationContext(), "Janezek", Toast.LENGTH_LONG).show();
-                        mToolbar.setTitle(R.string.janezNav);
+                        getSupportActionBar().setTitle(R.string.janezNav);
                         displayListOfJokes(R.id.janezek_navigation);
                         return true;
                     }
@@ -154,12 +154,14 @@ public class MainActivity extends AppCompatActivity {
 
                     case (R.id.policaji_navigation): {
                         Toast.makeText(getApplicationContext(), "Policaji", Toast.LENGTH_LONG).show();
-                        mToolbar.setTitle(R.string.policajiNav);
+                        getSupportActionBar().setTitle(R.string.policajiNav);
+                        displayListOfJokes(R.id.policaji_navigation);
                         return true;
                     }
 
                     case (R.id.tvojamama_navigation): {
                         mToolbar.setTitle(R.string.tvojaMamaNav);
+                        displayListOfJokes(R.id.tvojamama_navigation);
                         return true;
                     }
 

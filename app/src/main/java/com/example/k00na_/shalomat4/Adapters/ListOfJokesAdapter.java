@@ -211,6 +211,12 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             case(R.id.janezek_navigation):{
                 fileName = JSONSerializer.JANEZEK_FILENAME;
             }
+            case(R.id.policaji_navigation):{
+                fileName = JSONSerializer.POLICAJI_FILENAME;
+            }
+            case(R.id.tvojamama_navigation):{
+                fileName = JSONSerializer.TVOJAMAMA_FILENAME;
+            }
 
         }
 

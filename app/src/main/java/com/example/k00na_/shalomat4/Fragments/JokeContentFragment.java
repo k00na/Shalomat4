@@ -140,19 +140,6 @@ public class JokeContentFragment extends Fragment{
         String fileName = getFileNameForCategory(catNum);
         ArrayList<Joke> currentArray = new ArrayList<Joke>();
 
-        switch (catNum) {
-
-            case (R.id.blondinke_navigation): {
-                fileName = JSONSerializer.BLONDINKE_FILENAME;
-                break;
-            }
-            case(R.id.gostilniske_navigation):{
-                fileName = JSONSerializer.GOSTILNSIKE_FILENAME;
-            }
-
-
-
-        }
 
         return serializer.loadCategory(fileName);
     }

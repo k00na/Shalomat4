@@ -78,7 +78,6 @@ public class ListOfJokesFragment extends Fragment{
 
         try {
             mCurrentJokeList = getCurrentJokeList(mCurrentCategoryInt);
-            Log.i("yoyo", "Janezek size: " + mCurrentJokeList.size());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (JSONException e) {
@@ -125,11 +124,17 @@ public class ListOfJokesFragment extends Fragment{
             case (R.id.janezek_navigation):{
                 fileName = JSONSerializer.JANEZEK_FILENAME;
             }
+            case(R.id.policaji_navigation):{
+                fileName = JSONSerializer.POLICAJI_FILENAME;
+            }
+            case(R.id.tvojamama_navigation):{
+                fileName = JSONSerializer.TVOJAMAMA_FILENAME;
+            }
 
 
         }
 
-        Log.i("fav", "Size iz: " + serializer.loadCategory(fileName).size());
+        Log.i("curcat", "Current cat. size iz: " + serializer.loadCategory(fileName).size());
         return serializer.loadCategory(fileName);
 
 
@@ -144,18 +149,7 @@ public class ListOfJokesFragment extends Fragment{
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try {
-            mCurrentJokeList = getCurrentJokeList(mCurrentCategoryInt);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        try {
-            mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
         mRecyclerView.setAdapter(mListOfJokesAdapter);
 
     }

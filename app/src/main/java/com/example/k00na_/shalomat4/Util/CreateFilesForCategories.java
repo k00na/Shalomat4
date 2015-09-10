@@ -33,6 +33,7 @@ public class CreateFilesForCategories {
     public static final String GOSTILNSIKE_FILENAME = "gostilniske.json";
     public static final String PRILJUBLJENI_FILENAME = "priljubljeni.json";
         public static final String JANEZEK_FILENAME = "janezek.json";
+        public static final String TVOJAMAMA_FILENAME = "tvojamama.json";
 
 
     static String[] policaji = {"Prvi vic policaji policaji, Prvi vic policaji policaji, Prvi  policaji policaji, Prvi vic, Prvi vic, Prvi vic, Prvi vic, Prvi vic, Prvi vic, Prvi vic, Prvi vic, ",
@@ -113,6 +114,9 @@ public class CreateFilesForCategories {
 
 
     };
+
+        static String[] tvojamama = {"ena", "dva", "tri"};
+
     static String[] gostilniske = {
             "\"Imate žabje krake?\" vpraša gost natakarja.\n" +
                     "\"Ne, tako hodim zaradi revme.\"",
@@ -227,6 +231,15 @@ public class CreateFilesForCategories {
 
     };
 
+        static String[] janezek2 = {
+                "Profesor reče Janezku pri ustnem izpitu:\n" +
+                        "\"Poglejte skozi okno tista drevesa! Jih vidite?\"\n" +
+                        "\"Ja, vidim jih!\" reče Janezek.\n" +
+                        "\"Ko bodo zopet listi na njih lahko ponovno pridete na izpit!\" ",
+                "\"Zakaj ima naš Janezek pri matematiki cvek?\" vpraša mama učiteljico.\n" +
+                        "\"Zato,\" odgovori učiteljica \"ker nižjih ocen nimamo.\""
+        };
+
     public CreateFilesForCategories(Context c){
 
         mContext = c;
@@ -257,15 +270,25 @@ public class CreateFilesForCategories {
 
     public void createAllJokes() throws IOException, JSONException {
 
-        createCategory(blodninke, BLONDINKE_FILENAME);
-      //  createJokes(policaji, POLICAJI_FILENAME);
-        createCategory(gostilniske, GOSTILNSIKE_FILENAME);
-            createCategory(janezek, JANEZEK_FILENAME);
+                createCategory(janezek2, JANEZEK_FILENAME);
+                createCategory(blodninke, BLONDINKE_FILENAME);
+                createCategory(policaji, POLICAJI_FILENAME);
+                createCategory(gostilniske, GOSTILNSIKE_FILENAME);
+                createCategory(tvojamama, TVOJAMAMA_FILENAME);
+
 
     }
 
 
-    public static String[] getPolicaji() {
+        public static String[] getTvojamama() {
+                return tvojamama;
+        }
+
+        public static String[] getJanezek2() {
+                return janezek2;
+        }
+
+        public static String[] getPolicaji() {
         return policaji;
     }
 
@@ -276,6 +299,9 @@ public class CreateFilesForCategories {
     public static String[] getGostilniske() {
         return gostilniske;
     }
+
+
+
 
 
         static String[] janezek = {
