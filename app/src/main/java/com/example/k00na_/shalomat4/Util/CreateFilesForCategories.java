@@ -121,7 +121,6 @@ public class CreateFilesForCategories {
 
     };
 
-        static String[] tvojamama = {"ena", "dva", "tri"};
 
     static String[] gostilniske = {
             "\"Imate žabje krake?\" vpraša gost natakarja.\n" +
@@ -154,7 +153,7 @@ public class CreateFilesForCategories {
                     "\"Po čem pa ima okus?\"\n" +
                     "\"Po terpentinu!\"\n" +
                     "\"Potem je pa kava. Čaj ima okus po milu!\"",
-            "\n" +
+
                     "Natakar, ali vaš ansambel zaigra tudi kaj po želji gostov?\n" +
                     "\"Seveda!\"\n" +
                     "\"Potem pa članom ansambla povejte, naj zaigrajo biljard, da bom lahko v miru pojedel večerjo.\"",
@@ -328,7 +327,7 @@ public class CreateFilesForCategories {
                 "Ista zgodba se ponovi z župnikom. Omenjena gospoda se nato posvetujeta s policajem, ki gre osebno v akcijo in zaloti Janezka, ko ob cesti še vedno meša drek.Pa ga policaj vpraša:\n" +
                 "\"Kaj je Janezek? A polcaja delaš?\"\n" +
                 "Janezek:\"Ne, premau dreka!\"",
-        "",
+
                 "Profesor reče Janezku pri ustnem izpitu:\n" +
                         "\"Poglejte skozi okno tista drevesa! Jih vidite?\"\n" +
                         "\"Ja, vidim jih!\" reče Janezek.\n" +
@@ -783,13 +782,13 @@ public class CreateFilesForCategories {
                         "“Ker mi je pred tremi leti rekel, da sem kot nilski konj.”\n" +
                         "“A zakaj si ga pretepel danes?!”\n" +
                         "“Ker sem včeraj videl, kakšen je nilski konj!”",
-                "Janezek na uri verouka.\n" +
-                        "Nuna vpraša:\n" +
+                "Janezek na uri verouka." +
+                        "Nuna vpraša:" +
                         "“Kdo bi šel rad v nebesa?”\n" +
                         "Vsi učenci razen Janezka dvignejo roke.\n" +
-                        "Nuna ga vpraša:\n" +
+                        "Nuna ga vpraša:" +
                         "“Janezek, zakaj pa ti ne bi odšel v nebesa?”\n" +
-                        "Janezek:\n" +
+                        "Janezek:" +
                         "“Mami je rekla, da moram takoj po verouku domov!”",
                 "Mali Janezek je očeta zalotil med samozadovoljevanjem. Vprašal ga je:\n" +
                         "“Oče, kaj to počneš?”\n" +
@@ -959,56 +958,53 @@ public class CreateFilesForCategories {
                         "2. Enkrat v življenju boš ZELO, ZELO razočarana!!!\"",
                 "Učenci razjezijo učitelja zato jim ta reče:”Kdor misli, da je neumen, naj vstane. Nekaj časa nihče ne vstane potem pa se Janezek le upogumi in vstane. Učitelj ga vpraša: “Janezek, a ti misliš, da si neumen?” \n" +
                         "Janezek odgovori: “Ne gospod profesor, toda nerodno mi je, ker samo vi stojite!”",
-                "Janezek pride v trgovino in reče prodajalcu:\n" +
-                        "\n" +
-                        "- Daj mi liter vina.\n" +
-                        "\n" +
-                        "Prodajalec vpraša:\n" +
-                        "\n" +
-                        "- Hočete rdeče ali belo vino?\n" +
-                        "\n" +
+                "Janezek pride v trgovino in reče prodajalcu:" +
+
+                        "- Daj mi liter vina. - " +
+
+                        "Prodajalec vpraša:" +
+
+                        "- Hočete rdeče ali belo vino? " +
+
                         "Janezek odgovori:\n" +
-                        "\n" +
-                        "- Je čisto vseeno. To je za mojega dedka, ki je slep.",
-                "Janezek pove očetu, ko se ta vrne:\n" +
-                        "\n" +
+                        "" +
+                        "- Je čisto vseeno. To je za mojega dedka, ki je slep. -",
+                "Janezek pove očetu, ko se ta vrne:" +
                         "- Veš oči potem, ko si ti odšel na službeno potovanje je mamo obiskal ekolog!\n" +
-                        "\n" +
-                        "- Kako pa veš, da je bil ekolog?\n" +
-                        "\n" +
+
+                        "- Kako pa veš, da je bil ekolog?" +
+
                         "- Ko je prišel je mamo vprašal če je zrak čist…",
                 "V šoli so učenci dobili nalogo naj napišejo spis z naslovom: “Kaj bi naredili če bi bili direktor?” Vsi učenci pridno pišejo, le Janezek sedi in čaka križemrok. Učiteljica ga jezno vpraša:\n" +
                         "\n" +
                         "- Janezek, zakaj pa ti ne pišeš?\n" +
                         "\n" +
                         "- Čakam tajnico, da mi natipka!",
-                "Učiteljica sprašuje:\n" +
-                        "\n" +
-                        "- Janezek, kdo je odkril Ameriko?\n" +
-                        "\n" +
-                        "Janezek:\n" +
-                        "\n" +
-                        "- Nisem bil jaz, prisežem!\n" +
-                        "\n" +
-                        "Učiteljica:\n" +
-                        "\n" +
+                "Učiteljica sprašuje:" +
+
+                        "- Janezek, kdo je odkril Ameriko? - " +
+
+                        "Janezek:"  +
+                        "- Nisem bil jaz, prisežem! - " +
+
+                        "Učiteljica:" +
+
                         "- Vem, da je nisi ti, ampak povej kdo jo je?\n" +
-                        "\n" +
-                        "Janezek:\n" +
-                        "\n" +
-                        "- Res nisem bil jaz prisežem.\n" +
-                        "\n" +
-                        "Učiteljica:\n" +
-                        "\n" +
-                        "- Pa ti ne veš niti najbolj osnovnih stvari!!\n" +
-                        "\n" +
-                        "V tistem trenutku gre mimo razreda ravnatelj in ker sliši vpitje vstopi v razred in vpraša:\n" +
-                        "\n" +
-                        "- Zakaj se pa derete gospa?\n" +
-                        "\n" +
-                        "Učiteljica:\n" +
-                        "\n" +
-                        "- Janezka sprašujem kdo je odkril Ameriko, on pa vztrajno trdi, da ni bil on.\n" +
+
+                        "Janezek:" +
+
+                        "- Res nisem bil jaz prisežem. - " +
+
+                        "Učiteljica: - Pa ti ne veš niti najbolj osnovnih stvari!! - "
+                        +
+
+                        "V tistem trenutku gre mimo razreda ravnatelj in ker sliši vpitje vstopi v razred in vpraša:" +
+
+                        "- Zakaj se pa derete gospa? - \n" +
+
+                        "Učiteljica:" +
+
+                        "- Janezka sprašujem kdo je odkril Ameriko, on pa vztrajno trdi, da ni bil on." +
                         "\n" +
                         "Ravnatelj:\n" +
                         "\n" +
@@ -1027,17 +1023,328 @@ public class CreateFilesForCategories {
                         "\n" +
                         "- Pojdi k mami, ti bo on povedal!",
                 "Učiteljica:\n" +
-                        "\n" +
+
                         "- Janezek naštej tri afriške živali:\n" +
-                        "\n" +
-                        "Janezek:\n" +
-                        "\n" +
+
+                        "Janezek:" +
+
                         "- Žirafa in dve zebri.",
                 "Janezek piše domačo nalogo in vpraša očeta:\n" +
-                        "\n" +
+
                         "- Ati, kje je Afrika?\n" +
-                        "\n" +
+
                         "- Ne vem točno, ampak mislim, da ni daleč. V mojem podjetju dela en črnec, ki vsako jutro v službo pride s kolesom."
+
+        };
+
+        private static String[] tvojamama = {
+
+                "Tvoja mama je tok debela,da ko plava usi misljo da se mali lošinj premika...",
+                "Tvoja mama je tok debela,da k svoj mobi prestav iz enga hlačnga žepa v druzga,telefon zamenja signal...",
+                "Tvoja mama je tok debela,da ko zaplava v morje,vsi kiti pojejo: We are familly!",
+                "Tvoja mama je tako debela da ko stopi s postelje majo na Japonskem cunami.",
+                "tvoja mama je tako debela, da ima lastno orbito",
+                "Tvoja mama je tako debela, da ko stopi na tehnico, se pojavi napis \"Eden po \n" +
+                        "eden, prosim\"",
+                "Tvoja mama je tako debela, da sedi poleg vseh, ko gre v kino... :Đ ",
+                "Tvoja mama je tako debela, da zamudiš pol filma, ko gre mimo televizije... :Đ ",
+                "Tvoja mama je tako debela, da jo že 1 leto poznam pa je še vseeno nisem cele videl...",
+                "Tvoja mama je tako debela, da si pas zapre z bumerangom. ",
+                "Tvoja mama tako škili, da ji solze tečejo po hrbtu, ko se joče ...",
+                "Tvoja mam je tako debela, da, če zaplava, postane Himalaja otočje",
+                "Tvoja mama je tako debela, da ne rabi nosit hlač, ker ji špeh vse prekriva!",
+                "Tvoja mam je tako debela, da ko obleče rumeno vetrovko, ljudje za njo kličejo: \"Taxi! Alo, taxi!\"",
+                "Tvoja mama je tak debela, da okoli nje tecejo maraton. ",
+                "Tvoja mama je tako debela, da se pri fuzbalu ne rabi vraćat v obrambo .\n",
+                "Tvoja mama je tako stara, da je sedela zraven Jezusa v tretjem razredu osnovne šole... ",
+                "tvoja mama je tako stara da stregla na zadnji večerji.",
+                "tvoja mama je tako grda da je doktor ob njenem rojstvu skloftal njene starše",
+                "tvoja mama je tako neumna da je padla na anketi ",
+                "Tvoja mama je tako grda, da ko pride v strip bar, ji plačajo, da se ne sleče... ",
+                "Tvoja mama je tako grda, da ko pride v banko, ugasnejo vse kamere ",
+                "Tvoja mama je tako debela, da si da majonezo na aspirin ...",
+                "Tvoja mama je tako debela, da že samo njena senca tehta 100kg! ",
+                "Tvoja mama je tako debela, da ko se gre poleti kopat na morje, jo Španija proglasi za nov kontinent. ",
+                "Tvoja mama je tako debela, da ima še njena leva ritnica svojo poštno številko.. ",
+                "Tvoja mama je tako debela, da vsakič, ko nosi visoke pete, najde nafto... ",
+                "Tvoja mama je tako debela, da jo je zadel parkiran avto... :Đ ",
+                "Tvoja mama je tako debela, da mi je zmanjkalo bencina, ko sem se poskušal iti okoli nje. ",
+                "Tvoja mama je tako grda, da ko se je prijavila na tekmovanje grdih bab, so ji rekli \"oprostite, nobenih profesionalcev..\" ",
+                "Tvoja mama je tako stara, da je Jezusu dolžna za joint... ",
+                "tvoja mama je tako umazana da ko sva se šla sex prek telefona sem dobil unetje ušes ",
+                "Tvoja mama je tako stara,da še vedno vidi črnobelo.",
+                "Tvoja mama je tak debela, da lika hlače na avtocesti",
+                "Tvoja mama je tak debela, da je v knjigi rekordov na strani 39, 40, 41, 42, 43 in 44.",
+                "Tvoja mama je tak debela, da ima slovensko, italijansko, hrvaško, madžarsko in avstrijsko državljanstvo.",
+                "Tvoja mama je tako debela, da ko je bog rekel naj bo tam svetloba, jo je prosil naj se umakne.",
+                "Tvoja mama je tako debela, da je slon na njeni majici resničen.",
+                "Tvoja mama je tako debela, da ima krvno skupino golaž",
+                "Tvoja mama je tak debela, da ima Avstralijo za vzglavnik",
+
+
+        };
+
+        private static String[] seks = {"Mara ne želi seks prije braka, a Štef je nagovara: \n" +
+                "\"Daj Mara, nebum do kraja, samo do pola.\" \n" +
+                "\"Nemoj Štef, kaj bu selo reklo?\" \n" +
+                "\"Daj Mara, samo do pola, dopalo bu ti se, svidelo!\" \n" +
+                "\"Dobro, ali samo do pola,\" pristane Bara \n" +
+                "Krene Štef i zaboravi, što je obećao, pa ga metne do kraja. \n" +
+                "Svidi se Bari pa kaže: \n" +
+                "\"Stavi i drugu polovicu!\" \n" +
+                "\"A ne, dogovor je dogovor!\"",
+                "V cerkvi je maša. Vernikov je ogromno, vsi zbrano poslušajo župnika, ki pridiga o morali: \"Kako so dandanašnji ljudje pokvarjeni, koliko da je nasilja po svetu, vsi da mislijo samo na seks, in kako so se razpasle javne hiše..\"\n" +
+                        "Ravno ko je na tem mestu, opazi, da se v ozadju cerkve mežnar tolče po glavi in si misli: \"Kasneje ga bom vprašal, zakaj se je tolkel po glavi.\"\n" +
+                        "In res, maše je konec, župnik stopi do mežnarja in ga vpraša: \"Ti, zakaj si se pa prejle tolkel po glavi?\"\n" +
+                        "Mežnar odgovori: \"Zdaj sem se spomnil, kje sva midva marele pozabila!\"",
+                "Dve ničli gresta po puščavi in vidita v daljavi osmico. \n" +
+                        "Nato ena vpraša: \"Kako se jima v tej vročini le ljubi?\"",
+                "Živel je kmet na visoki planini in imel je svinjo. Poznal je prijatelja kmeta, ki je živel nižje v dolini in je imel prasca. In ker je kmet višje hotel imeti male svinje, se je odločil, da bo svinjo dal na samokolnico in jo zapeljal k prijatelju.\n" +
+                        "Napoči naslednji dan in kmet s težavo pripelje svinjo k prijatelju. Svinjo zapreta k partnerju in gresta na pijačo... Čez uro se vrneta in naložita svinjo na samokolnico. Prijatelj reče kmetu s svinjo: \"Naslednji dan navsezgodaj pojdi in poglej, kje bo svinja. Če bo na travniku in smukala deteljo, potem ni vredu in moraš še enkrat priti. Če pa se bo valjala po blatu, pa je v redu in imela bo 6-7 mladičev!\"\n" +
+                        "Kmet z muko spet odpelje svinjo do doma. \n" +
+                        "Naslednji dan zjutraj gre gledat svinjo. Zlomka, smukala je deteljo! Nič, kmet pljune še enkrat v roke in stokajoč odpelje svinjo še enkrat v dolino.\n" +
+                        "Naslednji dan spet gre gledat, kako je s svinjo. Svinja pa je še vedno smukala deteljo! Besno je vrgel svinjo na samokolnico in jo še enkrat spravil v dolino.\n" +
+                        "To se je ponovilo kar nekajkrat...\n" +
+                        "Šesto jutro se možu ni dalo vstajati in je naročil ženi, naj pogleda, kaj dela svinja. Žene nekaj časa ni nazaj, nato pa se vrne in samo miga z glavo.\n" +
+                        "Kmet jezno: \"Kaj je narobe, a je že spet v detelji !?\"\n" +
+                        "\"Čudno je, čudno... Danes te že v samokolnici čaka!\"",
+                "Gre pijanček mimo javne hiše in vidi lepo prostitutko, ki sloni na oknu. Spodaj pri vratih pa pes \"obdeluje\" psico na železnih rešetkah. Naenkrat pa rešetke popustijo in parček zleti v klet. Takrat se pijanček obrne k prostitutki in pravi: \"Glej, zdaj vam je pa reklama dol padla!\"",
+                "Se srečajo trije 16-letni sošolci. Beseda je nanesla na seks. Pa pravi prvi, da seksa skoraj vsak mesec. Drugi se pohvali, da seksa skoraj vsak teden. Tretji pa pravi: \"Jaz pa seksam skoraj vsak dan!\"\n" +
+                        "Druga dva ga začudeno pogledata: \"Kako to?\"\n" +
+                        "Tretji odgovori: \"V ponedeljek skoraj, v torek skoraj, v sredo skoraj...\"\n" +
+                        "\n",
+                "Pride prostitutka k tattoo mojstru. Ker pa je imela izjemno rada praznike mu veli, da ji na levo stegno vtetovira \"Srečno Novo leto\", na desno pa \"Vesele božične praznike.\"\n" +
+                        "Ko mojster konča mu reče: \"Najlepša hvala, gospod mojster, pa obiščite me kaj med prazniki!\"",
+                "Vpraša Jože Franca, kje je bil na dopustu.\n" +
+                        "Pa pravi: \"V Moravcih.\"\n" +
+                        "\"In kako je bilo?\"\n" +
+                        "\"Ženo so posilili, mene pa pretepli.\"\n" +
+                        "\"In kje ste bili lani?\"\n" +
+                        "\"Tudi v Moravcih.\"\n" +
+                        "\"In kako je bilo?\"\n" +
+                        "\"Ženo so posilili, mene pa pretepli.\"\n" +
+                        "\"In kam greste drugo leto?\"\n" +
+                        "\"Žena bi spet šla v Moravce.\"",
+                "Mož in žena seksata ... in ko je mož v pozi na vrhu, ga prične žena božati po glavi. Mož jo vpraša, kaj počne.\n" +
+                        "\"Roge iščem,\" odvrne žena.\n" +
+                        "\"Zakaj?\" vpraša mož.\n" +
+                        "\"Zato, ker seksaš ko hudič!\"\n" +
+                        "Mine nekaj dni, spet seksata, in tokrat je žena na vrhu. Mož jo začne božati po glavi.\n" +
+                        "Ga vpraša žena:\n" +
+                        "\"Kaj pa delaš?\"\n" +
+                        "\"Roge iščem,\" odvrne mož.\n" +
+                        "\"A zato, ker sem živa kot hudič?\"\n" +
+                        "\"Ne, ker si težka kot krava?\"",
+                "Tip pelje blondinko v hotelsko sobo. Blondinka vidi na tleh rabljen kondom in kar odskoči od groze.\n" +
+                        "Tip jo vpraša: \"A ga še nisi videla ali kaj ?\"\n" +
+                        "\"Sem, ampak zakaj ga je bilo treba odreti !?\"",
+                "Zakaj imajo ženske menstruacijo ?\n" +
+                        "Kot veste že iz zgodovine, je Adama Eva prisilila, da je prvi okusil jabolko. No, prav zato jo je hotel Bog kaznovati:\n" +
+                        "- Za to dejanje boš krvavo plačala !\n" +
+                        "- Kaj pa, če bi se zmenila na obroke ?",
+                "Gost v restavraciji pokliče natakarja: \"V moji pleskavici sem našel dlako!\"\n" +
+                        "\"Jooj, oprostite,\" se opravičuje natakar, \"veste, naš kuhar je invalid in ima le desno roko. Ko dela pleskavice, si jih potolče po prsih...\"\n" +
+                        "Gost plane v smeh. \"Čemu pa se smejite?\", vpraša natakar. \"Tistile gospe tamle čez, ki je naročila filane paprike.",
+                "Stoji na ograji Savskega mosta en zelo obupan moški, ki hoče ravno skočiti in narediti vsemu konec. Kar naenkrat pa zasliši za seboj žameten moški glas: \"Ne delaj tega, jaz ti bom pomagal - sem namreč dobri Vilenjak! Kaj se ti je zgodilo, prijatelj?\"\n" +
+                        "Moški se začudeno obrne in zagleda nizkega moškega z dooolgo brado in odvrne: \"Ah, vsega imam dovolj. Žena se mi je skurbala, hčer se drogira, mene so pa danes še iz službe vrgli.\"\n" +
+                        "Vilenjak dvigne roke, zamrmra neke čudežne besede, nato pa z donečim glasom odvrne: \"Oooo prijatelj, vseh tvojih težav je zdaj konec! Pojdi domov in našel boš ženo v svoji postelji, zvesto in prijazno kot še nikoli! Videl boš svojo hčerkico, pridno kot še nikoli poprej! Pojdi v službo, kjer te čaka še boljše delo!\"\n" +
+                        "Moški, ves srečen, vpraša Vilenjaka, če mu lahko uslugo kako poplača. Vilenjak odvrne: \"No, khe, khe, vsi imamo majhne slabosti - no, obrni se, nagni se čez ograjo in daj hlače dol.\"\n" +
+                        "Hvaležen moški stori, kakor mu je naročil Vilenjak - ta pride od zadaj in ga pošteno \"požgečka\".\n" +
+                        "Ko opravita, Vilenjak vpraša: \"Koliko pa si pravzaprav star ?\"\n" +
+                        "\"34,\" odvrne moški. \"Žalostno, žalostno ... 34 let, pa še verjameš v Vilenjake,\" odvrne majhen moški in odide.",
+                "Strokovna žirija se je odločila, da je vozilo leta 1997: ženska\n" +
+                        "K odločitvi so strokovno žirijo privedle predvsem naslednje kakovostne lastnosti:\n" +
+                        "1. Ima lastno polnjenje.\n" +
+                        "2. V normalnem položaju zmore 60 obratov na minuto.\n" +
+                        "3. Če je dobro ogreta, zmore tudi do 120 obratov na minuto.\n" +
+                        "4. Prilagojena je vsem tipom in dimenzij batov.\n" +
+                        "5. V času pogona uporablja samo eno svečko.\n" +
+                        "6. Za vožnjo ne potrebuje vozniškega in prometnega dovoljenja.\n" +
+                        "7. Mazanje v času obratovanja je avtomatsko in je odvisno od obremenitve.\n" +
+                        "8. Olje menja samodejno na vsakih 24 do 30 dni.\n" +
+                        "9. V primeru dobrega polnjenja lahko zdrži brez menjave olja tudi do 9 mesecev.\n" +
+                        "10. Ima serijsko vgrajene dve airbag blazini različnih dimenzij.\n" +
+                        "11. Nekateri modeli so zelo glasni.\n" +
+                        "Opozorilo: Za nemoteno delovanje je priporočljivo redno pranje bata in cilindra.\n" +
+                        "Poleg vseh naštetih dobrih lastnosti ima tudi vidnejše napake:\n" +
+                        "1. Zelo hitro izčrpa voznika.\n" +
+                        "2. Vzdrževanje je drago.\n" +
+                        "3. Starih modelov se je težko znebiti.",
+                "Se pogovarjata dva kolega in reče en drugemu:\n" +
+                        "\"Ti, a te zdaj bioritem kaj heca, ko smo za eno uro prestavili uro ?\"\n" +
+                        "\"Ti, a veš, da me res. Prej mi je ob šestih stal v postelji, zdaj mi pa na avtobusu.\"",
+                "Nekega dne je Francl hodil ob potoku, v katerem je zagledal zlato ribico. Zagnal se je v potok in jo po nekaj urnem boju zvlekel na obalo. \n" +
+                        "Zlata ribica mu je dejala: \"Ker si me ujel, ti izpolnem tri želje.\" \"Rad bi bil lep, pameten in bogat.\"\n" +
+                        "Nenadoma se je znašel v prelepi vili, kjer mu je streglo sto služabnikov, okoli njega so se gnetla najlepša dekleta, sam pri sebi pa je računal vrednost Ludolfovega števila (PI) na 200 decimalnih mest. Ker je bil zlati ribici neizmerno hvaležen, se ji je hotel zahvaliti. \"Zlata ribica, povej, ali se ti lahko kako oddolžim?\"\n" +
+                        "\"Rada bi bila 10-letna deklica.\" \n" +
+                        "Francl jo je najprej poljubil (bljah), potem jo je polizal (2x bljah), nazadnje pa ji je še dal tiča v usta. ...\n" +
+                        "\"In takrat se je spremenila v 10-letno deklico, nenadoma se je pojavila njena mama in to je sveta resnica, gospod sodnik !\"",
+                "V resnih, trajnih zvezah obstajajo tri vrste seksa:\n" +
+                        "\n" +
+                        "- stanovanjski,\n" +
+                        "- sobni\n" +
+                        "- nekontaktni\n" +
+                        "\n" +
+                        "1. faza - stanovanjski seks traja nekako 1 do 2 leti zveze\n" +
+                        "Seksaš povsod in vedno ... v postelji, na kavču, na stolu, na mizi, pod mizo, na tleh, na pralnem stroju - če se le da ob centrifugiranju - ob vseh mogočih urah, v vseh pozah, po celem stanovanju, pa tudi na vrtu, v bazenu (če ga imaš), v kleti, na podstrešju, strehi, balkonu, v drvarnici, delavnici, pasji uti ....\n" +
+                        "\n" +
+                        "2. faza - sobni seks traja nekako od 3. do 7. leta zveze\n" +
+                        "Seks je omejen na en prostor - vedno v postelji, vedno v spalnici, vedno na en in ist način, vedno zvečer ... skratka ... stvar postane rahlo enolična.\n" +
+                        "\n" +
+                        "3. faza - nekontaktni seks se odvija od 7. leta zveze dalje, v določenih primerih pa do te faze lahko pride tudi že prej. Zadnja stopnja v razvoju spolnega življenja med partnerjema pa izgleda približno takole:\n" +
+                        "Slučajno gresta eden mimo drugega, ko se srečata na sredini določene lokacije, in ko se pogledata v oči, si mirno rečeta: \"JEBI SE!\"",
+                "Naslonila sem glavo in vedela kaj on želi, jaz pa... Jaz pa sem si močno želela, da mi to stori. Tako je prišlo do, da...bilo je prvič. Zadrževala sem dih in čakala. Njegova roka se je približala tistemu mestu in vprašal je: \"Se ne da bolj narazen ?\"\n" +
+                        "Pričelo je boleti, bolelo je, pritekla je kri, on pa pravi: \"Končal sem !\"\n" +
+                        "Blaženost in neizmerna sreča sta me prevzeli, ko ga je izvlekel.\n" +
+                        "To je bilo prvič, ko sem bila pri ZOBOZDRAVNIKU.",
+                "Mujo, direktor, pride v pisarno in vpraša: \"Pa, djevojke, koja je opet pušila u liftu ?\"\n" +
+                        "Mlada Fata vstane in reče: \"Pa, ja sam gospon Mujo...\"\n" +
+                        "\"Ma,\" pravi direktor, \"nemojte više, tako je neugodno, ima puno dima i...\"\n" +
+                        "\"A, ne, ne,\" ga prekine Fata, \"...to onda nisam bila ja...\"",
+                "Kdo je najvecja kur*a na svetu ?\n" +
+                        "Smrketa.\n" +
+                        "Zakaj?\n" +
+                        "Ker poje: \"Ti-dam, ti dam, ti-dam, ti-dam,...\"\n" +
+                        "In kdo je najvecji kur*ir na svetu ?\n" +
+                        "Napoleon.\n" +
+                        "Zakaj? \n" +
+                        "Ker je umrl na Sv.Heleni.",
+                "Dva Slovenca se pogovarjata pri opravljanje male potrebe o predvolilnem boju.\n" +
+                        "\"Franc, kaj misliš, v čigavih rokah je usoda Slovencev ?\"\n" +
+                        "\"V najinih,\" mu odgovori drugi.",
+                "Tri ženske se pogovarjajo na tržnici in kar naenkrat se začnejo pogovarjati o svojih možeh.\n" +
+                        "Pa reče Micka: \"Moj ma čisto mrzlega !\"\n" +
+                        "Pa pravi Jasna: \"Moj tudi !\"\n" +
+                        "Pa Lojzka pravi: \"Za svojega pa še ne vem...\"\n" +
+                        "Pa se dobijo spet naslednji teden. Lojzka ima plavo oko. Lojzka pojasni: \"Preizkusila sem, pa sem ugotovila, da ima tudi mrzlega, pa sem mu še povedala, da imata vajina moža tudi mrzlega... Pa me je nabil kot medveda...\"",
+                "Pa gre en starejši moški na službeno potovanje. Pa mu ostane nekaj denarja od dnevnice in se odloči, da bo pogledal kako je v javni hiši v večjih mestih. Pa pride v javno hišo in vprasa koliko stane.\n" +
+                        "\"Na postelji 100 $, na preprogi pa 25 $.\"\n" +
+                        "\"Izvolite 100 $...\"\n" +
+                        "\"No dedek, je pa že boljše na postelji, hihi...\"\n" +
+                        "\"Kaj na postelji ! ŠTIRIKRAT na preprogi !\"",
+                "Janezek: \"Mami zakaj ima naš oči tako majhnega, tisti stric pa tako velikega ?\"\n" +
+                        "Mami: \"Veš, naš oči je bolj inteligenten, no stric pa je butast.\"\n" +
+                        "Čez nekaj časa, ko se je mamica malo obrnila na soncu.\n" +
+                        "Janezek: \"Mami, mami, poglej stric postaja čedalje bolj butast !\"",
+                "Mujo je bil že dolga leta impotenten, potem pa je šel na pregled k zdravniku, ki mu je napisal recept za Dabistal tablete. Mujo je takoj tekel v lekarno, pojedel pol škatle in prišel domov silno spolno vzburjen. Ko pride domov, vidi Fato kako sklonjena pomiva posode, in ker je sila velika, takoj opravi zadevo z njo. V naglici pa je zgrešil... Fata: \"Šta je sad to ?\"\n" +
+                        "Mujo ji pokaže tablete in Fata bere: \"Krka Novo mesto. Mujo ovo nisu prave tablete, trebao bi da doneseš Krka Staro mesto !!\"",
+                "Pride sin domov in reče:\n" +
+                        "- Ata jaz pa sem zgubil nedolžnost !\n" +
+                        "- Bravo sine, pridi sem, bova kakšno moško rekla !\n" +
+                        "- Ne danes, raje juri, me prevec rit peče.",
+                "V lekarno vstopi moški z roko z razkrečenimi prsti v zraku. Lekarnar ga vpraša:\n" +
+                        "\"Ali to pomeni, da želite kremo za roke?\"\n" +
+                        "\"Ne,\" odgovori moški, \"pomeni pet tablet Viagre, sem namreč portir v hotelu in danes pride avtobus z dvajsetimi mladimi Francozinjami k nam.\"\n" +
+                        "Naslednje jutro se spet pojavi v lekarni, tokrat z obema rokama z vsemi desetimi razkrečenimi prsti v zraku. Lekarnarju je takoj jasno:\n" +
+                        "\"Razumem, danes pa deset tablet Viagre!\"\n" +
+                        "\"Ne,\" reče moški, \"kremo za roke, avtobusa včeraj ni bilo!\"",
+                "Janezek in Metka se igrata zdravnike. Oba se sleceta in Metka vidi Janezovega lulka ter ga vpraša: \"A ga lahko primem ?\"\n" +
+                        "Janezek: \"Ne, svojega si že odtrgala.\"",
+                "Pride Fata iz Francije, pa jo Mujo že takoj naskoči. \n" +
+                        "Fata: \"Mujo, pa ne me tako, daj me po francosko !\"\n" +
+                        "Ker Mujo ni vedel, kako gre po francosko, je drugega dne povprašal prijatelja. Ta mu je odvrnil: \"Liži jo tam, kjer lula.\"\n" +
+                        "Mujo: \"A ploščice tudi ?\"",
+                "Na vratih restavracije se pojavi malo čuden možakar, s papigo na rami in v družbi dveh čudovitih mladih dam. Vsedejo se za mizo.\n" +
+                        "Prihiti natakar: \"Kaj boste?\"\n" +
+                        "Mož: \"Stotri porcije rižote!\"\n" +
+                        "Natakar: \"Gospod se šali, saj ste samo trije.\"\n" +
+                        "Mož vztraja: \"Stotri porcije rižote!\"\n" +
+                        "Natakar je tudi vztrajen: \"Gospod, ne zamerite, to bo stalo okrog 50.000 tolarjev.\"\n" +
+                        "Mož se zareži: \"Denar te skrbi, ha! Pomiri se,\" in mu pokaže, da ima denarja več ko dovolj.\n" +
+                        "Natakar skomigne z rameni, si misli, kak čudak mu je prišel v lokal in gre v kuhinjo naročit zahtevano.\n" +
+                        "\n" +
+                        "Čez čas začno prihajati iz kuhinje vozički, vsi obloženi s krožniki z rižoto.\n" +
+                        "Natakar: \"Gospod, vaši gostje še niso tu? Kam naj damo vso to jed?\"\n" +
+                        "Mož: \"Tri porcije dajte kar sem na mizo, ostalo pustite na vozičkih!\"\n" +
+                        "Narede zaukazano in mož in obe dami se spravijo vsak nad svojo porcijo rižote. Med tem pa papiga zapusti ramo moža in se spravi na ostalih 100 porcij in jih tudi pospravi prav tako hitro, kot sta mož in dami pospravili svoje porcije.\n" +
+                        "Vse to seveda ne ostane nezapaženo. Ljudje začnejo vzklikati in se glasno čuditi in potem seveda riniti v moža z vprašanji, kako, da imam njegova papiga tak apetit.\n" +
+                        "Mož se nejevoljen brani: \"Pustite me na miru, postanem slabe volje, kadarkoli se spomnim, kako sem prišel do te papige!\"\n" +
+                        "Ljudje vztrajajo in mož, da bi imel mir, začne pripovedovati:\n" +
+                        "\n" +
+                        "\"Lovil sem ribe in ujel zlato ribico. Ribica me je prosila, naj jo izpustim, v povračilo mi bo uresničila tri želje. Seveda sem jo izpustil. Potem pa so prišle na vrsto želje. Prva moja želja je bila, da bi imel vedno dovolj denarja. In res od takrat imam vse žepe polne denarja, ne glede, koliko ga vzamem ven. Druga želja je bila, da bi bil med čednimi ženskami. In res, od takrat me spremljata povsod ti dve lepotici. Tretja želja, oh, tretja želja, pa je bila, da bi imel nenasitnega tiča, pa je očitno prišlo do nesporazuma...\"",
+                "Zakaj lulek ni naredil osnovne šole?\n" +
+                        "Ker je imel luknjo v glavi!\n" +
+                        "Zakaj lulek ni naredil srednje šole?\n" +
+                        "Ker je preveč šprical!\n" +
+                        "Zakaj lulek ni dobil službe?\n" +
+                        "Ker ni mogel stati celih 8 ur!",
+                "Ribič ulovi zlato ribico in na njeno moledovanje, da mu izpolni željo, če jo izpusti, si le-ta zaželi, da bi lahko lulal šampanjec. Hopla! Želja se mu uresniči, ribica odplava, on pa k ženi in ji pove.\n" +
+                        "\"Čudovito,\" pravi žena, \"skočim po dva kozarca, da nazdraviva !\"\n" +
+                        "\"Ne, ne,\" pravi mož, \"samo enega prinesi; ti boš pila iz steklenice !\"",
+                "Mama in Janezek gresta po cesti, pa gresta mimo kurbnhausa, pa vpraša Janezek mamo: \"Mami, kaj pa je to za ene stavbe ?\"\n" +
+                        "Mama: \"Janezek, tukaj se pa ljubezen prodaja.\"\n" +
+                        "Ko prideta domov, prosi mamo Janezek, naj mu da denar za kino. Janezek gre seveda v kurbnhaus. Pride tja in reče vratarju, da bi rad kupil eno ljubezen. Vratar ga pelje v kuhinjo in mu namaže tri palačinke. Ko Janezek pride domov, vpraša mama, kje je bil. Pa reče, da je prvo raztegnil in polizal, drugo povohal in pol ure lizal, tretjo pa položil.",
+                "Mujo in Fata sta mož in žena! \n" +
+                        "Mujo: Fata, ali ti veš, kaj je to situacija?\n" +
+                        "Fata:Ja. Situacija je situacija.\n" +
+                        "Mujo: Situacija je, ko ti prideš domov in vidiš mene v postelji s sosedo!\n" +
+                        "Fata: Dobro. Potem je isto situacija, če ti prideš domov in vidiš mene v postelji s sosedom!\n" +
+                        "Mujo: E Fata, ne mešati batine in situacijo!!!!",
+                "\"Bio je jedanput čovjek zvan Mile.\"\n" +
+                        "Nekega dne se je odpravil na kmečko veselico z zelo malo denarja v žepu. Tam je spoznal znano radodarno žensko. Ta bi mu dala le, če bi imel 100 dinarjev, a revež Mile jih je imel le 50. Tako se sporazumeta, da bo delal le do polovice v bližnjem WC-ju. Ko Mile začne že do polovice, nekdo odpre vrata in Mileta potisne. A sad Mile: \"Tko to mene gura u dugove !?\"",
+                "Novinar: Gospa Helena, a vam rastejo dlake po prsih ?\n" +
+                        "Helena: Seveda ne, kaj si pa dovolite ?!\n" +
+                        "Novinar: Ja, pol pa mate dekolte preglobok !",
+                "Janez je odšel na službeno potovanje na Japonsko. Prvi dan je bil naporen, tako da so ga partnerji po sestankih povabili na sproščujočo večerjo, nato masažo in še pač ostalo, kar spada zraven. Vzhodnjaško lepotico je seveda takoj zatem odpeljal v svojo sobo in sta se igrala očite in mamice. Ko pa je začel, je začela sopsti: \"Sukiaaaa, sukiaaa...\" Mislil si je \"mat'r sem dober\" in nadaljeval še močneje, da je že vpila: \"SUKIAAA, SUUKIIAA !!!\" Ko je končal, se je počutil kot najboljši ljubimec na svetu.\n" +
+                        "Naslednji dan so ga partnerji povabili na igro golfa. Ko je udaril po žogici in je žogica poletela, je zaslišal ženski glas s tribune: \"Sukiaaa !\" Pogledal je proti najbližjemu partnerju in rekel: \"Pravi, da sem dober ko hudič, a ne ?\" Odgovoril mu je: \"Ne, to pomeni NAPAČNA LUKNJA...\"",
+                "Starejši gospod zaupno potoži svojemu dobremu prijatelju, češ, da ima težave z erekcijo. \n" +
+                        "\"To pa ni problem,\" ga nalaže prijatelj, \"veliko kruha jej, pa bodo težave minile!\" \n" +
+                        "\"A, res?!\"\n" +
+                        "\"Stoprocentno! To se ve!\"\n" +
+                        "Možakar gre malo zbegan v pekarno, kjer so ga poznali in vedeli, da kupuje kruh na deke. \"En kilogram kruha!\" zahteva mož.\n" +
+                        "\"Ja, gospod,\" se čudi prodajalka, \"to je precej, saj vam bo postal trd !\"\n" +
+                        "\"E, če je tako, pa mi ga dajte kar tri kilkograme !\"",
+                "Zakaj so moški po prsih kosmati ?\n" +
+                        "Ker so po srcu pi*de.",
+                "Janezek in mama sta se sprehajala v živalskem vrtu mimo predela, kjer so imeli slone. Janezek je zagledal starega velikega slona, ki je lulal. Potegnil je mamo za rokav: \"Mami, mami, kaj ima slon tamle ?\" in pokaže proti slonovem podaljšku.\n" +
+                        "Mama je zagledala precej ogromno zadevo, živo rdeče zafarbala in rekla: \"Oh, to ni nič. Pridi, greva...\"\n" +
+                        "Čez nekaj tednov je šel Janezek v živalski vrt z očetom. Potegnil ga je za roko, ga odvlekel do slonov in ga vprašal: \"Oči, kaj je to ?\"\n" +
+                        "Oče: \"Ja, a ti ni že mama povedala ?\"\n" +
+                        "Janezek: \"Ona je rekla, da to ni nič...\"\n" +
+                        "Oče: \"Hja, veš sine, tvoja mama je razvajena...\"",
+                "Mož in žena sta se naveličala seksa v postelji, pa reče mož ženi: \"Kaj ko bi šla to počet kar v park med sprehajalce, pa bo malce bolj zanimivo in napeto ?\"\n" +
+                        "In gresta. Med njunim opravilom jih zmoti policaj in reče: \"Tole bo pa kazen, tega vendar ne smeta početi na javnem mestu. Gospa bo plačala kazen 15000 SIT, gospod pa 5000 SIT !\"\n" +
+                        "Mož zvedavo vpraša policaja: \"Že, že, saj razumem kazen, ampak zakaj mora gospa plačati več kot jaz !?\"\n" +
+                        "Policaj odvrne: \"Vse je OK, imam zapisano. Vas sem zalotil pri tem dejanju prvič, vašo gospo pa že tretjič !\"",
+                "I'm always frank with my sexual partners.\n" +
+                        "Don't want them knowing my real name, do I?\n" +
+                        "\n" +
+                        "Courtesy of Sickipedia.org: http://www.sickipedia.org/sex-and-shit/adultery#ixzz3lLasceuV",
+                "Skrivnosti uspešnega zakona: \n 1. Pomembno je, da ženska kuha, čisti in pere. \n 2. Pomembno je, da ženska dobro služi" +
+                        "\n 3. Pomembno je, da ženska rada seksa \n 4. Najpomembnejše je, da se te tri ženske nikoli ne srečajo",
+                "Moja ženska dela kot asistentka cirkuškega čarovnika. Danes sem s šihta prišel zgodaj in ona je bila v spalnici. Rekla je \"Abrakadabra!\" in kar naenkrat je iz omare padel moj prijatelj Štef, popolnoma nag. Ubogemu Štefu zagotovo ni bilo jasno popolnoma nič",
+                "Mož reče ženi: \"Povej mi nekaj, kar me bo hkrati razveselilo in razžalostilo\". Žena: \"Imaš večjega kot tvoj brat...\"",
+                "Ko je moja žena danes prišla od zdravnika je bila videti zelo razburjena. \"Kaj ti je rekel?\", sem jo vprašal. \nNato je odgovorila \"Rekel mi je, da " +
+                        "ne moreva seksati naslednja dva tedna\" \n \"Zakaj ne?\" \n\"Zato, ker gre na dopust za dva tedna\"",
+                "Danes sem zalotil svojo punco - fukala se je z nekom drugim! Zato sem poklical njenega moža in mu pojasnil \n\"Najini prasici se je popolnoma zmešalo\"",
+                "Ti prokleti imigranti se lahko skrijejo kamorkoli! Včeraj sem se vrnil s šihta in našel nagega črnca v ženini omari!!!",
+                "Moja punca me je zalotila ob seksu z drugo žensko. \"Ni tako kot zgleda!\", sem ji hotel pojasniti. \n\"Vseeno mi je kako vse skupaj izgleda! Kdo za vraga je ona?\"\n\"Moja žena\"",
+                "Slišala sem, da rabi povprečen moški 5 minut za seks in 8 minut za tem že zaspi. To se sliši zelo nevarno, ker večina moških se takrat že pelje domov...",
+                "Fant vpraša punco: \"Si kdaj probala analni seks?\" Punca:\"Da, jebeno sranje\"",
+                "Ravno sem nažigaval tajnico v rit, ko je v pisarno vstopila žena in zakričala: " +
+                        "\"NE MOREŠ MI TEGA NAREDITI!!!\"\n\"Vem, zato pa to delam njej!\"",
+                "Analni seks: \nNi za pizde...",
+                "I'm always frank with my sexual partners.\n" +
+                        "Don't want them knowing my real name, do I?\n" +
+                        "\n",
+                "Ravnokar sem najel devetnajst letno švedinjo z ogrooomnimi joškami, da popazi na otroke. Sedaj se sprašujem, kje za vraga naj dobim še otroke???",
+                "Moj najljubši spomin iz otroštva je, ko sem nategnil svojo varuško. Nekje sredi vsega skupaj je rekla: \"Morala bi nehati, počutim se kot kurba\"" +
+                        "\nNakar sem ji rekel: \"Zakaj? Saj te ne plačujem jaz pač pa moji starši...\"",
+                "Včeraj sem seksal z varuško, ki sva jo najela z ženo. Najbolje zapravljenih 5€ na uro v mojem življenju.",
+                "Moja žena vedno vztraja, da malo pospravima predno pride čistilka. To je tako neumno kot da bi si ga šel drkati predno pride varuška.",
+                "Danes sem potolažil prijatelja, ki ni seksal že več kot leto dni. \n\"Še dobro, da nisi biseksualec. Ne vem kako bi prenesel zavrnitve obeh spolov...\" ",
+                "\"Jaz sem velik biseksualec.\" sem kot strela z jasnega izjavil zadnjič, ko smo se ob pivu zafrkavali s kolegi. \n \"Kako to\", so me vprašali. " +
+                        "\n\" Vedno bi seksal.\" ",
+                "Vsi me sovražijo, ker sem biseksualec! \n Jebeš njih vse!",
+                "\"Moja žena je biseksualka!\", sem potožil kolegu... \n \"Kako to?\", me je začuden vprašal... \n\"Seksava dvakrat letno...\"",
+                "Znastveniki so opravljali anketo, ki je raziskovala razloge zakaj je prijemanje oralnega seksa tako zelo všeč. 5% jih je odgovoril, da " +
+                "jim je všeč, kako zgleda, 15% je odgovoril, da jim je všeč občutek, 80% pa jih je reklo, da jim paše malo tišine.",
+                "Z ženo sva se pred kratkim dogovorila, da tisti, ki se prvi zbudi na jutro najine prve obletnice, zbudi drugega z oralnim seksom. Danes je bila prva obletnica in prvi sem se zbudil jaz ... in nato sem ji potisnil tiča v usta ... ",
+                "17 letna Špela je vprašala očeta, če si lahko sposodi avto. \nOče: \"Edino, če mi ga pofafaš, Špela. Saj poznaš pravila...\nŠpela je vzdihnila in se dala na kolena. "
+                + "Oče je izvlekel tiča in ona se je spravila na delo. Takoj, ko je pričela, se je zgrozila in rekla: \"Fuuuuj - okus ima po dreku!!!\" \nOče je rekel: \"Jah, tvoj brat si je hotel sposoditi 20 €...\""
+
+
+
 
         };
 

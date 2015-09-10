@@ -158,6 +158,10 @@ public class JokeContentActivity extends AppCompatActivity {
                 fileName = JSONSerializer.VSIVICI_FILENAME;
                 break;
             }
+            case(R.id.janezek_navigation):{
+                fileName = JSONSerializer.JANEZEK_FILENAME;
+                break;
+            }
 
 
         }

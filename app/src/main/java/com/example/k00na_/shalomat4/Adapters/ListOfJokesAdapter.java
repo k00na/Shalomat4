@@ -73,10 +73,10 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
 
 
         if(mJokeArrayList.get(position).isFavorited() == true) {
-            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_favorite_black_48dp);
+            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_star_black_24dp);
             Log.i("check1", "Is " + position + " favorited? A:" + mJokeArrayList.get(position).isFavorited());
         } else{
-            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_favorite_border_black_48dp);
+            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_star_border_black_24dp);
         }
 
         String shrunkenJokePreview = shrinkText(mJokeArrayList.get(position).getJokeContent());
@@ -249,6 +249,5 @@ class HolderThingy extends RecyclerView.ViewHolder{
         jokePreviewText = (TextView)itemView.findViewById(R.id.jokePreviewTextID);
         //rating = (TextView)itemView.findViewById(R.id.ratingText);
         favoritedIcon = (ImageView)itemView.findViewById(R.id.favoritedIcon);
-        favoritedIcon.setPadding(10, mCardView.getHeight()/2, 10, mCardView.getHeight()/2 - favoritedIcon.getHeight());
     }
 }
