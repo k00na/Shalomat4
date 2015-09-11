@@ -81,6 +81,9 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
 
         String shrunkenJokePreview = shrinkText(mJokeArrayList.get(position).getJokeContent());
 
+        // povečaj velikost teksta v kratkih šalah...
+
+
         holderThingy.categoryTitle.setText("" + getCategoryTitle(mJokeArrayList.get(position).getJokeCategoryTitle()));
         holderThingy.jokePreviewText.setText(shrunkenJokePreview);
 
@@ -151,6 +154,10 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
                 categoryName = "Yugo";
                 break;
             }
+            case(JSONSerializer.OPOLZKE_FILENAME):{
+                categoryName = "Opolzke Šale";
+                break;
+            }
 
         }
 
@@ -177,11 +184,13 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             text = text.substring(0, 200) + " ...";
 
 
-        else    // dodaj Stringu toliko presledkov, da bo dolg 200
-            for(int j = text.length(); text.length()<200; j++){
+        else {  // dodaj Stringu toliko presledkov, da bo dolg 200
+            for (int j = text.length(); text.length() < 200; j++) {
                 text = text + " ";
             }
 
+
+        }
         return text;
     }
 
@@ -198,6 +207,19 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             }
             case(R.id.gostilniske_navigation):{
                 fileName = JSONSerializer.GOSTILNSIKE_FILENAME;
+                break;
+            }
+
+            case(R.id.crnihumor_navigation):{
+                fileName = JSONSerializer.CRNIHUMOR_FILENAME;
+                break;
+            }
+            case(R.id.mujohaso_navigation):{
+                fileName = JSONSerializer.MUJOHASO_FILENAME;
+                break;
+            }
+            case(R.id.yugovici_navigation):{
+                fileName = JSONSerializer.YUGO_FILENAME;
                 break;
             }
 
@@ -219,6 +241,10 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             }
             case(R.id.tvojamama_navigation):{
                 fileName = JSONSerializer.TVOJAMAMA_FILENAME;
+                break;
+            }
+            case(R.id.opolzke_navigation):{
+                fileName = JSONSerializer.OPOLZKE_FILENAME;
                 break;
             }
 

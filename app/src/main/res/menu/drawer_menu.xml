@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/drawerMenuID"
+
     >
 
 
@@ -8,7 +10,12 @@
     <item
         android:icon="@drawable/ic_send_black_24dp"
         android:id="@+id/blondinke_navigation"
-        android:title="@string/blondinkeNav"></item>
+        android:title="Prolonging the default navView size aaaaaaaaaaaaaaaa..."></item>
+
+        <item
+            android:icon="@drawable/ic_send_black_24dp"
+            android:id="@+id/opolzke_navigation"
+            android:title="@string/opolzkeNav"></item>
 
     <item
         android:icon="@drawable/ic_send_black_24dp"

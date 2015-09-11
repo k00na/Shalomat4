@@ -36,6 +36,8 @@ public class JSONSerializer {
     public static final String POLITICNI_FILENAME = "politicni.json";
     public static final String YUGO_FILENAME = "yugo.json";
     public static final String VSIVICI_FILENAME = "vsivici.json";
+    public static final String OPOLZKE_FILENAME = "opolzke.json";
+
 
 
 
@@ -103,6 +105,14 @@ public class JSONSerializer {
 
         vsiViciArray.addAll(loadCategory(BLONDINKE_FILENAME));
         vsiViciArray.addAll(loadCategory(GOSTILNSIKE_FILENAME));
+        vsiViciArray.addAll(loadCategory(POLICAJI_FILENAME));
+        vsiViciArray.addAll(loadCategory(YUGO_FILENAME));
+        vsiViciArray.addAll(loadCategory(OPOLZKE_FILENAME));
+        vsiViciArray.addAll(loadCategory(JANEZEK_FILENAME));
+        vsiViciArray.addAll(loadCategory(MUJOHASO_FILENAME));
+        vsiViciArray.addAll(loadCategory(CRNIHUMOR_FILENAME));
+
+
 
         saveCategory(vsiViciArray, VSIVICI_FILENAME);
 

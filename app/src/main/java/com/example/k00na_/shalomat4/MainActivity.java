@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -51,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
         setupViews();
         navigationListener();
         actionBarDrawerToggleSetup();
@@ -84,13 +84,15 @@ public class MainActivity extends AppCompatActivity {
             incrementAndSaveVisits();
         }
 
+
+
+        navigationListener();
+
         try {
-            Log.i("hey", "Janezek, first joke: " + serializer.loadCategory(JSONSerializer.JANEZEK_FILENAME).get(15).getJokeContent());
+            setupNumOfJokesForMenu();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        navigationListener();
 
     }
 
@@ -131,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                     case (R.id.crnihumor_navigation): {
                         Toast.makeText(getApplicationContext(), "Črni humor", Toast.LENGTH_LONG).show();
                         mToolbar.setTitle(R.string.crnihumorNav);
-
+                        displayListOfJokes(R.id.crnihumor_navigation);
 
                         return true;
                     }
@@ -170,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
                     case (R.id.mujohaso_navigation): {
                         Toast.makeText(getApplicationContext(), "Mujo&Haso", Toast.LENGTH_LONG).show();
                         mToolbar.setTitle(R.string.mujohasoNav);
+                        displayListOfJokes(R.id.mujohaso_navigation);
                         return true;
                     }
 
@@ -198,12 +201,19 @@ public class MainActivity extends AppCompatActivity {
 
                     case (R.id.yugovici_navigation): {
                         mToolbar.setTitle(R.string.yugoviciNav);
+                        displayListOfJokes(R.id.yugovici_navigation);
                         return true;
 
                     }
                     case (R.id.nakljucni_navigation): {
                         mToolbar.setTitle(R.string.nakljucniVici);
                         displayListOfJokes(R.id.nakljucni_navigation);
+                        return true;
+                    }
+                    case (R.id.opolzke_navigation): {
+                        mToolbar.setTitle(R.string.opolzkeNav);
+                        displayListOfJokes(R.id.opolzke_navigation);
+                        return true;
                     }
 
                     default: {
@@ -245,6 +255,38 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private String setupSpacesForMenu(String title){
+
+        int titLen = title.length();
+
+        while(titLen < 22){
+           title = title.concat("_");
+            titLen++;
+        }
+
+        return title;
+
+    }
+
+    private void setupNumOfJokesForMenu() throws IOException {
+
+        JSONSerializer serializer = new JSONSerializer(this);
+
+        Menu menu = mNavigationView.getMenu();
+
+      menu.getItem(0).setTitle(setupSpacesForMenu(getString(R.string.blondinkeNav)) + " [" + serializer.loadCategory(JSONSerializer.BLONDINKE_FILENAME).size() + " vicev]");
+      menu.getItem(1).setTitle(setupSpacesForMenu(getString(R.string.opolzkeNav)) + " [" + serializer.loadCategory(JSONSerializer.OPOLZKE_FILENAME).size() + " vicev]");
+        menu.getItem(2).setTitle(setupSpacesForMenu(getString(R.string.policajiNav)) + " [" + serializer.loadCategory(JSONSerializer.POLICAJI_FILENAME).size() + " vicev]");
+        menu.getItem(3).setTitle(setupSpacesForMenu(getString(R.string.tvojaMamaNav)) + " [" + serializer.loadCategory(JSONSerializer.TVOJAMAMA_FILENAME).size() + " vicev]");
+        menu.getItem(4).setTitle(setupSpacesForMenu(getString(R.string.gostilniskeNav)) + " [" + serializer.loadCategory(JSONSerializer.GOSTILNSIKE_FILENAME).size() + " vicev]");
+        menu.getItem(5).setTitle(setupSpacesForMenu(getString(R.string.janezNav)) + " [" + serializer.loadCategory(JSONSerializer.JANEZEK_FILENAME).size() + " vicev]");
+        menu.getItem(6).setTitle(setupSpacesForMenu(getString(R.string.mujohasoNav)) + " [" + serializer.loadCategory(JSONSerializer.MUJOHASO_FILENAME).size()+ " vicev]");
+        menu.getItem(7).setTitle(setupSpacesForMenu(getString(R.string.crnihumorNav)) + " [" + serializer.loadCategory(JSONSerializer.CRNIHUMOR_FILENAME).size() + " vicev]");
+        menu.getItem(10).setTitle(setupSpacesForMenu(getString(R.string.yugoviciNav)) + " [" + serializer.loadCategory(JSONSerializer.YUGO_FILENAME).size() + " vicev]");
+
+        menu.getItem(12).setTitle(setupSpacesForMenu(getString(R.string.nakljucniVici)) + " [" + serializer.loadCategory(JSONSerializer.VSIVICI_FILENAME).size() + " vicev]");
+
+    }
 
     public int numOfVisits() {
 

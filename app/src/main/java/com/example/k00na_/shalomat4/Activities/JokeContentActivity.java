@@ -114,6 +114,10 @@ public class JokeContentActivity extends AppCompatActivity {
 
         switch (catNum){
 
+            case (R.id.opolzke_navigation):{
+                fileName = JSONSerializer.OPOLZKE_FILENAME;
+                break;
+            }
             case(R.id.blondinke_navigation):{
                 fileName = JSONSerializer.BLONDINKE_FILENAME;
                 break;

@@ -133,6 +133,12 @@ public class JokeContentFragment extends Fragment{
     private void setupViews(View v){
 
         mTextViewContent = (TextView)v.findViewById(R.id.jokeContentFragmentTextView);
+
+        if(mCurrentJoke.getJokeContent().length() < 200)
+            mTextViewContent.setTextSize(70);
+        else
+            mTextViewContent.setTextSize(55);
+
         mTextViewContent.setText(mCurrentJoke.getJokeContent());
         FAB = (FloatingActionsMenu)v.findViewById(R.id.fabulousFAB);
         saveToFavFAB = (com.getbase.floatingactionbutton.FloatingActionButton)v.findViewById(R.id.saveToFavoritesFAB);
@@ -204,6 +210,10 @@ public class JokeContentFragment extends Fragment{
             }
             case(R.id.priljubljeni_navigation):{
                 fileName = JSONSerializer.PRILJUBLJENI_FILENAME;
+                break;
+            }
+            case(R.id.opolzke_navigation):{
+                fileName = JSONSerializer.OPOLZKE_FILENAME;
                 break;
             }
 
