@@ -284,6 +284,7 @@ public class MainActivity extends AppCompatActivity {
         menu.getItem(7).setTitle(getString(R.string.crnihumorNav) + " [" + serializer.loadCategory(JSONSerializer.CRNIHUMOR_FILENAME).size() + " vicev]");
         menu.getItem(10).setTitle(getString(R.string.yugoviciNav) + " [" + serializer.loadCategory(JSONSerializer.YUGO_FILENAME).size() + " vicev]");
 
+        menu.getItem(11).setTitle(getString(R.string.pribljubljeniNav) + " [" + serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() + " vicev]");
         menu.getItem(12).setTitle(getString(R.string.nakljucniVici) + " [" + serializer.loadCategory(JSONSerializer.VSIVICI_FILENAME).size() + " vicev]");
 
     }

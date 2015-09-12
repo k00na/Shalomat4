@@ -69,6 +69,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         } else{
             holderThingy.favoritedIcon.setVisibility(View.VISIBLE);
             holderThingy.categoryTitle.setVisibility(View.INVISIBLE);
+
         }
 
 
@@ -184,13 +185,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             text = text.substring(0, 200) + " ...";
 
 
-        else {  // dodaj Stringu toliko presledkov, da bo dolg 200
-            for (int j = text.length(); text.length() < 200; j++) {
-                text = text + " ";
-            }
 
-
-        }
         return text;
     }
 

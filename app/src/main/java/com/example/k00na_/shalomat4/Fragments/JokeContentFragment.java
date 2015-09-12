@@ -146,9 +146,9 @@ public class JokeContentFragment extends Fragment{
         mTextViewContent = (TextView)v.findViewById(R.id.jokeContentFragmentTextView);
 
         if(mCurrentJoke.getJokeContent().length() < 200)
-            mTextViewContent.setTextSize(70);
+            mTextViewContent.setTextSize(35);
         else
-            mTextViewContent.setTextSize(55);
+            mTextViewContent.setTextSize(25);
 
         mTextViewContent.setText(mCurrentJoke.getJokeContent());
         FAB = (FloatingActionsMenu)v.findViewById(R.id.fabulousFAB);

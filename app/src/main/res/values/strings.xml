@@ -7,9 +7,9 @@
     <string name="policaji">Policaji</string>
     <string name="policajiNav">Policaji</string>
     <string name="tvojaMamaNav">Tvoja Mama</string>
-    <string name="gostilniskeNav">Gostilniške</string>
+    <string name="gostilniskeNav">Gostilniški</string>
     <string name="janezNav">Janezek</string>
-    <string name="mujohasoNav"><![CDATA[Mujo & Haso]]></string>
+    <string name="mujohasoNav"><![CDATA[Mujo&Haso]]></string>
     <string name="crnihumorNav">Črni Humor</string>
     <string name="tasceNav">Tašče</string>
     <string name="politicniNav">Politični Vici</string>
@@ -17,8 +17,8 @@
     <string name="drawerOpen">Drawer Opened</string>
     <string name="drawerClosed">Drawer Closed</string>
     <string name="title_activity_joke_content">JokeContentActivity</string>
-    <string name="priljubljeniVici">Priljubljeni Vici</string>
-    <string name="pribljubljeniNav">Priljubljeni Vici</string>
-    <string name="nakljucniVici">Naključni Vici</string>
-    <string name="opolzkeNav">Opolzke Šale</string>
+    <string name="priljubljeniVici">Priljubljeni</string>
+    <string name="pribljubljeniNav">Priljubljeni</string>
+    <string name="nakljucniVici">Vsi Vici</string>
+    <string name="opolzkeNav">Opolzki</string>
 </resources>
