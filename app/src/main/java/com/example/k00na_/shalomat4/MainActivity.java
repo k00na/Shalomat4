@@ -287,6 +287,7 @@ public class MainActivity extends AppCompatActivity {
         menu.getItem(11).setTitle(getString(R.string.pribljubljeniNav) + " [" + serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() + " vicev]");
         menu.getItem(12).setTitle(getString(R.string.nakljucniVici) + " [" + serializer.loadCategory(JSONSerializer.VSIVICI_FILENAME).size() + " vicev]");
 
+        // yoyo
     }
 
     public int numOfVisits() {
