@@ -1,16 +1,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:layout_height="192dp"
+              android:layout_height="222dp"
               android:background="@color/colorPrimaryDark"
               android:padding="16dp"
               android:theme="@style/ThemeOverlay.AppCompat.Dark"
               android:orientation="vertical"
-              android:gravity="bottom">
+              android:gravity="bottom"
+    >
+<!--
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=":Đ"
+        android:textSize="100sp"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:textStyle="bold"
+        />
+        -->
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/smiley_header"
+        android:layout_gravity="center"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Header"
+        android:text="Šalomat"
+        android:textSize="25sp"
+        android:textStyle="bold"
         android:textColor="@android:color/white"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 

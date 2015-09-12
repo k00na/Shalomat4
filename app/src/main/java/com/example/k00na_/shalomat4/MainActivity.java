@@ -274,17 +274,17 @@ public class MainActivity extends AppCompatActivity {
 
         Menu menu = mNavigationView.getMenu();
 
-      menu.getItem(0).setTitle(setupSpacesForMenu(getString(R.string.blondinkeNav)) + " [" + serializer.loadCategory(JSONSerializer.BLONDINKE_FILENAME).size() + " vicev]");
-      menu.getItem(1).setTitle(setupSpacesForMenu(getString(R.string.opolzkeNav)) + " [" + serializer.loadCategory(JSONSerializer.OPOLZKE_FILENAME).size() + " vicev]");
-        menu.getItem(2).setTitle(setupSpacesForMenu(getString(R.string.policajiNav)) + " [" + serializer.loadCategory(JSONSerializer.POLICAJI_FILENAME).size() + " vicev]");
-        menu.getItem(3).setTitle(setupSpacesForMenu(getString(R.string.tvojaMamaNav)) + " [" + serializer.loadCategory(JSONSerializer.TVOJAMAMA_FILENAME).size() + " vicev]");
-        menu.getItem(4).setTitle(setupSpacesForMenu(getString(R.string.gostilniskeNav)) + " [" + serializer.loadCategory(JSONSerializer.GOSTILNSIKE_FILENAME).size() + " vicev]");
-        menu.getItem(5).setTitle(setupSpacesForMenu(getString(R.string.janezNav)) + " [" + serializer.loadCategory(JSONSerializer.JANEZEK_FILENAME).size() + " vicev]");
-        menu.getItem(6).setTitle(setupSpacesForMenu(getString(R.string.mujohasoNav)) + " [" + serializer.loadCategory(JSONSerializer.MUJOHASO_FILENAME).size()+ " vicev]");
-        menu.getItem(7).setTitle(setupSpacesForMenu(getString(R.string.crnihumorNav)) + " [" + serializer.loadCategory(JSONSerializer.CRNIHUMOR_FILENAME).size() + " vicev]");
-        menu.getItem(10).setTitle(setupSpacesForMenu(getString(R.string.yugoviciNav)) + " [" + serializer.loadCategory(JSONSerializer.YUGO_FILENAME).size() + " vicev]");
+      menu.getItem(0).setTitle(getString(R.string.blondinkeNav) + " [" + serializer.loadCategory(JSONSerializer.BLONDINKE_FILENAME).size() + " vicev]");
+      menu.getItem(1).setTitle(getString(R.string.opolzkeNav) + " [" + serializer.loadCategory(JSONSerializer.OPOLZKE_FILENAME).size() + " vicev]");
+        menu.getItem(2).setTitle(getString(R.string.policajiNav) + " [" + serializer.loadCategory(JSONSerializer.POLICAJI_FILENAME).size() + " vicev]");
+        menu.getItem(3).setTitle(getString(R.string.tvojaMamaNav) + " [" + serializer.loadCategory(JSONSerializer.TVOJAMAMA_FILENAME).size() + " vicev]");
+        menu.getItem(4).setTitle(getString(R.string.gostilniskeNav) + " [" + serializer.loadCategory(JSONSerializer.GOSTILNSIKE_FILENAME).size() + " vicev]");
+        menu.getItem(5).setTitle(getString(R.string.janezNav) + " [" + serializer.loadCategory(JSONSerializer.JANEZEK_FILENAME).size() + " vicev]");
+        menu.getItem(6).setTitle(getString(R.string.mujohasoNav) + " [" + serializer.loadCategory(JSONSerializer.MUJOHASO_FILENAME).size()+ " vicev]");
+        menu.getItem(7).setTitle(getString(R.string.crnihumorNav) + " [" + serializer.loadCategory(JSONSerializer.CRNIHUMOR_FILENAME).size() + " vicev]");
+        menu.getItem(10).setTitle(getString(R.string.yugoviciNav) + " [" + serializer.loadCategory(JSONSerializer.YUGO_FILENAME).size() + " vicev]");
 
-        menu.getItem(12).setTitle(setupSpacesForMenu(getString(R.string.nakljucniVici)) + " [" + serializer.loadCategory(JSONSerializer.VSIVICI_FILENAME).size() + " vicev]");
+        menu.getItem(12).setTitle(getString(R.string.nakljucniVici) + " [" + serializer.loadCategory(JSONSerializer.VSIVICI_FILENAME).size() + " vicev]");
 
     }
 

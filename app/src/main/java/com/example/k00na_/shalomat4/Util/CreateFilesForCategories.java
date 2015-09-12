@@ -876,10 +876,273 @@ public class CreateFilesForCategories {
                     "Pastir z rokami zagrabi za kravje vime, se skloni in pove:\n" +
                     "\"Petnajst minut do treh.\"\n" +
                     "\"Neverjetno! Kar po kravjih vimenih ste točno ugotovili koliko je ura?!\"\n" +
-                    "\"Ne, kravje vime sem le nekoliko premaknil, da sem videl na zvonik v dolini.\""
+                    "\"Ne, kravje vime sem le nekoliko premaknil, da sem videl na zvonik v dolini.\"",
+            "Novi kuhar v gostinskem lokalu vpraša gosta:\n" +
+                    "\"Kakšna se vam kaj zdi juha?\"\n" +
+                    "\"Sol je dobra, voda je pa čisto zanič.\"",
+            "\"Kako to, da v juho ne pade nobena muha?\" se je začudila mlada kuharica, ki je pravkar nastopila delo v kuhinji večje restavracije.\n" +
+                    "\"Muhe se v naši kuhinji izogibajo hrane!\" ji je pojasnila šefinja kuhinje.",
+            "\"Pečenka se mi je prismodila!\" je zastokal kuhar.\n" +
+                    "\"Nič hudega\" je dejal šef strežbe. \"Na jedilni list bomo napisali, da gre za gasilsko pečenko, pa še ceno bomo zvišali!\"",
+            "Kuhar pristopi k gostu, ki ga je malo pred tem natakar postregel s segedin golažem.\n" +
+                    "\"Lepo prosim, če hitro pojeste golaž.\"\n" +
+                    "\"Zakaj pa to?\" se začudi gost.\n" +
+                    "\"Ravnokar je prišel v inšpekcijo sanitarni inšpektor.\"",
+            "Kuhar ugledne restavracije se pritožuje:\n" +
+                    "\"Kadar skuham slabo sploh ne morem pojesti.\"\n" +
+                    "\"Kaj pa kadar skuhaš dobro?\"\n" +
+                    "\"Takrat pa vse drugi pojedo.\"",
+            "V tovarniški kantini se je mlad uslužbenec pritoževal nad preveč zapečenim zrezkom.\n" +
+                    "\"Dragi gospodič,\" je rekel kuhar,\" jaz sem zrezke pekel že, ko so vas še dojili.\"\n" +
+                    "\"In zakaj jih servirate šele sedaj?\"",
+            "Ali veš, da je naš šef novega kuharja odpustil že drugi dan?\n" +
+                    "\"Zakaj pa?\"\n" +
+                    "\"Ni bil normalen. Ko je rezal čebulo, se je smejal.\"",
+            "\"Natakar!\" je zavpil gost. \"Prinesite mi še dve kocki sladkorja!\"\n" +
+                    "\"Saj sem vam prinesel že osem kock sladkorja. Kaj vam še ni dovolj?\"\n" +
+                    "\"Tiste, ki ste mi jih prinesli so se že vse stopile!\"",
+            "Starejši par si je nedeljsko kosilo privoščili v restavraciji. Ko pa je bilo potrebno plačati račun, je mož ugotovil, da je denarnico pozabil doma, zato je rekel natakarju:\n" +
+                    "\"Doma sem pozabil denarnico. Jaz bom skočil domov po denar, ženo vam bom pa pustil tu za garancijo!\"\n" +
+                    "\"Pa res nimate kaj bolj vrednega za garancijo?\" ga je vprašal natakar.",
+            "Mož in žena sta v gostilni naročila rižoto. Ko jima je natakar postregel je mož takoj začel jesti, žena pa je nekaj časa gledala v krožnik, potem pa rekla:\n" +
+                    "\"Tako majhne porcije so nama prinesli, da se bom pritožila!\"\n" +
+                    "\"Bodi tiho in jej!\" ji je rekel mož. \"še vesela boš, da si dobila tako malo!\"",
+            "\"Natakar, že pol ure čakam na kosilo! Ste pozabili name?\"\n" +
+                    "\"Ne nisem! Vi ste tisti s svinjsko glavo in tenstanim krompirjem, kajne?\"",
+            "V Ljubljani so odprli francosko restavracijo. Uroš je peljal svoje dekle na večerjo in natakar je paru priporočil:\n" +
+                    "\"Želite morda našo specialiteto: \"Poulet a la peugeot\"?\"\n" +
+                    "\"Kaj pa je to?\"\n" +
+                    "\"Kokoš, ki jo je povozil avto.\" ",
+            "Natakar, kaj pa dela gosenica v moji solati?\n" +
+                    "\"Žal nam je zmanjkalo polžev.\" ",
+            "Natakar v večji restavraciji vstopi v kuhinjo in išče enega od kuharjev. Končno ga najde v manjšem prostoru poleg kuhinje, ob sebi pa je imel ogromen kup na koščke narezanih žemelj.\n" +
+                    "\"Ja kaj pa počneš?\" ga je presenečeno vprašal.\n" +
+                    "\"Želim speči pecivo, pa v receptu piše: \"Nareži tri dni stare žemlje\". No, jaz jih režem šele dva dni!\" ",
+            "Miro je vsak dan vstopil v gostilno in naročil pet kozarčkov vodke naenkrat. Med vojno so se namreč prijatelji dogovorili, da bodo preživeli pili tudi za umrle. In tako je vsak dan izpraznil pet kozarčkov vodke. Nekega dne pa je vstopil v gostilno in naročil:\n" +
+                    "\"Štiri kozarčke vodke!\"\n" +
+                    "\"Zakaj pa danes samo štiri?\" se je začudil natakar.\n" +
+                    "\"Vodka je za moje umrle prijatelje, jaz pa sem postal abstinent!\" ",
+            "Gost želi plačati.\n" +
+                    "\"Kaj ste imeli?\" ga vpraša natakar.\n" +
+                    "\"To ve le kuhar. Jaz sem naročil postrv!\" ",
+            "\"Natakar, kaj mrgoli po moji solati?\"\n" +
+                    "\"Ali še nikoli niste videli uši? ",
+            "\"Natakar, moja juha je mrzla!\"\n" +
+                    "\"Saj ni čudno, če ste jo pa naročili pred eno uro!\" ",
+            "\"Natakar, imate kaj za hitro potešitev lakote? Mudi se mi na vlak!\"\n" +
+                    "\"Ja, izvolite tale sendvič, ki mora tudi hitro v promet!\" ",
+            "Napis na veliki tabli nad točilnim pultom vaške gostilne:\n" +
+                    "\"Nikoli ne pijte s prazno denarnico!\" ",
+            "\"Natakar, v moji juhi plava muha!\"\n" +
+                    "\"Ne bo več dolgo, saj jo na robu krožnika čaka pajek!\" ",
+            "\"Gospod, vi ste pa polili kavo po prtu!\" je natakar vzkliknil proti gostu.\n" +
+                    "\"Ne, ne, nisem je jaz polil. Tako slaba je bila, da je kar sama padla skupaj!\" ",
+            "Gost se jezi, saj čaka na hrano že debelo uro:\n" +
+                    "\"Kdaj bom vendar dobil polovico piščanca?\"\n" +
+                    "\"Takoj, ko bo še kdo naročil polovico! Kje ste pa že videli, da bi zaklali le polovico piščanca?\" ",
+            "Natakar je gostu prinesel juho. Ko je čez nekaj minut prišel zopet mimo gostove mize je opazil, da ta mirno sedi in se juhe še dotaknil ni.\n" +
+                    "\"Ali kaj morda ni v redu?\" je vprašal natakar.\n" +
+                    "\"Poskusite juho!\" je rekel gost.\n" +
+                    "\"Je prevroča ali prehladna?\"\n" +
+                    "\"Poskusite juho!\" je spet vztrajal gost.\n" +
+                    "\"Je preslana!\"\n" +
+                    "\"Poskusite juho!\" je zakričal gost.\n" +
+                    "\"Aja, žlice nimate!\" je ugotovil natakar. ",
+            "\"Sedaj je čas, da izpraznimo lokal!\" je rekel natakar stari, debeli in pijani snažilki. \"Stopi na točilni pult in zapleši striptiz!\" ",
+            "Gost se je pritožil natakarju:\n" +
+                    "\"Naročil sem porcijo ocvrtih kalamarov, na krožniku sta pa samo dva!\"\n" +
+                    "\"Oh, oprostite, takoj vam bom prinesel še enega!\" ",
+            "Skupina prijateljev je po dolgotrajnem vzponu prispela do lovske koče. Oskrbnica jim je prinesla vročo pijačo. Prvi je naredil požirek in rekel:\n" +
+                    "\"Fuj! Smrdi in okus ima po umazani vodi!\"\n" +
+                    "\"Si tvoj okus pustil v dolini?\" je rekel drugi. \"To je ja vendar čaj!\"\n" +
+                    "V tem trenutku je pristopila oskrbnica in rekla:\n" +
+                    "\"Bo še kdo skodelico kakava?\" ",
+            "\"Kako lahko dokažeš, da je resnica smrtno nevarna?\"\n" +
+                    "\"Greš v gostilno, naročiš Laško pivo, potem pa glasno oznaniš: \"Ta scalnica sploh ni pivo!\".\" ",
+            "\"Natakar, zakaj vsakemu gostu ponujate telečjo pečenko?\"\n" +
+                    "\"Če jo bo kaj ostalo jo bomo morali pojesti mi, ki smo tu zaposleni!\" ",
+            "Natakar v nočnem klubu je pristopil k šefu strežbe in mu rekel:\n" +
+                    "\"Šef, dve novici imam za vas! Dobro in Slabo!\"\n" +
+                    "\"Povej najprej dobro!\"\n" +
+                    "\"Tistega razgrajača od včeraj danes ni v lokalu!\"\n" +
+                    "\"Pa slaba?\"\n" +
+                    "\"Njegovi prijatelji pravijo, da bo prišel kasneje!\" ",
+            "\"Super! Odlično! Tako velikega in slastnega zrezka pa v vaši gostilni še nikoli nisem jedel!\" je vzkliknil gost.\n" +
+                    "\"Žal sem se zmotil!\" je nesrečno rekel natakar. \"Ta zrezek je šefov!\" ",
+            "\"Natakar, kaj mi pa danes priporočate?\"\n" +
+                    "\"Zelo, zelo močne zobe ter mišičaste prste!\" ",
+            "Lepotica je v restavraciji pristopila k bradatemu natakarju in mu rekla, da mu želi nekaj šepniti v uho. Natakar je privolil, lepotica pa mu je s prstom začela ovijati brado in se igrati z njo ter rekla:\n" +
+                    "\"Ste vi tukaj šef?\" in še naprej z prsti šarila po bradi.\n" +
+                    "\"Ne, jaz nisem šef!\" je rekel natakar.\n" +
+                    "\"Ali ga lahko pokličete?\" je vprašala lepotica in mu prste, enega za drugim vtikala v usta.\n" +
+                    "\"Ne, ne morem ga poklicati, ker ga danes sploh ni tu!\"\n" +
+                    "\"Toda, jaz ga potrebujem, ker mu moram nekaj sporočiti!\" je rekla lepotica in spet s prsti ovijala natakarjevo brado.\n" +
+                    "\"Saj lahko meni pustite sporočilo!\" je rekel natakar.\n" +
+                    "\"No, prav, pa mu povejte, da v stranišču ni WC papirja, voda pa tudi ne teče!\"",
+            "Natakar gostu:\n" +
+                    "\"Žal smo morali specialiteto naše kuhinje črtati iz jedilnega lista, ker je kuhar polomil ključ za odpiranje konzerv.\" ",
+            "Delavec, ki je delal s pnevmatskim vrtalnim strojem na gradbišču pred gostilno si je vzel odmor. Vstopil je v gostilno in si naročil pivo. Natakar mu je prinesel vrček piva in videl, kako se delavcu tresejo roke. Ko je v roke vzel vrček, so se mu roke tako tresle, da je pivo polival po mizi in po tleh.\n" +
+                    "\"Mora biti pa res težko piti pivo, ko se vam roke tako zelo tresejo!\" je rekel natakar.\n" +
+                    "\"Pivo niti ni problem!\" mu je odgovoril delavec. \"Huje je, ko grem lulat. Preden se polulam, prej dvakrat doživim izliv semenske tekočine!\" ",
+            "Gost, ki je cel večer popival v gostilni je poklical natakarja in mu rekel:\n" +
+                    "\"Pijan sem! Prinesite mi nekaj, da sem bom streznil, preden odidem domov!\"\n" +
+                    "\"Ja, takoj vam bom prinesel račun!\" ",
+            "\"Nakar, ali je vaš kuhar sploh očistil ribo, preden jo je spekel?\"\n" +
+                    "\"Zakaj le, saj je celo življenje preživela v vodi!\" ",
+            "\"Zakaj pa ješ podstavek za kozarce?\" je Štef vprašal kolega, s katerim je malical v gostilni.\n" +
+                    "\"To je podstavek za kozarce? Čudno! Pa najboljši okus ima od vsega, kar sem pojedel!\" ",
+            "\"Kaj imate za malico?\"\n" +
+                    "\"Polento!\"\n" +
+                    "\"Ali nimate nobene izbire?\"\n" +
+                    "\"Dve možnosti imate: ali jo naročite ali pa ne!\" ",
+            "\"Natakar, prst držite v moji juhi!\"\n" +
+                    "\"Nič hudega, saj ni vroča!\" ",
+            "Gost je v gostilni naročil svinjsko pečenko. Ko jo je natakar postregel je gost začutil, da pečenka ogabno smrdi. Pritožil se je natakarju, ta pa mu je na mizo prinesel ventilator, ga prižgal in rekel:\n" +
+                    "\"Da vam ne bo smrdelo!\" ",
+            "Gost je poklical natakarja k mizi in mu rekel:\n" +
+                    "\"Res je škoda, da že prej nisem obiskal vaše restavracije!\"\n" +
+                    "\"Vam je bil zrezek tako všeč?\"\n" +
+                    "\"Ne, toda, če bi vašo restavracijo obiskal prej, bi bil mogoče še svež!\" ",
+            "\"Natakar, po teh školjkah, ki sem jih pojedel, me blazno boli želodec!\"\n" +
+                    "\"Ste kaj nenavadnega opazili v njih, ko ste jih odprli?\"\n" +
+                    "\"HaaAa? Jih je bilo potrebno odpreti??!?\" ",
+            "V gostilno je vstopil mladoletnik in naročil natakarici:\n" +
+                    "\"Dvojni whiskey!\"\n" +
+                    "Natakarica ga je debelo pogledala, nato pa rekla:\n" +
+                    "\"Ali bi me rad spravil v težave?\"\n" +
+                    "\"Morda kasneje, najprej pa mi dajte pijačo!\" ",
+            "Moški je vstopil v gostinski lokal in naročil natakarju:\n" +
+                    "\"Tinjak, prosim!\"\n" +
+                    "\"Verjetno mislite na vinjak?\" ga je popravil natakar.\n" +
+                    "\"Ne, prav ste slišali. Tinjak hočem! Midva se že dolgo poznava in se tikava!\" ",
+            "\"Natakar, v moji juhi je vijak!\"\n" +
+                    "\"Naj vam prinesem še izvijač?\" \n",
+            "\"Natakar, ali imate pri vas vedno tako zanič hrano?\"\n" +
+                    "\"Ne, vedno pa ne! V soboto in nedeljo imamo zaprto!\" ",
+            "\"Natakar, je to marelični ali jabolčni zavitek?\"\n" +
+                    "\"Po čem pa ima okus?\"\n" +
+                    "\"Nimam pojma!\"\n" +
+                    "\"Ali ni potem vseeno kakšen zavitek je to?\" ",
+            "\"Natakar! Kaj je to v juhi?\"\n" +
+                    "\"Oprostite, toda na žuželke se pa prav nič ne spoznam!\" ",
+            "\"Natakar! V moji juhi je mrtva muha!\"\n" +
+                    "\"Moje sožalje.\" ",
+            "\"Natakar, včeraj sem v juhi našel en las, danes pa kar dva!\"\n" +
+                    "\"Kar poglejte si jedilni list, pa boste videli, da je juha danes za 20 centov dražja!\" ",
+            "\"Če že trdite, da je hrana neužitna, vsaj ne brskajte po njej! Kdo pa bo potem hotel jesti za vami?\" ",
+            "\"Natakar, oprostite, koliko je ura?\"\n" +
+                    "\"Niste v mojem rajonu!\" ",
+            "\"Natakar, pri računanju ste se zmotili v mojo škodo!\" Namesto trinajst ste napisali štirinajst!\"\n" +
+                    "\"Pomislil sem na to, da bi vam številka trinajst lahko prinesla nesrečo!\" ",
+            "\"Natakar, tale skodelica za kavo je počena!\"\n" +
+                    "\"To je dokaz, kako močna je naša kava!\" ",
+            "\"Natakar, v sadni solati so muhe!\"\n" +
+                    "\"Čudno! Ponavadi jih preženejo ose!\" ",
+            "\"Natakar! V juhi sem našel majhno muho!\"\n" +
+                    "\"Želite večjo?\" ",
+            "\"Natakar, kaj pa tole plava v juhi?\"\n" +
+                    "\"Kdo je dal pa vam diplomo? Profesor biologije ste pa še muhe ne poznate!\"",
+            "\"Natakar, kaj pomeni ta muha v juhi?\"\n" +
+                    "\"Ne vem, jaz sem natakar in ne vedeževalka.\" ",
+            "\"Natakar, temu golažu pa nekaj manjka!\"\n" +
+                    "\"Nemogoče, saj smo vanj zmetali vse, kar je včeraj ostalo v kuhinji!\" ",
+            "\"Natakar, v sladoledu je muha!\"\n" +
+                    "\"Kar pustite jo, da zmrzne! To jo bo izučilo za drugič\" ",
+            "\"Natakar, zakaj na mizi ni zobotrebcev?\"\n" +
+                    "\"Kaj pa vem. Veste ljudje so prav čudni. Vsak ga vzame, vrne pa nihče.\" ",
+            "\"Natakar, ali je ta pečenka res svinjska?\"\n" +
+                    "\"Seveda je, saj je kuharju dvakrat padla na tla.\" ",
+            "\"Natakar, ali lahko prinesete zobotrebec?\"\n" +
+                    "\"Žal ne, ker je trenutno zaseden!\" ",
+            "\"Natakar, bom dočakal svojo pizzo?\"\n" +
+                    "\"Glede na to, da še kar dobro izgledate, mislim da boste!\" ",
+            "\"Natakar, prinesite mi nov krožnik! Tale je še moker od pomivanja.\"\n" +
+                    "\"Oprostite, toda to je juha.\" ",
+            "\"Natakar, v moji juhi je muha!\"\n" +
+                    "\"Ne razburjajte se, saj je ne bo veliko popila!\" ",
+            "\"V denarnici imam tri evre. Kaj mi priporočate?\"\n" +
+                    "\"Lokal na drugi strani ceste!\" ",
+            "Gost naroči:\n" +
+                    "\"Na krožnik, ogret na pravo temperaturo, mi dajte dve jajci. Beljak ne sme biti preveč zapečen, rumenjak naj bo cel, dodajte pa malo peteršiljčka, pa ne preveč, ščep soli, ampak ne prevelik in naj bo brez popra.\n" +
+                    "\"Imate še kakšno željo?\" vpraša natakar.\n" +
+                    "\"Ne, to bo vse.\"\n" +
+                    "\"Lahko jaz nekaj vprašam?\"\n" +
+                    "\"Seveda.\"\n" +
+                    "\"Kokoši, ki je znesla jajce je ime Barbara. Bo to v redu?\" ",
+            "\"Želite menu za 5 ali 10 evrov?\"\n" +
+                    "\"In v čem je razlika?\"\n" +
+                    "\"V ceni!\" ",
+            "Prijatelja vstopita v gostilno in prvi naroči:\n" +
+                    "\"Prinesite nama pivo!\" reče prvi.\n" +
+                    "\"In čisti vrček!\" za natakarjem zavpije drugi.\n" +
+                    "Natakar se vrne s pivom, postreže prvega, pred drugega pa postavi čisti vrček. ",
+            "K zasebnemu gostilničarju pride na razgovor kandidat za delovno mesto natakarja. \n" +
+                    "\"Kako vam je ime?\" ga vpraša gostilničar.\n" +
+                    "\"To-to-to-tomislav!\" mu je odgovoril jecljajoče.\n" +
+                    "\"To je pa dolgo ime. Veste kaj, klicali vas bomo kar Tomislav!\" ",
+            "\"Kavo, prosim.\"\n" +
+                    "\"Želite turško ali italijanski ekspresso?\"\n" +
+                    "\"Ne, premislil sem si! Dajte mi čaj!\"\n" +
+                    "\"Ruskega ali kitajskega?\"\n" +
+                    "\"Veste kaj, zdaj imam pa dovolj vaše politike! Šnops mi dajte!\" ",
+            "\"Natakar, zakaj so tri jajca na oko dražja kot tri stepena jajca?\"\n" +
+                    "\"Ker jih lahko preštejete!\" ",
+            "Natakar postreže gosta z zrezkom.\n" +
+                    "\"Gospod natakar, ta zrezek smrdi po žganju!\"\n" +
+                    "Natakar stopi nekoliko vstran in vpraša:\n" +
+                    "\"Ali še smrdi?\" ",
+            "\"Natakar, kaj lahko dobim za 2 evra?\"\n" +
+                    "\"Dva kovanca po en evro!\" ",
+            "V gostilni pravi starejši gospod mladeniču, ki pije:\n" +
+                    "\"Ali veste, da zaradi alkohola umre deset tisoč Francozov letno?\"\n" +
+                    "\"Kaj se to mene tiče, jaz sem Slovenec!\" ",
+            "\"Ali je bil zrezek dober?\" vpraša natakar.\n" +
+                    "\"Glede na moj poklic še kar.\"\n" +
+                    "\"Kaj ste pa po poklicu?\"\n" +
+                    "\"Čevljar.\" ",
+            "V novo odprti restavraciji je gost naročil govejo juho. Ko jo je dobil, z njo ni bil zadovoljen in je poklical natakarja ter mu rekel:\n" +
+                    "\"Ta juha pa ni kaj prida, še najmanj pa je to goveja juha! Po mojem mnenju se v njej sploh ni kuhala govedina!\"\n" +
+                    "Natakar mu odvrne: \"Gospod, vi imate pa res čudne zahteve! Ali ste že slišali, da bi se v srbskem pasulju kuhal Srb?\" ",
+            "Gost se je jezil na natakarja, ki mu je prinesel juho, v juhi pa je namakal svoj prst.\n" +
+                    "\"Ja, kaj pa delate! Prst držite v moji juhi!\"\n" +
+                    "\"Veste, revma me trga, pa mi je doktor rekel da moram imeti prst stalno na toplem.\"\n" +
+                    "\"Vtaknite si ga v rit, pa bo na toplem!\" je zakričal gost.\n" +
+                    "\"Saj sem ga imel, dokler niste naročili juhe.\" ",
+            "Natakar Miro v družbi delovnih kolegov pripoveduje svoj doživljaj:\n" +
+                    "\"Nekega dne sem v restavraciji naročil kosilo. Dolgo sem moral čakati, in ko se je natakar vrnil, sem opazil, da zelo težko hodi. Vprašal sem ga, če ima išias. In kaj mi je odgovoril?\"\n" +
+                    "\"Trenutek, prosim,\" je rekel, \"grem vprašat v kuhinjo.\"\n" +
+                    "Družba se je pričela krohotati, eden med njimi pa je rekel:\n" +
+                    "\"Miro, meni se kaj takega že ne bi zgodilo.\"\n" +
+                    "\"Zakaj pa ne?\"\n" +
+                    "\"Že prej bi pogledal na jedilni list, ali ga imamo, in me vprašanje ne bi zalotilo nepripravljenega.\" ",
+            "\"Natakar, prinesite mi govejo juho z rezanci, govedino s špinačo in pire krompir, za desert pa češnjevo torto in kavo.\"\n" +
+                    "\"Kako pa veste, da vse to imamo? Saj še jedilnega lista niste videli!\"\n" +
+                    "\"Jedilnega lista ne, vidim pa prt na mizi.\" ",
+            "Glavni natakar se je jezil nad vajencem:\n" +
+                    "\"Nemogoča neroda si! Danes si razbil tri steklenice, pet kozarcev in dva krožnika! Le kaj boš razbil jutri?\"\n" +
+                    "\"Nič. Jutri sem prost.\" ",
+            "\"Natakar, tale zrezek ima okus po s čebulo nadevanemu podplatu!\"\n" +
+                    "\"Joj, gospod, kaj ste vi že vse jedli!\" ",
+            "Napis v ugledni restavraciji:\n" +
+                    "\"Nič nimamo proti kajenju, toda prosimo, da ne izdihujete dima.\" ",
+            "\"Koliko stane kapljica piva?\"\n" +
+                    "\"Nič!\"\n" +
+                    "\"V redu, potem mi ga pa nakapljajte pet litrov v tole kanglico!\" ",
+            "Gost poskusi kengurujevo juho in takoj pokliče natakarja.\n" +
+                    "\"Povejte mi, zakaj se ta juha imenuje kengurujeva, če v njej ni niti koščka kenguruja?\"\n" +
+                    "\"Veste, gospod, pri nas vam lahko kot sladico ponudimo tudi pijano nevesto, pa v njej ni neveste.\" ",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
 
     };
-
+// http://www.najdi.si/drobtine/index.jsp?dc=1&category1=Gostilni%C5%A1ki&entriesStartIndex=197&pageContent=content.browse.entries
         static String[] janezek2 = {
                 "Profesor reče Janezku pri ustnem izpitu:\n" +
                         "\"Poglejte skozi okno tista drevesa! Jih vidite?\"\n" +

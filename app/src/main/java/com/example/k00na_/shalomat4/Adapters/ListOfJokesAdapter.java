@@ -73,10 +73,10 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
 
 
         if(mJokeArrayList.get(position).isFavorited() == true) {
-            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_star_black_24dp);
+            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_favorite_black_48dp);
             Log.i("check1", "Is " + position + " favorited? A:" + mJokeArrayList.get(position).isFavorited());
         } else{
-            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_star_border_black_24dp);
+            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_favorite_border_black_48dp);
         }
 
         String shrunkenJokePreview = shrinkText(mJokeArrayList.get(position).getJokeContent());

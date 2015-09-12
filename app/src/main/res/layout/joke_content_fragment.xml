@@ -35,6 +35,18 @@
 
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:id="@+id/copyToClipBoardFAB"
+            fab:fab_icon="@drawable/ic_content_copy_black_24dp"
+            fab:fab_colorNormal="#e91e63"
+            fab:fab_colorPressed="#ec407a"
+            fab:fab_size="normal"
+            fab:fab_title="Kopiraj v odložišče"
+            />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:id="@+id/sendSmsFAB"
             fab:fab_icon="@drawable/ic_textsms_black_24dp"
             fab:fab_colorNormal="#e91e63"

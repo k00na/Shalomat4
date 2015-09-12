@@ -1,5 +1,6 @@
 package com.example.k00na_.shalomat4.Fragments;
 
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -38,7 +39,7 @@ public class JokeContentFragment extends Fragment{
     private FloatingActionsMenu FAB;
     private com.getbase.floatingactionbutton.FloatingActionButton saveToFavFAB;
     private com.getbase.floatingactionbutton.FloatingActionButton sendSmsFAB;
-
+    private com.getbase.floatingactionbutton.FloatingActionButton copyToClipboard;
 
     public static JokeContentFragment newInstance(UUID jokeID, int currentCatNum, int indexNum){
 
@@ -96,13 +97,23 @@ public class JokeContentFragment extends Fragment{
             }
         });
 
+        copyToClipboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ((ClipboardManager)getActivity().getSystemService(getActivity().CLIPBOARD_SERVICE))
+                        .setText(mCurrentJoke.getJokeContent() + "\n \n Če se hočeš nasmejat, prenesi sebi Šalomat! :Đ");
+                copyToClipboard.setTitle("Kopirano! ;-)");
+            }
+        });
+
         sendSmsFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Intent smsIntent = new Intent(Intent.ACTION_SEND);
                 smsIntent.setType("text/plain");
-                smsIntent.putExtra(Intent.EXTRA_TEXT, "" + mCurrentJoke.getJokeContent()+"\n" + "\n" + "Poslano s Šalomatom :Đ");
+                smsIntent.putExtra(Intent.EXTRA_TEXT, "" + mCurrentJoke.getJokeContent()+"\n" + "\n" + "\n \n Če se hočeš nasmejat, prenesi sebi Šalomat! :Đ");
                 startActivity(smsIntent);
 
             }
@@ -143,6 +154,7 @@ public class JokeContentFragment extends Fragment{
         FAB = (FloatingActionsMenu)v.findViewById(R.id.fabulousFAB);
         saveToFavFAB = (com.getbase.floatingactionbutton.FloatingActionButton)v.findViewById(R.id.saveToFavoritesFAB);
         sendSmsFAB = (com.getbase.floatingactionbutton.FloatingActionButton)v.findViewById(R.id.sendSmsFAB);
+        copyToClipboard = (com.getbase.floatingactionbutton.FloatingActionButton)v.findViewById(R.id.copyToClipBoardFAB);
 
         mTextViewContent.setMovementMethod(new ScrollingMovementMethod());
 
