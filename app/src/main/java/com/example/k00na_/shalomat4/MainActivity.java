@@ -310,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
 
         editor.putInt("counter", globalState.getNumOfVisits());
         editor.commit();
-
+//
 
     }
 
