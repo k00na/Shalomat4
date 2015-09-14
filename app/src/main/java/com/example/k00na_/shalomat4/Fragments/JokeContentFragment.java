@@ -20,7 +20,6 @@ import android.widget.Toast;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
-import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 import org.json.JSONException;
 
@@ -64,19 +63,60 @@ public class JokeContentFragment extends Fragment{
 
         setHasOptionsMenu(true);
 
+        FAB = (FloatingActionButton)v.findViewById(R.id.googleFAB);
+
+
+
         try {
             getBundleAndSetupData();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+        if(mCurrentJoke.isFavorited() == true)
+            FAB.setImageResource(R.drawable.ic_star_black_24dp);
+        else
+            FAB.setImageResource(R.drawable.ic_star_border_black_24dp);
+
         setupViews(v);
 
         FAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+
+                // if the currentJoke is not set to favorite, save it into that category
+                // otherwise, if it's already favorited and the user clicks on the FAB,
+                // delete the joke from favorites...
+
+
+                if(mCurrentJoke.isFavorited() == false) {
+                    FAB.setImageResource(R.drawable.ic_star_black_24dp);
+                    JSONSerializer serializer = new JSONSerializer(getActivity());
+                    Toast.makeText(getActivity(), "Shranjeno!", Toast.LENGTH_LONG).show();
+                    String fileName = getFileNameForCategory(currentCatNum);
+                    mCurrentJoke.setIsFavorited(true);
+                    try {
+                        serializer.saveCategory(mCurrentCategory, fileName);
+                        if (serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
+                            serializer.createPriljubljene(mCurrentJoke);
+                        else
+                            serializer.addToPriljubljene(mCurrentJoke);
+
+                        Log.i("favSize", "Fav array size: " + serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+
+
+
+                }
+
             }
+
+
         });
 
         return v;
@@ -99,6 +139,11 @@ public class JokeContentFragment extends Fragment{
 
         }
 
+        if(mCurrentJoke.isFavorited() == true)
+            FAB.setImageResource(R.drawable.ic_star_black_24dp);
+
+
+
     }
 
     private void setupViews(View v){
@@ -112,7 +157,7 @@ public class JokeContentFragment extends Fragment{
 
         mTextViewContent.setText(mCurrentJoke.getJokeContent());
 
-        FAB = (FloatingActionButton)v.findViewById(R.id.googleFAB);
+
 
         mTextViewContent.setMovementMethod(new ScrollingMovementMethod());
 
@@ -178,7 +223,7 @@ public class JokeContentFragment extends Fragment{
                 fileName = JSONSerializer.VSIVICI_FILENAME;
                 break;
             }
-            case(R.id.priljubljeni_navigation):{
+            case(R.id.shranjeni_navigation):{
                 fileName = JSONSerializer.PRILJUBLJENI_FILENAME;
                 break;
             }

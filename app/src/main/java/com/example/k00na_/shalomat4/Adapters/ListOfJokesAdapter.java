@@ -60,7 +60,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
     public void onBindViewHolder(HolderThingy holderThingy, final int position) {
 
 
-        if(mCurrentCategoryNum == R.id.priljubljeni_navigation){
+        if(mCurrentCategoryNum == R.id.shranjeni_navigation){
             holderThingy.favoritedIcon.setVisibility(View.INVISIBLE);
             holderThingy.categoryTitle.setVisibility(View.VISIBLE);
         } else if (mCurrentCategoryNum == R.id.nakljucni_navigation){
@@ -74,10 +74,10 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
 
 
         if(mJokeArrayList.get(position).isFavorited() == true) {
-            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_favorite_black_48dp);
+            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_star_black_48dp);
             Log.i("check1", "Is " + position + " favorited? A:" + mJokeArrayList.get(position).isFavorited());
         } else{
-            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_favorite_border_black_48dp);
+            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_star_border_black_48dp);
         }
 
         String shrunkenJokePreview = shrinkText(mJokeArrayList.get(position).getJokeContent());
@@ -218,7 +218,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
                 break;
             }
 
-            case(R.id.priljubljeni_navigation):{
+            case(R.id.shranjeni_navigation):{
                fileName = JSONSerializer.PRILJUBLJENI_FILENAME;
                 break;
             }

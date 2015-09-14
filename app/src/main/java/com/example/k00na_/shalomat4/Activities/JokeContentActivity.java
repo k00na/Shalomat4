@@ -9,7 +9,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -156,7 +155,7 @@ public class JokeContentActivity extends AppCompatActivity {
                 fileName = JSONSerializer.YUGO_FILENAME;
                 break;
             }
-            case(R.id.priljubljeni_navigation):{
+            case(R.id.shranjeni_navigation):{
                 fileName = JSONSerializer.PRILJUBLJENI_FILENAME;
                 break;
             }

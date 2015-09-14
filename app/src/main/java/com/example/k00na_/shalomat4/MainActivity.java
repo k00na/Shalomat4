@@ -18,14 +18,12 @@ import android.widget.Toast;
 
 import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
 import com.example.k00na_.shalomat4.Model.GlobalState;
-import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.Util.CreateFilesForCategories;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
 
 import org.json.JSONException;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -152,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                         displayListOfJokes(R.id.janezek_navigation);
                         return true;
                     }
-                    case (R.id.priljubljeni_navigation): {
+                    case (R.id.shranjeni_navigation): {
                         JSONSerializer serializer = new JSONSerializer(getApplicationContext());
                         try {
                             if (serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
@@ -160,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
                             else {
                                 Toast.makeText(getApplicationContext(), "YOYO", Toast.LENGTH_LONG).show();
                                 mToolbar.setTitle(R.string.pribljubljeniNav);
-                                displayListOfJokes(R.id.priljubljeni_navigation);
+                                displayListOfJokes(R.id.shranjeni_navigation);
                             }
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -334,6 +332,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
 
 
+
+        try {
+            setupNumOfJokesForMenu();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -70,8 +70,8 @@
 
         <item
             android:icon="@drawable/ic_star_black_24dp"
-            android:id="@+id/priljubljeni_navigation"
-            android:title="@string/priljubljeniVici"
+            android:id="@+id/shranjeni_navigation"
+            android:title="@string/shranjeniVici"
             ></item>
 
         <item

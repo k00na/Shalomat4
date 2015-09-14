@@ -17,8 +17,8 @@
     <string name="drawerOpen">Drawer Opened</string>
     <string name="drawerClosed">Drawer Closed</string>
     <string name="title_activity_joke_content">JokeContentActivity</string>
-    <string name="priljubljeniVici">Priljubljeni</string>
-    <string name="pribljubljeniNav">Priljubljeni</string>
+    <string name="shranjeniVici">Shranjeni</string>
+    <string name="pribljubljeniNav">Shranjeni</string>
     <string name="nakljucniVici">Vsi Vici</string>
     <string name="opolzkeNav">Opolzki</string>
     <string name="title_activity_main2">Main2Activity</string>
