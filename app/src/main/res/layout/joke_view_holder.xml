@@ -70,11 +70,11 @@
 
             <ImageView
                 android:layout_marginRight="15dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="6dp"
                 android:id="@+id/favoritedIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_favorite_border_black_48dp"
+                android:src="@drawable/ic_star_border_black_48dp"
                 android:visibility="invisible"
                 />
 

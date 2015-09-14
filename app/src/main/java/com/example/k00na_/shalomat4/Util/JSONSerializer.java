@@ -186,7 +186,7 @@ public class JSONSerializer {
 
     }
 
-    
+
 
     public ArrayList<Joke> loadFavorites() throws IOException, JSONException{
 

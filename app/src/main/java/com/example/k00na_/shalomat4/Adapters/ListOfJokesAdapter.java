@@ -53,6 +53,9 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         View v = LayoutInflater.from(mContext).inflate(R.layout.joke_view_holder, parent, false);
         HolderThingy holderThingy = new HolderThingy(v);
 
+
+
+
         return holderThingy;
     }
 
@@ -250,6 +253,10 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
 
     }
 
+    public ArrayList<Joke> getJokeArrayList() {
+        return mJokeArrayList;
+    }
+
 
 }
 
@@ -271,4 +278,6 @@ class HolderThingy extends RecyclerView.ViewHolder{
         //rating = (TextView)itemView.findViewById(R.id.ratingText);
         favoritedIcon = (ImageView)itemView.findViewById(R.id.favoritedIcon);
     }
+
+
 }

@@ -1130,16 +1130,7 @@ public class CreateFilesForCategories {
                     "\"V redu, potem mi ga pa nakapljajte pet litrov v tole kanglico!\" ",
             "Gost poskusi kengurujevo juho in takoj pokliče natakarja.\n" +
                     "\"Povejte mi, zakaj se ta juha imenuje kengurujeva, če v njej ni niti koščka kenguruja?\"\n" +
-                    "\"Veste, gospod, pri nas vam lahko kot sladico ponudimo tudi pijano nevesto, pa v njej ni neveste.\" ",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+                    "\"Veste, gospod, pri nas vam lahko kot sladico ponudimo tudi pijano nevesto, pa v njej ni neveste.\" "
 
     };
 // http://www.najdi.si/drobtine/index.jsp?dc=1&category1=Gostilni%C5%A1ki&entriesStartIndex=197&pageContent=content.browse.entries
@@ -1356,12 +1347,8 @@ public class CreateFilesForCategories {
                         "Kolje otac sina ispred kuće.\n" +
                         "Kad izadje mama iz kuće i reče: Majstore, jesmi li za rakijicu?.",
                 "Klin s klinom, Žid s plinom",
-                "Tvoja mama je tako debela, da je zlomila vejo na družinskem drevesu...",
-                "",
-                "",
-                "",
-                "",
-                ""
+                "Tvoja mama je tako debela, da je zlomila vejo na družinskem drevesu..."
+
 
 
         };

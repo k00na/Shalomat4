@@ -83,6 +83,12 @@ public class ListOfJokesFragment extends Fragment{
          */
         try {
             mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
+
+
+
+
+            getActivity().setTitle("YoYo" + mListOfJokesAdapter.getJokeArrayList().size());
+
         } catch (IOException e) {
             e.printStackTrace();
         }

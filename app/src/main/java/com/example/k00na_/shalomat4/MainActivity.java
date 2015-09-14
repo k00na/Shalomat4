@@ -86,11 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         navigationListener();
 
-        try {
-            setupNumOfJokesForMenu();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
 
     }
 
@@ -108,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
 
+
                 int selectedCategoryNum;
 
                 if (menuItem.isChecked())
@@ -119,9 +116,12 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (menuItem.getItemId()) {
 
+
                     case (R.id.blondinke_navigation): {
                         Toast.makeText(getApplicationContext(), "Blondinke", Toast.LENGTH_LONG).show();
                         getSupportActionBar().setTitle(R.string.blondinkeNav);
+
+                        selectedCategoryNum = R.id.blondinke_navigation;
 
                         displayListOfJokes(R.id.blondinke_navigation);
 
@@ -266,24 +266,68 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setupNumOfJokesForMenu() throws IOException {
+    private void setupToolbarTitle(int categoryID) throws IOException {
 
         JSONSerializer serializer = new JSONSerializer(this);
 
-        Menu menu = mNavigationView.getMenu();
+        switch(categoryID){
+            case(R.id.blondinke_navigation):{
+                getSupportActionBar().setTitle(getString(R.string.blondinkeNav) + " [" + serializer.loadCategory(JSONSerializer.BLONDINKE_FILENAME).size() + " vicev]");
 
-      menu.getItem(0).setTitle(getString(R.string.blondinkeNav) + " [" + serializer.loadCategory(JSONSerializer.BLONDINKE_FILENAME).size() + " vicev]");
-      menu.getItem(1).setTitle(getString(R.string.opolzkeNav) + " [" + serializer.loadCategory(JSONSerializer.OPOLZKE_FILENAME).size() + " vicev]");
-        menu.getItem(2).setTitle(getString(R.string.policajiNav) + " [" + serializer.loadCategory(JSONSerializer.POLICAJI_FILENAME).size() + " vicev]");
-        menu.getItem(3).setTitle(getString(R.string.tvojaMamaNav) + " [" + serializer.loadCategory(JSONSerializer.TVOJAMAMA_FILENAME).size() + " vicev]");
-        menu.getItem(4).setTitle(getString(R.string.gostilniskeNav) + " [" + serializer.loadCategory(JSONSerializer.GOSTILNSIKE_FILENAME).size() + " vicev]");
-        menu.getItem(5).setTitle(getString(R.string.janezNav) + " [" + serializer.loadCategory(JSONSerializer.JANEZEK_FILENAME).size() + " vicev]");
-        menu.getItem(6).setTitle(getString(R.string.mujohasoNav) + " [" + serializer.loadCategory(JSONSerializer.MUJOHASO_FILENAME).size()+ " vicev]");
-        menu.getItem(7).setTitle(getString(R.string.crnihumorNav) + " [" + serializer.loadCategory(JSONSerializer.CRNIHUMOR_FILENAME).size() + " vicev]");
-        menu.getItem(10).setTitle(getString(R.string.yugoviciNav) + " [" + serializer.loadCategory(JSONSerializer.YUGO_FILENAME).size() + " vicev]");
+                break;
+            }
+            case(R.id.opolzke_navigation):{
 
-        menu.getItem(11).setTitle(getString(R.string.pribljubljeniNav) + " [" + serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() + " vicev]");
-        menu.getItem(12).setTitle(getString(R.string.nakljucniVici) + " [" + serializer.loadCategory(JSONSerializer.VSIVICI_FILENAME).size() + " vicev]");
+                getSupportActionBar().setTitle(getString(R.string.opolzkeNav) + " [" + serializer.loadCategory(JSONSerializer.OPOLZKE_FILENAME).size() + " vicev]");
+                break;
+            }
+            case(R.id.policaji_navigation):{
+
+                getSupportActionBar().setTitle(getString(R.string.policajiNav) + " [" + serializer.loadCategory(JSONSerializer.POLICAJI_FILENAME).size() + " vicev]");
+                break;
+            }
+            case(R.id.tvojamama_navigation):{
+
+                getSupportActionBar().setTitle(getString(R.string.tvojaMamaNav) + " [" + serializer.loadCategory(JSONSerializer.TVOJAMAMA_FILENAME).size() + " vicev]");
+                break;
+            }
+            case(R.id.gostilniske_navigation):{
+
+                getSupportActionBar().setTitle(getString(R.string.gostilniskeNav) + " [" + serializer.loadCategory(JSONSerializer.GOSTILNSIKE_FILENAME).size() + " vicev]");
+                break;
+            }
+            case(R.id.janezek_navigation):{
+
+                getSupportActionBar().setTitle(getString(R.string.janezNav) + " [" + serializer.loadCategory(JSONSerializer.JANEZEK_FILENAME).size() + " vicev]");
+                break;
+            }
+            case(R.id.mujohaso_navigation):{
+
+                getSupportActionBar().setTitle(getString(R.string.mujohasoNav) + " [" + serializer.loadCategory(JSONSerializer.MUJOHASO_FILENAME).size()+ " vicev]");
+                break;
+            }
+            case(R.id.crnihumor_navigation):{
+
+                getSupportActionBar().setTitle(getString(R.string.crnihumorNav) + " [" + serializer.loadCategory(JSONSerializer.CRNIHUMOR_FILENAME).size() + " vicev]");
+                break;
+            }
+
+            case(R.id.yugovici_navigation):{
+
+                getSupportActionBar().setTitle(getString(R.string.yugoviciNav) + " [" + serializer.loadCategory(JSONSerializer.YUGO_FILENAME).size() + " vicev]");
+                break;
+            }
+            case(R.id.shranjeni_navigation):{
+
+                getSupportActionBar().setTitle(getString(R.string.pribljubljeniNav) + " [" + serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() + " vicev]");
+                break;
+            }
+            case(R.id.nakljucni_navigation):{
+
+                getSupportActionBar().setTitle(getString(R.string.nakljucniVici) + " [" + serializer.loadCategory(JSONSerializer.VSIVICI_FILENAME).size() + " vicev]");
+                break;
+            }
+        }
 
         // yoyo
     }
@@ -338,10 +382,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        try {
-            setupNumOfJokesForMenu();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 }
