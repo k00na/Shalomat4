@@ -162,6 +162,8 @@ public class JokeContentFragment extends Fragment{
                             for(int i = 0; i < currentJokeArray.size(); i++){
                                 if(currentJokeArray.get(i).getJokeContent().equals(mCurrentJoke.getJokeContent())) {
                                     currentJokeArray.get(i).setIsFavorited(false);
+
+
                                 }
 
 
@@ -173,6 +175,19 @@ public class JokeContentFragment extends Fragment{
 
                         try {
                             serializer.saveCategory(currentJokeArray, mCurrentJoke.getJokeCategoryTitle());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                        mCurrentCategory.remove(mCurrentJoke);
+
+                        try {
+                            serializer.saveCategory(mCurrentCategory, JSONSerializer.PRILJUBLJENI_FILENAME);
+                            if(mCurrentCategory.size() == 0){
+
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         } catch (IOException e) {
