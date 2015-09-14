@@ -73,6 +73,8 @@ public class JokeContentFragment extends Fragment{
             e.printStackTrace();
         }
 
+        Log.i("idValue","Joke ID: " +  mCurrentJoke.getJokeID());
+
         if(mCurrentJoke.isFavorited() == true)
             FAB.setImageResource(R.drawable.ic_star_black_24dp);
         else
@@ -92,11 +94,13 @@ public class JokeContentFragment extends Fragment{
                 if(mCurrentJoke.isFavorited() == false) {
                     FAB.setImageResource(R.drawable.ic_star_black_24dp);
                     JSONSerializer serializer = new JSONSerializer(getActivity());
-                    Toast.makeText(getActivity(), "Shranjeno!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Shranjeno =)", Toast.LENGTH_LONG).show();
                     String fileName = getFileNameForCategory(currentCatNum);
                     mCurrentJoke.setIsFavorited(true);
                     try {
+                        // save current category
                         serializer.saveCategory(mCurrentCategory, fileName);
+                        // check favorites category
                         if (serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
                             serializer.createPriljubljene(mCurrentJoke);
                         else
@@ -109,6 +113,38 @@ public class JokeContentFragment extends Fragment{
                         e.printStackTrace();
                     }
                 } else {
+
+                    if(currentCatNum != R.id.shranjeni_navigation) {
+                        FAB.setImageResource(R.drawable.ic_star_border_black_24dp);
+                        Toast.makeText(getActivity(), "Odstranjeno =(", Toast.LENGTH_LONG).show();
+                        JSONSerializer serializer = new JSONSerializer(getActivity());
+                        ArrayList<Joke> currentArray = new ArrayList<Joke>();
+                        // problem bo dobit ta joke v izvirnem array-ju in mu spremenit vrednost
+                        // 1. dobi izviren array
+                        // s for zanko pejt čez ceu array
+                        // ko najdeš item, ki se ujema z currentID-jem, odstrani to šalo
+                        // sam a ne bo problem tle v tem, da je ID te šale vezan samo na kategorijo v priljubljenih
+                        // torej v priljubljenih ima drugačen ID kot v svoji kategoriji... hm, hm...
+                        // vicev isFavorited bi tako lahko spremenil le znotraj JokeContentFragment-a...
+
+                        // hm... grem z logom čekirat, če imajo res različne ID-je...
+                        try {
+                            currentArray = serializer.loadCategory(mCurrentJoke.getJokeCategoryTitle());
+                            for(int i = 0; i<currentArray.size(); i++){
+                                if(currentArray.get(i).getJokeID().equals(mCurrentJoke.getJokeID()))
+                                    currentArray.get(i).setIsFavorited(false);
+                            }
+
+                            serializer.saveCategory(currentArray, mCurrentJoke.getJokeCategoryTitle());
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+
 
 
 

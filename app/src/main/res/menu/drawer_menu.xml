@@ -10,7 +10,7 @@
     <item
         android:icon="@drawable/ic_send_black_24dp"
         android:id="@+id/blondinke_navigation"
-        android:title="Prolonging the default navView size aaaaaaaaaaaaaaaa..."></item>
+        android:title="@string/blondinkeNav"></item>
 
         <item
             android:icon="@drawable/ic_send_black_24dp"

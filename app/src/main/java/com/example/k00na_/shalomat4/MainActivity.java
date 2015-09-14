@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private int visitsCounter;
     private GlobalState globalState;
     private Toolbar mToolbar;
+    public int selectedCategoryNum;
 
 
     @Override
@@ -105,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem menuItem) {
 
 
-                int selectedCategoryNum;
 
                 if (menuItem.isChecked())
                     menuItem.setChecked(false);
@@ -119,9 +119,12 @@ public class MainActivity extends AppCompatActivity {
 
                     case (R.id.blondinke_navigation): {
                         Toast.makeText(getApplicationContext(), "Blondinke", Toast.LENGTH_LONG).show();
-                        getSupportActionBar().setTitle(R.string.blondinkeNav);
 
-                        selectedCategoryNum = R.id.blondinke_navigation;
+                        try {
+                            setupToolbarTitle(R.id.blondinke_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
                         displayListOfJokes(R.id.blondinke_navigation);
 
@@ -130,7 +133,11 @@ public class MainActivity extends AppCompatActivity {
 
                     case (R.id.crnihumor_navigation): {
                         Toast.makeText(getApplicationContext(), "Črni humor", Toast.LENGTH_LONG).show();
-                        mToolbar.setTitle(R.string.crnihumorNav);
+                        try {
+                            setupToolbarTitle(R.id.crnihumor_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         displayListOfJokes(R.id.crnihumor_navigation);
 
                         return true;
@@ -138,15 +145,22 @@ public class MainActivity extends AppCompatActivity {
 
                     case (R.id.gostilniske_navigation): {
                         Toast.makeText(getApplicationContext(), "Gostilniške", Toast.LENGTH_LONG).show();
-                        mToolbar.setTitle(R.string.gostilniskeNav);
+                        try {
+                            setupToolbarTitle(R.id.gostilniske_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         displayListOfJokes(R.id.gostilniske_navigation);
                         return true;
                     }
 
                     case (R.id.janezek_navigation): {
                         Toast.makeText(getApplicationContext(), "Janezek", Toast.LENGTH_LONG).show();
-                        getSupportActionBar().setTitle(R.string.janezNav);
-                        Log.i("curCat", "Curr Cat, MainActivity: " + R.id.janezek_navigation);
+                        try {
+                            setupToolbarTitle(R.id.janezek_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         displayListOfJokes(R.id.janezek_navigation);
                         return true;
                     }
@@ -157,7 +171,11 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Prazna kategorija", Toast.LENGTH_LONG).show();
                             else {
                                 Toast.makeText(getApplicationContext(), "YOYO", Toast.LENGTH_LONG).show();
-                                mToolbar.setTitle(R.string.pribljubljeniNav);
+                                try {
+                                    setupToolbarTitle(R.id.shranjeni_navigation);
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
                                 displayListOfJokes(R.id.shranjeni_navigation);
                             }
                         } catch (IOException e) {
@@ -169,28 +187,37 @@ public class MainActivity extends AppCompatActivity {
 
                     case (R.id.mujohaso_navigation): {
                         Toast.makeText(getApplicationContext(), "Mujo&Haso", Toast.LENGTH_LONG).show();
-                        mToolbar.setTitle(R.string.mujohasoNav);
+                        try {
+                            setupToolbarTitle(R.id.mujohaso_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         displayListOfJokes(R.id.mujohaso_navigation);
                         return true;
                     }
 
                     case (R.id.policaji_navigation): {
                         Toast.makeText(getApplicationContext(), "Policaji", Toast.LENGTH_LONG).show();
-                        getSupportActionBar().setTitle(R.string.policajiNav);
+                        try {
+                            setupToolbarTitle(R.id.policaji_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         displayListOfJokes(R.id.policaji_navigation);
                         return true;
                     }
 
                     case (R.id.tvojamama_navigation): {
-                        mToolbar.setTitle(R.string.tvojaMamaNav);
+                        try {
+                            setupToolbarTitle(R.id.tvojamama_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         displayListOfJokes(R.id.tvojamama_navigation);
                         return true;
                     }
 
-                    case (R.id.tasce_navigation): {
-                        mToolbar.setTitle(R.string.tasceNav);
-                        return true;
-                    }
+
 
                     case (R.id.politicnivici_navigation): {
                         mToolbar.setTitle(R.string.politicniNav);
@@ -198,18 +225,30 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     case (R.id.yugovici_navigation): {
-                        mToolbar.setTitle(R.string.yugoviciNav);
+                        try {
+                            setupToolbarTitle(R.id.yugovici_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         displayListOfJokes(R.id.yugovici_navigation);
                         return true;
 
                     }
                     case (R.id.nakljucni_navigation): {
-                        mToolbar.setTitle(R.string.nakljucniVici);
+                        try {
+                            setupToolbarTitle(R.id.nakljucni_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         displayListOfJokes(R.id.nakljucni_navigation);
                         return true;
                     }
                     case (R.id.opolzke_navigation): {
-                        mToolbar.setTitle(R.string.opolzkeNav);
+                        try {
+                            setupToolbarTitle(R.id.opolzke_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         displayListOfJokes(R.id.opolzke_navigation);
                         return true;
                     }
@@ -219,9 +258,12 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
 
-
                 }
+
+
             }
+
+
         });
 
 
