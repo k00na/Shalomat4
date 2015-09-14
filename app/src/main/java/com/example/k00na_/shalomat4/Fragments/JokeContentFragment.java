@@ -8,6 +8,9 @@ import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -238,7 +241,37 @@ public class JokeContentFragment extends Fragment{
     public void onPause() {
         super.onPause();
 
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
 
 
+        inflater.inflate(R.menu.joke_content_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId() == R.id.kopirajIcon){
+
+        }
+
+        if(item.getItemId() == R.id.posljiIcon){
+            Intent smsIntent = new Intent(Intent.ACTION_SEND);
+            smsIntent.setType("text/plain");
+            smsIntent.putExtra(Intent.EXTRA_TEXT, "" + mCurrentJoke.getJokeContent() + "\n \n Šalomat™ ");
+            startActivity(smsIntent);
+        }
+
+        if(item.getItemId() == R.id.kopirajIcon){
+
+            ((ClipboardManager)getActivity().getSystemService(getActivity().CLIPBOARD_SERVICE))
+                    .setText(mCurrentJoke.getJokeContent() + "\n \n Šalomat™ ");
+
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

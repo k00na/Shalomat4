@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".MainActivity">
+
+
+    <item
+        android:id="@+id/kopirajIcon"
+        android:title="Kopiraj"
+        android:orderInCategory="100"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_content_copy_white_24dp"></item>
+
+    <item
+        android:id="@+id/posljiIcon"
+        android:title="Pošlji"
+        android:orderInCategory="200"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_share_white_24dp">
+
+    </item>
+
+
+
+
+
+</menu>
