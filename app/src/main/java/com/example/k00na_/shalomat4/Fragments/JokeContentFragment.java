@@ -4,6 +4,7 @@ import android.content.ClipboardManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
@@ -39,10 +41,7 @@ public class JokeContentFragment extends Fragment{
     private int currentCatNum;
     private ArrayList<Joke> mCurrentCategory;
     private int currentJokeNum;
-    private FloatingActionsMenu FAB;
-    private com.getbase.floatingactionbutton.FloatingActionButton saveToFavFAB;
-    private com.getbase.floatingactionbutton.FloatingActionButton sendSmsFAB;
-    private com.getbase.floatingactionbutton.FloatingActionButton copyToClipboard;
+    private FloatingActionButton FAB;
 
     public static JokeContentFragment newInstance(UUID jokeID, int currentCatNum, int indexNum){
 
@@ -63,13 +62,23 @@ public class JokeContentFragment extends Fragment{
 
         View v = inflater.inflate(R.layout.joke_content_fragment, container, false);
 
+        setHasOptionsMenu(true);
+
         try {
             getBundleAndSetupData();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         setupViews(v);
-        
+
+        FAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
+
         return v;
     }
 
@@ -102,10 +111,8 @@ public class JokeContentFragment extends Fragment{
             mTextViewContent.setTextSize(25);
 
         mTextViewContent.setText(mCurrentJoke.getJokeContent());
-        FAB = (FloatingActionsMenu)v.findViewById(R.id.fabulousFAB);
-        saveToFavFAB = (com.getbase.floatingactionbutton.FloatingActionButton)v.findViewById(R.id.saveToFavoritesFAB);
-        sendSmsFAB = (com.getbase.floatingactionbutton.FloatingActionButton)v.findViewById(R.id.sendSmsFAB);
-        copyToClipboard = (com.getbase.floatingactionbutton.FloatingActionButton)v.findViewById(R.id.copyToClipBoardFAB);
+
+        FAB = (FloatingActionButton)v.findViewById(R.id.googleFAB);
 
         mTextViewContent.setMovementMethod(new ScrollingMovementMethod());
 
@@ -195,8 +202,13 @@ public class JokeContentFragment extends Fragment{
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
 
+        /*
+         getMenuInflater().inflate(R.menu.menu_main2, menu);
+        return true;
+         */
 
         inflater.inflate(R.menu.joke_content_menu, menu);
+
     }
 
     @Override
@@ -217,6 +229,8 @@ public class JokeContentFragment extends Fragment{
 
             ((ClipboardManager)getActivity().getSystemService(getActivity().CLIPBOARD_SERVICE))
                     .setText(mCurrentJoke.getJokeContent() + "\n \n Šalomat™ ");
+
+            Toast.makeText(getActivity(), "Kopirano", Toast.LENGTH_LONG).show();
 
         }
 

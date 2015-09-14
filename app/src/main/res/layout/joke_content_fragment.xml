@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
+
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
@@ -18,6 +19,19 @@
 
 
 
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/googleFAB"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_star_border_black_24dp"
+        fab:backgroundTint="@color/accentColor"
+        ></android.support.design.widget.FloatingActionButton>
+
+    <!--
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -25,52 +39,21 @@
         android:layout_margin="16dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+
         fab:fab_addButtonColorNormal="#fafafa"
         fab:fab_addButtonColorPressed="#CCFFFF"
         fab:fab_addButtonPlusIconColor="#808080"
         fab:fab_labelStyle="@style/menu_labels_style"
         >
 
-        <com.getbase.floatingactionbutton.FloatingActionButton
 
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:id="@+id/copyToClipBoardFAB"
-            fab:fab_icon="@drawable/ic_content_copy_black_24dp"
-            fab:fab_colorNormal="#e91e63"
-            fab:fab_colorPressed="#ec407a"
-            fab:fab_size="normal"
-            fab:fab_title="Kopiraj v odložišče"
-            />
 
-        <com.getbase.floatingactionbutton.FloatingActionButton
 
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:id="@+id/sendSmsFAB"
-            fab:fab_icon="@drawable/ic_textsms_black_24dp"
-            fab:fab_colorNormal="#e91e63"
-            fab:fab_colorPressed="#ec407a"
-            fab:fab_size="normal"
-            fab:fab_title="Pošlji prijateljem"
-            />
-
-        <com.getbase.floatingactionbutton.FloatingActionButton
-
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:id="@+id/saveToFavoritesFAB"
-            fab:fab_icon="@drawable/ic_star_black_24dp"
-            fab:fab_colorNormal="#e91e63"
-            fab:fab_colorPressed="#ec407a"
-            fab:fab_size="normal"
-            fab:fab_title="Shrani v priljubljene"
-            />
 
 
 
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
-
+-->
 
 </RelativeLayout>
