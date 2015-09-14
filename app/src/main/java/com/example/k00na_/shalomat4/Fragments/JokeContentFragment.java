@@ -155,20 +155,29 @@ public class JokeContentFragment extends Fragment{
                         FAB.setImageResource(R.drawable.ic_star_border_black_24dp);
                         Toast.makeText(getActivity(), "Odstranjeno =(", Toast.LENGTH_LONG).show();
                         JSONSerializer serializer = new JSONSerializer(getActivity());
+                        ArrayList<Joke> currentJokeArray = new ArrayList<Joke>();
                         try {
-                            ArrayList<Joke> currentJokeArray = serializer.loadCategory(mCurrentJoke.getJokeCategoryTitle());
+                            currentJokeArray = serializer.loadCategory(mCurrentJoke.getJokeCategoryTitle());
 
                             for(int i = 0; i < currentJokeArray.size(); i++){
                                 if(currentJokeArray.get(i).getJokeContent().equals(mCurrentJoke.getJokeContent())) {
-                                    currentJokeArray.get(i)
+                                    currentJokeArray.get(i).setIsFavorited(false);
                                 }
+
+
                             }
 
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
 
-
+                        try {
+                            serializer.saveCategory(currentJokeArray, mCurrentJoke.getJokeCategoryTitle());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
 
                     }
