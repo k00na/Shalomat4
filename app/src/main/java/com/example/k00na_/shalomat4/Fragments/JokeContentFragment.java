@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.k00na_.shalomat4.MainActivity;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
@@ -186,7 +188,8 @@ public class JokeContentFragment extends Fragment{
                         try {
                             serializer.saveCategory(mCurrentCategory, JSONSerializer.PRILJUBLJENI_FILENAME);
                             if(mCurrentCategory.size() == 0){
-
+                                Intent i = new Intent(getContext(), MainActivity.class);
+                                startActivity(i);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
