@@ -69,59 +69,7 @@ public class JokeContentFragment extends Fragment{
             e.printStackTrace();
         }
         setupViews(v);
-
-        if(mCurrentJoke.isFavorited()== true){
-            saveToFavFAB.setVisibility(View.GONE);
-        } else {
-            saveToFavFAB.setVisibility(View.VISIBLE);
-        }
-
-        saveToFavFAB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                JSONSerializer serializer = new JSONSerializer(getActivity());
-                saveToFavFAB.setTitle("Shranjeno! ;-)");
-                String fileName = getFileNameForCategory(currentCatNum);
-                mCurrentJoke.setIsFavorited(true);
-                try {
-                    serializer.saveCategory(mCurrentCategory, fileName);
-                    if (serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
-                        serializer.createPriljubljene(mCurrentJoke);
-                    else
-                        serializer.addToPriljubljene(mCurrentJoke);
-
-                    Log.i("favSize", "Fav array size: " + serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size());
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-            }
-        });
-
-        copyToClipboard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                ((ClipboardManager)getActivity().getSystemService(getActivity().CLIPBOARD_SERVICE))
-                        .setText(mCurrentJoke.getJokeContent() + "\n \n Če se hočeš nasmejat, prenesi sebi Šalomat! :Đ");
-                copyToClipboard.setTitle("Kopirano! ;-)");
-            }
-        });
-
-        sendSmsFAB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent smsIntent = new Intent(Intent.ACTION_SEND);
-                smsIntent.setType("text/plain");
-                smsIntent.putExtra(Intent.EXTRA_TEXT, "" + mCurrentJoke.getJokeContent()+"\n" + "\n" + "\n \n Če se hočeš nasmejat, prenesi sebi Šalomat! :Đ");
-                startActivity(smsIntent);
-
-            }
-        });
-
+        
         return v;
     }
 
