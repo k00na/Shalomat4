@@ -134,8 +134,15 @@ public class JokeContentFragment extends Fragment{
                                 if(currentArray.get(i).getJokeID().equals(mCurrentJoke.getJokeID()))
                                     currentArray.get(i).setIsFavorited(false);
                             }
+                            ArrayList<Joke> favsArray = serializer.loadFavorites();
+                            for(int i = 0; i<favsArray.size(); i++){
+                                if(favsArray.get(i).getJokeContent().equals(mCurrentJoke.getJokeContent()))
+                                    favsArray.remove(i);
+                            }
+
 
                             serializer.saveCategory(currentArray, mCurrentJoke.getJokeCategoryTitle());
+                            serializer.saveCategory(favsArray, JSONSerializer.PRILJUBLJENI_FILENAME);
 
                         } catch (IOException e) {
                             e.printStackTrace();
