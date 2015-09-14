@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.k00na_.shalomat4.Activities.JokeContentActivity;
 import com.example.k00na_.shalomat4.MainActivity;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
@@ -188,8 +189,25 @@ public class JokeContentFragment extends Fragment{
                         try {
                             serializer.saveCategory(mCurrentCategory, JSONSerializer.PRILJUBLJENI_FILENAME);
                             if(mCurrentCategory.size() == 0){
-                                Intent i = new Intent(getContext(), MainActivity.class);
+                                Intent i = new Intent(getActivity(), MainActivity.class);
                                 startActivity(i);
+                            } else {
+                                mCurrentJoke = mCurrentCategory.get(0);
+
+                                Intent i = new Intent(getActivity(), JokeContentActivity.class);
+                                i.putExtra("jokeIDForContentFragment", mCurrentJoke.getJokeID());
+                                i.putExtra(ListOfJokesFragment.CATEGORY_TITLE_KEY, "Shranjeni vici [" + mCurrentCategory.size() + " vicev]");
+                                i.putExtra("currentCategoryInt", R.id.shranjeni_navigation);
+
+
+                                startActivity(i);
+                                getActivity().finish();
+
+
+
+
+
+                                mTextViewContent.setText(mCurrentJoke.getJokeContent());
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
