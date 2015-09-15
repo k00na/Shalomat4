@@ -67,6 +67,7 @@ public class JokeContentActivity extends AppCompatActivity {
         adView.loadAd(adRequest);
 
 
+        // yo
 
 
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
