@@ -17,12 +17,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import com.example.k00na_.shalomat4.Activities.JokeContentActivity;
 import com.example.k00na_.shalomat4.MainActivity;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
+import com.google.android.gms.ads.AdView;
 
 import org.json.JSONException;
 
@@ -44,6 +47,7 @@ public class JokeContentFragment extends Fragment{
     private ArrayList<Joke> mCurrentCategory;
     private int currentJokeNum;
     private FloatingActionButton FAB;
+    private AdView adView;
 
     public static JokeContentFragment newInstance(UUID jokeID, int currentCatNum, int indexNum){
 

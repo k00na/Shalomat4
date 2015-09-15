@@ -17,6 +17,8 @@ import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -39,6 +41,7 @@ public class JokeContentActivity extends AppCompatActivity {
     private int mCurrentCategoryNum;
     private UUID mJokeID;
     private String mCategoryTitle;
+    private AdView adView;
 
 
 
@@ -53,6 +56,18 @@ public class JokeContentActivity extends AppCompatActivity {
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        adView = (AdView) this.findViewById(R.id.adView);
+
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build()
+                ;
+        adView.loadAd(adRequest);
+
+
+
 
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

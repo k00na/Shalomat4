@@ -32,12 +32,8 @@
 
 
 
-        <include android:id="@+id/includeappbar" layout="@layout/app_bar"
-                 app:layout_scrollFlags="scroll|enterAlways"
-            ></include>
 
 
->>>>>>> Stashed changes
 
         <FrameLayout
             android:layout_width="match_parent"

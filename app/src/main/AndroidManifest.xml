@@ -22,8 +22,6 @@
             android:name=".Activities.Main2Activity"
             android:label="@string/title_activity_main2" >
         </activity>
-<<<<<<< Updated upstream
-=======
 
         <activity android:name="com.google.android.gms.ads.AdActivity"
                   android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"

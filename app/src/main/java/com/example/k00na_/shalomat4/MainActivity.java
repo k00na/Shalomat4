@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
+/*
         adView = (AdView) this.findViewById(R.id.adView);
 
 
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 ;
         adView.loadAd(adRequest);
 
+*/
 
 
 
