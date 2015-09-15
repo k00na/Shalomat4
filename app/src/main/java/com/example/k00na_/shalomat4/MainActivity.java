@@ -16,6 +16,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 
 import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
 import com.example.k00na_.shalomat4.Model.GlobalState;
@@ -35,11 +38,29 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     public int selectedCategoryNum;
 
+    private AdView adView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+        adView = (AdView) this.findViewById(R.id.adView);
+
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build()
+                ;
+        adView.loadAd(adRequest);
+
+
+
+
+
 
         globalState = (GlobalState)getApplicationContext();
 
