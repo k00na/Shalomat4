@@ -15,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.ads.AdRequest;
@@ -26,6 +27,8 @@ import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
 import com.google.android.gms.ads.AdView;
+import com.melnykov.fab.ObservableScrollView;
+import com.melnykov.fab.ScrollDirectionListener;
 
 import org.json.JSONException;
 
@@ -72,8 +75,21 @@ public class JokeContentFragment extends Fragment{
         setHasOptionsMenu(true);
 
         FAB = (com.melnykov.fab.FloatingActionButton)v.findViewById(R.id.googleFAB);
+        ObservableScrollView scrollViewYo = (ObservableScrollView)v.findViewById(R.id.scrollView);
 
-        FAB.att
+
+        FAB.attachToScrollView(scrollViewYo, new ScrollDirectionListener() {
+            @Override
+            public void onScrollDown() {
+                FAB.show();
+            }
+
+            @Override
+            public void onScrollUp() {
+
+                FAB.hide();
+            }
+        });
 
 
 
@@ -126,7 +142,7 @@ public class JokeContentFragment extends Fragment{
 
                     if(currentCatNum != R.id.shranjeni_navigation) {
                         FAB.setImageResource(R.drawable.ic_star_border_black_24dp);
-                        Toast.makeText(getActivity(), "Odstranjeno =(", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Odstranjeno", Toast.LENGTH_LONG).show();
                         JSONSerializer serializer = new JSONSerializer(getActivity());
                         ArrayList<Joke> currentArray = new ArrayList<Joke>();
                         // problem bo dobit ta joke v izvirnem array-ju in mu spremenit vrednost
@@ -163,7 +179,7 @@ public class JokeContentFragment extends Fragment{
                     } else {
 
                         FAB.setImageResource(R.drawable.ic_star_border_black_24dp);
-                        Toast.makeText(getActivity(), "Odstranjeno =(", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Odstranjeno", Toast.LENGTH_LONG).show();
                         JSONSerializer serializer = new JSONSerializer(getActivity());
                         ArrayList<Joke> currentJokeArray = new ArrayList<Joke>();
                         try {

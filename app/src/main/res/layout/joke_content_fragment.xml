@@ -10,6 +10,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <com.melnykov.fab.ObservableScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        >
+
+
 
     <TextView
         android:layout_marginTop="5dp"
@@ -22,6 +29,7 @@
         android:scrollbars="vertical"
         />
 
+    </com.melnykov.fab.ObservableScrollView>
 
 
 <!--
@@ -47,8 +55,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:src="@drawable/ic_star_border_black_24dp"
-        fab:fab_colorNormal="#99CCFF"
-        fab:fab_colorPressed="#FF6699"
+
+        fab:fab_colorNormal="@color/accentColor"
+        fab:fab_colorPressed="#99CCFF"
         fab:fab_colorRipple="#FFCC99" />
 
 
