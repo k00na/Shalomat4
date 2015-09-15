@@ -6,6 +6,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -61,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         if (numOfVisits() == 0) {
 
 
-            Toast.makeText(this, "Files created", Toast.LENGTH_SHORT).show();
             try {
                 createFiles.createAllJokes();
                 serializer.createVsiViciCategory();
@@ -72,14 +72,13 @@ public class MainActivity extends AppCompatActivity {
             }
 
             displayListOfJokes(R.id.nakljucni_navigation);
-            Toast.makeText(this, "First visit; wellcome!", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Dobrodošli v Šalomatu =)", Toast.LENGTH_LONG).show();
             mDrawerLayout.openDrawer(Gravity.LEFT);
             incrementAndSaveVisits();
 
 
         } else{
             displayListOfJokes(R.id.nakljucni_navigation);
-            Toast.makeText(this, "Num of entries: " + numOfVisits(), Toast.LENGTH_LONG).show();
             incrementAndSaveVisits();
         }
 
@@ -104,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-
 
 
                 if (menuItem.isChecked())
@@ -216,7 +214,6 @@ public class MainActivity extends AppCompatActivity {
                         displayListOfJokes(R.id.tvojamama_navigation);
                         return true;
                     }
-
 
 
                     case (R.id.politicnivici_navigation): {
@@ -418,12 +415,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
 
-
-
-
-    }
 }

@@ -7,23 +7,21 @@
               android:orientation="vertical"
               android:gravity="bottom"
     >
-<!--
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=":Đ"
+        android:text="=)"
         android:textSize="100sp"
         android:layout_gravity="center_horizontal|center_vertical"
         android:textStyle="bold"
+        android:textColor="@android:color/white"
         />
-        -->
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/smiley_header"
-        android:layout_gravity="center"/>
+
+
+
 
     <TextView
         android:layout_width="match_parent"

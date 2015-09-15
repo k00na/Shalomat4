@@ -184,4 +184,19 @@ public class JokeContentActivity extends AppCompatActivity {
 
         return super.onCreateOptionsMenu(menu);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        try {
+            mCurrentCategory = setupCategory(mCurrentCategoryNum);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        getSupportActionBar().setTitle(mCategoryTitle);
+
+
+    }
 }

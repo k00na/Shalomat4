@@ -87,7 +87,7 @@ public class ListOfJokesFragment extends Fragment{
 
 
 
-            getActivity().setTitle("YoYo" + mListOfJokesAdapter.getJokeArrayList().size());
+           getActivity().setTitle("Vsi vici [" + mListOfJokesAdapter.getJokeArrayList().size() + " vicev]");
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -109,6 +109,7 @@ public class ListOfJokesFragment extends Fragment{
     public void onResume() {
         super.onResume();
 
+
         try {
             mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
         } catch (IOException e) {
@@ -116,6 +117,7 @@ public class ListOfJokesFragment extends Fragment{
         }
 
         mRecyclerView.setAdapter(mListOfJokesAdapter);
+
 
     }
 }
