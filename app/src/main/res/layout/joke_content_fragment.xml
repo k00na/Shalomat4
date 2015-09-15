@@ -24,17 +24,33 @@
 
 
 
-
+<!--
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/googleFAB"
+        android:id="@+id/googleFABz"
         android:layout_margin="16dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:src="@drawable/ic_star_border_black_24dp"
         fab:backgroundTint="@color/accentColor"
         ></android.support.design.widget.FloatingActionButton>
+
+        -->
+
+    <com.melnykov.fab.FloatingActionButton
+        android:id="@+id/googleFAB"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_star_border_black_24dp"
+        fab:fab_colorNormal="#99CCFF"
+        fab:fab_colorPressed="#FF6699"
+        fab:fab_colorRipple="#FFCC99" />
+
 
     <!--
     <com.getbase.floatingactionbutton.FloatingActionsMenu

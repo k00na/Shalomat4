@@ -46,7 +46,8 @@ public class JokeContentFragment extends Fragment{
     private int currentCatNum;
     private ArrayList<Joke> mCurrentCategory;
     private int currentJokeNum;
-    private FloatingActionButton FAB;
+  //  private FloatingActionButton FAB;
+    private com.melnykov.fab.FloatingActionButton FAB;
     private AdView adView;
 
     public static JokeContentFragment newInstance(UUID jokeID, int currentCatNum, int indexNum){
@@ -70,7 +71,9 @@ public class JokeContentFragment extends Fragment{
 
         setHasOptionsMenu(true);
 
-        FAB = (FloatingActionButton)v.findViewById(R.id.googleFAB);
+        FAB = (com.melnykov.fab.FloatingActionButton)v.findViewById(R.id.googleFAB);
+
+        FAB.att
 
 
 
