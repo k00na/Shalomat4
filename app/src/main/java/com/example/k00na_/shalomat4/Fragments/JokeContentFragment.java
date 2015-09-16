@@ -261,7 +261,7 @@ public class JokeContentFragment extends Fragment{
         currentCatNum = bundle.getInt("currentCatNum");
         currentJokeNum = bundle.getInt("indexNum", 0);
         mCurrentCategory = currentJokeList(currentCatNum);
-        Collections.shuffle(mCurrentCategory);
+     //   Collections.shuffle(mCurrentCategory);
 
         for(int i = 0; i<mCurrentCategory.size(); i++){
             if(mCurrentCategory.get(i).getJokeID().equals(jokeID)){

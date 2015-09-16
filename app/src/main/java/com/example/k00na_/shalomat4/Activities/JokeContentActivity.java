@@ -58,6 +58,7 @@ public class JokeContentActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
         adView = (AdView) this.findViewById(R.id.adView);
 
 
@@ -66,6 +67,8 @@ public class JokeContentActivity extends AppCompatActivity {
                 .build()
                 ;
         adView.loadAd(adRequest);
+
+
 
 
 
@@ -85,7 +88,7 @@ public class JokeContentActivity extends AppCompatActivity {
 
         try {
             mCurrentCategory = setupCategory(mCurrentCategoryNum);
-            Collections.shuffle(mCurrentCategory);
+         //   Collections.shuffle(mCurrentCategory);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -200,13 +203,7 @@ public class JokeContentActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
-
-
-        return super.onCreateOptionsMenu(menu);
-    }
 
     @Override
     protected void onResume() {
