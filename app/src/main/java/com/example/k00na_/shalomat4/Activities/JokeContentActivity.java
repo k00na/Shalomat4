@@ -219,4 +219,11 @@ public class JokeContentActivity extends AppCompatActivity {
 
 
     }
+/*
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate();
+        return super.onCreateOptionsMenu(menu);
+    }*/
 }

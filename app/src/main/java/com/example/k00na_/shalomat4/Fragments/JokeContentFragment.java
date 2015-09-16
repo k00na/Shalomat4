@@ -74,6 +74,8 @@ public class JokeContentFragment extends Fragment{
 
         setHasOptionsMenu(true);
 
+
+
         FAB = (com.melnykov.fab.FloatingActionButton)v.findViewById(R.id.googleFAB);
         ObservableScrollView scrollViewYo = (ObservableScrollView)v.findViewById(R.id.scrollView);
 
@@ -379,10 +381,8 @@ public class JokeContentFragment extends Fragment{
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
 
-        /*
-         getMenuInflater().inflate(R.menu.menu_main2, menu);
-        return true;
-         */
+
+        menu.clear();
 
         inflater.inflate(R.menu.joke_content_menu, menu);
 
