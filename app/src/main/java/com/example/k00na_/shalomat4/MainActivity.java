@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     case (R.id.blondinke_navigation): {
-                        Toast.makeText(getApplicationContext(), "Blondinke", Toast.LENGTH_LONG).show();
+
 
                         try {
                             setupToolbarTitle(R.id.blondinke_navigation);
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     case (R.id.crnihumor_navigation): {
-                        Toast.makeText(getApplicationContext(), "Črni humor", Toast.LENGTH_LONG).show();
+
                         try {
                             setupToolbarTitle(R.id.crnihumor_navigation);
                         } catch (IOException e) {
@@ -164,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     case (R.id.gostilniske_navigation): {
-                        Toast.makeText(getApplicationContext(), "Gostilniške", Toast.LENGTH_LONG).show();
+
                         try {
                             setupToolbarTitle(R.id.gostilniske_navigation);
                         } catch (IOException e) {
@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     case (R.id.janezek_navigation): {
-                        Toast.makeText(getApplicationContext(), "Janezek", Toast.LENGTH_LONG).show();
+
                         try {
                             setupToolbarTitle(R.id.janezek_navigation);
                         } catch (IOException e) {
@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
                             if (serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
                                 Toast.makeText(getApplicationContext(), "Prazna kategorija", Toast.LENGTH_LONG).show();
                             else {
-                                Toast.makeText(getApplicationContext(), "YOYO", Toast.LENGTH_LONG).show();
+
                                 try {
                                     setupToolbarTitle(R.id.shranjeni_navigation);
                                 } catch (IOException e) {
@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     case (R.id.mujohaso_navigation): {
-                        Toast.makeText(getApplicationContext(), "Mujo&Haso", Toast.LENGTH_LONG).show();
+
                         try {
                             setupToolbarTitle(R.id.mujohaso_navigation);
                         } catch (IOException e) {
@@ -217,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     case (R.id.policaji_navigation): {
-                        Toast.makeText(getApplicationContext(), "Policaji", Toast.LENGTH_LONG).show();
+
                         try {
                             setupToolbarTitle(R.id.policaji_navigation);
                         } catch (IOException e) {

@@ -1641,15 +1641,7 @@ public class CreateFilesForCategories {
                         " Ker zmaji ne letijo tako visoko.",
                 "Kaj imata skupnega tašca in sonce?\n" +
                         "\n" +
-                        " V oba ne moreš dolgo gledati.",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                ""
+                        " V oba ne moreš dolgo gledati."
         };
 
 
@@ -3177,9 +3169,8 @@ public class CreateFilesForCategories {
                 "Mujo v Ameriki zagleda avtomat za Coca-Colo. Vrze prvi kovanec in dobi Coca-Colo, vrze drugega, spet dobi Coca-Colo, vrze tretjega....in za njim se nabere vrsta. Eden iz vrste pride do njega: \"A nimate ze dosti!? Mi smo tudi zejni!\" \n" +
                         "Mujo mu odgovori: \"Dok Mujo dobiva, Mujo igra.\" ",
                 "Dosao je Mujo u Sloveniu nakon 20 godina kod svoga starog poslodavaca Janeza... \n" +
-                        "I upita ga: \"Eeeh Janeze, kako su ti tvoja zena i moja djeca...?\" ",
-                "",
-                ""
+                        "I upita ga: \"Eeeh Janeze, kako su ti tvoja zena i moja djeca...?\" "
+
 
         };
 
@@ -3188,8 +3179,8 @@ public class CreateFilesForCategories {
                 "Mujo sreca Hasota in ga vprasa: \"Kako si, bolan, Haso?\" \n" +
                         "\"Pa, danas prilicno luksuzno,\" mu odvrne Haso. \n" +
                         "\"A kako to mislis - luksuzno?\" \n" +
-                        "\"Pa, upravo sam uzeo luk in nasjeckao ga i odmah mi navrle suze na oci!\" ",
-                ""
+                        "\"Pa, upravo sam uzeo luk in nasjeckao ga i odmah mi navrle suze na oci!\" "
+
         };
 
         private static String[] yugovici = {
@@ -4428,8 +4419,8 @@ public class CreateFilesForCategories {
                         "Žulj preživlja revne sloje,\n" +
                         "žrebca jaše kanonir,\n" +
                         "žalostno je srce moje,\n" +
-                        "žaltav je od pizde sir!",
-                ""
+                        "žaltav je od pizde sir!"
+
 
 
 
