@@ -49,6 +49,7 @@ public class JokeContentFragment extends Fragment{
     private int currentCatNum;
     private ArrayList<Joke> mCurrentCategory;
     private int currentJokeNum;
+    private boolean textContentClicked = false;
   //  private FloatingActionButton FAB;
     private com.melnykov.fab.FloatingActionButton FAB;
     private AdView adView;
@@ -74,6 +75,12 @@ public class JokeContentFragment extends Fragment{
 
         setHasOptionsMenu(true);
 
+        try {
+            getBundleAndSetupData();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         setupViews(v);
 
         FAB = (com.melnykov.fab.FloatingActionButton)v.findViewById(R.id.googleFAB);
@@ -90,6 +97,8 @@ public class JokeContentFragment extends Fragment{
             public void onScrollUp() {
 
                 FAB.hide();
+
+
             }
 
 
@@ -98,13 +107,21 @@ public class JokeContentFragment extends Fragment{
 
         });
 
+        mTextViewContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(textContentClicked == false) {
+                    FAB.hide();
+                    textContentClicked = true;
+                } else if (textContentClicked == true){
+                    FAB.show();
+                    textContentClicked = false;
+                }
+            }
+        });
 
 
-        try {
-            getBundleAndSetupData();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
 
         Log.i("idValue", "Joke ID: " + mCurrentJoke.getJokeID());
 
@@ -290,7 +307,7 @@ public class JokeContentFragment extends Fragment{
         mTextViewContent = (TextView)v.findViewById(R.id.jokeContentFragmentTextView);
 
         if(mCurrentJoke.getJokeContent().length() < 200)
-            mTextViewContent.setTextSize(35);
+            mTextViewContent.setTextSize(30);
         else
             mTextViewContent.setTextSize(25);
 
