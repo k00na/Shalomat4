@@ -238,10 +238,7 @@ public class MainActivity extends AppCompatActivity {
                     }
 
 
-                    case (R.id.politicnivici_navigation): {
-                        mToolbar.setTitle(R.string.politicniNav);
-                        return true;
-                    }
+
 
                     case (R.id.yugovici_navigation): {
                         try {

@@ -73,6 +73,8 @@ public class JokeContentFragment extends Fragment{
 
         View v = inflater.inflate(R.layout.joke_content_fragment, container, false);
 
+        setupFAB(v);
+
         setHasOptionsMenu(true);
 
         try {
@@ -83,37 +85,14 @@ public class JokeContentFragment extends Fragment{
 
         setupViews(v);
 
-        FAB = (com.melnykov.fab.FloatingActionButton)v.findViewById(R.id.googleFAB);
-        ObservableScrollView scrollViewYo = (ObservableScrollView)v.findViewById(R.id.scrollView);
-
-
-        FAB.attachToScrollView(scrollViewYo, new ScrollDirectionListener() {
-            @Override
-            public void onScrollDown() {
-                FAB.show();
-            }
-
-            @Override
-            public void onScrollUp() {
-
-                FAB.hide();
-
-
-            }
-
-
-
-
-
-        });
 
         mTextViewContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(textContentClicked == false) {
+                if (textContentClicked == false) {
                     FAB.hide();
                     textContentClicked = true;
-                } else if (textContentClicked == true){
+                } else if (textContentClicked == true) {
                     FAB.show();
                     textContentClicked = false;
                 }
@@ -141,7 +120,7 @@ public class JokeContentFragment extends Fragment{
                 // delete the joke from favorites...
 
 
-                if(mCurrentJoke.isFavorited() == false) {
+                if (mCurrentJoke.isFavorited() == false) {
                     FAB.setImageResource(R.drawable.ic_star_black_24dp);
                     JSONSerializer serializer = new JSONSerializer(getActivity());
                     Toast.makeText(getActivity(), "Shranjeno =)", Toast.LENGTH_LONG).show();
@@ -164,7 +143,7 @@ public class JokeContentFragment extends Fragment{
                     }
                 } else {
 
-                    if(currentCatNum != R.id.shranjeni_navigation) {
+                    if (currentCatNum != R.id.shranjeni_navigation) {
                         FAB.setImageResource(R.drawable.ic_star_border_black_24dp);
                         Toast.makeText(getActivity(), "Odstranjeno", Toast.LENGTH_LONG).show();
                         JSONSerializer serializer = new JSONSerializer(getActivity());
@@ -180,13 +159,13 @@ public class JokeContentFragment extends Fragment{
                         // hm... grem z logom čekirat, če imajo res različne ID-je...
                         try {
                             currentArray = serializer.loadCategory(mCurrentJoke.getJokeCategoryTitle());
-                            for(int i = 0; i<currentArray.size(); i++){
-                                if(currentArray.get(i).getJokeID().equals(mCurrentJoke.getJokeID()))
+                            for (int i = 0; i < currentArray.size(); i++) {
+                                if (currentArray.get(i).getJokeID().equals(mCurrentJoke.getJokeID()))
                                     currentArray.get(i).setIsFavorited(false);
                             }
                             ArrayList<Joke> favsArray = serializer.loadFavorites();
-                            for(int i = 0; i<favsArray.size(); i++){
-                                if(favsArray.get(i).getJokeContent().equals(mCurrentJoke.getJokeContent()))
+                            for (int i = 0; i < favsArray.size(); i++) {
+                                if (favsArray.get(i).getJokeContent().equals(mCurrentJoke.getJokeContent()))
                                     favsArray.remove(i);
                             }
 
@@ -209,8 +188,8 @@ public class JokeContentFragment extends Fragment{
                         try {
                             currentJokeArray = serializer.loadCategory(mCurrentJoke.getJokeCategoryTitle());
 
-                            for(int i = 0; i < currentJokeArray.size(); i++){
-                                if(currentJokeArray.get(i).getJokeContent().equals(mCurrentJoke.getJokeContent())) {
+                            for (int i = 0; i < currentJokeArray.size(); i++) {
+                                if (currentJokeArray.get(i).getJokeContent().equals(mCurrentJoke.getJokeContent())) {
                                     currentJokeArray.get(i).setIsFavorited(false);
 
 
@@ -235,7 +214,7 @@ public class JokeContentFragment extends Fragment{
 
                         try {
                             serializer.saveCategory(mCurrentCategory, JSONSerializer.PRILJUBLJENI_FILENAME);
-                            if(mCurrentCategory.size() == 0){
+                            if (mCurrentCategory.size() == 0) {
                                 Intent i = new Intent(getActivity(), MainActivity.class);
                                 startActivity(i);
                             } else {
@@ -251,9 +230,6 @@ public class JokeContentFragment extends Fragment{
                                 getActivity().finish();
 
 
-
-
-
                                 mTextViewContent.setText(mCurrentJoke.getJokeContent());
                             }
                         } catch (JSONException e) {
@@ -264,8 +240,6 @@ public class JokeContentFragment extends Fragment{
 
 
                     }
-
-
 
 
                 }
@@ -363,14 +337,8 @@ public class JokeContentFragment extends Fragment{
                 fileName = JSONSerializer.CRNIHUMOR_FILENAME;
                 break;
             }
-            case(R.id.tasce_navigation):{
-                fileName = JSONSerializer.TASCE_FILENAME;
-                break;
-            }
-            case(R.id.politicnivici_navigation):{
-                fileName = JSONSerializer.POLITICNI_FILENAME;
-                break;
-            }
+
+
             case(R.id.yugovici_navigation):{
                 fileName = JSONSerializer.YUGO_FILENAME;
                 break;
@@ -434,5 +402,33 @@ public class JokeContentFragment extends Fragment{
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void setupFAB(View v){
+
+        FAB = (com.melnykov.fab.FloatingActionButton)v.findViewById(R.id.googleFAB);
+        ObservableScrollView scrollViewYo = (ObservableScrollView)v.findViewById(R.id.scrollView);
+
+
+        FAB.attachToScrollView(scrollViewYo, new ScrollDirectionListener() {
+            @Override
+            public void onScrollDown() {
+                FAB.show();
+            }
+
+            @Override
+            public void onScrollUp() {
+
+                FAB.hide();
+
+
+            }
+
+
+
+
+
+        });
+
     }
 }

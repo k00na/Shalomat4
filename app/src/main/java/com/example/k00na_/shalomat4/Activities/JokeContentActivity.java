@@ -154,10 +154,7 @@ public class JokeContentActivity extends AppCompatActivity {
                 fileName = JSONSerializer.POLICAJI_FILENAME;
                 break;
             }
-            case(R.id.politicnivici_navigation):{
-                fileName = JSONSerializer.POLITICNI_FILENAME;
-                break;
-            }
+
             case(R.id.tvojamama_navigation):{
                 fileName = JSONSerializer.TVOJAMAMA_FILENAME;
                 break;
@@ -174,10 +171,7 @@ public class JokeContentActivity extends AppCompatActivity {
                 fileName = JSONSerializer.CRNIHUMOR_FILENAME;
                 break;
             }
-            case(R.id.tasce_navigation):{
-                fileName = JSONSerializer.TASCE_FILENAME;
-                break;
-            }
+
             case(R.id.yugovici_navigation):{
                 fileName = JSONSerializer.YUGO_FILENAME;
                 break;

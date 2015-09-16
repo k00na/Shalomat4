@@ -49,15 +49,6 @@
         android:id="@+id/crnihumor_navigation"
         android:title="@string/crnihumorNav"></item>
 
-    <item
-        android:icon="@drawable/ic_send_black_24dp"
-        android:id="@+id/tasce_navigation"
-        android:title="@string/tasceNav"></item>
-
-    <item
-        android:icon="@drawable/ic_send_black_24dp"
-        android:id="@+id/politicnivici_navigation"
-        android:title="@string/politicniNav"></item>
 
     <item
         android:icon="@drawable/ic_send_black_24dp"
