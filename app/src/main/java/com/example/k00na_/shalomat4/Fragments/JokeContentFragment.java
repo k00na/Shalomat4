@@ -74,7 +74,7 @@ public class JokeContentFragment extends Fragment{
 
         setHasOptionsMenu(true);
 
-
+        setupViews(v);
 
         FAB = (com.melnykov.fab.FloatingActionButton)v.findViewById(R.id.googleFAB);
         ObservableScrollView scrollViewYo = (ObservableScrollView)v.findViewById(R.id.scrollView);
@@ -91,6 +91,11 @@ public class JokeContentFragment extends Fragment{
 
                 FAB.hide();
             }
+
+
+
+
+
         });
 
 
@@ -101,14 +106,14 @@ public class JokeContentFragment extends Fragment{
             e.printStackTrace();
         }
 
-        Log.i("idValue","Joke ID: " +  mCurrentJoke.getJokeID());
+        Log.i("idValue", "Joke ID: " + mCurrentJoke.getJokeID());
 
         if(mCurrentJoke.isFavorited() == true)
             FAB.setImageResource(R.drawable.ic_star_black_24dp);
         else
             FAB.setImageResource(R.drawable.ic_star_border_black_24dp);
 
-        setupViews(v);
+
 
         FAB.setOnClickListener(new View.OnClickListener() {
             @Override
