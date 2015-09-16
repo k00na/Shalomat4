@@ -2,6 +2,7 @@ package com.example.k00na_.shalomat4;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
@@ -15,6 +16,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -97,18 +99,54 @@ public class MainActivity extends AppCompatActivity {
             displayListOfJokes(R.id.nakljucni_navigation);
            // Toast.makeText(this, "Dobrodošli v Šalomatu =)", Toast.LENGTH_LONG).show();
 
-            easyDialogWellcomeAnimation();
+
 
 
             mDrawerLayout.openDrawer(Gravity.LEFT);
+
+            mDrawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
+                @Override
+                public void onDrawerSlide(View drawerView, float slideOffset) {
+
+                }
+
+                @Override
+                public void onDrawerOpened(View drawerView) {
+
+                }
+
+                @Override
+                public void onDrawerClosed(View drawerView) {
+
+                    easyDialogWellcomeAnimation();
+
+                }
+
+                @Override
+                public void onDrawerStateChanged(int newState) {
+
+                }
+            });
+
+
+
+
+
+
             incrementAndSaveVisits();
 
 
-        } else{
+        }
+
+        else{
             displayListOfJokes(R.id.nakljucni_navigation);
             incrementAndSaveVisits();
         }
 
+        if(numOfVisits() == 1 && mDrawerLayout.isDrawerOpen(Gravity.LEFT) == false){
+
+            Toast.makeText(this, "Drawer is closed", Toast.LENGTH_LONG).show();
+        }
 
 
         navigationListener();
@@ -439,23 +477,24 @@ public class MainActivity extends AppCompatActivity {
 
     private void easyDialogWellcomeAnimation(){
 
-        View view = this.getLayoutInflater().inflate(R.layout.layout_tip_content_horizontal, null);
+        // get screen width for displaying the AlertDialog in propper position....
+        Configuration configuration = this.getResources().getConfiguration();
+        int screenWidth = configuration.screenWidthDp;
+
+        int[] yo = {screenWidth, 50};
 
         new EasyDialog(MainActivity.this)
-                // .setLayoutResourceId(R.layout.layout_tip_content_horizontal)//layout resource id
-                .setLayout(view)
-                .setBackgroundColor(MainActivity.this.getResources().getColor(R.color.background_color_black))
-                        // .setLocation(new location[])//point in screen
-              //  .setLocationByAttachedView(btnTopLeft)
+                .setLayoutResourceId(R.layout.layout_tip_image_text)
                 .setGravity(EasyDialog.GRAVITY_BOTTOM)
-                .setAnimationTranslationShow(EasyDialog.DIRECTION_X, 1000, -600, 100, -50, 50, 0)
-                .setAnimationAlphaShow(1000, 0.3f, 1.0f)
-                .setAnimationTranslationDismiss(EasyDialog.DIRECTION_X, 500, -50, 800)
-                .setAnimationAlphaDismiss(500, 1.0f, 0.0f)
+                .setBackgroundColor(MainActivity.this.getResources().getColor(R.color.background_color_black))
+                .setLocationByAttachedView(mToolbar)
+               // .setLocation(yo)
+                .setAnimationTranslationShow(20, 350, 400, 0)
+                .setAnimationTranslationDismiss(70, 350, 0, 400)
                 .setTouchOutsideDismiss(true)
-                .setMatchParent(true)
+                .setMatchParent(false)
                 .setMarginLeftAndRight(24, 24)
-                .setOutsideColor(MainActivity.this.getResources().getColor(R.color.accentColor))
+              //  .setOutsideColor(MainActivity.this.getResources().getColor(R.color.accentColor))
                 .show();
 
 
