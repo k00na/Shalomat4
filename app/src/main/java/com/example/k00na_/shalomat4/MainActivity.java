@@ -2,23 +2,18 @@ package com.example.k00na_.shalomat4;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
-import com.google.android.gms.ads.AdRequest;
+
 import com.google.android.gms.ads.AdView;
 
 
@@ -36,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
-    private int visitsCounter;
+
     private GlobalState globalState;
     private Toolbar mToolbar;
     public int selectedCategoryNum;
@@ -68,12 +63,6 @@ public class MainActivity extends AppCompatActivity {
 
         globalState = (GlobalState)getApplicationContext();
 
-        try {
-            setupGlobalState();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
 
 
@@ -97,10 +86,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
             displayListOfJokes(R.id.nakljucni_navigation);
-           // Toast.makeText(this, "Dobrodošli v Šalomatu =)", Toast.LENGTH_LONG).show();
-
-
-
 
             mDrawerLayout.openDrawer(Gravity.LEFT);
 
@@ -118,7 +103,9 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onDrawerClosed(View drawerView) {
 
+
                     easyDialogWellcomeAnimation();
+                    incrementAndSaveVisits();
 
                 }
 
@@ -132,10 +119,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-            incrementAndSaveVisits();
-
-
         }
 
         else{
@@ -143,10 +126,7 @@ public class MainActivity extends AppCompatActivity {
             incrementAndSaveVisits();
         }
 
-        if(numOfVisits() == 1 && mDrawerLayout.isDrawerOpen(Gravity.LEFT) == false){
 
-            Toast.makeText(this, "Drawer is closed", Toast.LENGTH_LONG).show();
-        }
 
 
         navigationListener();
@@ -465,26 +445,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setupGlobalState() throws IOException {
-
-        JSONSerializer serializer = new JSONSerializer(this);
-        globalState.setBlondinkeGlobal(serializer.loadCategory(JSONSerializer.BLONDINKE_FILENAME));
-        globalState.setJanezekGlobal(serializer.loadCategory(JSONSerializer.JANEZEK_FILENAME));
-
-
-
-    }
 
     private void easyDialogWellcomeAnimation(){
 
-        // get screen width for displaying the AlertDialog in propper position....
-        Configuration configuration = this.getResources().getConfiguration();
-        int screenWidth = configuration.screenWidthDp;
-
-        int[] yo = {screenWidth, 50};
 
         new EasyDialog(MainActivity.this)
-                .setLayoutResourceId(R.layout.layout_tip_image_text)
+                .setLayoutResourceId(R.layout.easydialog_recycler_notify)
                 .setGravity(EasyDialog.GRAVITY_BOTTOM)
                 .setBackgroundColor(MainActivity.this.getResources().getColor(R.color.background_color_black))
                 .setLocationByAttachedView(mToolbar)

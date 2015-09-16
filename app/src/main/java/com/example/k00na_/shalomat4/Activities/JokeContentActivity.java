@@ -2,6 +2,8 @@ package com.example.k00na_.shalomat4.Activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,17 +11,22 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.k00na_.shalomat4.Fragments.JokeContentFragment;
 import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
+import com.example.k00na_.shalomat4.Model.GlobalState;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.michael.easydialog.EasyDialog;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -43,6 +50,8 @@ public class JokeContentActivity extends AppCompatActivity {
     private UUID mJokeID;
     private String mCategoryTitle;
     private AdView adView;
+    private GlobalState mGlobalState;
+    private LinearLayout toolbarAndAdHolder;
 
 
 
@@ -51,12 +60,15 @@ public class JokeContentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joke_content);
 
+        mGlobalState = (GlobalState)getApplicationContext();
+
         mViewPager = (ViewPager)findViewById(R.id.viewPagerXMLid);
         mToolbar = (Toolbar)findViewById(R.id.includingAppBarForJokeContent);
         setSupportActionBar(mToolbar);
 
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbarAndAdHolder = (LinearLayout)findViewById(R.id.addsAndToolbar);
 
 /*
         adView = (AdView) this.findViewById(R.id.adView);
@@ -67,12 +79,6 @@ public class JokeContentActivity extends AppCompatActivity {
                 .build()
                 ;
         adView.loadAd(adRequest);*/
-
-
-
-
-
-
 
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,11 +99,12 @@ public class JokeContentActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        if(numOfVisitsForContentActivity() == 0){
+           // getResources().getString(R.string.dobrodoslica)
+            easyDialogWellcomeAnimation();
 
-        FragmentManager fm = getSupportFragmentManager();
-        fm.beginTransaction()
-                .add(R.id.viewPagerXMLid, JokeContentFragment.newInstance(mJokeID, mCurrentCategoryNum, 0))
-                .commit();
+        }
+
 
         mViewPager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
             @Override
@@ -211,9 +218,76 @@ public class JokeContentActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle(mCategoryTitle);
 
+        if(numOfVisitsForContentActivity() == 1 || numOfVisitsForContentActivity() == 2){
+            // getResources().getString(R.string.dobrodoslica)
+            easyDialogWellcomeAnimation();
+
+        }
+
 
     }
-/*
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Log.i("onPause", "On Pause called...");
+
+    }
+
+    public void incrementAndSaveVisitsForContentActivity() {
+
+        SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        mGlobalState.setNumOfVisitsContent(prefs.getInt("counter2", 0) + 1);
+
+
+        editor.putInt("counter2", mGlobalState.getNumOfVisitsContent());
+        editor.commit();
+
+
+    }
+
+    public int numOfVisitsForContentActivity() {
+
+        SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        mGlobalState.setNumOfVisitsContent(prefs.getInt("counter2", 0));
+
+        return mGlobalState.getNumOfVisitsContent();
+    }
+
+    private void easyDialogWellcomeAnimation(){
+
+        int[] coordinatesForDialog = {200, 400};
+
+        new EasyDialog(JokeContentActivity.this)
+                .setLayoutResourceId(R.layout.easydialog_jokecontent_notification)
+                .setGravity(EasyDialog.GRAVITY_BOTTOM)
+                .setBackgroundColor(JokeContentActivity.this.getResources().getColor(R.color.background_color_black))
+               // .setLocationByAttachedView(toolbarAndAdHolder)
+                .setLocation(coordinatesForDialog)
+                .setAnimationTranslationShow(20, 350, 400, 0)
+                .setAnimationTranslationDismiss(70, 350, 0, 400)
+                .setTouchOutsideDismiss(true)
+                .setMatchParent(false)
+                .setMarginLeftAndRight(24, 24)
+                .show();
+
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        incrementAndSaveVisitsForContentActivity();
+    }
+
+
+
+    /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 

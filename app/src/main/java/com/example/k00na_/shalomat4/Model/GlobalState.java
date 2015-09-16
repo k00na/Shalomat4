@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class GlobalState extends Application {
 
     private int numOfVisits;
+    private int numOfVisitsContent;
     private ArrayList<Joke> blondinkeGlobal;
     private ArrayList<Joke> janezekGlobal;
     private int blondinkeSize;
@@ -29,6 +30,14 @@ public class GlobalState extends Application {
     /*
         GETTERS AND SETTERS
      */
+
+    public int getNumOfVisitsContent() {
+        return numOfVisitsContent;
+    }
+
+    public void setNumOfVisitsContent(int numOfVisitsContent) {
+        this.numOfVisitsContent = numOfVisitsContent;
+    }
 
     public ArrayList<Joke> getJanezekGlobal() {
         return janezekGlobal;
