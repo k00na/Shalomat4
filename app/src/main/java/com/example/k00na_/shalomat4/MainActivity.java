@@ -24,6 +24,7 @@ import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
 import com.example.k00na_.shalomat4.Model.GlobalState;
 import com.example.k00na_.shalomat4.Util.CreateFilesForCategories;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
+import com.michael.easydialog.EasyDialog;
 
 import org.json.JSONException;
 
@@ -94,7 +95,11 @@ public class MainActivity extends AppCompatActivity {
             }
 
             displayListOfJokes(R.id.nakljucni_navigation);
-            Toast.makeText(this, "Dobrodošli v Šalomatu =)", Toast.LENGTH_LONG).show();
+           // Toast.makeText(this, "Dobrodošli v Šalomatu =)", Toast.LENGTH_LONG).show();
+
+            easyDialogWellcomeAnimation();
+
+
             mDrawerLayout.openDrawer(Gravity.LEFT);
             incrementAndSaveVisits();
 
@@ -236,8 +241,6 @@ public class MainActivity extends AppCompatActivity {
                         displayListOfJokes(R.id.tvojamama_navigation);
                         return true;
                     }
-
-
 
 
                     case (R.id.yugovici_navigation): {
@@ -430,6 +433,30 @@ public class MainActivity extends AppCompatActivity {
         globalState.setBlondinkeGlobal(serializer.loadCategory(JSONSerializer.BLONDINKE_FILENAME));
         globalState.setJanezekGlobal(serializer.loadCategory(JSONSerializer.JANEZEK_FILENAME));
 
+
+
+    }
+
+    private void easyDialogWellcomeAnimation(){
+
+        View view = this.getLayoutInflater().inflate(R.layout.layout_tip_content_horizontal, null);
+
+        new EasyDialog(MainActivity.this)
+                // .setLayoutResourceId(R.layout.layout_tip_content_horizontal)//layout resource id
+                .setLayout(view)
+                .setBackgroundColor(MainActivity.this.getResources().getColor(R.color.background_color_black))
+                        // .setLocation(new location[])//point in screen
+              //  .setLocationByAttachedView(btnTopLeft)
+                .setGravity(EasyDialog.GRAVITY_BOTTOM)
+                .setAnimationTranslationShow(EasyDialog.DIRECTION_X, 1000, -600, 100, -50, 50, 0)
+                .setAnimationAlphaShow(1000, 0.3f, 1.0f)
+                .setAnimationTranslationDismiss(EasyDialog.DIRECTION_X, 500, -50, 800)
+                .setAnimationAlphaDismiss(500, 1.0f, 0.0f)
+                .setTouchOutsideDismiss(true)
+                .setMatchParent(true)
+                .setMarginLeftAndRight(24, 24)
+                .setOutsideColor(MainActivity.this.getResources().getColor(R.color.accentColor))
+                .show();
 
 
     }

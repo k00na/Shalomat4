@@ -2415,7 +2415,7 @@ public class CreateFilesForCategories {
                 "Tvoja mama je tako debela, da ko je bog rekel naj bo tam svetloba, jo je prosil naj se umakne.",
                 "Tvoja mama je tako debela, da je slon na njeni majici resničen.",
                 "Tvoja mama je tako debela, da ima krvno skupino golaž",
-                "Tvoja mama je tak debela, da ima Avstralijo za vzglavnik",
+                "Tvoja mama je tak debela, da ima Avstralijo za vzglavnik"
 
 
         };
