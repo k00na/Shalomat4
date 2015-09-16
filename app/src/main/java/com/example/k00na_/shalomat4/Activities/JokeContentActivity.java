@@ -58,7 +58,7 @@ public class JokeContentActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+/*
         adView = (AdView) this.findViewById(R.id.adView);
 
 
@@ -66,7 +66,7 @@ public class JokeContentActivity extends AppCompatActivity {
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build()
                 ;
-        adView.loadAd(adRequest);
+        adView.loadAd(adRequest);*/
 
 
 

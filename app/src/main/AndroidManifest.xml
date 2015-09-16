@@ -18,10 +18,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.JokeContentActivity" />
-        <activity
-            android:name=".Activities.Main2Activity"
-            android:label="@string/title_activity_main2" >
-        </activity>
 
         <activity android:name="com.google.android.gms.ads.AdActivity"
                   android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
