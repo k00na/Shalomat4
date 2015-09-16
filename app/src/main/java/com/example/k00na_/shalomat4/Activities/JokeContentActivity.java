@@ -70,15 +70,12 @@ public class JokeContentActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbarAndAdHolder = (LinearLayout)findViewById(R.id.addsAndToolbar);
 
-/*
+
         adView = (AdView) this.findViewById(R.id.adView);
 
 
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build()
-                ;
-        adView.loadAd(adRequest);*/
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView.loadAd(adRequest);
 
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -219,7 +216,6 @@ public class JokeContentActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(mCategoryTitle);
 
         if(numOfVisitsForContentActivity() == 1 || numOfVisitsForContentActivity() == 2){
-            // getResources().getString(R.string.dobrodoslica)
             easyDialogWellcomeAnimation();
 
         }
@@ -261,7 +257,7 @@ public class JokeContentActivity extends AppCompatActivity {
 
     private void easyDialogWellcomeAnimation(){
 
-        int[] coordinatesForDialog = {200, 400};
+        int[] coordinatesForDialog = {200, 550};
 
         new EasyDialog(JokeContentActivity.this)
                 .setLayoutResourceId(R.layout.easydialog_jokecontent_notification)
