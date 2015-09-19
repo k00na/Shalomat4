@@ -70,12 +70,13 @@ public class JokeContentActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbarAndAdHolder = (LinearLayout)findViewById(R.id.addsAndToolbar);
 
-
+/*
         adView = (AdView) this.findViewById(R.id.adView);
 
 
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
+        */
 
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
