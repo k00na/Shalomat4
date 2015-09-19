@@ -119,130 +119,10 @@ public class JokeContentFragment extends Fragment{
                 // otherwise, if it's already favorited and the user clicks on the FAB,
                 // delete the joke from favorites...
 
-
-                if (mCurrentJoke.isFavorited() == false) {
-                    FAB.setImageResource(R.drawable.ic_star_black_24dp);
-                    JSONSerializer serializer = new JSONSerializer(getActivity());
-                    Toast.makeText(getActivity(), "Shranjeno =)", Toast.LENGTH_LONG).show();
-                    String fileName = getFileNameForCategory(currentCatNum);
-                    mCurrentJoke.setIsFavorited(true);
-                    try {
-                        // save current category
-                        serializer.saveCategory(mCurrentCategory, fileName);
-                        // check favorites category
-                        if (serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
-                            serializer.createPriljubljene(mCurrentJoke);
-                        else
-                            serializer.addToPriljubljene(mCurrentJoke);
-
-                        Log.i("favSize", "Fav array size: " + serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size());
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-
-                    if (currentCatNum != R.id.shranjeni_navigation) {
-                        FAB.setImageResource(R.drawable.ic_star_border_black_24dp);
-                        Toast.makeText(getActivity(), "Odstranjeno", Toast.LENGTH_LONG).show();
-                        JSONSerializer serializer = new JSONSerializer(getActivity());
-                        ArrayList<Joke> currentArray = new ArrayList<Joke>();
-                        // problem bo dobit ta joke v izvirnem array-ju in mu spremenit vrednost
-                        // 1. dobi izviren array
-                        // s for zanko pejt čez ceu array
-                        // ko najdeš item, ki se ujema z currentID-jem, odstrani to šalo
-                        // sam a ne bo problem tle v tem, da je ID te šale vezan samo na kategorijo v priljubljenih
-                        // torej v priljubljenih ima drugačen ID kot v svoji kategoriji... hm, hm...
-                        // vicev isFavorited bi tako lahko spremenil le znotraj JokeContentFragment-a...
-
-                        // hm... grem z logom čekirat, če imajo res različne ID-je...
-                        try {
-                            currentArray = serializer.loadCategory(mCurrentJoke.getJokeCategoryTitle());
-                            for (int i = 0; i < currentArray.size(); i++) {
-                                if (currentArray.get(i).getJokeID().equals(mCurrentJoke.getJokeID()))
-                                    currentArray.get(i).setIsFavorited(false);
-                            }
-                            ArrayList<Joke> favsArray = serializer.loadFavorites();
-                            for (int i = 0; i < favsArray.size(); i++) {
-                                if (favsArray.get(i).getJokeContent().equals(mCurrentJoke.getJokeContent()))
-                                    favsArray.remove(i);
-                            }
+                saveToFavorites(mCurrentJoke, currentCatNum, mCurrentCategory);
 
 
-                            serializer.saveCategory(currentArray, mCurrentJoke.getJokeCategoryTitle());
-                            serializer.saveCategory(favsArray, JSONSerializer.PRILJUBLJENI_FILENAME);
 
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    } else {
-
-                        FAB.setImageResource(R.drawable.ic_star_border_black_24dp);
-                        Toast.makeText(getActivity(), "Odstranjeno", Toast.LENGTH_LONG).show();
-                        JSONSerializer serializer = new JSONSerializer(getActivity());
-                        ArrayList<Joke> currentJokeArray = new ArrayList<Joke>();
-                        try {
-                            currentJokeArray = serializer.loadCategory(mCurrentJoke.getJokeCategoryTitle());
-
-                            for (int i = 0; i < currentJokeArray.size(); i++) {
-                                if (currentJokeArray.get(i).getJokeContent().equals(mCurrentJoke.getJokeContent())) {
-                                    currentJokeArray.get(i).setIsFavorited(false);
-
-
-                                }
-
-
-                            }
-
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-                        try {
-                            serializer.saveCategory(currentJokeArray, mCurrentJoke.getJokeCategoryTitle());
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-                        mCurrentCategory.remove(mCurrentJoke);
-
-                        try {
-                            serializer.saveCategory(mCurrentCategory, JSONSerializer.PRILJUBLJENI_FILENAME);
-                            if (mCurrentCategory.size() == 0) {
-                                Intent i = new Intent(getActivity(), MainActivity.class);
-                                startActivity(i);
-                            } else {
-                                mCurrentJoke = mCurrentCategory.get(0);
-
-                                Intent i = new Intent(getActivity(), JokeContentActivity.class);
-                                i.putExtra("jokeIDForContentFragment", mCurrentJoke.getJokeID());
-                                i.putExtra(ListOfJokesFragment.CATEGORY_TITLE_KEY, "Shranjeni vici [" + mCurrentCategory.size() + " vicev]");
-                                i.putExtra("currentCategoryInt", R.id.shranjeni_navigation);
-
-
-                                startActivity(i);
-                                getActivity().finish();
-
-
-                                mTextViewContent.setText(mCurrentJoke.getJokeContent());
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-
-                    }
-
-
-                }
 
             }
 
@@ -250,6 +130,33 @@ public class JokeContentFragment extends Fragment{
         });
 
         return v;
+    }
+
+    private void saveToFavorites(Joke currentJoke, int currentCatNum, ArrayList<Joke> currentCategory) {
+
+        if (mCurrentJoke.isFavorited() == false) {
+            FAB.setImageResource(R.drawable.ic_star_black_24dp);
+            JSONSerializer serializer = new JSONSerializer(getActivity());
+            Toast.makeText(getActivity(), "Shranjeno =)", Toast.LENGTH_LONG).show();
+            String fileName = getFileNameForCategory(currentCatNum);
+            mCurrentJoke.setIsFavorited(true);
+            try {
+                // save current category
+                serializer.saveCategory(mCurrentCategory, fileName);
+                // check favorites category
+                if (serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
+                    serializer.createPriljubljene(mCurrentJoke);
+                else
+                    serializer.addToPriljubljene(mCurrentJoke);
+
+                Log.i("favSize", "Fav array size: " + serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
 

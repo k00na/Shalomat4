@@ -10,12 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.k00na_.shalomat4.Activities.JokeContentActivity;
 import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
+
+import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -60,7 +63,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
     }
 
     @Override
-    public void onBindViewHolder(HolderThingy holderThingy, final int position) {
+    public void onBindViewHolder(final HolderThingy holderThingy, final int position) {
 
 
         bindViewsForHolder(holderThingy, position);
@@ -70,12 +73,12 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         String shrunkenJokePreview = shrinkText(mJokeArrayList.get(position).getJokeContent());
 
         // povečaj velikost teksta v kratkih šalah...
-
+        // saveToFavorites(mCurrentJoke, currentCatNum, mCurrentCategory);
 
         holderThingy.categoryTitle.setText("" + getCategoryTitle(mJokeArrayList.get(position).getJokeCategoryTitle()));
         holderThingy.jokePreviewText.setText(shrunkenJokePreview);
 
-
+/*
         holderThingy.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +87,42 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             }
         });
 
+        */
+
+        holderThingy.favoritedIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveToFavorites(mJokeArrayList.get(position), mCurrentCategoryNum, mJokeArrayList, holderThingy);
+            }
+        });
+
+
+    }
+
+    private void saveToFavorites(Joke joke, int currentCategoryNum, ArrayList<Joke> jokeArrayList, HolderThingy holderThingy) {
+
+        if (joke.isFavorited() == false) {
+            holderThingy.favoritedIcon.setImageResource(R.drawable.ic_star_black_48dp);
+            JSONSerializer serializer = new JSONSerializer(mContext);
+            Toast.makeText(mContext, "Shranjeno =)", Toast.LENGTH_LONG).show();
+            String fileName = joke.getJokeCategoryTitle();
+            joke.setIsFavorited(true);
+            try {
+                // save current category
+                serializer.saveCategory(jokeArrayList, fileName);
+                // check favorites category
+                if (serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() == 0)
+                    serializer.createPriljubljene(joke);
+                else
+                    serializer.addToPriljubljene(joke);
+
+                Log.i("favSize", "Fav array size: " + serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 
     }
 
