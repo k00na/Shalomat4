@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -68,9 +69,23 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
 
         bindViewsForHolder(holderThingy, position);
 
+        holderThingy.mBtnPreberiVec.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setupIntent(mJokeArrayList.get(position).getJokeID());
+            }
+        });
+
+        holderThingy.jokePreviewText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setupIntent(mJokeArrayList.get(position).getJokeID());
+            }
+        });
 
 
-        String shrunkenJokePreview = shrinkText(mJokeArrayList.get(position).getJokeContent());
+
+        String shrunkenJokePreview = shrinkText(mJokeArrayList.get(position).getJokeContent(), holderThingy);
 
         // povečaj velikost teksta v kratkih šalah...
         // saveToFavorites(mCurrentJoke, currentCatNum, mCurrentCategory);
@@ -227,11 +242,14 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
     }
 
 
-    private String shrinkText(String text){
+    private String shrinkText(String text, HolderThingy holderThingy){
 
         int textSize = text.length();
-        if(textSize > 400)
-            text = text.substring(0, 400) + " ... preberi več";
+        if(textSize > 400) {
+            text = text.substring(0, 400) + " ... ";
+            holderThingy.mBtnPreberiVec.setVisibility(View.VISIBLE);
+
+        }
 
 
 
@@ -313,6 +331,7 @@ class HolderThingy extends RecyclerView.ViewHolder{
     TextView rating;
     ImageView favoritedIcon;
     CardView mCardView;
+    Button mBtnPreberiVec;
 
 
     public HolderThingy(View itemView) {
@@ -323,6 +342,7 @@ class HolderThingy extends RecyclerView.ViewHolder{
         jokePreviewText = (TextView)itemView.findViewById(R.id.jokePreviewTextID);
         //rating = (TextView)itemView.findViewById(R.id.ratingText);
         favoritedIcon = (ImageView)itemView.findViewById(R.id.favoritedIcon);
+        mBtnPreberiVec = (Button)itemView.findViewById(R.id.preberiVec);
     }
 
 
