@@ -41,6 +41,10 @@ public class CreateFilesForCategories {
         public static final String YUGO_FILENAME = "yugo.json";
         public static final String VSIVICI_FILENAME = "vsivici.json";
         public static final String OPOLZKE_FILENAME = "opolzke.json";
+        public static final String SRBI_FILENAME = "srbi.json";
+        public static final String HRVATI_FILENAME = "hrvati.json";
+        public static final String SLOVENCI_FILENAME = "slovenci.json";
+        public static final String CRNOGORCI_FILENAME = "crnogorci.json";
 
 
     static String[] policaji = {"Policist Božo povabi kolega Petra domov, da mu pokaže novo pridobitev. In res. Ko prideta v Božovo stanovanje Božo pravi:  \"Poglej, kaj sva si kupila z ženo!\" in pokaže Petru hladilnik.  \"Kaj pa je to?\" je začudeno vprašal Peter.  \"Hladilnik. Karkoli postaviš noter, vse ostane hladno!\"  \"Zakaj pa je to?\" je vprašal Peter, ko je videl predal za odlaganje jajc.  \"To je pa za jajca. Toda, previdno če imaš prevelika. Jaz sem jih dal notri, pa me je strašno bolelo, ko sem zaprl vrata.\"",
@@ -552,6 +556,315 @@ public class CreateFilesForCategories {
                     "\"Zakaj ste naju poklicali, ko pa sta že najina kolega tukaj?\""
 
     };
+
+        static String[] crnogorci = {"Najtanjša knjiga na svetu?\n" +
+                "\n" +
+                "Črnogorske delavske pesmi. ",
+                "Kako se v Črni Gori fitnesirajo?\n" +
+                        "\n" +
+                        "Ležijo cel dan, da jih na koncu že vse boli",
+                "Kako v Črni Gori gradijo cesto?\n" +
+                        "\n" +
+                        "Odg. Naredijo 5m asfalta potem pa postavijo tablo z napisom \"itd.\"",
+                "Kdaj nastane v Črni Gori potres?\n" +
+                        "\n" +
+                        "Odg. Ko črnogorec prime za lopato in se mu cela Zemlja smeje.",
+                "Kaj reče črnogorec pred spanjem?\n" +
+                        "\n" +
+                        "\"Dvigni se zemlja, da se uležem\" ",
+                "Vprašajo črnogorca kaj si želi biti v drugem življenju?\n" +
+                        "\"Kača\"\n" +
+                        "\"Zakaj?\"\n" +
+                        "\"Ker ležiš pa se vseeno premikaš naprej\"",
+                "Zakaj ima črnogorec 2 kamna pod posteljo?\n" +
+                        "\n" +
+                        "Zato, da s prvim ugasne luč, z drugim pa preveri, če je okno zaprto.",
+                "Kateri prometni znak ne obstaja v Črni Gori?\n" +
+                        "\n" +
+                        "Odg: delo na cesti :D",
+                "Črnogorski premier je nagovoril svoje ljudstvo:\n" +
+                        "\"Če se vam dela, potem mrš u Srbijo!\" ",
+                "Kaže jedan Crnogorac drugome: \"Danas sam radio.\"\n" +
+                        "\"A jel? A đe ti je antena?\"",
+                "Šta za Crnogorca znači poslovica: \"Nikad nije kasno\"?\n" +
+                        "\"Uvijek je rano, jado, uvijek!\"",
+                "v morju pred Budvo se utaplja moški, črnogorci stojijo in gledajo. Naenkrat ena izmed žensk zavpije ˝kaj pa stojite??˝. Pa se oglasi eden ˝saj res usedimo se raje˝",
+                "kako se obesi crnogorec ???\n" +
+                        "tako da se priveze na drevo pa caka da bo zraslo ...",
+                "Črnogorec opisuje polža:\n" +
+                        "-to skače, to divlja, neukrotljivo!!! ",
+                "Katera so najhujša tri leta v življenju povprečnega Črnogorca ?\n" +
+                        "\n" +
+                        "Prvi razred osnovne šole",
+                "Sedita oče in sin Črnogorca pod drevesom v senci. Do hiše je pribljižno 100 metrov, pa se oglasi oče: -Sine, koliko ti treba do one kuče? Mine pol ure ko sine odgovori: -Pa oko tjedan dana, tata. Mine spet pol ure: -Pa sine, nisi mi ti PTICA da letiš!",
+                "V Črni gori zavlada lakota. Pa pravi Črnogorec svojemu sinu: -Ajde sine, neču ja ovde da umrem od gladi, lepo me zakopaj ti u zemlju pa da umrem ko čovek! In res sinko izkoplje grob, oče se vleže in sin ga začne zakopavati. Nakar se v vas pripelje tovornjak. Sin gre pogledat. Ves vesel priteče nazaj h grobu rekoč: -Tata, tata, došao krumpir iz Slovenije! (zgodba se pač dogaja še v časih bratstva i jedinstva) \n" +
+                        "Oče vpraša: -Jeli oljušten? \n" +
+                        "Sin: -Nije, tata!\n" +
+                        "-E, onda sipaj dalje, sine!",
+                "V Črni Gori so se odločili, da spremenijo delovni teden, pa pride šef na govorniški oder in začne:\n" +
+                        "-U ponedeljak je odmor od vikenda.\n" +
+                        "U utorak je priprema na rad.\n" +
+                        "U srijedu je rad.\n" +
+                        "U četvrtak je odmor od rada.\n" +
+                        "U petak je priprema na vikend.\n" +
+                        "A subuta in nedelja je vikend.\n" +
+                        "Po končanem ploskanju eden izmed delavcev vstane in reče: -Možem li da nešto pitam?\n" +
+                        "-Možeš.\n" +
+                        "-Jeli je svaku sredu radni dan?",
+                "Zakaj ima Črnogorec poleg postelje stol? Zato, da se odpočije, ko se zbudi.",
+                "Kaj reče Črnogorc, ko hoče it spat? Diži se, zemljo da legnem!",
+                "Deset črnogorskih zapovedi:\n" +
+                        "-Čovjek se rodi umoran i živi zato, da se odmori!\n" +
+                        "-Ljubi krevet svoj kao samoga sebe!\n" +
+                        "-Odmaraj se danju, da noču možeš spavati!\n" +
+                        "-Ne radi - rad ubija!\n" +
+                        "-Ako vidiš nekoga, da se odmara, pomozi mu!\n" +
+                        "-Ne čini danas ono što možeš sutra!\n" +
+                        "-Radi manje nego to možeš, a ono što možeš, prebaci na druge.\n" +
+                        "-U hladu je spas, od odmaranja još niko nije umro!\n" +
+                        "-Rad donosu bolest - ne umri mlad!\n" +
+                        "-Kada zaželiš raditi, sjedni i pričekaj, vidječeš da če te proči!",
+                "V času II. svetovne vojne v črnogorsko vas vpadejo Nemci in začno nalagati Črnogorce na kamion.\n" +
+                        "Pa vpraša starejši Črnogorec Nemca: Gde nas to vozite?\n" +
+                        "Na streljanje, odgovori Nemec. \n" +
+                        "Črnogorec olajšano vzklikne: Dobro je! Ja sam mislio da na posao...",
+                "Kako crnogorci porede pridjeve ?\n" +
+                        "Lijep, Lijepši, Viđaj mene",
+                "Ubije crnogorac ženu i dođe na sud, pa ga upita sudija:\n" +
+                        "- Bili ste punih 30 godina u braku. Dje je sada ubi?\n" +
+                        "Na to će crnogorac:\n" +
+                        "- Pa znaš ono: danas ću, sutra ću...",
+                "Došao Crnogorac u Podgoricu na pijacu, pa pita prodavačicu:\n" +
+                        "- Pošto su ti paprike?\n" +
+                        "- Dva evra.\n" +
+                        "- A da ti nisu punjene, jadna?",
+                "Student crnogorac piše roditeljima:\n" +
+                        "\n" +
+                        "- Već dugo mi se ne javljate. Posaljite mi 300 evra da znam da ste dobro!",
+                "Sede Slovenac i Crnogorac u vozu, vadi Crnogorac Jabuku,a Slovenac ga pita: \"Kaj ti je to?\" Crnogorac odgovara:\" pa jabuka.\" Slovenac ce na to:\" Znas kakve su kod nas ogromne\". Posle nekog vremena vadi Crnogorac bananu, Slovenac ce opet :\" Kaj ti je to?\" Crnogorac odgovara:\" pa banana covece\",a Slovenac ce opet:\" u znas kakve su kod nas velike\". Vadi Crnogorac Paradajz, pita ga Slovenac:\" Kaj ti je sad pa to?\" Crnogorac odgovara:\"Ribiz, pi**a ti materina!\"",
+                "Prišla je v Črno goro ekipa, ki snema film in vprašala črnogorca, če ga lahko malo posnamejo.\n" +
+                        "\"Može.\"\n" +
+                        "In so ga posneli. Potem pa so mu rekli, če se lahko malo sprehodi, pa jim je odgovoril: \"Ne može. Ja sam glumac ali nisam kaskader.\"",
+                "Črnogorec gleda porno film, leži na kavču z obema rokama pod glavo. Na ekranu je scena zelo vroča, zato se mu dvigne ...\n" +
+                        "\"E, da mi je sad bar jedna ruka slobodna.\"",
+                "Kaj dobimo če črnogorca povozi valjar?\n" +
+                        "Uspavalni prašek.",
+                "Pride Bosanec v Črno goro in reče Vladiki:\n" +
+                        "\"Jel, Vladiko, jel mogu da odnesem kamenja?\"\n" +
+                        "Vladika pravi: \"Nosi, samo ti nosi.\"\n" +
+                        "In odnese par kamnov.\n" +
+                        "Pride Bosanec drugič s kamionom. Spet reče Vladiki:\n" +
+                        "\"Jel, Vladiko, jel mogu da odnesem još kamenja?\"\n" +
+                        "In Vladika spet: \"Ma samo ti nosi, čovječe.\"\n" +
+                        "In Bosanec odpelje poln kamion. Medtem pa se zbere gruča vaščanov, ki nezadovljno mrmrajo. Pride eden izmed njih do Vladike in reče:\n" +
+                        "\"Jel, Vladiko, što dopuštaš da nam Bosanci odnose kamenje?\"\n" +
+                        "Pravi Vladika: \"Ma neka nose, dovoljno ga je.\"\n" +
+                        "Gre vaščan nazaj in se posvetuje z ostalimi. Pride zopet do Vladike:\n" +
+                        "\"Dobro Vladika. Al ako se pojavi zemlja, tič češ je obraživati!\"",
+                "Črnogorec v zadregi pokliče očeta in mu pove: \"Oče, odločil sem se zapustiti fakulteto za elektrotehniko. Deset let mi je več kot dovolj, ne morem več. Prestopam na medicino.\"\n" +
+                        "Oče prizadeto odgovori: \"Dobro, sine, kakor hočeš, toda midva z dedom bova študirala naprej.\"",
+                "Kaj dobiš, če Črnogorca vržeš v olje? Bremz olje.",
+                "Gresta dva Črnogorca po mestu. Naenkrat eden zagleda polža in reče: \"Iiii, kakvi lipi puž!\" Pa pravi drugi: \"Ma, ima sam ja lipšeg pa mi ubjega!\"",
+                "Hodi Slovenec po Črni Gori in sreča Črnogorca, ki leži pod slivo in ga vpraša: \"Šta radiš ovde?\" Ta mu odgovori: \"Pa berem šljive?\" Slovenec se začudi in odide. Drugi dan gre spet mimo in ga vpraša: \"Šta radiš ovde?\" Ta mu spet odgovori: \"Pa berem šljive!\" Slovenec se spet začudi in odide. Drugi dan ga zopet sreča in vpraša isto. Črnogorec mu spet isto odgovori. Slovenec se razjezi in reče: \"Pa kako bereš šljive kad samo ležiš tu!\" Črnogorec mu odvrne: \"Pa lepo, kad zaduva vetar šljive padnu dole i ja ih pokupim!\" Slovenec vpraša: \"A šta ako ne zaduva vetar?\" Črnogorec: \"A jebiga ... slaba ljetina!\"",
+                "Dva Črnogorca sta se sprehajala ob reki. Prvi pravi: \"Ej stari, nekdo se utaplja v reki midva pa stojiva!?\" Drugi pravi: \"Saj res, dajva se usesti.\"",
+                "Sastali se najvideniji Crnogorci da izglašaju radnu nedjelju i poslije dugo viječanja nekako se dogovore, te predsjednik skupa počne da čita:\n" +
+                        "\"Ponedjeljak - odmor od vikenda,\n" +
+                        "Utorak - priprema za rad,\n" +
+                        "Srijeda - radni dan,\n" +
+                        "Četvrtak - odmor od rada,\n" +
+                        "Petak - priprema za vikend,\n" +
+                        "Subota i nedjelja - vikend.\"\n" +
+                        "Posto je pročitao, digne ruku jedan od učesnika i zapita: \"A hoče li svaka srijeda bit' radna?",
+                "U kupeu sjede Crnogorac, Englez, Francuz i jedna gospoda. Poslije nekog vremena gospoda se blago pridigne i prdne. Svi zbunjeni, ali ustane Englez i kaže: \"Oprostite gospodo, omaklo mi se, imam problema sa gasovima.\" Izvinite još jednom. Poslije nekog vremena ona gospoda ponovo prdne, ali ovaj put Francuz kao pravi gentlmen se izvini svima za probleme sa stomakom i obeča da se više neče ponoviti. Prode neko duže vrijeme, ništa se ne desava, Crnogorac nestrpljiv sjedi, pa če, posto ga je strpljenje izdalo: \"Ja idem do bifea gospodo. Ako ova zenetina opet pr'ne, recite da sam ja.\"",
+                "Došla Fata prijaviti da je Crnogorac silovao. \"Pa kako znaš da je bio Crnogorac?\" \"Zato što sam morala sve sama raditi!\"",
+                "Pride Črnogorec v kupleraj, ter se ustavi na recepciji in vpraša: \"Imate li nekog snažnog momka za mene?\". Šefica mu odgovori: \"Imamo, imamo, samo treba da ga platiš.\". \"Nema problema,\" pravi on in vpraša naprej: \"Imate li vi neku djevojku plavušu za mene?\" \"Imamo, imamo, samo treba da je platiš. Očeš ključeve?\" \"Oču, oču,\" odgovori on, vzame ključe in odide v sobo. Tam se sleče in uleže na posteljo. Kmalu nekdo potrka in v sobo vstopi črnec, za njim pa blondinka. Nato se oglasi Črnogorec: \"E, momče vidim da si jak, pa onda stavi ovu curicu na ono moje i drmaj je gore dole.\" In res... Čez čas se utrudi in ves poten si obriše čelo. Črnogorec ga vidi in mu pravi: \"Ma šta je momak, ko sad jebe, ja ili ti?\"",
+
+        };
+
+        static String[] hrvati = {
+        "Pogovarjata se Slovenec in Hrvat. Hrvat: \"Znaš, ja sam ti sinoć sanjao Ljubljanu, svu u plamenu, lete bombarderi, gore ulice, ljudi, bježe...\"" +
+                "\n Slovenec na to odogovori: \"Škoda, ker jaz sem pa včeraj sanjal ravno obratno stvar. Zagreb - poln svečanosti, ljudje na balkonih, radostnih obrazev, vrtijo glasno glasbo in po celem mestu nekakšni plakati na katerih je nekaj pisalo ... \"" +
+                "\n \"A šta je pisalo?\" - vpraša Hrvat. \n \" Pfff, saj bi ti povedal pa ne vem - ne znam čirilico... \"",
+        "Na trgu Bana Jelačiča v Zagrebu prosijačita dva človeka. Pred enim piše \"Jaz sem hrvaški borec, brez dela, pomagajte.\", pred drugim pa piše \"Jaz sem srpski borec, brez dela, pomagajte.\" \n" +
+                "In tako minevajo dnevi, a mimoidoči devajo denar samo hrvatu. Nekega dne se jima je približala starejša gospa in vpraša srba: \"Zakaj ne prosijačiš v Beogradu? Tukaj ne boš dobil ničesar. \" in tudi ona je dala 20 kun hrvatu. \n" +
+                "Gospa je odšla, nakar je \"Srb\" rekel \"Hrvatu\": \n" +
+                "\"Jesi li je čuo, Huso, materi ti... ona nad da uči o marketingu!",
+        "Slovenec, Srb in Hrvat gredo skupaj v gore. Med potjo naletijo na\n" +
+                "temno votlino. Slovenec se odloči, da jo bo raziskal. Vstopi vanjo, prižge vžigalico in zagleda ogromnega medveda, ki drži v roki tubo z vazelinom in si maže svoj ogromen penis.\n" +
+                "Slovenec poskuša zbežati, toda medved ga dobi in brutalno posili. Slovenec se vrne na prosto ves osramočen.Druga dva ga vprašata, kaj se je zgodilo. Slovenec reče:\n" +
+                ">Notri je medved,zlomil sem mu nogo. Srb, pojdi noter in ga dokončaj<.\n" +
+                "Srb se opogumi in se poda v votlino. Prižge vžigalico in tudi on zagleda ogromnega medveda, ki drži v roki tubo z vazelinom in si maže svoj \n" +
+                "ogromen penis. Srb poskuša zbežati, toda medved ga dobi in brutalno posili.Ko pride na prosto, reče Hrvatu:\n" +
+                ">Hrvat, zlomil sem mu tudi drugo nogo. Pojdi in mu skrajšaj muke<.\n" +
+                "Hrvat odide v votlino in naenkrat se iz nje zaslišijo trgajoči kriki bolečine. Slovenec in Srb se spogledata. Slovenec osramočen prizna: \n" +
+                ">Veš, pravzaprav mu nisem zlomil noge<. \n" +
+                "Srb skloni glavo in doda: \n" +
+                ">Tudi jaz ne druge, sem mu pa ukradel tubo z vazelinom<.",
+        "Sjede u vagonu: Kinez, Amer, Hrvat i Slovenac. \n" +
+                "Odjednom ustane Kinez i baci kroz prozor kosaru punu rize. \n" +
+                "\n" +
+                "Amerikanac ga pogleda i zacudjeno pita: \n" +
+                "- Zasto si bacio rizu, pa steta je... \n" +
+                "- Ma, u Kini imamo pun kurac rize - veli Kinez. \n" +
+                "\n" +
+                "Malo kasnije, ustane Amer i baci svezanj dolara kroz prozor. Slovenac se prenerazi i pita: \n" +
+                "- Zasto baci dolare van? \n" +
+                "- Pa, mi u Americi imamo pun kurac dolara - veli Amerikanac. \n" +
+                "\n" +
+                "Sjede oni dalje tako, nato Slovenac pogleda Hrvata, a Hrvat ce brzo: \n" +
+                "- Nemoj da ti slucajno padne na pamet.",
+        "Dođe Srbin u restoran u Zagrebu.\n" +
+                "Kelnar: Šta bi gospodin želio?\n" +
+                "Srbin: Supu.\n" +
+                "Kelnar: Gospodin je vjerovatno mislio juhu. Još nešto sljedeće? \n" +
+                "Srbin : Becku šniclu.\n" +
+                "Kelnar: Gospodin je vjerovatno mislio becki odrezak. I za prilog?\n" +
+                "Srbin: Leba.\n" +
+                "Kelnar: Gospodin je vjerovatno mislio kruha. Koju salatu? \n" +
+                "Srbin: Jednu srpsku salatu. A sad prevedi to ako možeš, pička ti materina!",
+        "Hrvaški finančni minister obišče Švicarsko vlado in se zaplete v pogovor s švicarskim ministrom za pomorstvo. Začuden ga vpraša: '\"Kako to, da ima Švica pomorsko ministrstvo, če pa nima morja?'\", Švicarski minister: '\"Tudi Hrvaška ima Finančno ministrstvo, pa nima financ!'\" ",
+        "Pride purger v bordel z enim Eurom in vpraša, kaj lahko za to dobi. \n" +
+                "'\"Za 1 Euro lahko poližeš našo čistilko Fato.'\". \n" +
+                "Purger sprejme in odpeljejo ga v sobo k Fati. Ona se sleče, umazana in neurejena, in on začne lizati. \n" +
+                "Čez minuto preneha in pravi .'\"Fuj, groza, gospa, vi imate gliste !'\". \n" +
+                "Fata: '\"Pa šta oćeš ti za 1 euro? Škampe,a?'\"",
+        "Upeca Srbin zlatnu ribicu,pa kaže ribica: '\"Čedo izpunim ti tri želje,ako me pustiš'\" '\"Dobro,prva želja,da Srbi ratujemo sa Slovencima,druga želja,da Srbi još jednom ratujemo sa Slovencima,treča želja, da Srbi opet ratujemo sa Slovencima.'\" '\"Jel bre Čedo,a zašto da tri put ratujete sa Slovencima'\"; upita ga zlatna ribica. '\"Da šest puta gazimo hrvate'\"",
+                "Ko sem prvič slišal za ivico in janico kostelič,sem mislil da so sestre.Ko sem jih prvič videl sem mislil da sta brata.",
+                "Kaj narediš, če postanejo Hrvati evropski prvaki? - Izklopiš playstation in greš malo ven. ",
+                "Vratio se Frane iz Australije pa se hvali.\n" +
+                        "-Nećete mi virovat, ali ja san jednom proba jisti kengura.\n" +
+                        "-I, kakvo mu je meso? - upitaše ga okupljeni.\n" +
+                        "-E, kakvo, riba ka riba - zaključi Frane.",
+                "Hrvat, Mađar in Slovenc grejo skupaj na neke športne igre v arabijo.\n" +
+                        "In so jih dal v skupno sobo v hotelu.\n" +
+                        "In tam je blo, pač šport pa to.. strogo prepovedano kej alkohola, karkoli..\n" +
+                        "fantje ko fantje..\n" +
+                        "bomo mi to nekak prešvercal \n" +
+                        "Nekako jim pač ne rata in jih dobijo.\n" +
+                        "In zdj jim oni rečejo pač da dobi vsak dvajset bičanj,\n" +
+                        "ampak da ma vsak eno željo lahko, preden ga bičajo \n" +
+                        "Pa hrvata vprašajo, kakšna je njegova želja, da je prvi na vrsti..\n" +
+                        "Hrvat: zavežite mi odejo na hrbet..\n" +
+                        "Zavežejo.. prvih deset udarcev sploh ne čuti.. pol se pa že mal raztrga in naslednjih deset kr oreng boli \n" +
+                        "drugi na vrsti mađar: mhm, če ena odeja zdrži 10 udarcev, '\"meni navežite pa kr dve odeji'\"\n" +
+                        "in bolj ali manj skoraj brez bolečin pride prek..\n" +
+                        "Potem se pa vstavijo pri slovencu, pa rečejo:\n" +
+                        "'\"dobr vi slovenci ste bolj tko.. mali pa to, ampak se vedno trudite.. niste neki fuzbaleri, ampak se trudite, tko ste vredu rokometaši, zadnje čase celo kar dobri v košarki pa to..\n" +
+                        "naj vam bo, pa ti dobiš dve želje, pred bičanjem!\n" +
+                        "pa reče tko slovenec: 1. Hočem 60 bičanj!\n" +
+                        "pa ga vsi pogledajo malce čudno, pa reče '\"ja, prav ste slišal.. 60'\"\n" +
+                        "No, ok.. pa druga želja?\n" +
+                        "pa tko slovenec: '\"navežite mi na hrbet hrvata'\" ",
+                "Ko se je Clinton vrnil iz obiska v Hrvaški so ga zaprosili za njegov osebni vtis.\n" +
+                        "'\"Ali imamo v Ameriki kakšno korporacijo, ki je sposobna izdelati šotor, ki bi pokril celotno Hrvaško?'\" je vprašal Bill.\n" +
+                        "'\"Zakaj pa?'\"\n" +
+                        "'\"Ker takega cirkusa ni nikjer na svetu!'\"",
+                "Kako znamo da su Amadm i Eva bili Hrvati?\n" +
+                        "\n" +
+                        "Bili su goli i bosi, a mislili su da žive u raju!",
+                "Vratila se Zagrepčanka sa odmora iz Bosne. I priča ona kolegicama kako je vidila kurac. Pitaju je one šta ti je to:\n" +
+                        "- '\"Ma to vam je ko 3-4 naša pimpeka.'\"",
+                "- Koja je razlika izmedju katolicke crkve i hrvatske vlade?\n" +
+                        "- Katolicka crkva propovijeda siromastvo, hrvatska vlada ga realizira.",
+                "Grdi Hrvat sina:\n" +
+                        "- Ne smiješ pušiti, pa tek si peti razred!\n" +
+                        "\n" +
+                        "Mali Francek:\n" +
+                        "- Pa i ti si tata pušio u 5. razredu!\n" +
+                        "\n" +
+                        "- Da, ali ja sam imao tad 18 godina!",
+                "Kaže Hrvat Srbinu:\n" +
+                        "• Mi imamo 2 mora?\n" +
+                        "• Jadransko i koje još? - pita Srbin.\n" +
+                        "• More nezaposlenih.",
+                "Učiteljica upozorava dječake da će sutra biti pismeni zadatak iz \n" +
+                        "matematike i da nitko ne smije izostati i da nikakva liječnička i \n" +
+                        "druga opravdanja neće pomoći. Ivica pažljivo sasluša i pita: - A što \n" +
+                        "ako budem iscrpljen od seksa? - Ništa Ivica, pisat ćeš drugom rukom - \n" +
+                        "odgovori učiteljica",
+                "Kako Hrvat muci muhu? \n" +
+                        "Zatvori je u teglu i pred njom jede govna. ",
+                "Družina Kostelič sedi pri mizi, ko sta bila asa še malo mlajša. \n" +
+                        "Ivica: Na obrazu mi dlake vedno bolj rastejo. \n" +
+                        "Ante: Pa dobro, to je normalno. \n" +
+                        "Janica: Tudi meni dlake rastejo. \n" +
+                        "Ante: Ja kje pa tebi? \n" +
+                        "Janica: Po jajcih. ",
+                "Kaj nas loči od živali? \n" +
+                        "\n" +
+                        "KOLPA. ",
+                "katere ovce na hrvaškem so še device: tiste ki so hitrejše od pastirja",
+                "pride hrvat na letališče v beograd, in se odloči da se bo v zemun odpeljal s taksijem, na koncu poti pa vpraša taksista koliko košta vožnja; srb-taksist reče dvije hiljade, pa reče hrvat ja koliko je pa to v tisuču; pa reče srb - PET tisuča. "
+        };
+
+        static String[] srbi = {
+
+                "Kakšna je srbska definicija pacifizma? Srbija do Pacifika.",
+                "Kako v Srbiji po novem učijo šolarje o ekvatorju? To je črta, ki nepravično deli Srbijo na severni in južni del.",
+                "Na Havajih se srečata Clinton in Milošević. Clinton: \"Slobo, Kak je svet mali!?\" Milošević: \"Nije svet mali, nego je Srbija velika!\"",
+                "Razprava med očetom in sinom v romski hiši. Oče: \"A bre, kakvi ste današnji mladi, sve mora da se vam nacrta, da vam se da, da vam se pokaže\" \n" +
+                        "Sin: \"Sti je bre čale, nismo baš tako loši, na nama svet ostaje... \" \n" +
+                        "Oče: \"Ma gde niste bre, stvarno ste jadni bre\" \n" +
+                        "Sin: \"Šta, pa ni vi roditelji niste cveče, aj reci mi, ko je izmislio struju.\" \n" +
+                        "Oče: \"Kako ko?! Pa Nikola Tesla, bre \" \n" +
+                        "Sin: \"Pa naravno Nikola Tesla, a ne njegov čale.\"  ",
+                "Pride Srbin v knjižnico in vpraša knjižničarko: \n" +
+                        "\"Oprostite, kje lahko najdem knjigo Velika Srbija?\" \n" +
+                        "Knjižničarka ga bledo pogleda in reče: \n" +
+                        "\"Mladenič, bajke so v drugem nadstropju!\"",
+                "Hrvat, Bosanec in Srb so po brodolomu pristali na ljudožerskem otoku. Domorodci so jim dali nalogo: \n" +
+                        "\"Pojdite v gozd in najdite neko sadje ali pa vas bomo skuhali in pojedli\" \n" +
+                        "Čez nekaj časa pride Bosanec z banano. Domorodci so mu rekli: \"Zdaj ti bomo to banano porinili v rit in če proizvedeš bilokakšen zvok, te bomo pojedli. \n" +
+                        "Bosanec je pretrpel in preživel, ko je prišel Hrvat z jagodo. Domorodci so tudi Hrvatu počeli isto, ko je začel umirati od smeha. Bosanec ga je vprašal: \n" +
+                        "\"Zakaj se smeješ??! Pojedli te bodo!\" \n" +
+                        "Hrvat je nato rekel: \"Poglej tja - Srb prihaja z lubenico!\" ",
+                "Kako se na srpskom jeziku kaže \"smak svijeta\"? Kaže se: \"sVak sMeta\".",
+                "Koje su dvije knjige najtanje na svijetu? - Atlas Slovenije i dobra djela Srbije.",
+                "Srbi su pali u tešku depresiju. Više se ne raduju ni kada Hrvatska izpadne.",
+                "Što je hrabrost? \n" +
+                        "Popeti se na Trg bana Jelačića i vikati \"Ovo je Srbija!\" \n" +
+                        "A što je još veča hrabrost? \n" +
+                        "Sići dolje.",
+                "Zaštu Srbi ne gledaju prognozu? Boje se OLUJE.",
+                "Tetka na tržnici se je drla: \n" +
+                        "\"Černobilska jaaabolka, Čeeernobilska jabooolka...\" \n" +
+                        "Do nje stopi nek tip in jo vpraša: \"Ženska, ali si ti normalna? Mar res misliš, da bo kdo kupil ta jabolka, če praviš, da so černobilska?!?\" \n" +
+                        "Ona mu odgovori: \"OOo, pa še kako kupujejo... Nekdo za zeta, nekdo za taščo, nekdo za soseda... Srbi za Albance, Hrvati za Slovence... kupujejo, kupujejo\"",
+                "Kako natrpati 50 Srbov v telefonsko govorilnico? Rečeš jim, da ni njihova in da ne smejo vstopiti.",
+                "Što ispadne kad se dogovoru Srbi i Crnogorci? Pa ispadnu Hrvati! :D",
+                "Kako srbi kažnjavaju svoje neprijatelje? Teraju ih da žive sa njima! :D",
+                "Kako je ime Srbu s pokvarjenim avtom? Stojadin :D",
+                "Kako igrajo Srbi nogomet? Po himni, 5 minut.",
+                "Vprašali so Mujo, kakšno mnenje ima o nacionalizmu. Mujo: \"Pa ta nacionalizem sovražim prav toliko kot Srbe!\"",
+                "Katero je glavno mesto Srbije? \n" +
+                        "Hag - vsi ljudje iz vlade so tam :D",
+                "Pitali srbina: \"E, ima li u srpskom jeziku imalo turcizma?\" \n" +
+                        "\"E VALA, nema ni malo!\"",
+                "Kako pameten Srb kliče neumnega Srba? \n" +
+                        "S telefonom, iz tujine.",
+                "Srb je bil oženjen z židkinjo in imela sta otroka. Nekega dne vpraša sin očeta: \n" +
+                        "- \"Oče, sem jaz Srb ali Žid?\" \n" +
+                        "- \"Zakaj sprašuješ?\" \n" +
+                        "- \"Nek fant mi hoče prodati kolo pa ne vem ali ga naj ukradem ali pa se naj pogajam za ceno... \"",
+                "Zakaj je Slovenija najbolj razvita država na Balkanu? \n" +
+                        "Zato, ker je dovolj oddaljena od Srbije.",
+                "Takmičili su se Amer, Rus i Srbin ko ima jače piće.\n" +
+                        "Amer popije 21 viskija. Stave pred njega stolicu.\n" +
+                        "• Koliko vidiš stolica?\n" +
+                        "• Dve!\n" +
+                        "• Nije loše...\n" +
+                        "Rus popije 15 votki. Stave pred njega stolicu.\n" +
+                        "• Koliko vidiš stolica?\n" +
+                        "• Hik... Tri.\n" +
+                        "• Dobro.\n" +
+                        "Srbin popije 10 šljivovica. Stave pred njega stolicu.\n" +
+                        "• Koliko vidiš stolica?\n" +
+                        "•... Hik... A?... Hik... U kom redu?"
+
+
+        };
+
+
 
     static String[] blodninke = {"Blondinka prijateljici razlaga o neprijetni izkušnji iz službe: “Včeraj sem zgrešila ženski WC in vstopila v moškega.” “Te je kdo videl?” je radovedna prijateljica. “Ja, tam je malo potrebo opravljal moj šef. Videla sem njegov penis!” “In kakšnega ima?” “Pa, za moj okus je preveč slan!”",
             "Blondinka vstopi v pekarno in vpraša prodajalko: “Ali imate burek?” “Imamo, samo trenutek.” pravi prodajalka. “Dobro, dajte mi ta samo trenutek in jogurt.”",
@@ -1182,6 +1495,10 @@ public class CreateFilesForCategories {
             createCategory(crniHumor, CRNIHUMOR_FILENAME);
             createCategory(mujohaso, MUJOHASO_FILENAME);
             createCategory(yugovici, YUGO_FILENAME);
+            createCategory(srbi, SRBI_FILENAME);
+            createCategory(crnogorci, CRNOGORCI_FILENAME);
+            createCategory(hrvati, HRVATI_FILENAME);
+            createCategory(slovenci, SLOVENCI_FILENAME);
 
 
     }
@@ -1212,6 +1529,299 @@ public class CreateFilesForCategories {
 
 
         static String[] crniHumor = {
+
+                "Pride novi jetnik v zapor in ga drugi jetniki vprašajo,koliko let si pa ti dobil?\n" +
+                        "15 let!\n" +
+                        "Zakaj pa?\n" +
+                        "Za zdravniško pomoč.\n" +
+                        "Kako to,za zdravniško pomoč?\n" +
+                        "Tašči je tekla kri iz nosa, pa sem ji naredil prevezavo okoli vratu,da ne bi izkrvavela.",
+                "Na kmetiji se je stari oče obesil na podstrešju svoje hiše. Mati je poslala malega Mihca k župniku v vas z namenom, da mu pove za smrt dedka.\n" +
+                        "\"Toda nikakor ne smeš povedati, da se je obesil!\" mu je zabičala mama. \n" +
+                        "Ko je Mihec prišel v župnišče je rekel:\n" +
+                        "\"Gospod župnik, mama me je poslala, da pridete k nam, ker je umrl dedek!\"\n" +
+                        "\"Kaj?\" se je začudil župnik. \"Ali ga je gospod poklical k sebi?\"\n" +
+                        "\"Ne, s štrikom ga je povlekel!",
+                "Kaj je edina pozitivna stvar v Keniji? \n" +
+                        "HIV.",
+                "Janez: A veš kateri avto gre najhitreje po makadamu?\n" +
+                        "\n" +
+                        "Miha: Hm...ne vem?\n" +
+                        "\n" +
+                        "Janez: Službeni!",
+                "Serbus Štef, kwo delaš? \"\n" +
+                        "\" stou za ženo. \"\n" +
+                        "\" ajaaa? kk gre? \"\n" +
+                        "\" pa gre, sam štrom me še mal jebe",
+                "Pride ženska srednjih let k zdravniku, vsa otekla in plava po obrazu. \n" +
+                        "\n" +
+                        "Pa pravi zdravniku: \"Gospod doktor, mož me vsakič, ko pride iz gostilne \n" +
+                        "pretepe. \n" +
+                        "\n" +
+                        "Kaj naj naredim???\" Zdravnik ji svetuje: \"Gospa skuhajte kamilični \n" +
+                        "čaj in ga grgrajte vsakič ko pride mož iz gostilne. \n" +
+                        "\n" +
+                        "To počnite, dokler NE gre spat. Čez en mesec pa pridite na kontrolo.\" \n" +
+                        "\n" +
+                        "Gospa pride čez en mesec na kontrolo vsa lepa in pravi zdravniku: \n" +
+                        "\n" +
+                        "\"Gospod doktor, vi delate čudeže. Res pomaga, mož nič več NE znori\" \n" +
+                        "\n" +
+                        "Pa ji doktor odvrne: \"Saj sem vedel, DA NI kriv alkohol, ampak GOBEC!!!!\" ",
+                "\"Kaj naj storim, da mi bodo zrasle prsi?\" je nesrečno zavzdihnila \n" +
+                        "žena. \n" +
+                        "\"Čisto enostavno!\" ji je rekel mož. \"Vzemi toaletni papir in se \n" +
+                        "briši med dojkama!\" \n" +
+                        "\"In ti misliš, da bo to pomagalo?\" \n" +
+                        "\"Seveda bo! Če na riti deluje, bo tudi na joškah!\"",
+                "V ordinacijo prižvižga pacient in reče psihiatru:\n" +
+                        " \"Doktor, jaz mislim, da sem ptič!\"\n" +
+                        " \"Kar odletite nazaj v čakalnico, jaz pa bom poklical v bolnico, da vam\n" +
+                        " pripravijo gnezdo...",
+                "Nevrotik je tisti, ki gradi gradove v oblakih.\n" +
+                        " Psihotik je tisti, ki tam živi.\n" +
+                        " Psihoterapevt je tisti, ki pobira najemnino.",
+                " Zdravnika kliče pacientka:\n" +
+                        " \"Oprostite, gospod doktor, ali sem morda pri vas pozabila spodnje\n" +
+                        " hlačke?\"\n" +
+                        " \"Ne, nisem jih videl v ordinaciji.\"\n" +
+                        " \"Hvala lepa, potem so verjetno ostale pri zobozdravniku.\"",
+                " \"O, mlada gospodična. Vedno kadar vas vidim kako se smejite, vas želim\n" +
+                        " povabiti k sebi.\"\n" +
+                        " \"Ste samski?\"\n" +
+                        " \"Ne, zobozdravnik sem.\"",
+                "Kaj bi Jörg Haider najbolj obžaloval, če bi preživel?\n" +
+                        "\n" +
+                        "Da je uničil tri avstrijske table pa NOBENE slovenske!",
+                "Jacksonu je uspelo prestaviti še en mejnik v glasbeni industriji. Je prvi solist, ki je razpadel.",
+                "Lovec Jaka pride domov nažgan ko mina in se uleže v posteljo k ženi, \n" +
+                        "se spravi na njo in ga sploh ni motilo, da ima menstruacijo.......\n" +
+                        "Žena zjutraj vstane in gre v službo, ko on še spi. \n" +
+                        "Ko se Jaka zbudi najde posteljo vso krvavo, in si misli: \"Ustrelil sem jo!\" \n" +
+                        "Gre in takoj prešteje vse naboje za puško. Vsi so bili tam.\n" +
+                        "Potem pa: \"Zaklal sem jo!\" Gre v kuhinjo, pregleda vse nože,\n" +
+                        "vsi so bili lepo čisti odloženi. Nič mu ni bilo jasno,\n" +
+                        "nakar gre v kopalnico, se pogleda v ogledalo in ..... \"sranje,\n" +
+                        "požrl sem jo!!!\"",
+                "Michael Jackson noče biti kremiran, ker je 89% njegovega telesa iz plastike. Namesto tega bi raje" +
+                        " bil recikliran v tovarni LEGO, ker se bo tako lahko še vedno igral z otroci.",
+                "Gresta serijski morilec in punčka v gozd. \n" +
+                        "Punčka pravi: \n" +
+                        "\"Joj kako je mene strah, tako mračno in prav grozljivo je.\" \n" +
+                        "Serijski morilec pa nadaljuje: \n" +
+                        "\"Ja,kako bo šele mene strah, ko bom šel sam nazaj!\"",
+                "Model in njegova punca sta bila skupaj v postelji, ko se punca nenadoma obrnek njemu in ga vpraša: \"A si ti pedofil?\"\"Preklet hudič!\" reče on karajoče. \"To je grda grda beseda od osemletne punčke!\"",
+                "kaj podnevi laja,ponoči pa plava?\n" +
+                        "taščina proteza!",
+                "Kakšna je razlika med kupom peska in kupom dojenčkov? Dojenčke lahko premečeš z vilami...",
+                "Koliko dojenčkov rabiš, da z njimi pokriješ eno nogometno igrišče?\"Odvisno kako na tanko jih narežeš!",
+                "- \"Vama je sada opet dobro?\" \n" +
+                        "- \"Dobro nije, ali je bolje.\" \n" +
+                        "- \"Ipak je dobro kada vam je bolje.\" \n" +
+                        "- \"Bilo bi bolje da je dobro!\"",
+                "Zakaj cigani prebarvajo kante za smeti rdeče in rumeno?Da bi njihovi otroci mislili,da jejo v Mc Donaldsu!",
+                "Pride črnec iz morja in vrze tica cez ramo!\n" +
+                        "Vsi ga gledajo, on pa rece.\n" +
+                        "Kaj gledate a vam ko greste v morje , a se vam ne skrči!",
+                "\n" +
+                        "Pride vaški peb v gostilno in vpraša kelnerco, kaj imajo za jest. Ona mu odgovori; \"prvi meni, drugi, tretji meni...\" Pjeb ji reče:\"pa kaj mene briga ker te je ker te pa ni. Dej mi vampe in pir.\" Ko pjeb poje vpraša kelnerco kolk je njegov dolg. Klenerca mu zabrusi: \"pa kaj mene briga kolk je tvoj dolg. Plači vampe pa pir in se zgub domu.\"",
+                "\"Kmetom pomagam, da se postavijo na noge,\" je dejal plemič in jim zasegel konje.",
+                "Pride hčerkica k materi in reče, da ji raste tretja joška.Mati ji odvrne: \"Boli me ku*ac !\"",
+                "Izgorjeloj baki u pozaru zelimo vjecni mir uz pjesmu: \n" +
+                        "- \"Sve jos mirise na nju!\"\n",
+                "Otac poslao sina Sabana u vojsku. Posle devet meseci salje Saban pismo ocu u komemu kazuje da je ziv i zdrav i da se otac nista ne brine o njemu. Istovremeno trazi od oca da mu napise sta ima novo kod kuce. Otac odgovara: \n" +
+                        "- \"Dragi sine Sabane, svi smo zivi i zdravi. Jedina novost je da ti je zena rodila brata.\"",
+                "Kroz maglovito proskrozorje se teturaju dvije kurve.\n" +
+                        "Nato će jedna: danas će biti dobar dan, osjećam miris sperme u vazduhu.\n" +
+                        "Nato će druga: ma jok sestra, to sam samo i ja podrignula..",
+                "\"Halo, policija? Moja tašča se je obesila!\"\n" +
+                        "\"Pa ste prerezali vrv?\"\n" +
+                        "\"Ne... Še diha...\"",
+                "Kaj je optimizen:\n" +
+                        "To, da vidiš klošarja kako sedi na klopci in bere Naš Dom.",
+                "\n" +
+                        "Uletila jedna časna sestra nadstojnici samostana u kancelariju:\n" +
+                        "- \"Majko, silovana sam u šumi. Šta da radim?\"\n" +
+                        "- \"Sestro, izgovori sto puta Oče naš... a onda pojedi 3 limuna.\"\n" +
+                        "- \"Majko razumijem to za molitvu, ali zašto limunovi?\"\n" +
+                        "- \"Da ti skinu blaženi osmjeh s lica...\"",
+                "- Kako zovu djevicu u Srbiji\n" +
+                        "- !?\n" +
+                        "- Cura koja trci brze od svog brata.",
+                "Kapitan Titanika pove ostalim:Zadeli smo ob ledeno goro.Zaradi tega vam moram povedati dve novici.Dobro in slabo.Katero naj povem prvo ?Najprej slabo!Potopili se bomo.In dobra? Za to bomo dobili 11 oskarjev.",
+                "U finalu svetskog prvenstva za invalide pobedila reprezentacija Bosne, i oni su poceli da se zahvaljuju svima koji su im pomogli da dodju na ovo prvenstvo, sponzorima, prijateljima, itd... \n" +
+                        "Kad ono iz tribina se cuje Hrvat: \n" +
+                        "- \"A za nas nema hvala, je li, a tko vas je takve napravio?!?\"",
+                "Pita Zdravko šefa za bolovanje. \n" +
+                        "- \"Šta ti je?\", pita ga šef. \n" +
+                        "- \"Pa bolestan sam.\" \n" +
+                        "- \"Šta ti je?\" \n" +
+                        "- \"Jebem svoju sestru!!! Jel ti to dovoljno bolesno?\"",
+                "Gre star par v gostilno!\n" +
+                        "Žena reče :Joj meni je tako toplo pri srcu!\n" +
+                        "Moz pa: Ja kaj ne vidis, da mas josk v župi!",
+                "Bracanin na samrti pita sina: \n" +
+                        "- \"Sine je li ono mati pece moje omiljene kolace? Donesi mi jednog!\" \n" +
+                        "Sin ode i vrati se bez kolaca te kaze: \n" +
+                        "- \"Neda mater, kaze da je to sutra za sprovod!\"",
+                "Rece sine fotru črncu: Ati a se lahko igram s tvojim lulkom?\n" +
+                        "Ja,ja sine sam ne it prevec dalec!",
+                "kaj reče lev ko sreča viteza?\"sveže meso v konzervi!",
+                " Prideta mož in žena k mesarju. Pa vprašata, ce bi lahko stehtal dojencka na natancni tehtnici.\n" +
+                        "\n" +
+                        " Mesar odvrne, seveda, lahko, in odnese otroka zadaj v klavnico, kjer ga stehta.\n" +
+                        "\n" +
+                        " Potem se vrne ves krvav in rece: \"Kilo dvajset brez kosti.\"",
+                "Zakaj imajo pedofili radi otroke do višine 1 m ?\n" +
+                        "\n" +
+                        " Zato, ker ne morejo prijeti za kljuko in pobegniti...",
+                "Oce in sin porivata avto v prepad.\n" +
+                        "\n" +
+                        " Sinko: \"Oce, zakaj porivava avto v prepad ?\"\n" +
+                        "\n" +
+                        " Oce: \"Tiho bodi, da se mama ne zbudi !\"",
+                "Pride Dedek Mraz v zavod za prizadete otroke. Po predstavitvi vzame mikrofon v roke in pravi:\n" +
+                        " \"Kdor mi zapoje pesmico bo dobil darilo.\"\n" +
+
+                        " Fantek iz prve vrste vzame mikrofon in pricne: \"AAAAooooo, eeeeoooooouuuuuuu,\n" +
+
+                        " aaaaauuuuu....!!\"\n" +
+
+                        " Ko konca, Dedek Mraz pristavi: \"In kdor me bo zajebavou ne bo dobil NIC !\"",
+                "Kakšna je razlika med pedofilom in pedagogom ?\n" +
+                        "\n" +
+                        " Pedofil ima otroke resnicno rad.",
+                "Dva pedofila se pogovarjata o svoji stroki...\n" +
+                        "\n" +
+                        " Pa rece prvi: \"Cuj, vceraj sem eno štiriletno ruknu...\"\n" +
+                        "\n" +
+                        " Drugi pa: \"Kaj?!!! Štiriletno??? Pa to ja že hodi!\"",
+                "Hitler v taborišcu vpraša Žideka:\n" +
+
+                        " - Koliko si star, mali?\n" +
+
+                        " Židek odgovori:\n" +
+
+                        " - Jutri bom pet let.\n" +
+
+                        " - A-a, ne boš!",
+                " Pride Hitler kot ponavadi vsako popoldne v taborišce.\n" +
+
+                        " Pa gre do Žida in mu prijazno rece: \"Ti debelušcek moj, za metlo si se skril !\"",
+                "V porodnišnici bodoci ocka caka da bo žena rodila. Po kakšnih dveh urah nervoznosti pride\n" +
+                        "\n" +
+                        " porodnicar ven in v desni roki drži dojencka za noge tako da binglja z glavo navzdol. Nato pa ga\n" +
+                        "\n" +
+                        " zalima ob desno steno pa ob levo, vrže ob tla in nekaj casa skace po njem. Nato ga prime in\n" +
+                        "\n" +
+                        " vrže skozi okno. Ocka zaprepaden ogleduje njegovo ravnanje in ne ve kaj bi rekel ali naredil.\n" +
+                        "\n" +
+                        " Nato se porodnicar zasmeje in pojasni: \"Samo malo šale gospod, veste, dojencek se je že rodil\n" +
+                        "\n" +
+                        " mrtev.\"",
+                " Se grejo Anglež, American in Bosanc kdo zadane z lokom v jabolko na ženini glavi. Ustreli\n" +
+                        "\n" +
+                        " Anglež....center..in rece: \"I'm Robin Hood.\"\n" +
+                        "\n" +
+                        " Ustreli American...center...: \"I'm Rambo.\"\n" +
+                        "\n" +
+                        " Ustreli Bosanec direktno na sredo glave in pripomni: \"I'm sorry.\"",
+                " Sin: \"Mama, ali ja ne želim iči u Ameriku !!\"\n" +
+                        "\n" +
+                        " Mama: \"Šuti i plivaj dalje !\"",
+                " Mlada mamica po stopnicah nese dojencka in ga drži za noge. To opazuje soseda in prijazno\n" +
+                        "\n" +
+                        " pove: \"Soseda, da ne bo malemu kapica dol padla!\"\n" +
+                        " Mamica odgovori: \"Saj ni sile, saj sem jo mu pribila.\"",
+                " Pride Hitler pozimi malo pogledat v Dachau. Takrat je bilo 10 stopinj pod niclo. Pa rece svojemu\n" +
+                        " podrejenemu:\n" +
+                        " \"Uff, je mraz, daj še kakšnega Žida na ogenj vrzi !\"",
+                " Kakšna je razlika med dojenckom in slonom ?\n" +
+                        "\n" +
+                        " Slona ne moremo metati v steno.",
+                " Kakšna je razlika med dvo-kilskim in tro-kilskim dojenckom ?\n" +
+                        "\n" +
+                        " Tro-kilski gori dlje casa.",
+                " Ata in Janezek v kleti popravljata elektricno napeljavo. Cez nekaj casa Janezek zaklice mami v\n" +
+                        "\n" +
+                        " zgornje nadstropje:\n" +
+                        "\n" +
+                        " \"Mama, ata že pol ure trese elektrika !\"\n" +
+                        "\n" +
+                        " Mama iz zgornjega nadstropja:\n" +
+                        "\n" +
+                        " \"Joj, koliko bomo pa elektrike placali !\"",
+                "Pride Janezek do fotra\n" +
+                        " - Ati, kaka je razlika med prakso in teorijo?\n" +
+                        " - Pojdi do mame in sestre ter ju vprašaj ce bi obe dale tujcu za 20.000 DM\n" +
+                        " Seveda sta obe takoj za.\n" +
+                        " - No vidiš sine, teoreticno imamo mi 40.000 DM, prakticno pa dve kurbi.",
+                "Kaj je grozno ?\n" +
+                        " Sedem dojenckov v eni kanti za smeti.\n" +
+                        " Kaj je pa še bolj grozno ?\n" +
+                        " Eden dojencek v sedmih kantah za smeti.",
+                "Sinek pritece k mami:\n" +
+                        " \"Mami, mami, oci se je pa obesil na podstrešju !\"\n" +
+                        " Hitro steceta na podstrešje in ... tam ni nic.\n" +
+                        " Mama si že oddahne, sinko pa pravi: \"Hahaha, 1. april !! ... Oci se je pa obesil v kleti !\"",
+                "Janezek vpraša mamo: \"Mama, mama, se lahko grem igrat z babico ?\"\n" +
+                        " Mama: \"Lahko, samo potem jo nazaj zakoplji !\"",
+                " Kakšna je razlika med dojenckom in frnikolami ?\n" +
+                        " Frnikol ne moreš nalagati z vilami.",
+                " Kakšna je razlika med dojenckom in odojkom?\n" +
+                        " Odojek se v pecici lepše zapece.",
+                " Srecata se slepi in invalid na vozicku.\n" +
+                        " Slepi: \"Kako gre ?\"\n" +
+                        " Invalid: \"Saj vidiš.\"",
+                " Spreta se brezroki in slepi.\n" +
+                        "\n" +
+                        " Brezroki: \"Te bom tak vžgal... !\"\n" +
+                        "\n" +
+                        " Slepi: \"To bi pa res rad videl !\"",
+                "Vprašanje: Kako spijo dojencki v Sarajevu?\n" +
+                        "\n" +
+                        " Odgovor: Kot zaklani.",
+                "V avtobusni garaži nek obcan po vrsti poljublja avtobuse. Vratar ga nekaj casa gleda in vpraša:\n" +
+                        "\n" +
+                        " \"Kaj pa je z vami ? A se vam je zmešalo !?\"\n" +
+                        "\n" +
+                        " \"Ne, avtobus mi je povozil tašco, pa ne vem kateri !\"",
+                "\"Zakaj te vceraj ni bilo na tenis,\" vpraša Miha Janeza.\n" +
+                        "\n" +
+                        " \"Ah, tašca je umrla, pa sem moral na pogreb,\" je rekel Janez.\n" +
+                        "\n" +
+                        " Miha: \"Kaj je pa imela ?\"\n" +
+                        "\n" +
+                        " Janez: \"Ne vec kot dva tisoc mark.\"\n" +
+                        "\n" +
+                        " Miha: \"Ne mislim kaj je zapustila, ampak kaj se ji zgodilo, da je umrla ?\"\n" +
+                        "\n" +
+                        " Janez: \"Kosilo je kuhala, potem pa je šla v klet po krompir, padla po stopnicah in se ubila.\"\n" +
+                        "\n" +
+                        " Miha: \"Ja, kaj je bilo pa potem ?\"\n" +
+                        "\n" +
+                        " Janez: \"Ja nic, potem smo pa makarone skuhali.\"",
+                "- Ja Tone, kaj pa pocneš tukaj ?\n" +
+                        "\n" +
+                        " - Žena mi je umrla. Kaj pa ti ?\n" +
+                        "\n" +
+                        " - Meni pa tašca.\n" +
+                        "\n" +
+                        " - Aaa... Tudi ni slabo, tudi ni slabo...",
+                " - Zakaj pa nimaš strašila na vrtu ?\n" +
+                        "\n" +
+                        " - Ni potrebno, ker je tašca stalno na vrtu.",
+                " Zakaj tašce ne pridejo v nebesa ?\n" +
+                        "\n" +
+                        " Ker zmaji ne letijo tako visoko.",
+                "Kaj imata skupnega tašca in sonce?\n" +
+                        "\n" +
+                        " V oba ne moreš dolgo gledati.",
+
+                "Po Slavoniji se sprehaja četnik in za sabo vleče mrtvega ustaša. Pa sreča UNPROFOR-jevega vojaka. Le ta ga vpraša: \"Kaj se je zgodilo?\" Četnik odgovori: \"Medvedi!\" Vojak vzame slovar in začne iskati. Ko končno najde pravi: \"A grizli?\" Četnik mu odgovori: \"Ma kakvi grizli, klali!\"",
+                "Kupac ulazi u apoteku: \"Mogu li da dobijem malo arsenika? Za punicu.\" \"Imate li recept?\" \"Nemam, ali mogu da vam pokažem njenu fotografiju.\"",
+"Dolazi žena kod doktora. \"Doktore, patim od impotencije.\" \"Kako patiš? Pa ti si žensko.\" \"Ma muž boluje, a ja patim.\"",
+                "Uhvatili Srbi Šiptara i dali mu kockicu da baca. Kažu mu ako baci od 1-5 koljejo ga. \"A šta ako bacim 6?\" pita Šiptar? \"Pa bacaš ponovo, jebo te!\"",
 "Scena doma. Policist hoče storiti samomor. Prisloni si cev pištole na sence, žena pa se krohota. On ji jezno zavpije:  \"Kaj se smeješ? Ti boš naslednja!\"",
                 "Neka ženska se odloči, da bi bilo lepo, če bi v časopisu objavila osmrtnico za njenega nedavno preminulega moža.\n" +
                         "Odpravi se v uredništvo časopisa, kjer ji urednik prijazno razloži, da osrtnica stane 1 € na besedo.\n" +
@@ -1347,9 +1957,155 @@ public class CreateFilesForCategories {
                         "Kolje otac sina ispred kuće.\n" +
                         "Kad izadje mama iz kuće i reče: Majstore, jesmi li za rakijicu?.",
                 "Klin s klinom, Žid s plinom",
-                "Tvoja mama je tako debela, da je zlomila vejo na družinskem drevesu..."
+                "Tvoja mama je tako debela, da je zlomila vejo na družinskem drevesu...",
+                "Pacient pride k zdravniku in le-ta ugotovi, da ima AIDS.\n" +
+                        "\"Ja, kaj naj pa sedaj naredim?\" vpraša pacient.\n" +
+                        "\"Lahko vam predpišem blatne kopeli,\" mu predlaga zdravnik.\n" +
+                        "\"Krasno, odlično - ampak ali bo to pomagalo?\"\n" +
+                        "\"Ja, no - to sicer ne, ampak na zemljo se boste pa le navadili.\"",
+                "Purana na dvorišču filozofsko razpravljata. Prvi vpraša drugega: \"A ti misliš, da življenje po božiču obstaja?\"",
+                "Izbor jutranje glasbe na eni od slovenskih radijskih postaj:\n" +
+                        "\n" +
+                        "Šestindvajsetletnici, ki je bila včeraj posiljena na železniški postaji, posvečamo naslednjo pesem: \"To je bil moj dan ljubezni\".\n" +
+                        "99-letni prababici posvečamo pesem \"Odšla bom še to noč, ozrla se ne bom\".\n" +
+                        "Fantu, ki mu je punca zgorela v požaru, posvečamo pesem \"Sve još mirise na nju\".\n" +
+                        "Moškemu, ki se je včeraj vrgel iz ljubljanskega nebotičnika, posvečamo to pesem: \"I believe I can fly\".\n" +
+                        "Za mladega fanta, ki je dobil levkemijo, pa: \"Nikoli več se ne bom ostrigu\".\n" +
+                        "Bolnemu dedku, ki danes praznuje stoti rojstni dan, posvečamo pesem \"Poletja ne bo, poletja ne bo\".\n" +
+                        "Francelnu, kateremu se je tašča včeraj obesila, pa posvečamo pesem \"Srečo imaš na vrvici...\".\n" +
+                        "\n" +
+                        "Prijetno poslušanje!",
+                "Kaj je rdeče in je v enem kotu?\n" +
+                        "Dojenček, ki se je igral z britvico. \n" +
+                        "Kaj je rdeče in je v vseh kotih?\n" +
+                        "Dojenček, ki se je igral z motorko.",
+                "Kaj je modro in zaudarja?\n" +
+                        "Dojenček po enem tednu.",
+                "Na vaškem pokopališču sreča mladenič zelo zelo staro ženičko. \"Kam pa, kam?\" jo vpraša. \"Domov, sinko, domov.\" \"A se vam splača?\"",
+                "Kmet se je po dolgih letih trdega dela odločil, da gre v toplice sam. Ker so že napeljali telefon, naroči hlapcu, da naj ga kliče res v zelo zelo nujnih primerih. Po tednu dni zazvoni telefon in hlapec reče gospodarju:\n" +
+                        "\"Gazda, ročaj na lopati se je zlomil ...\"\n" +
+                        "\"Aja, za tako oslarijo me kličeš!? Kaj si pa delal, da se je zlomil?\"\n" +
+                        "\"Nič, samo psa sem hotel pokopati ...\"\n" +
+                        "\"Kaj, našega Tarzana? Kaj mu je pa bilo?\"\n" +
+                        "\"Od štale mu je en tram na glavo padel.\"\n" +
+                        "\"Kako, saj imamo novo štalo!?\"\n" +
+                        "\"Ja, samo je malo gorela ...\"\n" +
+                        "\"Kako gorela!? Od kod pa ogenj v štali?\"\n" +
+                        "\"Ja, iz hiše ... Tja je veter razširil ogenj ...\"\n" +
+                        "\"KAJ!!? A je hiša tudi!?\"\n" +
+                        "\"Ja, tudi. Se je sveča prevrnila, pa je zagorelo ...\"\n" +
+                        "\"Kašna sveča, a ni bilo elektrike?\"\n" +
+                        "\"Elektrika je bila, samo vam je mama umrla, pa smo morali svečo prižgati ...\"\n" +
+                        "\"KAJ!? Mama so umrli!? Pa kako to, saj so bili zdravi ...\"\n" +
+                        "\"Zdravi, že zdravi, samo kap jih je, ko so mene na vaši ženi videli ...\"",
+                "Pet kirurgov se pogovarja ob kavi. Prvi pravi: \"Najrajši operiram računovodje: ko jih odpreš, imajo notri vse oštevilčeno.\" Drugi doda: \"Ma jok, najboljši so knjižničarji, vse v njih je razporejeno po abecednem redu.\" Tretji nasprotuje: \"Najlažji so električarji. Vse imajo barvno kodirano.\" Starejši, četrti ga prekine: \"Moji najljubši so pravniki. So brez srca in brez hrbtenice. Glave in riti so preprosto zamenljive.\" Peti, ki je poslušal svoje kolege pa doda: \"Jaz imam pa najrajši inženirje. Vedno razumejo, če ti po končani operaciji kakšen kos ostane.\"",
+                "\"Počakajte, počakajte, zmotila sem se!\" vpije farmacevtka za kupcem, ki odhaja iz lekarne. \"Namesto aspirina sem vam dala strihnin!\" \"Pa je velika razlika med tema zdraviloma?\" \"Tri evre!\"",
+                "Sinek priteče k mami: \"Mami, mami, oči se je pa obesil na podstrešju!\" Hitro stečeta na podstrešje in ... tam ni nič. Mama si že oddahne, sinko pa pravi: \"Hahah, 1. april! Oči se je obesil v kleti!\"",
+                "Sirota Jerica se je z otroki igrala na šolskem dvorišču. Z gornjega okna gleda hišnik in jim grozi: \"Če mi kdo razbije šipo, mu oko iztaknem!\" Ni hudič, da Jerica po nerodnosti brcne žogo naravnost v šipo. Brž priteče hišnik in vpraša: \"Kdo je bil?\" Seveda se Jerica takoj javi. Hišnik pa reče: \"Kar sem rekel, sem rekel.\" Nakar Jerici iztakne oko. Otroci se igrajo dalje. Čez čas sirota Jerica, sedaj še bolj nerodna, zaluča žogo v drugo šipo. Spet v trenutku priteče hišnik in se z vprašujočim pogledom ozre po dvorišču. Jerica prostovoljno pride k njemu. Hišnik pa pravi: \"Kar sem rekel, sem rekel!\" ... in iztakne Jerici še drugo oko. Jerica se obrne in počasi krene proti domu. V tem trenutku pa se hišniku milo stori pri srcu, poboža Jerico in reče: \"Saj še lahko ostaneš z otroki. Ostani in se igraj naprej!\" \"Ne morem,\" reče Jerica, \"mačeha je rekla, da moram iti domov takoj, ko bo tema.\"",
+                "Kakšna je razlika med dojenčkom in odojkom? Odojek se v pečici lepše zapeče.",
+                "Zakaj mamica ne uporablja kontracepcije? Zato, da bo imela kaj za podkuriti.",
+                "Mlada mamica po stopnicah nese dojenčka in ga drži za noge. To opazuje soseda in prijazno pove: \"Soseda, da ne bo malemu kapica dol padla!\" Mamica odgovori: \"Saj ni sile, sem jo mu pribila.\"",
+        "Komuniciraju onako europski međudržavno Janez i Mujo\n" +
+        "\n" +
+        "Priprema Slovenac Muju za ulazak u Europu, pa ga malo testira...\n" +
+        "\n" +
+        "Slovenac: Šta radi žena kad dobije jabuku? \n" +
+        "Mujo: Ne znam...\n" +
+        "Slovenac: Napravi kolač od jabuke!\n" +
+        "\n" +
+        "Gleda ga Mujo: A znaš li ti šta radi žena kad dobije šljivu?\n" +
+        "Slovenac: Ne, ne vem!\n" +
+        "Mujo: Sve radi, jarane, SVE!",
+                "Nakon 30 godina života u maloj Sloveniji, Mujo i Haso zatražili domovnicu.\n" +
+                        "Rekoše im da se svaki pravi Slovenac mora prvo popeti na Triglav.\n" +
+                        "I tako njih dvojica krenu.\n" +
+                        "\n" +
+                        "Na pola puta kaže Mujo :\n" +
+                        "“Ajde ti bolan sam, pa ponesi i moju knjižicu i udari pečat na vrhu Triglava.”\n" +
+                        "\n" +
+                        "Haso ode. Vraća se, a samo sebi udario pečat.\n" +
+                        "\n" +
+                        "“Zašto i meni nisi udario pečat?”\n" +
+                        "“Ma htio sam i tebi, ali sam se onda sjetio da sam ja sada pravi Slovenac,\n" +
+                        "pa nisam mogo. Jebi ga, takvi smo ti mi!”"
+        };
 
+        private String[] slovenci = {
 
+                "Kako se zove selidba dva Slovenca iz Slovenije u Hrvatsku? \n" +
+                        "INVAZIJA! ",
+                "Što radi plavuša između dva Slovenca? \n" +
+                        "Smeta. ",
+                "Kako Slovenci mjenjaju brzine? \n" +
+                        "Prva,druga, granica! ",
+                "Zašto letači na Planici ne lete preko 250 metara? \n" +
+                        "Jer bi skočili u Italiju. ",
+                "Koliko Slovenaca zna hodati? \n" +
+                        "Sva trojica. ",
+                "Najkraći vic na svijetu: Šeta bračni par slovenskom obalom... ",
+                "U Ljubljani vise nema disco klubova, jer su se pobunili Hrvati, Talijani, Austrijanci i Madjari da je preglasno!",
+                "Upozorenje na EU puzzlama:\n" +
+                        "- Djeca mlađa od 3 godine bi mogla progutat Sloveniju.",
+                "Slovenija baci nuklearnu bombu na Ameriku, Amerika ništa ne vraća, tako prvi put, drugi put i treći put. Nakon toga nazove predsjednik Slovenije Georgea Busha i pita ga zašto ne vraća. Kaže George Bush:\n" +
+                        "- Dobit ćete vi svoje kad vas nađem na karti!",
+                "Dosao Janez Jansa u posjetu Britanskoj kraljici i postavio joj \n" +
+                        "pitanje kako joj je uspjelo da tako dugo i uspjesno vlada i kako \n" +
+                        "joj je uspjelo da bude k tome i omiljena medju Britancima. \n" +
+                        "\"Pa to je doista jednostavno.\"- rece kraljica.\"Okruzena sam \n" +
+                        "inteligentnim savjetnicima.\" \n" +
+                        "Jansa se zamisli: \"A kako znate da je savjetnik inteligentan?\" \n" +
+                        "\" Ah, postavim im zagonetku i ako odgovore na nju onda su u \n" +
+                        "redu.\"- kaze kraljica i pozove batlera: \"Pozovite mi Georga \n" +
+                        "Browna, molim vas.\" \n" +
+                        "\n" +
+                        "Nakon par minuta pojavi se Sir George Brown. \n" +
+                        "\n" +
+                        "\"Izvolite Vase Visocanstvo...\" \n" +
+                        "\"Odgovorite mi George: Vasi roditelji imaju dijete. Ono nije \n" +
+                        "vas brat niti vasa sestra. Tko je to?\" \n" +
+                        "\"To sam ja Vase Visocanstvo.\"- odgovori George. \n" +
+                        "\"Izvrsno, George! Hvala Vam George.\" \n" +
+                        "\n" +
+                        "\"Eto, vidite gospodine Jansa.To radim jednom mjesecno sa \n" +
+                        "svima. To je tajna mog uspjeha.\" \n" +
+                        "\n" +
+                        "J. Jansa se zamisljen vrati u Ljubljanu, pozove Dr Dimitrija \n" +
+                        "Rupela i upita ga: \n" +
+                        "\"Recite mi Dimitrij: Vasi roditelji imaju dijete ali ono nije \n" +
+                        "vas brat nit vasa sestra. Ko je to?\" \n" +
+                        "Dr. Rupel se zamisli i nakon pet minuta kaze Jansi: \"Mozete li mi \n" +
+                        "dati nekoliko sati da razmislim, premijeru?\" \n" +
+                        "\"O da, svakako!\" \n" +
+                        "Rupel se povuce u kancelariju , nazove Dr.Danila Turka i pita ga. \n" +
+                        "\" Vasi roditelji imaju dijete ali ono nije vas brat nit vasa \n" +
+                        "sestra. Ko je to?\" \n" +
+                        "\"Pa to sam ja!\"-kaze Turk. \n" +
+                        "Rupel odmah ode kod Janse i kaze mu: \n" +
+                        "\"To je Dr. Danilo Turk, premijeru!\" \n" +
+                        "\n" +
+                        "\"Ne Rupel. To je George Brown!\" ",
+                "Zašto je u sloveniji zabranjeno pušenje? \n" +
+                        "jer dim smeta austrijancima...",
+                "Nakon 30 godina života u maloj Sloveniji, Mujo i Haso zatražili domovnicu.\n" +
+                        "Rekoše im da se svaki pravi Slovenac mora prvo popeti na Triglav.\n" +
+                        "I tako njih dvojica krenu.\n" +
+                        "\n" +
+                        "Na pola puta kaže Mujo :\n" +
+                        "“Ajde ti bolan sam, pa ponesi i moju knjižicu i udari pečat na vrhu Triglava.”\n" +
+                        "\n" +
+                        "Haso ode. Vraća se, a samo sebi udario pečat.\n" +
+                        "\n" +
+                        "“Zašto i meni nisi udario pečat?”\n" +
+                        "“Ma htio sam i tebi, ali sam se onda sjetio da sam ja sada pravi Slovenac,\n" +
+                        "pa nisam mogo. Jebi ga, takvi smo ti mi!”",
+                "- Zašto Slovenci sviraju harmoniku okomito?\n" +
+                        "- Zato da je sviraju vodoravno trebala bi im putovnica! ",
+                "Otišli Slovenci na neki seminar u Kinu. Dođe predsjednik Slovenaca kod predsjednika Kineza i pita njega kineski predsjednik:\n" +
+                        "- \"Koliko vas ima?\"\n" +
+                        "Kaže slovenski predsjednik:\n" +
+                        "- \"Oko 2 miljuna\",\n" +
+                        "a na to će kineski predsjednik:\n" +
+                        "- \"Pa što niste svi došli?\""
 
         };
 
@@ -1427,8 +2183,8 @@ public class CreateFilesForCategories {
                         "Potem pa: \"Zaklal sem jo!\" Gre v kuhinjo, pregleda vse nože,\n" +
                         "vsi so bili lepo čisti odloženi. Nič mu ni bilo jasno,\n" +
                         "nakar gre v kopalnico, se pogleda v ogledalo in ..... \"sranje,\n" +
-                        "požrl sem jo!!!!!!!!!!!!!!\"",
-                "Michael Jackson noče biti kremiran, ker je 89% njegovega telesa iz plastike. NAmesto tega bi raje" +
+                        "požrl sem jo!!!\"",
+                "Michael Jackson noče biti kremiran, ker je 89% njegovega telesa iz plastike. Namesto tega bi raje" +
                         " bil recikliran v tovarni LEGO, ker se bo tako lahko še vedno igral z otroci.",
                 "Gresta serijski morilec in punčka v gozd. \n" +
                         "Punčka pravi: \n" +
@@ -2972,30 +3728,6 @@ public class CreateFilesForCategories {
                         "Ustane se Haso i podere 50 eura.\n" +
                         "-Bolan Haso,jes' ti normalan?!?Poderao si 50 eura!!!Zašto?\n" +
                         "-Ma bona,đes' ti video 50 eura sa 2 nule!?!",
-                "Rad sajta je omogućila\n" +
-                        "prodavnica smešnih poklona Hoću To\n" +
-                        "Bosanci (166)\n" +
-                        "Ciganski vicevi (276)\n" +
-                        "Crni humor (256)\n" +
-                        "Crnogorci (138)\n" +
-                        "Gej vicevi (60)\n" +
-                        "Kompjuterski vicevi (36)\n" +
-                        "Lekarski vicevi (62)\n" +
-                        "Mali Perica (395)\n" +
-                        "Mujo i Haso (552)\n" +
-                        "Narodi vicevi (114)\n" +
-                        "Pandurski vicevi (119)\n" +
-                        "Piroćanci (96)\n" +
-                        "Politički vicevi (71)\n" +
-                        "Razno (1127)\n" +
-                        "Seksi vicevi (289)\n" +
-                        "Sportski vicevi (40)\n" +
-                        "Šumski vicevi (109)\n" +
-                        "Verski vicevi (63)\n" +
-                        "Vicevi o plavušama (329)\n" +
-                        "Zlatna ribica (32)\n" +
-                        "Mujo i Haso\n" +
-                        "\n" +
                         "Dolazi mujo u apoteku i trazi kondom apotekat mu kaze:\n" +
                         "- imamo žute,crne,miki maus,...\n" +
                         "- dajte mi crni..\n" +
@@ -3179,24 +3911,68 @@ public class CreateFilesForCategories {
                 "Mujo sreca Hasota in ga vprasa: \"Kako si, bolan, Haso?\" \n" +
                         "\"Pa, danas prilicno luksuzno,\" mu odvrne Haso. \n" +
                         "\"A kako to mislis - luksuzno?\" \n" +
-                        "\"Pa, upravo sam uzeo luk in nasjeckao ga i odmah mi navrle suze na oci!\" "
+                        "\"Pa, upravo sam uzeo luk in nasjeckao ga i odmah mi navrle suze na oci!\" ",
+                "Dođe mladić iz Dalmacije u Beograd i sjedne u kafić popiti nešto. Dođe konobar i kaže: \"Izovlite?\" \n" +
+                        "A mladić kaže: \"Daj kavu sa malo mlika i deci kole\" A konobar če: \n" +
+                        "\"Jel' bre, a gde su ti deca???\" ",
+                "- Znate kako se kaže DNK na bosanskom?\n" +
+                        "- Da nije komšijino?",
+                "Kako je ime bošnjakinji, ki študira na DIF-u? \n" +
+                        "Sadifa. "
 
         };
 
         private static String[] yugovici = {
 
+                "Sudac upita optuženog uhvačenog u krađi: \"Jeste li oženjeni?\" \"Nisam i nikada neču biti.\" \"Tako pametan čovjek, a krade?\"",
+                "Rječnik savremenog Bosanskog biznis jezika\n" +
+                        "(Bosnian business language)\n" +
+                        "\n" +
+                        "(za poslovne ljude iz inozemstva)\n" +
+                        "(for businessmen from outside)\n" +
+                        "\n" +
+                        "Language outside:\tKod nas se kaže:\n" +
+                        "Haven't seen you for a long time.\tĐe si, pizda ti materina!\n" +
+                        "I've been waiting for you for a while.\tĐe s' bio, jebo te ja.\n" +
+                        "You didn't recognize all the aspects.\tJebem te ćorava.\n" +
+                        "You must be joking.\tSereš.\n" +
+                        "I think you're wrong.\tPuši kurac.\n" +
+                        "The information you have is wrong.\tJedeš govna.\n" +
+                        "Your secretary is very attractive.\tJel, jebeš li ti to?\n" +
+                        "Have a nice time.\tDiši malo.\n" +
+                        "What's his position in the company?\tKoji je on kurac?\n" +
+                        "Publicity is not in our interest.\tKoji će mi kurac reklama?\n" +
+                        "His opinion is not relevant.\tKo ga jebe.\n" +
+                        "Your project is easy to realize.\tTo je pičkin dim.\n" +
+                        "It is impossible.\tMože, al' u kurcu.\n" +
+                        "We can't give you a loan.\tDam ti kurac na odloženo.\n" +
+                        "You don't have to obey this law.\tJebo zakon.\n" +
+                        "At last.\tFala kurcu.\n" +
+                        "Why don't you agree?\tKoji ti je kurac?\n" +
+                        "He's not very powerful.\tMože mi ga popušiti.\n" +
+                        "I'm sorry.\tJebi ga.\n" +
+                        "I don't want to.\tHoću kurac.\n" +
+                        "I wouldn't agree with you.\tJebo ti to priču.\n" +
+                        "Thank you.\t(taj izraz ne postoji)",
                 "Vegetarijanac stara indijanska riječ za \"\"Loš lovac\"\".",
                 "Svecenik u seoskoj crkvi drži propovijed: \"Što se to dogada s vama, ljudi moji!? Idem neki dan cestom, kad u grmlju spazim nju i njega, malo dalje opazim nju i nju, a još malo dalje njega i njega! Pa što je to, ljudi moji!?\"\n" +
                         "Štef šapne susjedu: \"Da je išel još malo dalje, srel bi - MENE I MENE!\"",
                 "Sta je najbolje u tome kada ti daje oralni seks?\n" +
                         "Onih 10 min cutanja!!!!\n" +
                         "\n",
+                "Leti medo avionom i naglo ogladni. Gleda kog če mrknuti, pa ode do pilotske kabine i krene na pilota, a ovaj če: \"Nemoj mene, medo! Pa tko če voziti avion?\"\n" +
+                        "Onda krene na kopilota, a ovaj če: \"Nemoj mene, medo! Što ako se nešto dogodi pilotu?\"\n" +
+                        "\"Pa kog onda da pojedem?\" pita medo, a pilot če mu: \"Odi iza i tam češ nači jednu slatku stjuardesu.\"\n" +
+                        "Odjuri medo i nadje stjuardesu i počne nešto s njom pričati po tiho, na uho. I odjednom medo širom otvori oči i vrati se mirno na svoje mjesto i sveze se. Nakon pola sata izlazi pilot iz kabine, da vidi što je s medom i stjuardesom. Vidi on medu, a vidi i stjuardesu živu. Pita medu: \"Pa zašto je nisi pojeo?\"\n" +
+                        "A medo če: \"Ma da! Pa da mene kasnije jebete!\"",
                 "Zašto Škoti nose suknje?\n" +
                         "Zato što ovce čuju rajferšlus na kilometar",
                 "Stara židovska poslovica, Bolje da nam RUSI zatvore PLIN, nego da nam ga Nijemci puste.",
                 "Izlazi žena iz salona za uljepšavanje i čeka je muž.\n" +
                         "Kad ju je vidio kaže \"Jebiga barem si probala\"\n" +
                         "\n",
+                "Nakon tri dana, iz ruševina dva nebodera u New Yorku izlazi Bosanac i otresajući prašinu sa sebe promrmlja: \"Jebo vas - vaki aerodrom.\"",
+
                 "Bosanac, Hercegovac i Crnogorac došli na kolodvor malo ranije, pa skoknuli \"na po jednu\".\n" +
                         "Međutim, malo se zarakijali, pa skoro zakasnili.\n" +
                         "Kad su istrčali na peron vlak već krenuo.\n" +

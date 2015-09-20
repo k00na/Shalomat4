@@ -224,6 +224,25 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
                 break;
             }
 
+            case(JSONSerializer.SRBI_FILENAME):{
+                    categoryName = "Srbi ";
+                break;
+            }
+
+            case(JSONSerializer.HRVATI_FILENAME):{
+                categoryName = "Hrvati ";
+                break;
+            }
+
+            case(JSONSerializer.SLOVENCI_FILENAME):{
+                categoryName = "Slovenci ";
+                break;
+            }
+            case(JSONSerializer.CRNOGORCI_FILENAME):{
+                categoryName = "Črnogorci ";
+                break;
+            }
+
         }
 
         return categoryName;
@@ -249,7 +268,10 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             text = text.substring(0, 400) + " ... ";
             holderThingy.mBtnPreberiVec.setVisibility(View.VISIBLE);
 
+        } else{
+            holderThingy.mBtnPreberiVec.setVisibility(View.GONE);
         }
+
 
 
 
@@ -307,6 +329,26 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             }
             case(R.id.opolzke_navigation):{
                 fileName = JSONSerializer.OPOLZKE_FILENAME;
+                break;
+            }
+
+            case(R.id.srbi_navigation):{
+                fileName = JSONSerializer.SRBI_FILENAME;
+                break;
+            }
+
+            case(R.id.hrvati_navigation):{
+                fileName = JSONSerializer.HRVATI_FILENAME;
+                break;
+            }
+
+            case(R.id.slovenci_navigation):{
+                fileName = JSONSerializer.SLOVENCI_FILENAME;
+                break;
+            }
+
+            case(R.id.crnogorci_navigation):{
+                fileName = JSONSerializer.CRNOGORCI_FILENAME;
                 break;
             }
 

@@ -290,6 +290,46 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
 
+                    case (R.id.srbi_navigation): {
+                        try {
+                            setupToolbarTitle(R.id.srbi_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        displayListOfJokes(R.id.srbi_navigation);
+                        return true;
+                    }
+
+                    case (R.id.hrvati_navigation): {
+                        try {
+                            setupToolbarTitle(R.id.hrvati_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        displayListOfJokes(R.id.hrvati_navigation);
+                        return true;
+                    }
+
+                    case (R.id.crnogorci_navigation): {
+                        try {
+                            setupToolbarTitle(R.id.crnogorci_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        displayListOfJokes(R.id.crnogorci_navigation);
+                        return true;
+                    }
+
+                    case (R.id.slovenci_navigation): {
+                        try {
+                            setupToolbarTitle(R.id.slovenci_navigation);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        displayListOfJokes(R.id.slovenci_navigation);
+                        return true;
+                    }
+
                     default: {
                         Toast.makeText(getApplicationContext(), "No such category...", Toast.LENGTH_LONG).show();
                         return true;
@@ -404,6 +444,22 @@ public class MainActivity extends AppCompatActivity {
             case(R.id.nakljucni_navigation):{
 
                 getSupportActionBar().setTitle(getString(R.string.nakljucniVici) + " [" + serializer.loadCategory(JSONSerializer.VSIVICI_FILENAME).size() + " vicev]");
+                break;
+            }
+            case(R.id.hrvati_navigation):{
+                getSupportActionBar().setTitle(getString(R.string.hrvatiNav) + " [" + serializer.loadCategory(JSONSerializer.HRVATI_FILENAME).size() + " vicev]");
+                break;
+            }
+            case(R.id.srbi_navigation):{
+                getSupportActionBar().setTitle(getString(R.string.srbiNav) + " [" + serializer.loadCategory(JSONSerializer.SRBI_FILENAME).size() + " vicev]");
+                break;
+            }
+            case(R.id.slovenci_navigation):{
+                getSupportActionBar().setTitle(getString(R.string.slovenciNav) + " [" + serializer.loadCategory(JSONSerializer.SLOVENCI_FILENAME).size() + " vicev]");
+                break;
+            }
+            case(R.id.crnogorci_navigation):{
+                getSupportActionBar().setTitle(getString(R.string.crnogorciNav) + " [" + serializer.loadCategory(JSONSerializer.CRNOGORCI_FILENAME).size() + " vicev]");
                 break;
             }
         }

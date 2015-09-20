@@ -194,6 +194,26 @@ public class JokeContentActivity extends AppCompatActivity {
                 break;
             }
 
+            case(R.id.srbi_navigation):{
+                fileName = JSONSerializer.SRBI_FILENAME;
+                break;
+            }
+
+            case(R.id.hrvati_navigation):{
+                fileName = JSONSerializer.HRVATI_FILENAME;
+                break;
+            }
+
+            case(R.id.slovenci_navigation):{
+                fileName = JSONSerializer.SLOVENCI_FILENAME;
+                break;
+            }
+
+            case(R.id.crnogorci_navigation):{
+                fileName = JSONSerializer.CRNOGORCI_FILENAME;
+                break;
+            }
+
 
         }
 

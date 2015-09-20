@@ -37,6 +37,10 @@ public class JSONSerializer {
     public static final String YUGO_FILENAME = "yugo.json";
     public static final String VSIVICI_FILENAME = "vsivici.json";
     public static final String OPOLZKE_FILENAME = "opolzke.json";
+    public static final String SRBI_FILENAME = "srbi.json";
+    public static final String HRVATI_FILENAME = "hrvati.json";
+    public static final String SLOVENCI_FILENAME = "slovenci.json";
+    public static final String CRNOGORCI_FILENAME = "crnogorci.json";
 
 
 
@@ -111,6 +115,10 @@ public class JSONSerializer {
         vsiViciArray.addAll(loadCategory(JANEZEK_FILENAME));
         vsiViciArray.addAll(loadCategory(MUJOHASO_FILENAME));
         vsiViciArray.addAll(loadCategory(CRNIHUMOR_FILENAME));
+        vsiViciArray.addAll(loadCategory(HRVATI_FILENAME));
+        vsiViciArray.addAll(loadCategory(SRBI_FILENAME));
+        vsiViciArray.addAll(loadCategory(SLOVENCI_FILENAME));
+        vsiViciArray.addAll(loadCategory(CRNOGORCI_FILENAME));
 
 
 

@@ -39,10 +39,7 @@
         android:id="@+id/janezek_navigation"
         android:title="@string/janezNav"></item>
 
-    <item
-        android:icon="@drawable/ic_send_black_24dp"
-        android:id="@+id/mujohaso_navigation"
-        android:title="@string/mujohasoNav"></item>
+
 
     <item
         android:icon="@drawable/ic_send_black_24dp"
@@ -53,9 +50,50 @@
     <item
         android:icon="@drawable/ic_send_black_24dp"
         android:id="@+id/yugovici_navigation"
-        android:title="@string/yugoviciNav"></item>
+        android:title="@string/yugoviciNav"/>
+
+
+
+
+
 
     </group>
+
+    <item android:title="Narodnosti">
+        <menu>
+
+            <item
+                android:icon="@drawable/ic_send_black_24dp"
+                android:id="@+id/crnogorci_navigation"
+                android:title="@string/crnogorciNav"></item>
+            />
+
+            <item
+                android:icon="@drawable/ic_send_black_24dp"
+                android:id="@+id/mujohaso_navigation"
+                android:title="@string/mujohasoNav"></item>
+
+
+            <item
+                android:icon="@drawable/ic_send_black_24dp"
+                android:id="@+id/hrvati_navigation"
+                android:title="@string/hrvatiNav"></item>
+
+            <item
+                android:icon="@drawable/ic_send_black_24dp"
+                android:id="@+id/slovenci_navigation"
+                android:title="@string/slovenciNav"></item>
+
+            <item
+                android:icon="@drawable/ic_send_black_24dp"
+                android:id="@+id/srbi_navigation"
+                android:title="@string/srbiNav"></item>
+
+            />
+
+        </menu>
+
+    </item>
 
     <group android:id="@+id/favorites_group">
 
