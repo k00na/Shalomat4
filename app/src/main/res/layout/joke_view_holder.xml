@@ -33,7 +33,7 @@
 
 
         <TextView
-            android:padding="15dp"
+            android:paddingBottom="3dp"
             android:paddingLeft="15dp"
             android:paddingRight="15dp"
             android:layout_width="match_parent"
@@ -70,6 +70,18 @@
                 android:visibility="gone"
                 />
 
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/ic_share_black_48dp"
+                android:id="@+id/shareImgView"
+                android:visibility="visible"
+                />
+
+
             <ImageView
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="6dp"
@@ -83,20 +95,32 @@
 
         </LinearLayout>
 
-
-
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:gravity="right"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Preberi več..."
-            android:id="@+id/preberiVec"
-            android:visibility="gone"
+            android:layout_margin="5dp"
+            android:background="#BBDEFB"
+            android:orientation="horizontal"
             android:layout_below="@+id/jokePreviewTextID"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="15dp"
-            />
+            android:id="@+id/bottomMarginLayout">
 
+            <Button
+                style="@style/ButtonText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cel vic"
+                android:textSize="15sp"
+                android:id="@+id/preberiVec"
+                android:visibility="gone"
+                android:textStyle="bold"
+                android:background="@drawable/btn_preberivec"
+                />
 
+        </LinearLayout>
+
+        <!--   android:layout_alignParentRight="true" -->
 
     </RelativeLayout>
 

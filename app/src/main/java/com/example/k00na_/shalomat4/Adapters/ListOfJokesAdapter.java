@@ -83,6 +83,16 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             }
         });
 
+        holderThingy.shareIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent smsIntent = new Intent(Intent.ACTION_SEND);
+                smsIntent.setType("text/plain");
+                smsIntent.putExtra(Intent.EXTRA_TEXT, "" + mJokeArrayList.get(position).getJokeContent() + "\n \n Šalomat™ ");
+                mContext.startActivity(smsIntent);
+            }
+        });
+
 
 
         String shrunkenJokePreview = shrinkText(mJokeArrayList.get(position).getJokeContent(), holderThingy);
@@ -144,14 +154,14 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
     private void bindViewsForHolder(HolderThingy holderThingy, int position) {
 
         if(mCurrentCategoryNum == R.id.shranjeni_navigation){
-            holderThingy.favoritedIcon.setVisibility(View.INVISIBLE);
+            holderThingy.favoritedIcon.setVisibility(View.GONE);
             holderThingy.categoryTitle.setVisibility(View.VISIBLE);
         } else if (mCurrentCategoryNum == R.id.nakljucni_navigation){
-            holderThingy.favoritedIcon.setVisibility(View.INVISIBLE);
+            holderThingy.favoritedIcon.setVisibility(View.VISIBLE);
             holderThingy.categoryTitle.setVisibility(View.VISIBLE);
         } else{
             holderThingy.favoritedIcon.setVisibility(View.VISIBLE);
-            holderThingy.categoryTitle.setVisibility(View.INVISIBLE);
+            holderThingy.categoryTitle.setVisibility(View.GONE);
 
         }
 
@@ -371,9 +381,10 @@ class HolderThingy extends RecyclerView.ViewHolder{
     TextView categoryTitle;
     TextView jokePreviewText;
     TextView rating;
-    ImageView favoritedIcon;
+    ImageView favoritedIcon, shareIcon;
     CardView mCardView;
     Button mBtnPreberiVec;
+
 
 
     public HolderThingy(View itemView) {
@@ -384,6 +395,7 @@ class HolderThingy extends RecyclerView.ViewHolder{
         jokePreviewText = (TextView)itemView.findViewById(R.id.jokePreviewTextID);
         //rating = (TextView)itemView.findViewById(R.id.ratingText);
         favoritedIcon = (ImageView)itemView.findViewById(R.id.favoritedIcon);
+        shareIcon = (ImageView)itemView.findViewById(R.id.shareImgView);
         mBtnPreberiVec = (Button)itemView.findViewById(R.id.preberiVec);
     }
 
