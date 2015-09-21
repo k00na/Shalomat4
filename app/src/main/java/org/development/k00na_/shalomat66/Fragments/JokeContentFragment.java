@@ -1,12 +1,10 @@
-package com.example.k00na_.shalomat4.Fragments;
+package org.development.k00na_.shalomat66.Fragments;
 
 import android.content.ClipboardManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,18 +13,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.google.android.gms.ads.AdRequest;
+
 import com.google.android.gms.ads.AdView;
 
-import com.example.k00na_.shalomat4.Activities.JokeContentActivity;
-import com.example.k00na_.shalomat4.MainActivity;
-import com.example.k00na_.shalomat4.Model.Joke;
+import org.development.k00na_.shalomat66.Model.Joke;
 import com.example.k00na_.shalomat4.R;
-import com.example.k00na_.shalomat4.Util.JSONSerializer;
-import com.google.android.gms.ads.AdView;
+import org.development.k00na_.shalomat66.Util.JSONSerializer;
+
 import com.melnykov.fab.ObservableScrollView;
 import com.melnykov.fab.ScrollDirectionListener;
 
@@ -34,7 +29,6 @@ import org.json.JSONException;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.UUID;
 
 /**

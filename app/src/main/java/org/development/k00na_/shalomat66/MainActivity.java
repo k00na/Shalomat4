@@ -1,4 +1,4 @@
-package com.example.k00na_.shalomat4;
+package org.development.k00na_.shalomat66;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -14,15 +14,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.k00na_.shalomat4.Util.WellcomingDialog;
+import com.example.k00na_.shalomat4.R;
+
+import org.development.k00na_.shalomat66.Util.WellcomingDialog;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 
-import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
-import com.example.k00na_.shalomat4.Model.GlobalState;
-import com.example.k00na_.shalomat4.Util.CreateFilesForCategories;
-import com.example.k00na_.shalomat4.Util.JSONSerializer;
+import org.development.k00na_.shalomat66.Fragments.ListOfJokesFragment;
+import org.development.k00na_.shalomat66.Model.GlobalState;
+import org.development.k00na_.shalomat66.Util.CreateFilesForCategories;
+import org.development.k00na_.shalomat66.Util.JSONSerializer;
 import com.michael.easydialog.EasyDialog;
 
 import org.json.JSONException;

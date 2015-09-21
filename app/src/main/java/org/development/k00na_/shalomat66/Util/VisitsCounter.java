@@ -1,7 +1,6 @@
-package com.example.k00na_.shalomat4.Util;
+package org.development.k00na_.shalomat66.Util;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 
 /**
  * Created by k00na_ on 7.9.2015.

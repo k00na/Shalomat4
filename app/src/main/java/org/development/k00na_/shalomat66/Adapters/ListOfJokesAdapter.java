@@ -1,4 +1,4 @@
-package com.example.k00na_.shalomat4.Adapters;
+package org.development.k00na_.shalomat66.Adapters;
 
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -14,11 +14,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.k00na_.shalomat4.Activities.JokeContentActivity;
-import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
-import com.example.k00na_.shalomat4.Model.Joke;
+import org.development.k00na_.shalomat66.Activities.JokeContentActivity;
+import org.development.k00na_.shalomat66.Fragments.ListOfJokesFragment;
+import org.development.k00na_.shalomat66.Model.Joke;
 import com.example.k00na_.shalomat4.R;
-import com.example.k00na_.shalomat4.Util.JSONSerializer;
+import org.development.k00na_.shalomat66.Util.JSONSerializer;
 
 import org.json.JSONException;
 

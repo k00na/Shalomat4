@@ -1,4 +1,4 @@
-package com.example.k00na_.shalomat4.Fragments;
+package org.development.k00na_.shalomat66.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,21 +9,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.k00na_.shalomat4.Adapters.ListOfJokesAdapter;
-import com.example.k00na_.shalomat4.Model.GlobalState;
-import com.example.k00na_.shalomat4.Model.Joke;
+import org.development.k00na_.shalomat66.Adapters.ListOfJokesAdapter;
+import org.development.k00na_.shalomat66.Model.GlobalState;
+import org.development.k00na_.shalomat66.Model.Joke;
 import com.example.k00na_.shalomat4.R;
-import com.example.k00na_.shalomat4.Util.JSONSerializer;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 
-import org.json.JSONException;
-
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 

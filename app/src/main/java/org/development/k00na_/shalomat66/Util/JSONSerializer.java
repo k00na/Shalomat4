@@ -1,8 +1,8 @@
-package com.example.k00na_.shalomat4.Util;
+package org.development.k00na_.shalomat66.Util;
 
 import android.content.Context;
 
-import com.example.k00na_.shalomat4.Model.Joke;
+import org.development.k00na_.shalomat66.Model.Joke;
 
 import org.json.JSONArray;
 import org.json.JSONException;

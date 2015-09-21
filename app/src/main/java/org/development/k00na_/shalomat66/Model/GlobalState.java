@@ -1,4 +1,4 @@
-package com.example.k00na_.shalomat4.Model;
+package org.development.k00na_.shalomat66.Model;
 
 import android.app.Application;
 

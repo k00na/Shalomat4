@@ -5,11 +5,11 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        applicationId "com.example.k00na_.shalomat"
+        applicationId "org.development.k00na_.shalomat66"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 1.1
+        versionName "1.1"
     }
     buildTypes {
         release {

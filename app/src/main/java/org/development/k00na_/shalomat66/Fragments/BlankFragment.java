@@ -1,4 +1,4 @@
-package com.example.k00na_.shalomat4.Fragments;
+package org.development.k00na_.shalomat66.Fragments;
 
 import android.app.Activity;
 import android.net.Uri;

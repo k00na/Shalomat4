@@ -1,36 +1,31 @@
-package com.example.k00na_.shalomat4.Activities;
+package org.development.k00na_.shalomat66.Activities;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.AttributeSet;
 import android.util.Log;
-import android.view.Menu;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.k00na_.shalomat4.Fragments.JokeContentFragment;
-import com.example.k00na_.shalomat4.Fragments.ListOfJokesFragment;
-import com.example.k00na_.shalomat4.Model.GlobalState;
-import com.example.k00na_.shalomat4.Model.Joke;
+import org.development.k00na_.shalomat66.Fragments.JokeContentFragment;
+import org.development.k00na_.shalomat66.Fragments.ListOfJokesFragment;
+import org.development.k00na_.shalomat66.Model.GlobalState;
+import org.development.k00na_.shalomat66.Model.Joke;
 import com.example.k00na_.shalomat4.R;
-import com.example.k00na_.shalomat4.Util.JSONSerializer;
+import org.development.k00na_.shalomat66.Util.JSONSerializer;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.michael.easydialog.EasyDialog;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.UUID;
 
 /**
