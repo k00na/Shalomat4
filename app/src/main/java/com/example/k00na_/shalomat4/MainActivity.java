@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.k00na_.shalomat4.Util.WellcomingDialog;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         adView = (AdView) this.findViewById(R.id.adViewYoYo);
 
         AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build()
                 ;
         adView.loadAd(adRequest);
@@ -93,8 +95,12 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onDrawerClosed(View drawerView) {
 
+                    WellcomingDialog wellcomingDialog = new WellcomingDialog();
 
-                    easyDialogWellcomeAnimation();
+                    if(numOfVisits() == 0)
+                    wellcomingDialog.show(getSupportFragmentManager(), "wellcome");
+
+                  //  easyDialogWellcomeAnimation();
                     incrementAndSaveVisits();
 
                 }

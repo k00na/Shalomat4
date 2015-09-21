@@ -1,5 +1,6 @@
 package com.example.k00na_.shalomat4.Adapters;
 
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
@@ -83,6 +84,16 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             }
         });
 
+        holderThingy.copyIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((ClipboardManager)mContext.getSystemService(mContext.CLIPBOARD_SERVICE))
+                        .setText(mJokeArrayList.get(position).getJokeContent() + "\n \n Šalomat™ ");
+
+                Toast.makeText(mContext, "Kopirano", Toast.LENGTH_LONG).show();
+            }
+        });
+
         holderThingy.shareIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,8 +103,6 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
                 mContext.startActivity(smsIntent);
             }
         });
-
-
 
         String shrunkenJokePreview = shrinkText(mJokeArrayList.get(position).getJokeContent(), holderThingy);
 
@@ -381,7 +390,7 @@ class HolderThingy extends RecyclerView.ViewHolder{
     TextView categoryTitle;
     TextView jokePreviewText;
     TextView rating;
-    ImageView favoritedIcon, shareIcon;
+    ImageView favoritedIcon, shareIcon, copyIcon;
     CardView mCardView;
     Button mBtnPreberiVec;
 
@@ -397,6 +406,7 @@ class HolderThingy extends RecyclerView.ViewHolder{
         favoritedIcon = (ImageView)itemView.findViewById(R.id.favoritedIcon);
         shareIcon = (ImageView)itemView.findViewById(R.id.shareImgView);
         mBtnPreberiVec = (Button)itemView.findViewById(R.id.preberiVec);
+        copyIcon = (ImageView)itemView.findViewById(R.id.copyIcon);
     }
 
 

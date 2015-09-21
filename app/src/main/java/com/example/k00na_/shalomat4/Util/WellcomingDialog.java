@@ -21,6 +21,7 @@ public class WellcomingDialog extends DialogFragment {
     LayoutInflater mLayoutInflater;
     View v;
     TextView mTextView;
+    TextView secondDescriptionText;
 
 
     @NonNull
@@ -31,10 +32,26 @@ public class WellcomingDialog extends DialogFragment {
         v = mLayoutInflater.inflate(R.layout.wellcome_alert_dialog, null);
 
         mTextView = (TextView)v.findViewById(R.id.appDescriptionText);
+        secondDescriptionText = (TextView)v.findViewById(R.id.secondDescriptionText);
 
-        String nodata="Prelistaj skozi 1000+ vicev in najboljše deli s prijatlelji, YO!";
+        String nodata="S to aplikacijo lahko: " +
+                "\n" +
+                "<br/>&#8226; brskaš vice po kategorijah"
+                +
+
+                "\n" + "<br/>&#8226; pošlješ vic prijateljem,"
+                +
+                 "\n" + "<br/>&#8226; shraniš najboljše vice v posebno mapo,"
+                +
+                "\n" + "<br/>&#8226; kopiraš posamezen vic in ga objaviš na Facebook-u. "
+
+                ;
+
+
 
         mTextView.setText(Html.fromHtml(nodata));
+
+        secondDescriptionText.setText("Z veseljem sprejemam tudi ideje/predloge za izboljšavo. ");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setView(v).setPositiveButton("OK", new DialogInterface.OnClickListener() {
