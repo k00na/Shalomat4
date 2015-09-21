@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (numOfVisits() == 0) {
 
+            WellcomingDialog wellcomingDialog = new WellcomingDialog();
+            wellcomingDialog.show(getSupportFragmentManager(), "wellcome");
 
             try {
                 createFiles.createAllJokes();
@@ -94,10 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onDrawerClosed(View drawerView) {
 
-                    WellcomingDialog wellcomingDialog = new WellcomingDialog();
 
-                    if(numOfVisits() == 0)
-                    wellcomingDialog.show(getSupportFragmentManager(), "wellcome");
 
                   //  easyDialogWellcomeAnimation();
                     incrementAndSaveVisits();
