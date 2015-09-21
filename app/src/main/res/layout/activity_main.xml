@@ -11,6 +11,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:gravity="left"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
 
     >
 
@@ -31,7 +32,16 @@
         <include android:id="@+id/includeappbar" layout="@layout/app_bar"></include>
 
 
-
+        <com.google.android.gms.ads.AdView
+            android:layout_marginTop="5dp"
+            android:layout_gravity = "center_horizontal"
+            android:id="@+id/adViewYoYo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            ads:adUnitId="ca-app-pub-8869325879758697/8536299960"
+            ads:adSize="BANNER"
+            ></com.google.android.gms.ads.AdView>
 
 
 

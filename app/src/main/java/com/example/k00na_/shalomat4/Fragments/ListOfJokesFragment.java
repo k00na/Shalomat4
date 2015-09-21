@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.k00na_.shalomat4.Adapters.ListOfJokesAdapter;
@@ -16,6 +17,9 @@ import com.example.k00na_.shalomat4.Model.GlobalState;
 import com.example.k00na_.shalomat4.Model.Joke;
 import com.example.k00na_.shalomat4.R;
 import com.example.k00na_.shalomat4.Util.JSONSerializer;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
 
 import org.json.JSONException;
 
@@ -36,6 +40,7 @@ public class ListOfJokesFragment extends Fragment{
     private ListOfJokesAdapter mListOfJokesAdapter;
     private RecyclerView mRecyclerView;
     GlobalState globalState;
+    private AdView adView;
 
 
     private TextView mTestingTextView;
@@ -68,6 +73,10 @@ public class ListOfJokesFragment extends Fragment{
 
         View v = inflater.inflate(R.layout.list_of_jokes_fragment, container, false);
         mRecyclerView = (RecyclerView)v.findViewById(R.id.recyclerViewID);
+
+
+
+
 
         /*
             GET DATA
