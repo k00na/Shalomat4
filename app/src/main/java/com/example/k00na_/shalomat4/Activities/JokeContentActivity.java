@@ -75,7 +75,6 @@ public class JokeContentActivity extends AppCompatActivity {
 
 
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         adView.loadAd(adRequest);
 
@@ -280,13 +279,13 @@ public class JokeContentActivity extends AppCompatActivity {
 
     private void easyDialogWellcomeAnimation(){
 
-        int[] coordinatesForDialog = {200, 550};
+        int[] coordinatesForDialog = {200, 280};
 
         new EasyDialog(JokeContentActivity.this)
                 .setLayoutResourceId(R.layout.easydialog_jokecontent_notification)
                 .setGravity(EasyDialog.GRAVITY_BOTTOM)
                 .setBackgroundColor(JokeContentActivity.this.getResources().getColor(R.color.background_color_black))
-               // .setLocationByAttachedView(toolbarAndAdHolder)
+            //   .setLocationByAttachedView(adView)
                 .setLocation(coordinatesForDialog)
                 .setAnimationTranslationShow(20, 350, 400, 0)
                 .setAnimationTranslationDismiss(70, 350, 0, 400)
