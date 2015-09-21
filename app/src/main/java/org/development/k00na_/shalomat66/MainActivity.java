@@ -14,7 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.k00na_.shalomat4.R;
+import org.development.k00na_.shalomat66.R;
 
 import org.development.k00na_.shalomat66.Util.WellcomingDialog;
 import com.google.android.gms.ads.AdRequest;
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         adView = (AdView) this.findViewById(R.id.adViewYoYo);
 
         AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build()
                 ;
         adView.loadAd(adRequest);

@@ -14,7 +14,8 @@ import android.widget.TextView;
 import org.development.k00na_.shalomat66.Adapters.ListOfJokesAdapter;
 import org.development.k00na_.shalomat66.Model.GlobalState;
 import org.development.k00na_.shalomat66.Model.Joke;
-import com.example.k00na_.shalomat4.R;
+import org.development.k00na_.shalomat66.R;
+
 import com.google.android.gms.ads.AdView;
 
 import java.io.IOException;

@@ -11,7 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.k00na_.shalomat4.R;
+import org.development.k00na_.shalomat66.R;
+
 
 /**
  * Created by k00na_ on 20.9.2015.

@@ -17,7 +17,8 @@ import android.widget.Toast;
 import org.development.k00na_.shalomat66.Activities.JokeContentActivity;
 import org.development.k00na_.shalomat66.Fragments.ListOfJokesFragment;
 import org.development.k00na_.shalomat66.Model.Joke;
-import com.example.k00na_.shalomat4.R;
+import org.development.k00na_.shalomat66.R;
+
 import org.development.k00na_.shalomat66.Util.JSONSerializer;
 
 import org.json.JSONException;

@@ -19,7 +19,8 @@ import android.widget.Toast;
 import com.google.android.gms.ads.AdView;
 
 import org.development.k00na_.shalomat66.Model.Joke;
-import com.example.k00na_.shalomat4.R;
+import org.development.k00na_.shalomat66.R;
+
 import org.development.k00na_.shalomat66.Util.JSONSerializer;
 
 import com.melnykov.fab.ObservableScrollView;

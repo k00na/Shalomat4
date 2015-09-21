@@ -8,7 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.k00na_.shalomat4.R;
+import org.development.k00na_.shalomat66.R;
+
 
 /**
  * A simple {@link Fragment} subclass.

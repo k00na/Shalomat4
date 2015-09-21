@@ -8,7 +8,8 @@ android {
         applicationId "org.development.k00na_.shalomat66"
         minSdkVersion 15
         targetSdkVersion 22
-        versionCode 1.1
+
+        versionCode 11
         versionName "1.1"
     }
     buildTypes {
