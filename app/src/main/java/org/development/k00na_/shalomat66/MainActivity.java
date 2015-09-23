@@ -470,7 +470,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
 
-        globalState.setNumOfVisits(prefs.getInt("counter", 0));
+        globalState.setNumOfVisits(prefs.getInt("counterFirstUpdate", 0));
 
         return globalState.getNumOfVisits();
     }
@@ -480,10 +480,10 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
 
-        globalState.setNumOfVisits(prefs.getInt("counter", 0) + 1);
+        globalState.setNumOfVisits(prefs.getInt("counterFirstUpdate", 0) + 1);
 
 
-        editor.putInt("counter", globalState.getNumOfVisits());
+        editor.putInt("counterFirstUpdate", globalState.getNumOfVisits());
         editor.commit();
 //
 

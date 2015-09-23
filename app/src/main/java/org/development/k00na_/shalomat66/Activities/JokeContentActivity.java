@@ -255,10 +255,10 @@ public class JokeContentActivity extends AppCompatActivity {
         SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
 
-        mGlobalState.setNumOfVisitsContent(prefs.getInt("counter2", 0) + 1);
+        mGlobalState.setNumOfVisitsContent(prefs.getInt("counter2FirstUpdate", 0) + 1);
 
 
-        editor.putInt("counter2", mGlobalState.getNumOfVisitsContent());
+        editor.putInt("counter2FirstUpdate", mGlobalState.getNumOfVisitsContent());
         editor.commit();
 
 
@@ -269,7 +269,7 @@ public class JokeContentActivity extends AppCompatActivity {
         SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
 
-        mGlobalState.setNumOfVisitsContent(prefs.getInt("counter2", 0));
+        mGlobalState.setNumOfVisitsContent(prefs.getInt("counter2FirstUpdate", 0));
 
         return mGlobalState.getNumOfVisitsContent();
     }
