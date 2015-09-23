@@ -47,6 +47,7 @@ public class ListOfJokesFragment extends Fragment{
         args.putString(CATEGORY_TITLE_KEY, currentTitle);
         ListOfJokesFragment fragment = new ListOfJokesFragment();
         fragment.setArguments(args);
+        currentJokeIndex = 0;
         return fragment;
 
     }
@@ -121,7 +122,7 @@ public class ListOfJokesFragment extends Fragment{
         mRecyclerView.setAdapter(mListOfJokesAdapter);
 
 
-        mRecyclerView.scrollToPosition(currentJokeIndex  + 1);
+        mRecyclerView.scrollToPosition(currentJokeIndex);
 
                 //scrollToPosition(currentJokeIndex);
 
@@ -132,7 +133,9 @@ public class ListOfJokesFragment extends Fragment{
     public void onPause() {
         super.onPause();
 
-
+        // če smo kliknli na navigation button, se mora current joke index nastavit na 0.
         currentJokeIndex = ((LinearLayoutManager)mRecyclerView.getLayoutManager()).findFirstVisibleItemPosition();
     }
+
+
 }

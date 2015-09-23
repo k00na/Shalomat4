@@ -21,9 +21,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/categoryTitle"
-            android:layout_above="@+id/jokePreviewTextID"
+            android:layout_alignParentTop="true"
             android:layout_alignLeft="@+id/jokePreviewTextID"
             android:paddingLeft="15dp"
+            android:layout_marginTop="4dp"
             android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -43,12 +44,14 @@
             android:textSize="25sp"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/jokeRatingsLayout"
+            android:layout_below="@+id/categoryTitle"
             android:text="Ok, i've figured out how to implement a TabLayout and NavigationView or better said, what I was doing wrong...
 	    The NavigationView didn't have the DrawerLayout as its first parent, it was inside a LinearLayout... I've changed that and now it works...
         First task: "
             />
 
+
+        <!--
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -105,6 +108,8 @@
 
         </LinearLayout>
 
+        -->
+
         <LinearLayout
             android:layout_alignParentBottom="true"
             android:gravity="right"
@@ -112,9 +117,64 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="#BBDEFB"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_below="@+id/jokePreviewTextID"
             android:id="@+id/bottomMarginLayout">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/jokeRatingsLayout"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:text="4/5"
+                    android:id="@+id/ratingText"
+                    android:textSize="20sp"
+                    android:visibility="gone"
+                    />
+
+                <ImageView
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/copyIcon"
+                    android:src="@drawable/ic_content_copy_black_36dp"
+                    />
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="6dp"
+                    android:src="@drawable/ic_share_black_36dp"
+                    android:id="@+id/shareImgView"
+                    android:visibility="visible"
+                    />
+
+
+                <ImageView
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="0dp"
+                    android:id="@+id/favoritedIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_star_border_black_36dp"
+                    android:visibility="invisible"
+                    />
+
+
+
+
+            </LinearLayout>
 
             <Button
                 style="@style/ButtonText"

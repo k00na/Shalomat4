@@ -388,6 +388,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch(categoryID){
             case(R.id.blondinke_navigation):{
+
                 getSupportActionBar().setTitle(getString(R.string.blondinkeNav) + " [" + serializer.loadCategory(JSONSerializer.BLONDINKE_FILENAME).size() + " vicev]");
 
                 break;

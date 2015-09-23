@@ -51,12 +51,12 @@
 
 
         <com.google.android.gms.ads.AdView
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="8dp"
             android:layout_gravity = "center_horizontal|bottom"
             android:id="@+id/adViewYoYo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="8dp"
             ads:adUnitId="ca-app-pub-8869325879758697/8536299960"
             ads:adSize="BANNER"
             ></com.google.android.gms.ads.AdView>

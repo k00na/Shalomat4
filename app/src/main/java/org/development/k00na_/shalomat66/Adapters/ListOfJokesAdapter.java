@@ -287,9 +287,15 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         if(textSize > 400) {
             text = text.substring(0, 400) + " ... ";
             holderThingy.mBtnPreberiVec.setVisibility(View.VISIBLE);
+            holderThingy.copyIcon.setVisibility(View.GONE);
+            holderThingy.favoritedIcon.setVisibility(View.GONE);
+            holderThingy.shareIcon.setVisibility(View.GONE);
 
         } else{
             holderThingy.mBtnPreberiVec.setVisibility(View.GONE);
+            holderThingy.copyIcon.setVisibility(View.VISIBLE);
+            holderThingy.favoritedIcon.setVisibility(View.VISIBLE);
+            holderThingy.shareIcon.setVisibility(View.VISIBLE);
         }
 
 
