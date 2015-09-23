@@ -32,9 +32,27 @@
         <include android:id="@+id/includeappbar" layout="@layout/app_bar"></include>
 
 
+
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/fragment_container">
+
+
+
+
+
+
+    </FrameLayout>
+
+
         <com.google.android.gms.ads.AdView
             android:layout_marginTop="5dp"
-            android:layout_gravity = "center_horizontal"
+            android:layout_gravity = "center_horizontal|bottom"
             android:id="@+id/adViewYoYo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,16 +62,6 @@
             ></com.google.android.gms.ads.AdView>
 
 
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/fragment_container">
-
-
-
-
-    </FrameLayout>
 
     </LinearLayout>
 
@@ -96,6 +104,8 @@
 
 
         ></android.support.design.widget.NavigationView>
+
+
 
 
 

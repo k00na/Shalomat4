@@ -46,7 +46,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         mContext = c;
         Log.i("curCat", "Curr Cat, ListOfJokesAdapter: " + mCurrentCategoryNum);
         mJokeArrayList = currentJokeList(currentCategoryNum);
-        Collections.shuffle(mJokeArrayList);
+       // Collections.shuffle(mJokeArrayList);
 
 
     }

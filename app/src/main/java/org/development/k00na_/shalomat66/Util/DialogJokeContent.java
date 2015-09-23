@@ -17,7 +17,7 @@ import org.development.k00na_.shalomat66.R;
 /**
  * Created by k00na_ on 20.9.2015.
  */
-public class WellcomingDialog extends DialogFragment {
+public class DialogJokeContent extends DialogFragment {
 
     LayoutInflater mLayoutInflater;
     View v;
@@ -30,26 +30,7 @@ public class WellcomingDialog extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
         mLayoutInflater = getActivity().getLayoutInflater();
-        v = mLayoutInflater.inflate(R.layout.wellcome_alert_dialog, null);
-
-        mTextView = (TextView)v.findViewById(R.id.appDescriptionText);
-        secondDescriptionText = (TextView)v.findViewById(R.id.secondDescriptionText);
-
-        String nodata="S to aplikacijo lahko: " +
-                "\n" +
-                "<br/>&#8226; brskaš vice po kategorijah"
-                +
-
-                "\n" + "<br/>&#8226; pošlješ vic prijateljem,"
-                +
-                 "\n" + "<br/>&#8226; shraniš najboljše vice v posebno mapo,"
-                +
-                "\n" + "<br/>&#8226; kopiraš posamezen vic in ga objaviš na Facebook-u. ";
-
-
-
-        mTextView.setText(Html.fromHtml(nodata));
-
+        v = mLayoutInflater.inflate(R.layout.dialog_finger_swipe, null);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setView(v).setPositiveButton("OK", new DialogInterface.OnClickListener() {

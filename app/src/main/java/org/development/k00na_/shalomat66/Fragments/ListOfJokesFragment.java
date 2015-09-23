@@ -35,6 +35,7 @@ public class ListOfJokesFragment extends Fragment{
     private RecyclerView mRecyclerView;
     GlobalState globalState;
     private AdView adView;
+    private static int currentJokeIndex = 0;
 
 
     private TextView mTestingTextView;
@@ -67,10 +68,6 @@ public class ListOfJokesFragment extends Fragment{
 
         View v = inflater.inflate(R.layout.list_of_jokes_fragment, container, false);
         mRecyclerView = (RecyclerView)v.findViewById(R.id.recyclerViewID);
-
-
-
-
 
         /*
             GET DATA
@@ -113,6 +110,8 @@ public class ListOfJokesFragment extends Fragment{
         super.onResume();
 
 
+
+
         try {
             mListOfJokesAdapter = new ListOfJokesAdapter(mCurrentCategoryInt, mCurrentCategoryTitle, getActivity());
         } catch (IOException e) {
@@ -122,5 +121,18 @@ public class ListOfJokesFragment extends Fragment{
         mRecyclerView.setAdapter(mListOfJokesAdapter);
 
 
+        mRecyclerView.scrollToPosition(currentJokeIndex  + 1);
+
+                //scrollToPosition(currentJokeIndex);
+
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+
+        currentJokeIndex = ((LinearLayoutManager)mRecyclerView.getLayoutManager()).findFirstVisibleItemPosition();
     }
 }

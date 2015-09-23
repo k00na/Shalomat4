@@ -19,6 +19,7 @@ import org.development.k00na_.shalomat66.Fragments.ListOfJokesFragment;
 import org.development.k00na_.shalomat66.Model.GlobalState;
 import org.development.k00na_.shalomat66.Model.Joke;
 import org.development.k00na_.shalomat66.R;
+import org.development.k00na_.shalomat66.Util.DialogJokeContent;
 import org.development.k00na_.shalomat66.Util.JSONSerializer;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -79,7 +80,9 @@ public class JokeContentActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                onBackPressed();
+                finish();
+
+             //   onBackPressed();
 
             }
         });
@@ -95,8 +98,9 @@ public class JokeContentActivity extends AppCompatActivity {
         }
 
         if(numOfVisitsForContentActivity() == 0){
-           // getResources().getString(R.string.dobrodoslica)
-            easyDialogWellcomeAnimation();
+
+            DialogJokeContent dialogJokeContent = new DialogJokeContent();
+            dialogJokeContent.show(getSupportFragmentManager(), "dialogJokeContent");
 
         }
 
@@ -233,10 +237,7 @@ public class JokeContentActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle(mCategoryTitle);
 
-        if(numOfVisitsForContentActivity() == 1 || numOfVisitsForContentActivity() == 2){
-            easyDialogWellcomeAnimation();
 
-        }
 
 
     }
@@ -273,25 +274,7 @@ public class JokeContentActivity extends AppCompatActivity {
         return mGlobalState.getNumOfVisitsContent();
     }
 
-    private void easyDialogWellcomeAnimation(){
 
-        int[] coordinatesForDialog = {200, 280};
-
-        new EasyDialog(JokeContentActivity.this)
-                .setLayoutResourceId(R.layout.easydialog_jokecontent_notification)
-                .setGravity(EasyDialog.GRAVITY_BOTTOM)
-                .setBackgroundColor(JokeContentActivity.this.getResources().getColor(R.color.background_color_black))
-            //   .setLocationByAttachedView(adView)
-                .setLocation(coordinatesForDialog)
-                .setAnimationTranslationShow(20, 350, 400, 0)
-                .setAnimationTranslationDismiss(70, 350, 0, 400)
-                .setTouchOutsideDismiss(true)
-                .setMatchParent(false)
-                .setMarginLeftAndRight(24, 24)
-                .show();
-
-
-    }
 
     @Override
     protected void onDestroy() {

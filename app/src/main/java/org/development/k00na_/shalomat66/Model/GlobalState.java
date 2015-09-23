@@ -1,6 +1,8 @@
 package org.development.k00na_.shalomat66.Model;
 
 import android.app.Application;
+import android.content.Context;
+import android.support.multidex.MultiDex;
 
 import java.util.ArrayList;
 
@@ -30,6 +32,12 @@ public class GlobalState extends Application {
     /*
         GETTERS AND SETTERS
      */
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 
     public int getNumOfVisitsContent() {
         return numOfVisitsContent;
