@@ -51,12 +51,12 @@
 
 
         <com.google.android.gms.ads.AdView
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="6dp"
             android:layout_gravity = "center_horizontal|bottom"
             android:id="@+id/adViewYoYo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="4dp"
             ads:adUnitId="ca-app-pub-8869325879758697/8536299960"
             ads:adSize="BANNER"
             ></com.google.android.gms.ads.AdView>
@@ -101,6 +101,7 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
         android:id="@+id/navigationView"
+
 
 
         ></android.support.design.widget.NavigationView>

@@ -95,20 +95,73 @@
 
     </item>
 
-    <group android:id="@+id/favorites_group">
+    <item android:title="Ostalo">
+        <menu>
 
-        <item
-            android:icon="@drawable/ic_star_black_24dp"
-            android:id="@+id/shranjeni_navigation"
-            android:title="@string/shranjeniVici"
-            ></item>
+            <item
+                android:icon="@drawable/ic_star_black_24dp"
+                android:id="@+id/shranjeni_navigation"
+                android:title="@string/shranjeniVici"
+                ></item>
 
-        <item
-            android:icon="@drawable/ic_send_black_24dp"
-            android:id="@+id/nakljucni_navigation"
-            android:title="@string/nakljucniVici">
+            <item
+                android:icon="@drawable/ic_send_black_24dp"
+                android:id="@+id/nakljucni_navigation"
+                android:title="@string/nakljucniVici">
 
-        </item>
-    </group>
+            </item>
+
+
+        </menu>
+
+    </item>
+
+    <item android:title="Partnerske strani [FB]">
+        <menu>
+
+            <item
+                android:icon="@drawable/ic_web_black_24dp"
+                android:id="@+id/viciZaDobroJutro"
+                android:title="@string/viciZaDobroJutro"></item>
+            />
+
+            <item
+                android:icon="@drawable/ic_web_black_24dp"
+                android:id="@+id/zakajAlternativa"
+                android:title="@string/zakajAlternativa"></item>
+            />
+
+
+
+            <item
+                android:icon="@drawable/ic_web_black_24dp"
+                android:id="@+id/najNajFoto"
+                android:title="@string/najNajFoto"></item>
+            />
+
+            <item
+                android:icon="@drawable/ic_web_black_24dp"
+                android:id="@+id/najlepseTetovaze"
+                android:title="@string/najlepseTetoavze"></item>
+            />
+
+            <item
+                android:icon="@drawable/ic_web_black_24dp"
+                android:id="@+id/spoznajPomurje"
+                android:title="@string/spoznajPomurje"></item>
+            />
+
+
+
+            />
+
+        </menu>
+
+    </item>
+
+
+
+
+
 
 </menu>

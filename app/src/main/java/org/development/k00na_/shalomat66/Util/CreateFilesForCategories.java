@@ -856,7 +856,48 @@ public class CreateFilesForCategories {
 
 
 
-    static String[] blodninke = {"Blondinka prijateljici razlaga o neprijetni izkušnji iz službe: “Včeraj sem zgrešila ženski WC in vstopila v moškega.” “Te je kdo videl?” je radovedna prijateljica. “Ja, tam je malo potrebo opravljal moj šef. Videla sem njegov penis!” “In kakšnega ima?” “Pa, za moj okus je preveč slan!”",
+    static String[] blodninke = {
+            "Blondinka je skupaj z bratom policajem\n" +
+                    "odšla na policijsko postajo, ker se je hotela\n" +
+                    "vpisati na policijsko akademijo. \n" +
+                    "\n" +
+                    "Tako je stopila do inšpektorja, ki ji je \n" +
+                    "postavil par vprašanj, da preveri njeno\n" +
+                    "splošno razgledanost. \n" +
+                    "\n" +
+                    "-\"Kaj je algoritem?\"  \n" +
+                    "jo vpraša. \n" +
+                    "\n" +
+                    "Blondinka mu odgovori: \n" +
+                    "-\"To je alga, ki ima svoj ritem...\"\n" +
+                    "\n" +
+                    "Odgovor je inšpektorja precej zmedel, a se\n" +
+                    "je zbral in ji postavil novo vprašanje:\n" +
+                    "\"Kdo je bil Gavrilo Princip?\"\n" +
+                    "\n" +
+                    "Blondinka se zamisli in vpraša:\n" +
+                    "\"Da ni to slučajno tisti tip, ki je ubil\n" +
+                    "poslednjega kitajskega carja, John-a F. Kennedy-ja?\"\n" +
+                    "\n" +
+                    "Inšpektor se še bolj začudi, a vseeno\n" +
+                    "postavi še zadnje vprašanje: \n" +
+                    "\"Povejte mi, kdo je ubil Jezusa Kristusa?\"\n" +
+                    "\n" +
+                    "Blondinka razmišlja in razmišlja, a skrušeno odgovori:\n" +
+                    "\"Ne vem\"\n" +
+                    "\n" +
+                    "\"Dobro\", reče inšpektor: \"potem pojdite ven\n" +
+                    "in se vrnite, ko boste zvedeli odgovor.\"\n" +
+                    "\n" +
+                    "Blondinka vsa srečna odide iz pisarne in \n" +
+                    "brat jo vpraša:\n" +
+                    "\"Kako ti je šlo?\"\n" +
+                    "\n" +
+                    "Blondinka na to odgovori z: \n" +
+                    "\"Sijajno, šef mi je že takoj dal nalogo  -\n" +
+                    "razrešiti moram primer umora\"",
+
+            "Blondinka prijateljici razlaga o neprijetni izkušnji iz službe: “Včeraj sem zgrešila ženski WC in vstopila v moškega.” “Te je kdo videl?” je radovedna prijateljica. “Ja, tam je malo potrebo opravljal moj šef. Videla sem njegov penis!” “In kakšnega ima?” “Pa, za moj okus je preveč slan!”",
             "Blondinka vstopi v pekarno in vpraša prodajalko: “Ali imate burek?” “Imamo, samo trenutek.” pravi prodajalka. “Dobro, dajte mi ta samo trenutek in jogurt.”",
             "Zakaj so blondinke resne, ko pijejo sok iz tetrapaka ? Ker na njem piše \"concentrate\".",
             "Kdo že vrsto let uspešno zmaguje na tekmovanjih za najbolj pametno blondinko? Zlata prinašalka!",
@@ -4518,9 +4559,7 @@ public class CreateFilesForCategories {
                         "Mož zvedavo vpraša policaja: \"Že, že, saj razumem kazen, ampak zakaj mora gospa plačati več kot jaz !?\"\n" +
                         "Policaj odvrne: \"Vse je OK, imam zapisano. Vas sem zalotil pri tem dejanju prvič, vašo gospo pa že tretjič !\"",
                 "I'm always frank with my sexual partners.\n" +
-                        "Don't want them knowing my real name, do I?\n" +
-                        "\n" +
-                        "Courtesy of Sickipedia.org: http://www.sickipedia.org/sex-and-shit/adultery#ixzz3lLasceuV",
+                        "Don't want them knowing my real name, do I?\n",
                 "Skrivnosti uspešnega zakona: \n 1. Pomembno je, da ženska kuha, čisti in pere. \n 2. Pomembno je, da ženska dobro služi" +
                         "\n 3. Pomembno je, da ženska rada seksa \n 4. Najpomembnejše je, da se te tri ženske nikoli ne srečajo",
                 "Moja ženska dela kot asistentka cirkuškega čarovnika. Danes sem s šihta prišel zgodaj in ona je bila v spalnici. Rekla je \"Abrakadabra!\" in kar naenkrat je iz omare padel moj prijatelj Štef, popolnoma nag. Ubogemu Štefu zagotovo ni bilo jasno popolnoma nič",

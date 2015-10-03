@@ -2,6 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.development.k00na_.shalomat66" >
 
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="22" />
+    <!--required permission-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--optional permission - highly recommended-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!--optional permission -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+
     <application
         android:name="org.development.k00na_.shalomat66.Model.GlobalState"
         android:allowBackup="true"

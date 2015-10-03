@@ -43,13 +43,13 @@
 
 
     <com.google.android.gms.ads.AdView
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:layout_gravity = "center_horizontal"
         android:layout_below="@+id/includingAppBarForJokeContent"
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="2dp"
         ads:adUnitId="@string/banner_ad_unit_id"
         ads:adSize="BANNER"
         ></com.google.android.gms.ads.AdView>

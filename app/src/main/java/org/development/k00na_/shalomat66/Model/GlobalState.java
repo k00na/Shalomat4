@@ -3,6 +3,9 @@ package org.development.k00na_.shalomat66.Model;
 import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
+import android.util.Log;
+
+import com.flurry.android.FlurryAgent;
 
 import java.util.ArrayList;
 
@@ -27,11 +30,27 @@ public class GlobalState extends Application {
     private int yugoSize;
     private int shranjeniSize;
     private int vsiViciSize;
-
+    private static final String FLURRY_KEY = "GY98KGH7WQVZ72N4TFKH";
 
     /*
         GETTERS AND SETTERS
      */
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        FlurryAgent.setLogEvents(true);
+
+        // configure Flurry
+        FlurryAgent.setLogEnabled(true);
+        FlurryAgent.setLogLevel(Log.INFO);
+
+        // init Flurry
+        FlurryAgent.init(this, FLURRY_KEY);
+
+
+    }
 
     @Override
     protected void attachBaseContext(Context base) {

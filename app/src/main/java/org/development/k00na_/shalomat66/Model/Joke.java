@@ -16,7 +16,7 @@ public class Joke {
     private double userRating = 0.0;
     private boolean isFavorited = false;
     private UUID jokeID;
-    // JSON STUFF
+    // JSON STUFF yo
     public static final String JSON_ID = "id";
     public static final String JSON_CATTITLE = "category";
     public static final String JSON_CONENT = "content";

@@ -46,7 +46,8 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         mContext = c;
         Log.i("curCat", "Curr Cat, ListOfJokesAdapter: " + mCurrentCategoryNum);
         mJokeArrayList = currentJokeList(currentCategoryNum);
-       // Collections.shuffle(mJokeArrayList);
+        if(currentCategoryNum == R.id.nakljucni_navigation)
+             Collections.shuffle(mJokeArrayList);
 
 
     }
@@ -124,12 +125,17 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
 
         */
 
-        holderThingy.favoritedIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveToFavorites(mJokeArrayList.get(position), mCurrentCategoryNum, mJokeArrayList, holderThingy);
-            }
-        });
+        if(mCurrentCategoryNum != R.id.shranjeni_navigation){
+            holderThingy.favoritedIcon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    saveToFavorites(mJokeArrayList.get(position), mCurrentCategoryNum, mJokeArrayList, holderThingy);
+                }
+            });
+        } else {
+            holderThingy.favoritedIcon.setVisibility(View.GONE);
+        }
+
 
 
     }

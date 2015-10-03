@@ -1,7 +1,9 @@
 package org.development.k00na_.shalomat66;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
@@ -10,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -17,6 +20,8 @@ import android.widget.Toast;
 import org.development.k00na_.shalomat66.R;
 
 import org.development.k00na_.shalomat66.Util.WellcomingDialog;
+
+import com.flurry.android.FlurryAgent;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -327,6 +332,44 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
 
+                    case (R.id.viciZaDobroJutro): {
+                        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/viczadobrojutro?fref=ts"));
+                        startActivity(implicit);
+                        return true;
+                    }
+
+                    case (R.id.zakajAlternativa): {
+                        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/ZakajAlternativa"));
+                        startActivity(implicit);
+                        return true;
+                    }
+
+                    case (R.id.najNajFoto) : {
+
+                        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/NajNajFoto"));
+                        startActivity(implicit);
+                        return true;
+
+                    }
+
+                    case (R.id.najlepseTetovaze) : {
+
+                        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/NajlepseTetovaze"));
+                        startActivity(implicit);
+                        return true;
+
+                    }
+
+                    case (R.id.spoznajPomurje) : {
+
+                        Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/SpoznajPomurje"));
+                        startActivity(implicit);
+                        return true;
+
+                    }
+
+                    // https://www.facebook.com/SpoznajPomurje
+
                     default: {
                         Toast.makeText(getApplicationContext(), "No such category...", Toast.LENGTH_LONG).show();
                         return true;
@@ -390,74 +433,88 @@ public class MainActivity extends AppCompatActivity {
             case(R.id.blondinke_navigation):{
 
                 getSupportActionBar().setTitle(getString(R.string.blondinkeNav) + " [" + serializer.loadCategory(JSONSerializer.BLONDINKE_FILENAME).size() + " vicev]");
-
+                FlurryAgent.logEvent("Navigation_blondinke");
                 break;
             }
             case(R.id.opolzke_navigation):{
 
                 getSupportActionBar().setTitle(getString(R.string.opolzkeNav) + " [" + serializer.loadCategory(JSONSerializer.OPOLZKE_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation_opolzke");
                 break;
             }
             case(R.id.policaji_navigation):{
 
                 getSupportActionBar().setTitle(getString(R.string.policajiNav) + " [" + serializer.loadCategory(JSONSerializer.POLICAJI_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation_policaji");
                 break;
             }
             case(R.id.tvojamama_navigation):{
 
                 getSupportActionBar().setTitle(getString(R.string.tvojaMamaNav) + " [" + serializer.loadCategory(JSONSerializer.TVOJAMAMA_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation_tvojamama");
                 break;
             }
             case(R.id.gostilniske_navigation):{
 
                 getSupportActionBar().setTitle(getString(R.string.gostilniskeNav) + " [" + serializer.loadCategory(JSONSerializer.GOSTILNSIKE_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation_gostilniske");
                 break;
             }
             case(R.id.janezek_navigation):{
 
                 getSupportActionBar().setTitle(getString(R.string.janezNav) + " [" + serializer.loadCategory(JSONSerializer.JANEZEK_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation_janezek");
                 break;
             }
             case(R.id.mujohaso_navigation):{
 
                 getSupportActionBar().setTitle(getString(R.string.mujohasoNav) + " [" + serializer.loadCategory(JSONSerializer.MUJOHASO_FILENAME).size()+ " vicev]");
+                FlurryAgent.logEvent("Navigation_mujohaso");
                 break;
             }
             case(R.id.crnihumor_navigation):{
 
                 getSupportActionBar().setTitle(getString(R.string.crnihumorNav) + " [" + serializer.loadCategory(JSONSerializer.CRNIHUMOR_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation_crnihumor");
                 break;
             }
 
             case(R.id.yugovici_navigation):{
 
                 getSupportActionBar().setTitle(getString(R.string.yugoviciNav) + " [" + serializer.loadCategory(JSONSerializer.YUGO_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation_yugovici");
                 break;
             }
             case(R.id.shranjeni_navigation):{
 
                 getSupportActionBar().setTitle(getString(R.string.pribljubljeniNav) + " [" + serializer.loadCategory(JSONSerializer.PRILJUBLJENI_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation_shranjeni");
                 break;
             }
             case(R.id.nakljucni_navigation):{
 
                 getSupportActionBar().setTitle(getString(R.string.nakljucniVici) + " [" + serializer.loadCategory(JSONSerializer.VSIVICI_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation_nakljucni");
                 break;
             }
             case(R.id.hrvati_navigation):{
                 getSupportActionBar().setTitle(getString(R.string.hrvatiNav) + " [" + serializer.loadCategory(JSONSerializer.HRVATI_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation_hrvati");
                 break;
             }
             case(R.id.srbi_navigation):{
                 getSupportActionBar().setTitle(getString(R.string.srbiNav) + " [" + serializer.loadCategory(JSONSerializer.SRBI_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation_srbi");
                 break;
             }
             case(R.id.slovenci_navigation):{
                 getSupportActionBar().setTitle(getString(R.string.slovenciNav) + " [" + serializer.loadCategory(JSONSerializer.SLOVENCI_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation_slovenci");
                 break;
             }
             case(R.id.crnogorci_navigation):{
                 getSupportActionBar().setTitle(getString(R.string.crnogorciNav) + " [" + serializer.loadCategory(JSONSerializer.CRNOGORCI_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation_crnogorci");
                 break;
             }
         }
@@ -519,6 +576,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
 
 }
