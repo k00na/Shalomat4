@@ -32,4 +32,7 @@ dependencies {
     compile 'com.github.michaelye.easydialog:easydialog:1.0'
     compile 'com.android.support:multidex:1.0.0'
     compile files('libs/FlurryAnalytics-6.0.0.jar')
+    compile 'com.github.ParsePlatform:ParseUI-Android:82caece93e'
+
+
 }

@@ -6,6 +6,7 @@ import android.support.multidex.MultiDex;
 import android.util.Log;
 
 import com.flurry.android.FlurryAgent;
+import com.parse.Parse;
 
 import java.util.ArrayList;
 
@@ -31,6 +32,8 @@ public class GlobalState extends Application {
     private int shranjeniSize;
     private int vsiViciSize;
     private static final String FLURRY_KEY = "GY98KGH7WQVZ72N4TFKH";
+    private static final String PARSE_APP_KEY = "9Ao0ayCgsudGL7222ytHBwOicQPwPvTy4H02zJHJ";
+    private static final String CLIENT_KEY = "tonhJCLrztMnSkLFtwOoiII10k060UjyuNYutRzN";
 
     /*
         GETTERS AND SETTERS
@@ -40,6 +43,16 @@ public class GlobalState extends Application {
     public void onCreate() {
         super.onCreate();
 
+        setupFlurry();
+
+
+        // Parse part
+        Parse.initialize(this, PARSE_APP_KEY, CLIENT_KEY);
+
+
+    }
+
+    private void setupFlurry(){
         FlurryAgent.setLogEvents(true);
 
         // configure Flurry
@@ -48,8 +61,6 @@ public class GlobalState extends Application {
 
         // init Flurry
         FlurryAgent.init(this, FLURRY_KEY);
-
-
     }
 
     @Override
@@ -57,6 +68,12 @@ public class GlobalState extends Application {
         super.attachBaseContext(base);
         MultiDex.install(this);
     }
+
+    // { "results": [ {...}, ... ]}
+
+
+
+
 
     public int getNumOfVisitsContent() {
         return numOfVisitsContent;
