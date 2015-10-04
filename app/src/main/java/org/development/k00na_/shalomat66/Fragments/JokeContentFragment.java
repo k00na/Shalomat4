@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.flurry.android.FlurryAgent;
 import com.google.android.gms.ads.AdView;
 
 import org.development.k00na_.shalomat66.Model.Joke;
@@ -113,7 +114,7 @@ public class JokeContentFragment extends Fragment{
                 // if the currentJoke is not set to favorite, save it into that category
                 // otherwise, if it's already favorited and the user clicks on the FAB,
                 // delete the joke from favorites...
-
+                FlurryAgent.logEvent("FAB(JokeContentFragment)_shrani");
                 saveToFavorites(mCurrentJoke, currentCatNum, mCurrentCategory);
 
 
@@ -307,6 +308,7 @@ public class JokeContentFragment extends Fragment{
         }
 
         if(item.getItemId() == R.id.posljiIcon){
+            FlurryAgent.logEvent("BTN(JokeContentFragment)_poslji");
             Intent smsIntent = new Intent(Intent.ACTION_SEND);
             smsIntent.setType("text/plain");
             smsIntent.putExtra(Intent.EXTRA_TEXT, "" + mCurrentJoke.getJokeContent() + "\n \n Šalomat™ ");
@@ -314,7 +316,7 @@ public class JokeContentFragment extends Fragment{
         }
 
         if(item.getItemId() == R.id.kopirajIcon){
-
+            FlurryAgent.logEvent("BTN(JokeContentFragment)_kopiraj");
             ((ClipboardManager)getActivity().getSystemService(getActivity().CLIPBOARD_SERVICE))
                     .setText(mCurrentJoke.getJokeContent() + "\n \n Šalomat™ ");
 

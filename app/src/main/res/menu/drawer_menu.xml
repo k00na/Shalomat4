@@ -95,6 +95,41 @@
 
     </item>
 
+    <item android:title="Vici v Angleščini">
+        <menu>
+
+            <item
+                android:icon="@drawable/ic_send_black_24dp"
+                android:id="@+id/yomomma_navigation"
+                android:title="@string/yomomma_txt"
+                ></item>
+
+            <item
+                android:icon="@drawable/ic_send_black_24dp"
+                android:id="@+id/blondes_navigation"
+                android:title="@string/blondes_nav">
+
+            </item>
+
+            <item
+                android:icon="@drawable/ic_send_black_24dp"
+                android:id="@+id/sexrelated_navigation"
+                android:title="@string/sexrelated_nav">
+
+            </item>
+
+            <item
+                android:icon="@drawable/ic_send_black_24dp"
+                android:id="@+id/wordplay_navigation"
+                android:title="@string/wordplay_nav">
+
+            </item>
+
+
+        </menu>
+
+    </item>
+
     <item android:title="Ostalo">
         <menu>
 

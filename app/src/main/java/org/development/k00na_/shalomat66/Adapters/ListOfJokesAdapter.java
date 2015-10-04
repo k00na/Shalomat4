@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.flurry.android.FlurryAgent;
+
 import org.development.k00na_.shalomat66.Activities.JokeContentActivity;
 import org.development.k00na_.shalomat66.Fragments.ListOfJokesFragment;
 import org.development.k00na_.shalomat66.Model.Joke;
@@ -92,6 +94,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
                 ((ClipboardManager)mContext.getSystemService(mContext.CLIPBOARD_SERVICE))
                         .setText(mJokeArrayList.get(position).getJokeContent() + "\n \n Šalomat™ ");
 
+                FlurryAgent.logEvent("BTN_kopirano");
                 Toast.makeText(mContext, "Kopirano", Toast.LENGTH_LONG).show();
             }
         });
@@ -99,6 +102,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
         holderThingy.shareIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FlurryAgent.logEvent("BTN_share");
                 Intent smsIntent = new Intent(Intent.ACTION_SEND);
                 smsIntent.setType("text/plain");
                 smsIntent.putExtra(Intent.EXTRA_TEXT, "" + mJokeArrayList.get(position).getJokeContent() + "\n \n Šalomat™ ");
@@ -129,6 +133,7 @@ public class ListOfJokesAdapter extends RecyclerView.Adapter<HolderThingy> {
             holderThingy.favoritedIcon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    FlurryAgent.logEvent("BTN_shrani");
                     saveToFavorites(mJokeArrayList.get(position), mCurrentCategoryNum, mJokeArrayList, holderThingy);
                 }
             });

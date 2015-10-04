@@ -332,41 +332,69 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
 
+                    case (R.id.yomomma_navigation): {
+
+                        onNavigationSelected(R.id.yomomma_navigation);
+                        return true;
+                    }
+
+                    case (R.id.blondes_navigation): {
+                        onNavigationSelected(R.id.blondes_navigation);
+                        return true;
+                    }
+
+                    case (R.id.sexrelated_navigation): {
+                        onNavigationSelected(R.id.sexrelated_navigation);
+                        return true;
+                    }
+
+                    case (R.id.wordplay_navigation): {
+                        onNavigationSelected(R.id.wordplay_navigation);
+                        return true;
+                    }
+
+
                     case (R.id.viciZaDobroJutro): {
                         Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/viczadobrojutro?fref=ts"));
                         startActivity(implicit);
+                        FlurryAgent.logEvent("Navigation_ViciZaDobroJutro");
                         return true;
                     }
 
                     case (R.id.zakajAlternativa): {
                         Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/ZakajAlternativa"));
                         startActivity(implicit);
+                        FlurryAgent.logEvent("Navigation_partnerski");
                         return true;
                     }
 
-                    case (R.id.najNajFoto) : {
+                    case (R.id.najNajFoto): {
 
                         Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/NajNajFoto"));
                         startActivity(implicit);
+                        FlurryAgent.logEvent("Navigation_partnerski");
                         return true;
 
                     }
 
-                    case (R.id.najlepseTetovaze) : {
+                    case (R.id.najlepseTetovaze): {
 
                         Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/NajlepseTetovaze"));
                         startActivity(implicit);
+                        FlurryAgent.logEvent("Navigation_partnerski");
                         return true;
 
                     }
 
-                    case (R.id.spoznajPomurje) : {
+                    case (R.id.spoznajPomurje): {
 
                         Intent implicit = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/SpoznajPomurje"));
                         startActivity(implicit);
+                        FlurryAgent.logEvent("Navigation_partnerski");
                         return true;
 
                     }
+
 
                     // https://www.facebook.com/SpoznajPomurje
 
@@ -383,6 +411,17 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+
+    }
+
+    private void onNavigationSelected(int menuID){
+
+        try {
+            setupToolbarTitle(menuID);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        displayListOfJokes(menuID);
 
     }
 
@@ -517,6 +556,31 @@ public class MainActivity extends AppCompatActivity {
                 FlurryAgent.logEvent("Navigation_crnogorci");
                 break;
             }
+
+            case (R.id.wordplay_navigation):{
+                getSupportActionBar().setTitle("Wordplay Jokes : " + "[" + serializer.loadCategory(CreateFilesForCategories.WORDPLAY_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation WordPlay");
+                break;
+            }
+
+            case (R.id.sexrelated_navigation):{
+                getSupportActionBar().setTitle("Sex Related : " + "[" + serializer.loadCategory(CreateFilesForCategories.SEXRELATED_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation Sex Related");
+                break;
+            }
+
+            case (R.id.blondes_navigation):{
+                getSupportActionBar().setTitle("Blondes : " + "[" + serializer.loadCategory(CreateFilesForCategories.BLONDES_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation Blondes");
+                break;
+            }
+
+            case (R.id.yomomma_navigation) : {
+                getSupportActionBar().setTitle("Yo Momma! : " + "[" + serializer.loadCategory(CreateFilesForCategories.YOMOMMA_FILENAME).size() + " vicev]");
+                FlurryAgent.logEvent("Navigation Yo Momma");
+                break;
+            }
+
         }
 
         // yoyo

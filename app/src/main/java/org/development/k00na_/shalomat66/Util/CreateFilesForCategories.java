@@ -1755,6 +1755,10 @@ public class CreateFilesForCategories {
             createCategory(crnogorci, CRNOGORCI_FILENAME);
             createCategory(hrvati, HRVATI_FILENAME);
             createCategory(slovenci, SLOVENCI_FILENAME);
+            createCategory(yomomma, YOMOMMA_FILENAME);
+            createCategory(blondes, BLONDES_FILENAME);
+            createCategory(sexRelated, SEXRELATED_FILENAME);
+            createCategory(wordPlay, WORDPLAY_FILENAME);
 
 
     }
@@ -1786,6 +1790,16 @@ public class CreateFilesForCategories {
 
         static String[] crniHumor = {
 
+                "menjam taščo za hlevski gnoj šifra:govno za govno",
+                "Sedijo sadist, mazohist, serijski morilec, nekrofil, zoofil in piroman na klopci in se dolgočasijo do onemoglosti, ko se zoofil spomni in predlaga: Ulovimo eno mačko! Sadist doda: Ulovimo eno macko in jo mučimo! Serijski morilec: Ulovimo eno mačko, jo mučimo in ubijmo! Nekrofil: Ulovimo eno mačko, jo mučimo, ubijmo in nategnemo! Piroman: Ulovimo eno mačko, jo mučimo, ubijmo, nategnimo in zažgimo! Vsi pogledajo mazohista in pričakujejo, kaj bo dodal. Ta dvigne pogled in reče: Mijav",
+                "Mama in Sara prideta v trgovino. Sara na polici zagleda kokice in reče mami: Mamii, mamiiii jaz bi pa kokice. Mama: 'Vzemi jih'. Sara: 'Ne morem, ker nimam rok.' Mama: 'ni rokic, ni kokic !'",
+                "Kaj ima 4 noge in eno roko? Doberman na otroškem igrišču.",
+                "Zakaj Mexico ne sodeluje na olimpijskih igrah? Vsi ki so znali teči, plavati ali skakati so že prečkali mejo.",
+                "Kakšna je razlika med Jezusom in sliko od Jezusa ? Za obesit sliko rabiš samo en žebelj.",
+                "Kaj dobiš, ko daš dojenčka v škatlo polno britvic in ju porineš po stopnicah? Erekcijo.",
+                "\"\"Mama, mama, kje imaš vse tvoje kraste?\" \n" +
+                        "\n" +
+                        "\"Tiho bodi in jej ocvirke.\"...\",",
                 "Pride novi jetnik v zapor in ga drugi jetniki vprašajo,koliko let si pa ti dobil?\n" +
                         "15 let!\n" +
                         "Zakaj pa?\n" +
