@@ -15,7 +15,71 @@
 
     >
 
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/root_coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/app_bar"
+                    android:background="@color/colorPrimary"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+
+                    app:layout_collapseMode="pin" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimaryDark"/>
+
+                </LinearLayout>
+
+
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    app:layout_collapseMode="pin"
+                    app:tabIndicatorColor="@color/colorPrimary"
+                    app:tabSelectedTextColor="@android:color/white"
+                    app:tabTextColor="#EEE" />
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+
+    </android.support.design.widget.CoordinatorLayout>
 
 
     <LinearLayout
@@ -28,9 +92,9 @@
         tools:context=".MainActivity"
         >
 
-
+<!--
         <include android:id="@+id/includeappbar" layout="@layout/app_bar"></include>
-
+-->
 
 
 
@@ -66,27 +130,7 @@
     </LinearLayout>
 
 
-    <!--
-        <android.support.design.widget.TabLayout
-            android:id="@+id/sliding_tabs_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#FFFFFF"
-            app:tabMode="fixed"
-            app:tabGravity="fill"
-            android:background="@color/colorPrimary"
-            ></android.support.design.widget.TabLayout>
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/viewpager_id"
-                android:layout_width="match_parent"
-                android:layout_height="0px"
-                android:layout_weight="1"
-                ></android.support.v4.view.ViewPager>
-
-        </LinearLayout>
-
-    -->
+    
 
 
 
