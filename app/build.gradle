@@ -9,8 +9,8 @@ android {
         minSdkVersion 15
         targetSdkVersion 22
 
-        versionCode 11112
-        versionName "1.1"
+        versionCode 11113
+        versionName "1.2"
     }
     buildTypes {
         release {

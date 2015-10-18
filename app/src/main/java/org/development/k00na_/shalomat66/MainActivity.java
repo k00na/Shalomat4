@@ -12,12 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
-import org.development.k00na_.shalomat66.R;
 
 import org.development.k00na_.shalomat66.Util.WellcomingDialog;
 
@@ -26,10 +23,8 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 
-import org.development.k00na_.shalomat66.Fragments.ListOfJokesFragment;
 import org.development.k00na_.shalomat66.Model.GlobalState;
-import org.development.k00na_.shalomat66.Util.CreateFilesForCategories;
-import org.development.k00na_.shalomat66.Util.JSONSerializer;
+
 import com.michael.easydialog.EasyDialog;
 
 import org.json.JSONException;
@@ -591,7 +586,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
 
-        globalState.setNumOfVisits(prefs.getInt("counterFirstUpdate", 0));
+        globalState.setNumOfVisits(prefs.getInt("counterSecondUpdate", 0));
 
         return globalState.getNumOfVisits();
     }
@@ -601,10 +596,10 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
 
-        globalState.setNumOfVisits(prefs.getInt("counterFirstUpdate", 0) + 1);
+        globalState.setNumOfVisits(prefs.getInt("counterSecondUpdate", 0) + 1);
 
 
-        editor.putInt("counterFirstUpdate", globalState.getNumOfVisits());
+        editor.putInt("counterSecondUpdate", globalState.getNumOfVisits());
         editor.commit();
 //
 

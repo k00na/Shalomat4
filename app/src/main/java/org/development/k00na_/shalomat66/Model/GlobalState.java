@@ -17,8 +17,7 @@ public class GlobalState extends Application {
 
     private int numOfVisits;
     private int numOfVisitsContent;
-    private ArrayList<Joke> blondinkeGlobal;
-    private ArrayList<Joke> janezekGlobal;
+
     private int blondinkeSize;
     private int opolzkiSize;
     private int policajiSize;
@@ -83,21 +82,7 @@ public class GlobalState extends Application {
         this.numOfVisitsContent = numOfVisitsContent;
     }
 
-    public ArrayList<Joke> getJanezekGlobal() {
-        return janezekGlobal;
-    }
 
-    public void setJanezekGlobal(ArrayList<Joke> janezekGlobal) {
-        this.janezekGlobal = janezekGlobal;
-    }
-
-    public ArrayList<Joke> getBlondinkeGlobal() {
-        return blondinkeGlobal;
-    }
-
-    public void setBlondinkeGlobal(ArrayList<Joke> blondinkeGlobal) {
-        this.blondinkeGlobal = blondinkeGlobal;
-    }
 
     public int getBlondinkeSize() {
         return blondinkeSize;
