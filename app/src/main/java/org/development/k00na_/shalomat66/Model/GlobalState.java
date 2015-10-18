@@ -8,6 +8,8 @@ import android.util.Log;
 import com.flurry.android.FlurryAgent;
 import com.parse.Parse;
 
+import org.development.k00na_.shalomat66.Util.Constants;
+
 import java.util.ArrayList;
 
 /**
@@ -46,7 +48,7 @@ public class GlobalState extends Application {
 
 
         // Parse part
-        Parse.initialize(this, PARSE_APP_KEY, CLIENT_KEY);
+        Parse.initialize(this, Constants.PARSE_KEY, Constants.PARSE_CLIENT);
 
 
     }
