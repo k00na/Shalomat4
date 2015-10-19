@@ -19,6 +19,8 @@ public class TabsPagerAdapter extends FragmentStatePagerAdapter {
 
     public TabsPagerAdapter(FragmentManager fm, Context c, String selectedCat) {
         super(fm);
+        mContext = c;
+        mCategory = selectedCat;
     }
 
     @Override

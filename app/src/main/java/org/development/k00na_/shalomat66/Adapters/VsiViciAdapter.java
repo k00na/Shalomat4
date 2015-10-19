@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.Adapter;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -32,22 +33,30 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
 
     @Override
     public VsiViciHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+
+
+        View v = LayoutInflater.from(mContext).inflate(R.layout.vsi_vici_holder, parent, false);
+        VsiViciHolder vsiViciHolder = new VsiViciHolder(v);
+
+        return vsiViciHolder;
     }
 
     @Override
     public void onBindViewHolder(VsiViciHolder holder, int position) {
 
+        holder.mJokeContent.setText(mVsiViciList.get(position).getContent());
+
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mVsiViciList.size();
     }
 
     class VsiViciHolder extends RecyclerView.ViewHolder{
 
-        private TextView mLikeIcon, mDislikeIcon, mShareIcon, mNumOfLikes;
+        private TextView mLikeIcon, mDislikeIcon, mShareIcon, mNumOfLikes, mJokeContent;
 
 
 
@@ -58,6 +67,7 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
             mDislikeIcon = (TextView)itemView.findViewById(R.id.dislikeIcon_TV);
             mShareIcon = (TextView)itemView.findViewById(R.id.shareIcon_TV);
             mNumOfLikes = (TextView)itemView.findViewById(R.id.numOfLikes_TV);
+            mJokeContent = (TextView)itemView.findViewById(R.id.jokeContent_TV);
 
             Typeface iconFont = FontManager.getTypeface(mContext, FontManager.FONTAWESOME);
             FontManager.markAsIconContainer(itemView.findViewById(R.id.likeIcon_TV), iconFont);

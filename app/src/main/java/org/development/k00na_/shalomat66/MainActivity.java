@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import org.development.k00na_.shalomat66.Adapters.TabsPagerAdapter;
+import org.development.k00na_.shalomat66.Fragments.ListOfJokesFragment;
 import org.development.k00na_.shalomat66.Util.WellcomingDialog;
 
 import com.flurry.android.FlurryAgent;
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private GlobalState globalState;
 
     public int selectedCategoryNum;
+    private String mCurrentCategory;
 
     /*
      *  WIDGETS DOWN-BELLOW
@@ -86,7 +88,56 @@ public class MainActivity extends AppCompatActivity {
         mTabsAdapter = new TabsPagerAdapter(getSupportFragmentManager(), MainActivity.this, "justTesting");
         mTabLayout.setTabsFromPagerAdapter(mTabsAdapter);
 
+
         mViewPager = (ViewPager)findViewById(R.id.view_pager);
+
+        mTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+                /**
+                 * TODO: naredi metodo, ki bo hendlala še ostale kategorije
+                 * Zanekrat imam samo VsiVici kategorijo.
+                 */
+
+                mCurrentCategory = "VsiVici";
+
+                if(tab.getPosition() == 0){
+
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction()
+                            .replace(R.id.fragment_container, ListOfJokesFragment.newInstance(mCurrentCategory, tab.getPosition()))
+                            .commit();
+
+
+                }
+                if(tab.getPosition() == 1){
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction()
+                            .replace(R.id.fragment_container, ListOfJokesFragment.newInstance(mCurrentCategory, tab.getPosition()))
+                            .commit();
+                }
+
+                if(tab.getPosition() == 2){
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction()
+                            .replace(R.id.fragment_container, ListOfJokesFragment.newInstance(mCurrentCategory, tab.getPosition()))
+                            .commit();
+                }
+
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
 
 
