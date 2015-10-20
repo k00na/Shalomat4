@@ -10,5 +10,10 @@ public class Constants {
 
     public static final String VSI_VICI = "VsiVici";
 
+    // FragmentThingy constants
+
+    public static final String TABNUM = "tabnum";
+    public static final String SELECTED_CAT = "selectedcategory";
+
 
 }

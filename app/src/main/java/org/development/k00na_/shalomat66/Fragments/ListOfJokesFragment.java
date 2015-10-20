@@ -113,10 +113,6 @@ public class ListOfJokesFragment extends Fragment {
             }
         });
 
-       // newQuery(0);
-
-
-
     }
 
     private void newQuery(int skipValue){

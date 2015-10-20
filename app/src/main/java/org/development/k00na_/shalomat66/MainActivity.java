@@ -4,24 +4,34 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import org.development.k00na_.shalomat66.Adapters.TabsPagerAdapter;
+import org.development.k00na_.shalomat66.Adapters.VsiViciAdapter;
 import org.development.k00na_.shalomat66.Fragments.ListOfJokesFragment;
+import org.development.k00na_.shalomat66.Parse.VsiVici;
+import org.development.k00na_.shalomat66.Util.Constants;
 import org.development.k00na_.shalomat66.Util.WellcomingDialog;
 
 import com.flurry.android.FlurryAgent;
@@ -32,10 +42,15 @@ import com.google.android.gms.ads.AdView;
 import org.development.k00na_.shalomat66.Model.GlobalState;
 
 import com.michael.easydialog.EasyDialog;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
 
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     public int selectedCategoryNum;
     private String mCurrentCategory;
+    private List<VsiVici> mVsiViciList;
 
     /*
      *  WIDGETS DOWN-BELLOW
@@ -61,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
     private ViewPager mViewPager;
-    private TabsPagerAdapter mTabsAdapter;
+    private ViewPagerAdapter mTabsAdapter;
 
     private AdView adView;
 
@@ -85,20 +101,29 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
 
         mTabLayout = (TabLayout)findViewById(R.id.tab_layout);
-        mTabsAdapter = new TabsPagerAdapter(getSupportFragmentManager(), MainActivity.this, "justTesting");
+        mTabsAdapter = new ViewPagerAdapter(getSupportFragmentManager(), "VsiVici");
         mTabLayout.setTabsFromPagerAdapter(mTabsAdapter);
 
 
+
+
         mViewPager = (ViewPager)findViewById(R.id.view_pager);
+
+        mViewPager.setAdapter(mTabsAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
+
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
+
+
+/**
+ *
+
 
         mTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
-                /**
-                 * TODO: naredi metodo, ki bo hendlala še ostale kategorije
-                 * Zanekrat imam samo VsiVici kategorijo.
-                 */
+
 
                 mCurrentCategory = "VsiVici";
 
@@ -106,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction()
-                            .replace(R.id.fragment_container, ListOfJokesFragment.newInstance(mCurrentCategory, tab.getPosition()))
+                            .replace(R.id.fragment_container, FragmentThingy.newInstance(tab.getPosition(), mCurrentCategory))
                             .commit();
 
 
@@ -114,14 +139,22 @@ public class MainActivity extends AppCompatActivity {
                 if(tab.getPosition() == 1){
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction()
-                            .replace(R.id.fragment_container, ListOfJokesFragment.newInstance(mCurrentCategory, tab.getPosition()))
+                            .replace(R.id.fragment_container, FragmentThingy.newInstance(tab.getPosition(), mCurrentCategory))
                             .commit();
                 }
 
                 if(tab.getPosition() == 2){
+
+                    // TEST:
+                    // poskrbi, da bo view pager-ju nastavljen VsiViciAdapter
+                    // 1. dobi vice z Parse-a v List<VsiVici>
+                    // 2. naredi VsiViciAdapter objekt
+                    // 3. podaj ta adapter objekt viewPager-ju
+
+
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction()
-                            .replace(R.id.fragment_container, ListOfJokesFragment.newInstance(mCurrentCategory, tab.getPosition()))
+                            .replace(R.id.fragment_container, FragmentThingy.newInstance(tab.getPosition(), mCurrentCategory))
                             .commit();
                 }
 
@@ -139,6 +172,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+ */
+
 
 
         setupDrawerToggle();
@@ -147,6 +182,123 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+    /*
+     *  INNER CLASS :VIEW PAGERS ADAPTER
+     */
+
+    public class ViewPagerAdapter extends FragmentStatePagerAdapter{
+
+        private String selectedCategory;
+        private String[] titles = {"VSIya", "NOVO", "NAKLJUČNI"};
+
+        public ViewPagerAdapter(FragmentManager fm, String selCat) {
+            super(fm);
+
+            selectedCategory = selCat;
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return FragmentThingy.newInstance(position, selectedCategory);
+        }
+
+        @Override
+        public int getCount() {
+            return titles.length;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return titles[position];
+        }
+    }
+
+    /**
+     *      FRAGMENT THINGY
+     */
+
+
+    public static class FragmentThingy extends Fragment{
+
+
+        int mTabNum = 0;
+        String mSelectedCat = "VsiVici";
+        private List<VsiVici> vsiViciList;
+        private RecyclerView fragmentRecycler;
+
+        public FragmentThingy(){
+
+        }
+
+        public static FragmentThingy newInstance(int tabNum, String selectedCategory){
+
+            Bundle args = new Bundle();
+            args.putInt(Constants.TABNUM, tabNum);
+            args.putString(Constants.SELECTED_CAT, selectedCategory);
+
+            FragmentThingy fragmentThingy = new FragmentThingy();
+            fragmentThingy.setArguments(args);
+
+            return fragmentThingy;
+        }
+
+
+        @Nullable
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+            vsiViciList = new ArrayList<>();
+
+            mSelectedCat = getArguments().getString(Constants.SELECTED_CAT);
+            mTabNum = getArguments().getInt(Constants.TABNUM);
+            fragmentRecycler = new RecyclerView(getActivity());
+            LinearLayoutManager llm = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+            fragmentRecycler.setLayoutManager(llm);
+
+            fetchDataFromParse("VsiVici", mTabNum);
+
+
+
+            return fragmentRecycler;
+        }
+
+        private void fetchDataFromParse(String categoryName, int mode){
+
+            // če bo kategory name samo dummy String kot npr "" bom query vrnil vse vici
+            // če bo kategory name npr. "blondinke.json" bomo query-ju dodali where clause za kategorijo
+
+            ParseQuery<VsiVici> query = ParseQuery.getQuery(categoryName);
+
+            if(mode == 1)
+                query.addDescendingOrder("createdAt");
+            if(mode == 2)
+                query.addDescendingOrder("numOfLikes");
+
+            query.setLimit(1000);
+            query.findInBackground(new FindCallback<VsiVici>() {
+                @Override
+                public void done(List<VsiVici> list, ParseException e) {
+                    vsiViciList.addAll(list);
+                    Toast.makeText(getActivity(), "List size: " + list.size(), Toast.LENGTH_LONG).show();
+
+                    VsiViciAdapter vsiViciAdapter = new VsiViciAdapter(getActivity(), vsiViciList);
+                    fragmentRecycler.setAdapter(vsiViciAdapter);
+
+                }
+            });
+
+        }
+
+    } // < --- END OF FRAGMENT THINGY
+
+
+    /**
+     * MainActivity methods:
+     */
+
+
 
     private void setupDrawerToggle() {
 
@@ -165,6 +317,8 @@ public class MainActivity extends AppCompatActivity {
                 ;
         adView.loadAd(adRequest);
     }
+
+
 
 
 }
