@@ -44,7 +44,15 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
     @Override
     public void onBindViewHolder(VsiViciHolder holder, int position) {
 
-        holder.mJokeContent.setText(mVsiViciList.get(position).getContent());
+
+        String contentText = mVsiViciList.get(position).getContent();
+
+        if(contentText.length() < 250)
+            holder.mJokeContent.setText(contentText);
+        else{
+            holder.mJokeContent.setText(contentText.substring(0, 250) + "\n PREBERI VEČ");
+
+        }
 
 
     }
