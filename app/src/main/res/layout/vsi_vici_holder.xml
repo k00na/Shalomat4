@@ -5,9 +5,9 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    card_view:contentPadding="10dp"
     card_view:cardCornerRadius="8dp"
-    android:layout_margin="6dp"
+    card_view:cardBackgroundColor="@color/accentColor"
+
     >
 
 
@@ -15,7 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/colorPrimary"
+        android:layout_margin="6dp"
+        android:padding="10dp"
         >
 
 
