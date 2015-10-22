@@ -7,6 +7,8 @@ import android.support.v7.widget.RecyclerView.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import org.development.k00na_.shalomat66.Parse.VsiVici;
@@ -47,11 +49,17 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
 
         String contentText = mVsiViciList.get(position).getContent();
 
-        if(contentText.length() < 250)
-            holder.mJokeContent.setText(contentText);
-        else{
-            holder.mJokeContent.setText(contentText.substring(0, 250) + "\n PREBERI VEČ");
+        if(contentText.length() < 450){
 
+            holder.mJokeContent.setText(contentText);
+            holder.mPreberiVecBTN.setVisibility(View.GONE);
+            holder.mTableLayout.setVisibility(View.VISIBLE);
+        }
+
+        else{
+            holder.mJokeContent.setText(contentText.substring(0, 450) + " ... ");
+            holder.mPreberiVecBTN.setVisibility(View.VISIBLE);
+            holder.mTableLayout.setVisibility(View.GONE);
         }
 
 
@@ -65,6 +73,8 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
     class VsiViciHolder extends RecyclerView.ViewHolder{
 
         private TextView mLikeIcon, mDislikeIcon, mShareIcon, mNumOfLikes, mJokeContent, mFavIcon, mCopyIcon;
+        private Button mPreberiVecBTN;
+        private TableLayout mTableLayout;
 
 
 
@@ -78,6 +88,8 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
             mJokeContent = (TextView)itemView.findViewById(R.id.jokeContent_TV);
             mFavIcon = (TextView)itemView.findViewById(R.id.favIcon_TV);
             mCopyIcon = (TextView)itemView.findViewById(R.id.copyIcon_TV);
+            mPreberiVecBTN = (Button)itemView.findViewById(R.id.preberiVec_BTN);
+            mTableLayout = (TableLayout)itemView.findViewById(R.id.tableLayout_holder);
 
             Typeface iconFont = FontManager.getTypeface(mContext, FontManager.FONTAWESOME);
             FontManager.markAsIconContainer(itemView.findViewById(R.id.favIcon_TV), iconFont);
