@@ -1,9 +1,5 @@
 package org.development.k00na_.shalomat66;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -20,36 +16,27 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import org.development.k00na_.shalomat66.Adapters.TabsPagerAdapter;
 import org.development.k00na_.shalomat66.Adapters.VsiViciAdapter;
-import org.development.k00na_.shalomat66.Fragments.ListOfJokesFragment;
 import org.development.k00na_.shalomat66.Parse.VsiVici;
 import org.development.k00na_.shalomat66.Util.Constants;
-import org.development.k00na_.shalomat66.Util.WellcomingDialog;
 
-import com.flurry.android.FlurryAgent;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 
 import org.development.k00na_.shalomat66.Model.GlobalState;
 
-import com.michael.easydialog.EasyDialog;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 
-import org.json.JSONException;
-
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -61,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
     public int selectedCategoryNum;
     private String mCurrentCategory;
-    private List<VsiVici> mVsiViciList;
+    private List<VsiVici> mVsiViciListRandomized;
+    private List<VsiVici> mVsiViciListNewest;
+    private List<VsiVici> mVsiViciListBest;
 
     /*
      *  WIDGETS DOWN-BELLOW
@@ -225,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
 
         int mTabNum = 0;
         String mSelectedCat = "VsiVici";
-        private List<VsiVici> vsiViciList;
+        private List<VsiVici> trenutniVici_List;
         private RecyclerView fragmentRecycler;
 
         public FragmentThingy(){
@@ -249,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-            vsiViciList = new ArrayList<>();
+            trenutniVici_List = new ArrayList<>();
 
             mSelectedCat = getArguments().getString(Constants.SELECTED_CAT);
             mTabNum = getArguments().getInt(Constants.TABNUM);
@@ -264,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
             return fragmentRecycler;
         }
 
-        private void fetchDataFromParse(String categoryName, int mode){
+        private void fetchDataFromParse(String categoryName, final int mode){
 
             // če bo kategory name samo dummy String kot npr "" bom query vrnil vse vici
             // če bo kategory name npr. "blondinke.json" bomo query-ju dodali where clause za kategorijo
@@ -280,10 +269,27 @@ public class MainActivity extends AppCompatActivity {
             query.findInBackground(new FindCallback<VsiVici>() {
                 @Override
                 public void done(List<VsiVici> list, ParseException e) {
-                    vsiViciList.addAll(list);
+
+
+                    if (mode == 0) {
+                        Collections.shuffle(list);
+                        GlobalState.setmVsiViciListRandomized(list);
+
+                    }
+
+
+                    if (mode == 1)
+                        GlobalState.setmVsiViciListNewest(list);
+
+                    if (mode == 2)
+                        GlobalState.setmVsiViciListBest(list);
+
                     Toast.makeText(getActivity(), "List size: " + list.size(), Toast.LENGTH_LONG).show();
 
-                    VsiViciAdapter vsiViciAdapter = new VsiViciAdapter(getActivity(), vsiViciList);
+
+                    trenutniVici_List.addAll(list);
+
+                    VsiViciAdapter vsiViciAdapter = new VsiViciAdapter(getActivity(), trenutniVici_List);
                     fragmentRecycler.setAdapter(vsiViciAdapter);
 
                 }

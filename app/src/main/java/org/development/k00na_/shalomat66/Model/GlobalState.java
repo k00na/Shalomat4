@@ -14,6 +14,7 @@ import org.development.k00na_.shalomat66.Parse.VsiVici;
 import org.development.k00na_.shalomat66.Util.Constants;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by k00na_ on 7.9.2015.
@@ -38,6 +39,10 @@ public class GlobalState extends Application {
     private static final String FLURRY_KEY = "GY98KGH7WQVZ72N4TFKH";
     private static final String PARSE_APP_KEY = "9Ao0ayCgsudGL7222ytHBwOicQPwPvTy4H02zJHJ";
     private static final String CLIENT_KEY = "tonhJCLrztMnSkLFtwOoiII10k060UjyuNYutRzN";
+
+    private static List<VsiVici> mVsiViciListRandomized;
+    private static List<VsiVici> mVsiViciListNewest;
+    private static List<VsiVici> mVsiViciListBest;
 
     /*
         GETTERS AND SETTERS
@@ -77,8 +82,32 @@ public class GlobalState extends Application {
     // { "results": [ {...}, ... ]}
 
 
+    // GETTER & SETTER for lists
 
 
+    public static List<VsiVici> getmVsiViciListRandomized() {
+        return mVsiViciListRandomized;
+    }
+
+    public static void setmVsiViciListRandomized(List<VsiVici> mVsiViciListRandomized) {
+        GlobalState.mVsiViciListRandomized = mVsiViciListRandomized;
+    }
+
+    public static List<VsiVici> getmVsiViciListNewest() {
+        return mVsiViciListNewest;
+    }
+
+    public static void setmVsiViciListNewest(List<VsiVici> mVsiViciListNewest) {
+        GlobalState.mVsiViciListNewest = mVsiViciListNewest;
+    }
+
+    public static List<VsiVici> getmVsiViciListBest() {
+        return mVsiViciListBest;
+    }
+
+    public static void setmVsiViciListBest(List<VsiVici> mVsiViciListBest) {
+        GlobalState.mVsiViciListBest = mVsiViciListBest;
+    }
 
     public int getNumOfVisitsContent() {
         return numOfVisitsContent;
@@ -87,6 +116,7 @@ public class GlobalState extends Application {
     public void setNumOfVisitsContent(int numOfVisitsContent) {
         this.numOfVisitsContent = numOfVisitsContent;
     }
+
 
 
 
