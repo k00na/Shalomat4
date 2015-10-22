@@ -53,13 +53,13 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
 
             holder.mJokeContent.setText(contentText);
             holder.mPreberiVecBTN.setVisibility(View.GONE);
-            holder.mTableLayout.setVisibility(View.VISIBLE);
+       //     holder.mTableLayout.setVisibility(View.VISIBLE);
         }
 
         else{
             holder.mJokeContent.setText(contentText.substring(0, 450) + " ... ");
             holder.mPreberiVecBTN.setVisibility(View.VISIBLE);
-            holder.mTableLayout.setVisibility(View.GONE);
+         //   holder.mTableLayout.setVisibility(View.GONE);
         }
 
 
@@ -84,12 +84,12 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
             mLikeIcon = (TextView)itemView.findViewById(R.id.likeIcon_TV);
             mDislikeIcon = (TextView)itemView.findViewById(R.id.dislikeIcon_TV);
             mShareIcon = (TextView)itemView.findViewById(R.id.shareIcon_TV);
-            mNumOfLikes = (TextView)itemView.findViewById(R.id.numOfLikes_TV);
+         //   mNumOfLikes = (TextView)itemView.findViewById(R.id.numOfLikes_TV);
             mJokeContent = (TextView)itemView.findViewById(R.id.jokeContent_TV);
             mFavIcon = (TextView)itemView.findViewById(R.id.favIcon_TV);
             mCopyIcon = (TextView)itemView.findViewById(R.id.copyIcon_TV);
             mPreberiVecBTN = (Button)itemView.findViewById(R.id.preberiVec_BTN);
-            mTableLayout = (TableLayout)itemView.findViewById(R.id.tableLayout_holder);
+         //   mTableLayout = (TableLayout)itemView.findViewById(R.id.tableLayout_holder);
 
             Typeface iconFont = FontManager.getTypeface(mContext, FontManager.FONTAWESOME);
             FontManager.markAsIconContainer(itemView.findViewById(R.id.favIcon_TV), iconFont);
