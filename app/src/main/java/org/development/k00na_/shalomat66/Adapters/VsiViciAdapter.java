@@ -64,7 +64,7 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
 
     class VsiViciHolder extends RecyclerView.ViewHolder{
 
-        private TextView mLikeIcon, mDislikeIcon, mShareIcon, mNumOfLikes, mJokeContent;
+        private TextView mLikeIcon, mDislikeIcon, mShareIcon, mNumOfLikes, mJokeContent, mFavIcon, mCopyIcon;
 
 
 
@@ -76,8 +76,12 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
             mShareIcon = (TextView)itemView.findViewById(R.id.shareIcon_TV);
             mNumOfLikes = (TextView)itemView.findViewById(R.id.numOfLikes_TV);
             mJokeContent = (TextView)itemView.findViewById(R.id.jokeContent_TV);
+            mFavIcon = (TextView)itemView.findViewById(R.id.favIcon_TV);
+            mCopyIcon = (TextView)itemView.findViewById(R.id.copyIcon_TV);
 
             Typeface iconFont = FontManager.getTypeface(mContext, FontManager.FONTAWESOME);
+            FontManager.markAsIconContainer(itemView.findViewById(R.id.favIcon_TV), iconFont);
+            FontManager.markAsIconContainer(itemView.findViewById(R.id.copyIcon_TV), iconFont);
             FontManager.markAsIconContainer(itemView.findViewById(R.id.likeIcon_TV), iconFont);
             FontManager.markAsIconContainer(itemView.findViewById(R.id.dislikeIcon_TV), iconFont);
             FontManager.markAsIconContainer(itemView.findViewById(R.id.shareIcon_TV), iconFont);

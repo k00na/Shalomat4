@@ -2,11 +2,11 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-
+    android:layout_margin="3dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     card_view:cardCornerRadius="8dp"
-    card_view:cardBackgroundColor="@color/accentColor"
+    card_view:cardBackgroundColor="#BBDEFB"
 
     >
 
@@ -16,7 +16,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_margin="6dp"
-        android:padding="10dp"
+        android:paddingBottom="2dp"
+        android:paddingTop="4dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         >
 
 
@@ -62,6 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/jokeContent_TV"
+            android:textColor="#000000"
             android:textSize="17sp"
             android:layout_margin="6dp"
             android:text="Here comes the content..."/>
@@ -73,51 +77,93 @@
             ></View>
 
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="3dp"
-            android:orientation="horizontal">
+            >
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/likeIcon_TV"
+                    android:textSize="20sp"
+                    android:text="&#xf087;"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dislikeIcon_TV"
+                    android:textSize="20sp"
+                    android:text="&#xf088;"
+                    />
 
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:id="@+id/likeIcon_TV"
-                android:textSize="20sp"
-                android:text="&#xf087;"
-                />
+<!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Všečki: "
+                    />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:id="@+id/dislikeIcon_TV"
-                android:textSize="20sp"
-                android:text="&#xf088;"
-                />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:id="@+id/shareIcon_TV"
-                android:textSize="20sp"
-                android:text="&#xf1e0;"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/numOfLikes_TV"
-                android:text="0"/>
+-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/numOfLikes_TV"
+                    android:text="0"/>
 
 
-        </LinearLayout>
+            </TableRow>
+
+
+            <TableRow
+                android:layout_marginTop="6dp"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/shareIcon_TV"
+                    android:textSize="20sp"
+                    android:text="&#xf1e0;"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:textSize="20sp"
+
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/favIcon_TV"
+                    android:text="&#xf004;"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/copyIcon_TV"
+                    android:text="&#xf0c5;"
+                    />
+
+            </TableRow>
+
+        </TableLayout>
+
+
+
+
 
     </LinearLayout>
 
