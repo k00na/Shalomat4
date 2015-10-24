@@ -43,6 +43,8 @@
 
                 />
 
+
+            <!--
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -56,6 +58,7 @@
                 android:textStyle="bold"
                 />
 
+                -->
 
         </LinearLayout>
 
@@ -71,8 +74,47 @@
             android:text="Here comes the content..."/>
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Št. všečkov: "
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="30"
+                android:layout_height="wrap_content"
+                android:id="@+id/numOfLikes_TV"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vic dodal/-a: "
+                android:id="@+id/vicDodalText_TV"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="70"
+                android:id="@+id/vicDodalParseUser_TV"
+                />
+
+
+
+
+        </LinearLayout>
+
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Preberi cel vic ... "
             android:id="@+id/preberiVec_BTN"
@@ -85,10 +127,15 @@
 
             />
 
+
+
+
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@color/colorPrimaryDark"
+            android:id="@+id/deviderLine_XML"
+            android:layout_marginBottom="4dp"
             ></View>
 
 
@@ -96,7 +143,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-
+            android:id="@+id/linearLayoutXML"
             >
 
 
@@ -149,56 +196,6 @@
 
 
         </LinearLayout>
-
-
-        <!--
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="3dp"
-            android:id="@+id/tableLayout_holder"
-            >
-
-            <TableRow>
-
-
-
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Všečki: "
-                    />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/numOfLikes_TV"
-                    android:text="0"/>
-
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_marginTop="6dp"
-                >
-
-
-
-            </TableRow>
-
-        </TableLayout>
-
--->
-
-
 
     </LinearLayout>
 

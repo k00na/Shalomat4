@@ -3,12 +3,11 @@ package org.development.k00na_.shalomat66.Adapters;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TableLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.development.k00na_.shalomat66.Parse.VsiVici;
@@ -49,6 +48,7 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
 
         String contentText = mVsiViciList.get(position).getContent();
 
+
         if(contentText.length() < 450){
 
             holder.mJokeContent.setText(contentText);
@@ -59,8 +59,18 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
         else{
             holder.mJokeContent.setText(contentText.substring(0, 450) + " ... ");
             holder.mPreberiVecBTN.setVisibility(View.VISIBLE);
+            holder.mDevider.setVisibility(View.GONE);
+            holder.mLinearLayout.setVisibility(View.GONE);
          //   holder.mTableLayout.setVisibility(View.GONE);
         }
+
+
+        holder.mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
+
+        if(mVsiViciList.get(position).getUser() != null)
+            holder.mUserName.setText("" + mVsiViciList.get(position).getUser());
+        else
+            holder.mVicDodalText.setVisibility(View.GONE);
 
 
     }
@@ -72,9 +82,10 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
 
     class VsiViciHolder extends RecyclerView.ViewHolder{
 
-        private TextView mLikeIcon, mDislikeIcon, mShareIcon, mNumOfLikes, mJokeContent, mFavIcon, mCopyIcon;
+        private TextView mLikeIcon, mDislikeIcon, mShareIcon, mNumOfLikes, mJokeContent, mFavIcon, mCopyIcon, mUserName, mVicDodalText;
         private Button mPreberiVecBTN;
-        private TableLayout mTableLayout;
+        private LinearLayout mLinearLayout;
+        private View mDevider;
 
 
 
@@ -84,12 +95,15 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
             mLikeIcon = (TextView)itemView.findViewById(R.id.likeIcon_TV);
             mDislikeIcon = (TextView)itemView.findViewById(R.id.dislikeIcon_TV);
             mShareIcon = (TextView)itemView.findViewById(R.id.shareIcon_TV);
-         //   mNumOfLikes = (TextView)itemView.findViewById(R.id.numOfLikes_TV);
+            mDevider = (View)itemView.findViewById(R.id.deviderLine_XML);
+            mLinearLayout = (LinearLayout)itemView.findViewById(R.id.linearLayoutXML);
+            mNumOfLikes = (TextView)itemView.findViewById(R.id.numOfLikes_TV);
             mJokeContent = (TextView)itemView.findViewById(R.id.jokeContent_TV);
             mFavIcon = (TextView)itemView.findViewById(R.id.favIcon_TV);
             mCopyIcon = (TextView)itemView.findViewById(R.id.copyIcon_TV);
             mPreberiVecBTN = (Button)itemView.findViewById(R.id.preberiVec_BTN);
-         //   mTableLayout = (TableLayout)itemView.findViewById(R.id.tableLayout_holder);
+            mUserName = (TextView)itemView.findViewById(R.id.vicDodalParseUser_TV);
+            mVicDodalText = (TextView)itemView.findViewById(R.id.vicDodalText_TV);
 
             Typeface iconFont = FontManager.getTypeface(mContext, FontManager.FONTAWESOME);
             FontManager.markAsIconContainer(itemView.findViewById(R.id.favIcon_TV), iconFont);

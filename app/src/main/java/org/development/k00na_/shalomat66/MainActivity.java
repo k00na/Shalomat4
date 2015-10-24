@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
     public class ViewPagerAdapter extends FragmentStatePagerAdapter{
 
         private String selectedCategory;
-        private String[] titles = {"VSIya", "NOVO", "NAKLJUČNI"};
+        private String[] titles = {"VSI", "NOVO", "NAKLJUČNI"};
 
         public ViewPagerAdapter(FragmentManager fm, String selCat) {
             super(fm);
@@ -212,10 +212,17 @@ public class MainActivity extends AppCompatActivity {
     public static class FragmentThingy extends Fragment{
 
 
+
+        final ParseQuery<VsiVici> parseQuery = new ParseQuery("VsiVici");
         int mTabNum = 0;
         String mSelectedCat = "VsiVici";
         private List<VsiVici> trenutniVici_List;
         private RecyclerView fragmentRecycler;
+
+        // variables for getAllObjects method
+        int skip = 0;
+        int limit = 1000;
+
 
         public FragmentThingy(){
 
@@ -246,7 +253,20 @@ public class MainActivity extends AppCompatActivity {
             LinearLayoutManager llm = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
             fragmentRecycler.setLayoutManager(llm);
 
-            fetchDataFromParse("VsiVici", mTabNum);
+      //      fetchDataFromParse("VsiVici", mTabNum);
+
+            // TEST BELLOW:
+
+
+            parseQuery.setLimit(1000);
+          //  parseQuery.whereEqualTo(Constants.PARSE_CATEGORY_COLUMN, mSelectedCat);
+
+            if(mTabNum == 1)
+                parseQuery.orderByAscending(Constants.PARSE_CREATEDAT_COL);
+            if(mTabNum == 2)
+                parseQuery.orderByDescending(Constants.PARSE_NUMOFLIKES_COL);
+
+            parseQuery.findInBackground(getAllObjects());
 
 
 
@@ -258,7 +278,7 @@ public class MainActivity extends AppCompatActivity {
             // če bo kategory name samo dummy String kot npr "" bom query vrnil vse vici
             // če bo kategory name npr. "blondinke.json" bomo query-ju dodali where clause za kategorijo
 
-            ParseQuery<VsiVici> query = ParseQuery.getQuery(categoryName);
+            final ParseQuery<VsiVici> query = ParseQuery.getQuery(categoryName);
 
             if(mode == 1)
                 query.addDescendingOrder("createdAt");
@@ -270,6 +290,23 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void done(List<VsiVici> list, ParseException e) {
 
+                    // load more jokes if size exceeds 1000
+                    if (list.size() == 1000) {
+
+                        query.setSkip(1000);
+                        query.findInBackground(new FindCallback<VsiVici>() {
+                            @Override
+                            public void done(List<VsiVici> list, ParseException e) {
+
+                                if (mode == 0) {
+                                    Collections.shuffle(list);
+                                    GlobalState.getmVsiViciListRandomized().addAll(list);
+
+                                }
+                            }
+                        });
+
+                    }
 
                     if (mode == 0) {
                         Collections.shuffle(list);
@@ -295,9 +332,49 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+        }   // <--- END OF fetchDataFromParse
+
+
+
+
+        FindCallback<VsiVici> getAllObjects(){
+
+
+            return new FindCallback<VsiVici>() {
+                @Override
+                public void done(List<VsiVici> list, ParseException e) {
+
+                    if(e == null){
+
+                        trenutniVici_List.addAll(list);
+
+                        if(list.size() == limit){
+                            skip = skip + limit;
+                            parseQuery.setSkip(skip);
+                            parseQuery.setLimit(limit);
+                            parseQuery.findInBackground(getAllObjects());
+
+                        }
+                        else {
+                            VsiViciAdapter vsiViciAdapter = new VsiViciAdapter(getActivity(), trenutniVici_List);
+                            fragmentRecycler.setAdapter(vsiViciAdapter);
+                        }
+
+                    } else {
+                        Toast.makeText(getActivity(), "Nešto vent narobe.", Toast.LENGTH_LONG).show();
+
+                    }
+                    Toast.makeText(getActivity(), "getAllObjects listSize = " + trenutniVici_List.size(), Toast.LENGTH_LONG).show();
+
+                }
+            };
+
+
         }
 
     } // < --- END OF FRAGMENT THINGY
+
+
 
 
     /**
