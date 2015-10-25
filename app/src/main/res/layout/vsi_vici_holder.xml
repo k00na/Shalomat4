@@ -113,19 +113,7 @@
 
         </LinearLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Preberi cel vic ... "
-            android:id="@+id/preberiVec_BTN"
-            android:visibility="gone"
-            android:bottomRightRadius="10dp"
-            android:bottomLeftRadius="10dp"
-            android:topLeftRadius="10dp"
-            android:topRightRadius="10dp"
 
-
-            />
 
 
 

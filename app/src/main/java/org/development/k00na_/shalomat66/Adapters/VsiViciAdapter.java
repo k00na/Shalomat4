@@ -23,6 +23,7 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private static final int TYPE_PREBERIVEC = 0;
     private static final int TYPE_USUAL = 1;
+    private static final int TYPE_REKLAMA = 2;
     private List<VsiVici> mVsiViciList;
     private Context mContext;
 
@@ -43,6 +44,11 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             VsiViciHolder_preberiVec vsiViciHolder_preberiVec = new VsiViciHolder_preberiVec(v);
             return vsiViciHolder_preberiVec;
         }
+        else if ( viewType == TYPE_REKLAMA){
+            v = LayoutInflater.from(mContext).inflate(R.layout.testing_reklame_recyclerview, parent, false);
+            ReklameHolder_test reklameHolder_test = new ReklameHolder_test(v);
+            return reklameHolder_test;
+        }
         else {
             v = LayoutInflater.from(mContext).inflate(R.layout.vsi_vici_holder, parent, false);
             VsiViciHolder vsiViciHolder = new VsiViciHolder(v);
@@ -55,25 +61,42 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
+        String contentText = mVsiViciList.get(position).getContent();
+        String parseUser = mVsiViciList.get(position).getUser();
+        String categoryTitle = mVsiViciList.get(position).getCategoryTitle();
+        String jokeContent = mVsiViciList.get(position).getContent();
+        boolean addedByUser = false;
+
+        if(parseUser != null)
+            addedByUser = true;
+
         if(holder instanceof VsiViciHolder){
-            ((VsiViciHolder) holder).mNumOfLikes.setText(mVsiViciList.get(position).getNumOfLikes());
-            
+            ((VsiViciHolder) holder).mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
+            ((VsiViciHolder) holder).mJokeContent.setText(jokeContent);
+
+            if(addedByUser = true)
+                ((VsiViciHolder) holder).mVicDodalParseUser.setText(parseUser);
+
+            ((VsiViciHolder) holder).mCategoryTitle.setText(categoryTitle);
+
+
         }
 
+        else if(holder instanceof ReklameHolder_test) {
+            ((ReklameHolder_test)holder).reklameTest_TV.setText(categoryTitle);
+        }
+        else {
+            ((VsiViciHolder_preberiVec)holder).mCategoryTitle.setText(categoryTitle);
+            ((VsiViciHolder_preberiVec)holder).mJokeContent.setText(contentText.substring(0, 450) + " ...");
+            if(addedByUser == true)
+                ((VsiViciHolder_preberiVec)holder).mVicDodalText.setText(parseUser);
 
-        String contentText = mVsiViciList.get(position).getContent();
-
-
-        holder.mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
+            ((VsiViciHolder_preberiVec) holder).mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
 
 
 
+        }
 
-
-        if(mVsiViciList.get(position).getUser() != null)
-            holder.mUserName.setText("" + mVsiViciList.get(position).getUser());
-        else
-            holder.mVicDodalText.setVisibility(View.GONE);
 
 
     }
@@ -88,6 +111,9 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         if(mVsiViciList.get(position).getContent().length() > 450)
             return TYPE_PREBERIVEC;
+        else if (position % 7 == 0){
+            return TYPE_REKLAMA;
+        }
         else
             return TYPE_USUAL;
 
@@ -95,7 +121,7 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     class VsiViciHolder extends RecyclerView.ViewHolder{
 
-        private TextView mLikeIcon, mDislikeIcon, mShareIcon, mNumOfLikes, mJokeContent, mFavIcon, mCopyIcon, mUserName, mVicDodalText;
+        private TextView mLikeIcon, mDislikeIcon, mShareIcon, mCategoryTitle, mNumOfLikes, mJokeContent, mFavIcon, mCopyIcon, mVicDodalParseUser, mVicDodalText;
         private Button mPreberiVecBTN;
         private LinearLayout mLinearLayout;
         private View mDevider;
@@ -106,6 +132,7 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             super(itemView);
 
             mLikeIcon = (TextView)itemView.findViewById(R.id.likeIcon_TV);
+            mCategoryTitle = (TextView)itemView.findViewById(R.id.categoryTitle_TV);
             mDislikeIcon = (TextView)itemView.findViewById(R.id.dislikeIcon_TV);
             mShareIcon = (TextView)itemView.findViewById(R.id.shareIcon_TV);
             mDevider = (View)itemView.findViewById(R.id.deviderLine_XML);
@@ -114,8 +141,7 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             mJokeContent = (TextView)itemView.findViewById(R.id.jokeContent_TV);
             mFavIcon = (TextView)itemView.findViewById(R.id.favIcon_TV);
             mCopyIcon = (TextView)itemView.findViewById(R.id.copyIcon_TV);
-            mPreberiVecBTN = (Button)itemView.findViewById(R.id.preberiVec_BTN);
-            mUserName = (TextView)itemView.findViewById(R.id.vicDodalParseUser_TV);
+            mVicDodalParseUser = (TextView)itemView.findViewById(R.id.vicDodalParseUser_TV);
             mVicDodalText = (TextView)itemView.findViewById(R.id.vicDodalText_TV);
 
             Typeface iconFont = FontManager.getTypeface(mContext, FontManager.FONTAWESOME);
@@ -130,7 +156,7 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     class VsiViciHolder_preberiVec extends RecyclerView.ViewHolder{
 
-        private TextView mNumOfLikes, mJokeContent, mUserName, mVicDodalText;
+        private TextView mNumOfLikes, mJokeContent, mUserName, mVicDodalText, mCategoryTitle;
         private Button mPreberiVecBTN;
 
 
@@ -141,8 +167,21 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             mJokeContent = (TextView)itemView.findViewById(R.id.jokeContent_TV_preberiVec);
             mUserName = (TextView)itemView.findViewById(R.id.vicDodalParseUser_TV_preberiVec);
             mVicDodalText = (TextView)itemView.findViewById(R.id.vicDodalText_TV_preberiVec);
+            mCategoryTitle = (TextView)itemView.findViewById(R.id.categoryTitle_TV_preberiVec);
 
             mPreberiVecBTN = (Button)itemView.findViewById(R.id.preberiVec_BTN_preberiVec);
+        }
+    }
+
+
+    class ReklameHolder_test extends RecyclerView.ViewHolder{
+
+        TextView reklameTest_TV;
+
+        public ReklameHolder_test(View itemView) {
+            super(itemView);
+
+            reklameTest_TV = (TextView)itemView.findViewById(R.id.reklameTest_TV);
         }
     }
 }
