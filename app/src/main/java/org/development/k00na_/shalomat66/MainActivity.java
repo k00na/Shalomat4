@@ -356,6 +356,9 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                         else {
+
+                            if(mTabNum == 0)
+                                Collections.shuffle(trenutniVici_List);
                             VsiViciAdapter vsiViciAdapter = new VsiViciAdapter(getActivity(), trenutniVici_List);
                             fragmentRecycler.setAdapter(vsiViciAdapter);
                         }

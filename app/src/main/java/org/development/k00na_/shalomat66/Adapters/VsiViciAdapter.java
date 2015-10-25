@@ -21,7 +21,8 @@ import java.util.List;
  */
 public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciHolder>{
 
-
+    private static final int TYPE_PREBERIVEC = 0;
+    private static final int TYPE_USUAL = 1;
     private List<VsiVici> mVsiViciList;
     private Context mContext;
 
@@ -35,8 +36,16 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
     @Override
     public VsiViciHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
+        View v = null;
 
-        View v = LayoutInflater.from(mContext).inflate(R.layout.vsi_vici_holder, parent, false);
+        if(viewType == TYPE_PREBERIVEC) {
+            v = LayoutInflater.from(mContext).inflate(R.layout.vsi_vici_holder_preberivec, parent, false);
+        }
+        else if (viewType == TYPE_USUAL){
+            v = LayoutInflater.from(mContext).inflate(R.layout.vsi_vici_holder, parent, false);
+
+        }
+
         VsiViciHolder vsiViciHolder = new VsiViciHolder(v);
 
         return vsiViciHolder;
@@ -49,6 +58,9 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
         String contentText = mVsiViciList.get(position).getContent();
 
 
+        holder.mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
+
+
         if(contentText.length() < 450){
 
             holder.mJokeContent.setText(contentText);
@@ -56,7 +68,7 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
        //     holder.mTableLayout.setVisibility(View.VISIBLE);
         }
 
-        else{
+        else if (contentText.length() >= 450){
             holder.mJokeContent.setText(contentText.substring(0, 450) + " ... ");
             holder.mPreberiVecBTN.setVisibility(View.VISIBLE);
             holder.mDevider.setVisibility(View.GONE);
@@ -65,7 +77,6 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
         }
 
 
-        holder.mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
 
         if(mVsiViciList.get(position).getUser() != null)
             holder.mUserName.setText("" + mVsiViciList.get(position).getUser());
@@ -78,6 +89,16 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
     @Override
     public int getItemCount() {
         return mVsiViciList.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+
+        if(mVsiViciList.get(position).getContent().length() > 450)
+            return TYPE_PREBERIVEC;
+        else
+            return TYPE_USUAL;
+
     }
 
     class VsiViciHolder extends RecyclerView.ViewHolder{
