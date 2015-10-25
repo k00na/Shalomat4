@@ -25,7 +25,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:id="@+id/categoryTitle_TV"
+                android:id="@+id/categoryTitle_TV_preberiVec"
                 android:text="Title"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
@@ -46,7 +46,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/jokeContent_TV"
+            android:id="@+id/jokeContent_TV_preberiVec"
             android:textColor="#000000"
             android:textSize="17sp"
             android:layout_margin="6dp"
@@ -71,20 +71,20 @@
                 android:layout_width="0dp"
                 android:layout_weight="30"
                 android:layout_height="wrap_content"
-                android:id="@+id/numOfLikes_TV"
+                android:id="@+id/numOfLikes_TV_preberiVec"
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Vic dodal/-a: "
-                android:id="@+id/vicDodalText_TV"/>
+                android:id="@+id/vicDodalText_TV_preberiVec"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="70"
-                android:id="@+id/vicDodalParseUser_TV"
+                android:id="@+id/vicDodalParseUser_TV_preberiVec"
                 />
 
 
@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Preberi cel vic ... "
-            android:id="@+id/preberiVec_BTN"
+            android:id="@+id/preberiVec_BTN_preberiVec"
             android:visibility="gone"
             android:bottomRightRadius="10dp"
             android:bottomLeftRadius="10dp"

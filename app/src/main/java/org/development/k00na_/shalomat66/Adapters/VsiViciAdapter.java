@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * Created by k00na_ on 19.10.2015.
  */
-public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciHolder>{
+public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     private static final int TYPE_PREBERIVEC = 0;
     private static final int TYPE_USUAL = 1;
@@ -34,25 +34,31 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
 
 
     @Override
-    public VsiViciHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View v = null;
 
         if(viewType == TYPE_PREBERIVEC) {
             v = LayoutInflater.from(mContext).inflate(R.layout.vsi_vici_holder_preberivec, parent, false);
+            VsiViciHolder_preberiVec vsiViciHolder_preberiVec = new VsiViciHolder_preberiVec(v);
+            return vsiViciHolder_preberiVec;
         }
-        else if (viewType == TYPE_USUAL){
+        else {
             v = LayoutInflater.from(mContext).inflate(R.layout.vsi_vici_holder, parent, false);
-
+            VsiViciHolder vsiViciHolder = new VsiViciHolder(v);
+            return vsiViciHolder;
         }
 
-        VsiViciHolder vsiViciHolder = new VsiViciHolder(v);
 
-        return vsiViciHolder;
     }
 
     @Override
-    public void onBindViewHolder(VsiViciHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+
+        if(holder instanceof VsiViciHolder){
+            ((VsiViciHolder) holder).mNumOfLikes.setText(mVsiViciList.get(position).getNumOfLikes());
+            
+        }
 
 
         String contentText = mVsiViciList.get(position).getContent();
@@ -61,20 +67,6 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
         holder.mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
 
 
-        if(contentText.length() < 450){
-
-            holder.mJokeContent.setText(contentText);
-            holder.mPreberiVecBTN.setVisibility(View.GONE);
-       //     holder.mTableLayout.setVisibility(View.VISIBLE);
-        }
-
-        else if (contentText.length() >= 450){
-            holder.mJokeContent.setText(contentText.substring(0, 450) + " ... ");
-            holder.mPreberiVecBTN.setVisibility(View.VISIBLE);
-            holder.mDevider.setVisibility(View.GONE);
-            holder.mLinearLayout.setVisibility(View.GONE);
-         //   holder.mTableLayout.setVisibility(View.GONE);
-        }
 
 
 
@@ -133,6 +125,24 @@ public class VsiViciAdapter extends RecyclerView.Adapter<VsiViciAdapter.VsiViciH
             FontManager.markAsIconContainer(itemView.findViewById(R.id.dislikeIcon_TV), iconFont);
             FontManager.markAsIconContainer(itemView.findViewById(R.id.shareIcon_TV), iconFont);
 
+        }
+    }
+
+    class VsiViciHolder_preberiVec extends RecyclerView.ViewHolder{
+
+        private TextView mNumOfLikes, mJokeContent, mUserName, mVicDodalText;
+        private Button mPreberiVecBTN;
+
+
+        public VsiViciHolder_preberiVec(View itemView) {
+            super(itemView);
+
+            mNumOfLikes = (TextView)itemView.findViewById(R.id.numOfLikes_TV_preberiVec);
+            mJokeContent = (TextView)itemView.findViewById(R.id.jokeContent_TV_preberiVec);
+            mUserName = (TextView)itemView.findViewById(R.id.vicDodalParseUser_TV_preberiVec);
+            mVicDodalText = (TextView)itemView.findViewById(R.id.vicDodalText_TV_preberiVec);
+
+            mPreberiVecBTN = (Button)itemView.findViewById(R.id.preberiVec_BTN_preberiVec);
         }
     }
 }
