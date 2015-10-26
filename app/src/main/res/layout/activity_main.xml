@@ -46,7 +46,11 @@
                     android:layout_height="?attr/actionBarSize"
                     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
 
-                    app:layout_collapseMode="pin" />
+                    app:layout_collapseMode="pin">
+
+
+
+                </android.support.v7.widget.Toolbar>
 
                 <View
                     android:layout_width="match_parent"
@@ -107,13 +111,6 @@
 
 
 
-
-
-
-
-
-
-
     <android.support.design.widget.NavigationView
         app:theme="@style/myStyle"
         android:layout_width="wrap_content"
@@ -126,13 +123,6 @@
 
 
         ></android.support.design.widget.NavigationView>
-
-
-
-
-
-
-
 
 </android.support.v4.widget.DrawerLayout>
 

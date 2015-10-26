@@ -1,5 +1,6 @@
 package org.development.k00na_.shalomat66;
 
+import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -17,6 +18,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     // Need this to link with the Snackbar
     private CoordinatorLayout mCoordinator;
     //Need this to set the title of the app bar
-    private CollapsingToolbarLayout mCollapsingToolbarLayout;
+    private static CollapsingToolbarLayout mCollapsingToolbarLayout;
 
     private Toolbar mToolbar;
     private TabLayout mTabLayout;
@@ -85,15 +87,38 @@ public class MainActivity extends AppCompatActivity {
         mCoordinator = (CoordinatorLayout) findViewById(R.id.root_coordinator);
         mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_layout);
         mDrawerLayout = (DrawerLayout)findViewById(R.id.ourDrawerLayout);
-
+        mNavigationView = (NavigationView)findViewById(R.id.navigationView);
         mToolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(mToolbar);
+
+        getSupportActionBar().setTitle("HEHE");
+
+
+
 
         mTabLayout = (TabLayout)findViewById(R.id.tab_layout);
         mTabsAdapter = new ViewPagerAdapter(getSupportFragmentManager(), "VsiVici");
         mTabLayout.setTabsFromPagerAdapter(mTabsAdapter);
 
 
+        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+                switch(menuItem.getItemId()){
+
+                    // angleški
+                    case(R.id.wordplay_navigation):
+                        FragmentManager fm = getSupportFragmentManager();
+                        fm.beginTransaction()
+                                .replace(R.id.view_pager, FragmentThingy.newInstance(mTabLayout.getSelectedTabPosition(), "wordplay.json"))
+                                .commit();
+                        break;
+
+                }
+            return true;
+            }
+        });
 
 
         mViewPager = (ViewPager)findViewById(R.id.view_pager);
@@ -104,70 +129,16 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
 
 
-/**
- *
-
-
-        mTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-
-
-
-                mCurrentCategory = "VsiVici";
-
-                if(tab.getPosition() == 0){
-
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    fragmentManager.beginTransaction()
-                            .replace(R.id.fragment_container, FragmentThingy.newInstance(tab.getPosition(), mCurrentCategory))
-                            .commit();
-
-
-                }
-                if(tab.getPosition() == 1){
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    fragmentManager.beginTransaction()
-                            .replace(R.id.fragment_container, FragmentThingy.newInstance(tab.getPosition(), mCurrentCategory))
-                            .commit();
-                }
-
-                if(tab.getPosition() == 2){
-
-                    // TEST:
-                    // poskrbi, da bo view pager-ju nastavljen VsiViciAdapter
-                    // 1. dobi vice z Parse-a v List<VsiVici>
-                    // 2. naredi VsiViciAdapter objekt
-                    // 3. podaj ta adapter objekt viewPager-ju
-
-
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    fragmentManager.beginTransaction()
-                            .replace(R.id.fragment_container, FragmentThingy.newInstance(tab.getPosition(), mCurrentCategory))
-                            .commit();
-                }
-
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
- */
-
 
 
         setupDrawerToggle();
 
 
+    }
+
+    public static void setToolBarTitle(String title){
+
+        mCollapsingToolbarLayout.setTitle(title);
 
 
     }
@@ -218,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
         String mSelectedCat = "VsiVici";
         private List<VsiVici> trenutniVici_List;
         private RecyclerView fragmentRecycler;
+        private CollapsingToolbarLayout mCollapsingToolbarLayout;
 
         // variables for getAllObjects method
         int skip = 0;
@@ -247,15 +219,13 @@ public class MainActivity extends AppCompatActivity {
 
             trenutniVici_List = new ArrayList<>();
 
+
             mSelectedCat = getArguments().getString(Constants.SELECTED_CAT);
             mTabNum = getArguments().getInt(Constants.TABNUM);
             fragmentRecycler = new RecyclerView(getActivity());
             LinearLayoutManager llm = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
             fragmentRecycler.setLayoutManager(llm);
 
-      //      fetchDataFromParse("VsiVici", mTabNum);
-
-            // TEST BELLOW:
 
 
             parseQuery.setLimit(1000);
@@ -265,6 +235,9 @@ public class MainActivity extends AppCompatActivity {
                 parseQuery.orderByAscending(Constants.PARSE_CREATEDAT_COL);
             if(mTabNum == 2)
                 parseQuery.orderByDescending(Constants.PARSE_NUMOFLIKES_COL);
+
+            if(!mSelectedCat.equals("VsiVici"))
+                parseQuery.whereContains("category", mSelectedCat);
 
             parseQuery.findInBackground(getAllObjects());
 
@@ -295,15 +268,17 @@ public class MainActivity extends AppCompatActivity {
 
                             if(mTabNum == 0)
                                 Collections.shuffle(trenutniVici_List);
+                            Toast.makeText(getActivity(), "getAllObjects listSize = " + trenutniVici_List.size(), Toast.LENGTH_LONG).show();
+
                             VsiViciAdapter vsiViciAdapter = new VsiViciAdapter(getActivity(), trenutniVici_List);
                             fragmentRecycler.setAdapter(vsiViciAdapter);
+                            MainActivity.setToolBarTitle("" + mSelectedCat + "[" + trenutniVici_List.size() + " vicev]");
                         }
 
                     } else {
                         Toast.makeText(getActivity(), "Nešto vent narobe.", Toast.LENGTH_LONG).show();
 
                     }
-                    Toast.makeText(getActivity(), "getAllObjects listSize = " + trenutniVici_List.size(), Toast.LENGTH_LONG).show();
 
                 }
             };

@@ -44,11 +44,6 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             VsiViciHolder_preberiVec vsiViciHolder_preberiVec = new VsiViciHolder_preberiVec(v);
             return vsiViciHolder_preberiVec;
         }
-        else if ( viewType == TYPE_REKLAMA){
-            v = LayoutInflater.from(mContext).inflate(R.layout.testing_reklame_recyclerview, parent, false);
-            ReklameHolder_test reklameHolder_test = new ReklameHolder_test(v);
-            return reklameHolder_test;
-        }
         else {
             v = LayoutInflater.from(mContext).inflate(R.layout.vsi_vici_holder, parent, false);
             VsiViciHolder vsiViciHolder = new VsiViciHolder(v);
@@ -82,9 +77,6 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         }
 
-        else if(holder instanceof ReklameHolder_test) {
-            ((ReklameHolder_test)holder).reklameTest_TV.setText(categoryTitle);
-        }
         else {
             ((VsiViciHolder_preberiVec)holder).mCategoryTitle.setText(categoryTitle);
             ((VsiViciHolder_preberiVec)holder).mJokeContent.setText(contentText.substring(0, 450) + " ...");
@@ -111,9 +103,6 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         if(mVsiViciList.get(position).getContent().length() > 450)
             return TYPE_PREBERIVEC;
-        else if (position % 7 == 0){
-            return TYPE_REKLAMA;
-        }
         else
             return TYPE_USUAL;
 
@@ -174,14 +163,5 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
 
-    class ReklameHolder_test extends RecyclerView.ViewHolder{
 
-        TextView reklameTest_TV;
-
-        public ReklameHolder_test(View itemView) {
-            super(itemView);
-
-            reklameTest_TV = (TextView)itemView.findViewById(R.id.reklameTest_TV);
-        }
-    }
 }
