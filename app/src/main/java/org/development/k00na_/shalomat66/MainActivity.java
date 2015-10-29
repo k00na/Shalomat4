@@ -92,68 +92,180 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
 
 
-
-
+        mCurrentCategory = Constants.VSI_VICI;
 
 
         mTabLayout = (TabLayout)findViewById(R.id.tab_layout);
-        mTabsAdapter = new ViewPagerAdapter(getSupportFragmentManager(), "VsiVici");
+        mTabsAdapter = new ViewPagerAdapter(getSupportFragmentManager(), mCurrentCategory);
         mTabLayout.setTabsFromPagerAdapter(mTabsAdapter);
+        mViewPager = (ViewPager)findViewById(R.id.view_pager);
+        mViewPager.setAdapter(mTabsAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
 
 
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
 
-                switch(menuItem.getItemId()){
 
-                    // angleški
-                    case(R.id.wordplay_navigation):
-                        FragmentManager fm = getSupportFragmentManager();
-                        fm.beginTransaction()
-                                .replace(R.id.view_pager, FragmentThingy.newInstance(mTabLayout.getSelectedTabPosition(), "wordplay.json"))
-                                .commit();
+                handleNavigationClicks(menuItem.getItemId());
 
-
-                        break;
-
-                }
-            return true;
+                return true;
             }
         });
-
-
-        mViewPager = (ViewPager)findViewById(R.id.view_pager);
-
-        mViewPager.setAdapter(mTabsAdapter);
-        mTabLayout.setupWithViewPager(mViewPager);
-
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
-
-
 
 
         setupDrawerToggle();
 
 
+    } // <-- END onCreate()
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * MainActivity methods:
+     */
+
+    private void handleNavigationClicks(int itemID){
+
+
+        switch(itemID){
+
+            case(R.id.blondinke_navigation):
+                mCurrentCategory = Constants.BLONDINKE;
+                setupTabsAndViewPager();
+                break;
+
+
+            case(R.id.opolzke_navigation):
+                mCurrentCategory = Constants.OPOLZKI;
+                setupTabsAndViewPager();
+                break;
+
+            case(R.id.policaji_navigation):
+                mCurrentCategory = Constants.POLICAJI;
+                setupTabsAndViewPager();
+                break;
+
+            case(R.id.tvojamama_navigation):
+                mCurrentCategory = Constants.TVOJAMAMA;
+                setupTabsAndViewPager();
+                break;
+
+            case(R.id.gostilniske_navigation):
+                mCurrentCategory = Constants.GOSTILNISKI;
+                setupTabsAndViewPager();
+                break;
+
+            case(R.id.janezek_navigation):
+                mCurrentCategory = Constants.JANEZEK;
+                setupTabsAndViewPager();
+                break;
+
+            case(R.id.crnihumor_navigation):
+                mCurrentCategory = Constants.CRNIHUMOR;
+                setupTabsAndViewPager();
+                break;
+
+            case(R.id.yugovici_navigation):
+                mCurrentCategory = Constants.YUGOVICI;
+                setupTabsAndViewPager();
+                break;
+
+
+            // NACIONALNI
+            case(R.id.crnogorci_navigation):
+                mCurrentCategory = Constants.CRNOGORCI;
+                setupTabsAndViewPager();
+                break;
+
+            case(R.id.mujohaso_navigation):
+                mCurrentCategory = Constants.MUJOHASO;
+                setupTabsAndViewPager();
+                break;
+
+            case(R.id.hrvati_navigation):
+                mCurrentCategory = Constants.HRVATI;
+                setupTabsAndViewPager();
+                break;
+
+            case(R.id.slovenci_navigation):
+                mCurrentCategory = Constants.SLOVENCI;
+                setupTabsAndViewPager();
+                break;
+
+            case(R.id.srbi_navigation):
+                mCurrentCategory = Constants.SRBI;
+                setupTabsAndViewPager();
+                break;
+
+
+            // ANGLEŠKI
+            case(R.id.yomomma_navigation):
+                mCurrentCategory = Constants.YOMOMMA;
+                setupTabsAndViewPager();
+                break;
+
+            case(R.id.blondes_navigation):
+                mCurrentCategory = Constants.BLONDES;
+                setupTabsAndViewPager();
+                break;
+
+            case(R.id.sexrelated_navigation):
+                mCurrentCategory = Constants.SEXRELATED;
+                setupTabsAndViewPager();
+                break;
+
+            case(R.id.wordplay_navigation):
+                mCurrentCategory = Constants.WORDPLAY;
+                setupTabsAndViewPager();
+                break;
+
+        }
+
     }
 
-    public static void setToolBarTitle(String title){
+    private void setupTabsAndViewPager(){
 
-        mCollapsingToolbarLayout.setTitle(title);
+        mTabsAdapter = new ViewPagerAdapter(getSupportFragmentManager(), mCurrentCategory);
+        mTabLayout.setTabsFromPagerAdapter(mTabsAdapter);
+        mViewPager.setAdapter(mTabsAdapter);
+        mTabLayout.setupWithViewPager(mViewPager);
 
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
 
     }
 
 
-    /*
+    private void setupDrawerToggle() {
+
+        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close);
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        mDrawerToggle.syncState();
+    }
+
+    private void setupAdView() {
+
+        adView = (AdView) this.findViewById(R.id.adViewYoYo);
+
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build()
+                ;
+        adView.loadAd(adRequest);
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
      *  INNER CLASS :VIEW PAGERS ADAPTER
      */
 
     public class ViewPagerAdapter extends FragmentStatePagerAdapter{
 
         private String selectedCategory;
-        private String[] titles = {"VSI", "NOVO", "NAKLJUČNI"};
+        private String[] titles = {"Naključni", "Novi", "Najboljši"};
 
         public ViewPagerAdapter(FragmentManager fm, String selCat) {
             super(fm);
@@ -175,8 +287,9 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return titles[position];
         }
-    }
+    } // <- END OF ViewPagerAdapter
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
     /**
      *      FRAGMENT THINGY
      */
@@ -274,7 +387,6 @@ public class MainActivity extends AppCompatActivity {
 
                             VsiViciAdapter vsiViciAdapter = new VsiViciAdapter(getActivity(), trenutniVici_List);
                             fragmentRecycler.setAdapter(vsiViciAdapter);
-                            MainActivity.setToolBarTitle("" + mSelectedCat + "[" + trenutniVici_List.size() + " vicev]");
                         }
 
                     } else {
@@ -290,32 +402,10 @@ public class MainActivity extends AppCompatActivity {
 
     } // < --- END OF FRAGMENT THINGY
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
-    /**
-     * MainActivity methods:
-     */
-
-
-
-    private void setupDrawerToggle() {
-
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.drawer_open, R.string.drawer_close);
-        mDrawerLayout.setDrawerListener(mDrawerToggle);
-        mDrawerToggle.syncState();
-    }
-
-    private void setupAdView() {
-
-        adView = (AdView) this.findViewById(R.id.adViewYoYo);
-
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .build()
-                ;
-        adView.loadAd(adRequest);
-    }
 
 
 

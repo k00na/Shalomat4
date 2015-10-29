@@ -10,7 +10,32 @@ public class Constants {
     public static final String PARSE_CATEGORY_COLUMN = "category";
     public static final String PARSE_CREATEDAT_COL = "createdAt";
     public static final String PARSE_NUMOFLIKES_COL = "numOfLikes";
+
+    // Categories
     public static final String VSI_VICI = "VsiVici";
+    public static final String BLONDINKE = "blondinke.json";
+    public static final String OPOLZKI = "opolzki.json";
+    public static final String POLICAJI = "policaji.json";
+
+    public static final String TVOJAMAMA = "tvojamama.json";
+    public static final String GOSTILNISKI = ".json";
+    public static final String JANEZEK= ".json";
+    public static final String  CRNIHUMOR= ".json";
+    public static final String YUGOVICI = "yugovici.json"; // IS IT?
+    public static final String  CRNOGORCI = "crnogorci.json";
+    public static final String MUJOHASO= "mujohaso.json";
+    public static final String HRVATI = "hrvati.json";
+    public static final String SLOVENCI = "slovenci.json";
+    public static final String SRBI = "srbi.json";
+    public static final String YOMOMMA = "yomomma.json";
+    public static final String BLONDES = "blondes.json";
+    public static final String SEXRELATED= "sexrelated.json";
+    public static final String WORDPLAY= "wordplay.json";
+
+
+
+
+
 
     // FragmentThingy constants
 
