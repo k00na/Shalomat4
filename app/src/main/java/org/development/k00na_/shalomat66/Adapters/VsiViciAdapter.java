@@ -65,15 +65,23 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         if(parseUser != null)
             addedByUser = true;
 
+
+        // If statement for two types of Holders
         if(holder instanceof VsiViciHolder){
             ((VsiViciHolder) holder).mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
             ((VsiViciHolder) holder).mJokeContent.setText(jokeContent);
+
+            ((VsiViciHolder) holder).mLikeIcon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
 
             if(addedByUser = true)
                 ((VsiViciHolder) holder).mVicDodalParseUser.setText(parseUser);
 
             ((VsiViciHolder) holder).mCategoryTitle.setText(categoryTitle);
-
 
         }
 
