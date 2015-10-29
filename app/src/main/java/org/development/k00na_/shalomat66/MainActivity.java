@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         mToolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(mToolbar);
 
-        getSupportActionBar().setTitle("HEHE");
+
 
 
 
@@ -113,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
                         fm.beginTransaction()
                                 .replace(R.id.view_pager, FragmentThingy.newInstance(mTabLayout.getSelectedTabPosition(), "wordplay.json"))
                                 .commit();
+
+
                         break;
 
                 }
