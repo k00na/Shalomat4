@@ -5,13 +5,22 @@
               android:layout_height="match_parent">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nimateRacuna"
+        android:textSize="16sp"
+        android:layout_margin="16dp"
+        android:textStyle="bold"
+        />
+
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:hint="@string/vnesiUpIme"
-        android:id="@+id/enterUsername_ET"
+        android:id="@+id/registrationUsername_ET"
         />
 
 
@@ -21,36 +30,24 @@
         android:layout_margin="16dp"
         android:inputType="textPassword"
         android:hint="@string/vnesiGeslo"
-        android:id="@+id/enterPassword_ET"
+        android:id="@+id/registrationPassword_ET"
         />
 
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:inputType="textPassword"
+        android:hint="@string/ponovnoVnesiGeslo"
+        android:id="@+id/registrationPasswordDoubleCheck_ET"
+        />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="@string/vpisiBtn"
-        android:id="@+id/vpis_BTN"/>
-
-
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:text="@string/nimasRacuna"
-       android:layout_margin="16dp"
-       android:textSize="20sp"
-       android:autoLink="web"
-
-       />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ustvariNovRacun"
-        android:layout_margin="16dp"
-        android:id="@+id/novRacun_BTN"
-        />
-
-
+        android:text="@string/registracijaBTN"
+        android:id="@+id/registracija_BTN"/>
 
 </LinearLayout>

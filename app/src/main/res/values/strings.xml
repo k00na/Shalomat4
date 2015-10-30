@@ -48,4 +48,12 @@
     <string name="wordplay_nav">Wordplay Jokes</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+    <string name="vnesiUpIme">Vaše uporabniško ime...</string>
+    <string name="vnesiGeslo">Vnesite geslo ...</string>
+    <string name="vpisiBtn">Vpiši me</string>
+    <string name="nimateRacuna">Vkolikor še nimate svojega računa izpolnite spodnja polja za registracijo</string>
+    <string name="ponovnoVnesiGeslo">Ponovno vnesite svoje geslo</string>
+    <string name="registracijaBTN">Registriraj</string>
+    <string name="ustvariNovRacun">Ustvari nov račun</string>
+    <string name="nimasRacuna">Še nimaš svojega računa?</string>
 </resources>

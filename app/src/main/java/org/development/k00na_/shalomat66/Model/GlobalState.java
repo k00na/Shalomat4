@@ -37,8 +37,6 @@ public class GlobalState extends Application {
     private int shranjeniSize;
     private int vsiViciSize;
     private static final String FLURRY_KEY = "GY98KGH7WQVZ72N4TFKH";
-    private static final String PARSE_APP_KEY = "9Ao0ayCgsudGL7222ytHBwOicQPwPvTy4H02zJHJ";
-    private static final String CLIENT_KEY = "tonhJCLrztMnSkLFtwOoiII10k060UjyuNYutRzN";
 
     private static List<VsiVici> mVsiViciListRandomized;
     private static List<VsiVici> mVsiViciListNewest;

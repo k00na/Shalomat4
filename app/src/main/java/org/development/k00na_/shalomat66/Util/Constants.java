@@ -5,6 +5,7 @@ package org.development.k00na_.shalomat66.Util;
  */
 public class Constants {
 
+    // Parse constants
     public static final String PARSE_KEY = "7It4884q33aw4wXOpEcxME89R0uB0liOiQmz1Czs";
     public static final String PARSE_CLIENT = "lq4iyVnHzQWirbR55pLa2RpXvTdr9PIwFUJOnlxz";
     public static final String PARSE_CATEGORY_COLUMN = "category";

@@ -1,7 +1,6 @@
 package org.development.k00na_.shalomat66;
 
-import android.content.ClipData;
-import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -25,6 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import org.development.k00na_.shalomat66.Activities.LoginActivity;
 import org.development.k00na_.shalomat66.Adapters.VsiViciAdapter;
 import org.development.k00na_.shalomat66.Parse.VsiVici;
 import org.development.k00na_.shalomat66.Util.Constants;
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(ParseUser.getCurrentUser() != null)
             menuItem.setTitle("Izpis");
-        else
+        else if (ParseUser.getCurrentUser() == null)
             menuItem.setTitle("Vpis");
 
         return super.onPrepareOptionsMenu(menu);
@@ -147,9 +147,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        if(item.getItemId() == R.id.vpisItem){
-
-        }
+        if(item.getItemId() == R.id.vpisItem && ParseUser.getCurrentUser() == null){
+            Intent openLogin = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(openLogin);
+        } else if(item.getItemId() == R.id.vpisItem && ParseUser.getCurrentUser() != null)
+            ParseUser.getCurrentUser().logOut();
 
 
         return super.onOptionsItemSelected(item);
