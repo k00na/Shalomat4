@@ -1,5 +1,6 @@
 package org.development.k00na_.shalomat66;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -18,6 +19,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +38,7 @@ import org.development.k00na_.shalomat66.Model.GlobalState;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -119,12 +122,45 @@ public class MainActivity extends AppCompatActivity {
         setupDrawerToggle();
 
 
-    } // <-- END onCreate()
+    } // <-- END of onCreate()
+
+
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        menu.clear();
+
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+        MenuItem menuItem = menu.findItem(R.id.vpisItem);
+
+
+
+        if(ParseUser.getCurrentUser() != null)
+            menuItem.setTitle("Izpis");
+        else
+            menuItem.setTitle("Vpis");
+
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId() == R.id.vpisItem){
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     /**
-     * MainActivity methods:
+     * MainActivity custom methods:
      */
 
     private void handleNavigationClicks(int itemID){
@@ -137,7 +173,6 @@ public class MainActivity extends AppCompatActivity {
                 setupTabsAndViewPager();
                 break;
 
-
             case(R.id.opolzke_navigation):
                 mCurrentCategory = Constants.OPOLZKI;
                 setupTabsAndViewPager();
@@ -147,11 +182,12 @@ public class MainActivity extends AppCompatActivity {
                 mCurrentCategory = Constants.POLICAJI;
                 setupTabsAndViewPager();
                 break;
-
+                /*
             case(R.id.tvojamama_navigation):
                 mCurrentCategory = Constants.TVOJAMAMA;
                 setupTabsAndViewPager();
                 break;
+                */
 
             case(R.id.gostilniske_navigation):
                 mCurrentCategory = Constants.GOSTILNISKI;
@@ -351,6 +387,8 @@ public class MainActivity extends AppCompatActivity {
             if(mTabNum == 2)
                 parseQuery.orderByDescending(Constants.PARSE_NUMOFLIKES_COL);
 
+
+            // A ni tak, da je to
             if(!mSelectedCat.equals("VsiVici"))
                 parseQuery.whereContains("category", mSelectedCat);
 

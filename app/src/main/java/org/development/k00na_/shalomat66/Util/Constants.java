@@ -14,14 +14,14 @@ public class Constants {
     // Categories
     public static final String VSI_VICI = "VsiVici";
     public static final String BLONDINKE = "blondinke.json";
-    public static final String OPOLZKI = "opolzki.json";
+    public static final String OPOLZKI = "opolzke.json";
     public static final String POLICAJI = "policaji.json";
 
     public static final String TVOJAMAMA = "tvojamama.json";
-    public static final String GOSTILNISKI = ".json";
-    public static final String JANEZEK= ".json";
-    public static final String  CRNIHUMOR= ".json";
-    public static final String YUGOVICI = "yugovici.json"; // IS IT?
+    public static final String GOSTILNISKI = "gostilniske.json";
+    public static final String JANEZEK= "janezek.json";
+    public static final String  CRNIHUMOR= "crnihumor.json";
+    public static final String YUGOVICI = "yugo.json";
     public static final String  CRNOGORCI = "crnogorci.json";
     public static final String MUJOHASO= "mujohaso.json";
     public static final String HRVATI = "hrvati.json";

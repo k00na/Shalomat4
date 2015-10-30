@@ -1,6 +1,7 @@
 package org.development.k00na_.shalomat66.Adapters;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,9 +10,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.development.k00na_.shalomat66.Parse.VsiVici;
 import org.development.k00na_.shalomat66.R;
+import org.development.k00na_.shalomat66.Util.Constants;
 import org.development.k00na_.shalomat66.Util.FontManager;
 
 import java.util.List;
@@ -54,15 +57,16 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
 
         String contentText = mVsiViciList.get(position).getContent();
-        String parseUser = mVsiViciList.get(position).getUser();
+        String parseUserString = mVsiViciList.get(position).getUser();
         String categoryTitle = mVsiViciList.get(position).getCategoryTitle();
         String jokeContent = mVsiViciList.get(position).getContent();
+        final String jokeID = mVsiViciList.get(position).getObjectId();
         boolean addedByUser = false;
 
-        if(parseUser != null)
+        if(parseUserString != null)
             addedByUser = true;
 
 
@@ -71,15 +75,27 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             ((VsiViciHolder) holder).mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
             ((VsiViciHolder) holder).mJokeContent.setText(jokeContent);
 
+
+            // LIKE BTN FUNCTIONALITY
             ((VsiViciHolder) holder).mLikeIcon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    if(checkIfAlreadyLiked(jokeID) == false) {
+                        saveToPrefs(jokeID);
+                        mVsiViciList.get(position).increment(Constants.PARSE_NUMOFLIKES_COL);
+                        mVsiViciList.get(position).saveInBackground();
+
+                        ((VsiViciHolder) holder).mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
+
+                    }
+                    else
+                        Toast.makeText(mContext, "Ta vic ste že ocenili", Toast.LENGTH_LONG).show();
 
                 }
             });
 
-            if(addedByUser = true)
-                ((VsiViciHolder) holder).mVicDodalParseUser.setText(parseUser);
+            if(addedByUser == true)
+                ((VsiViciHolder) holder).mVicDodalParseUser.setText(parseUserString);
 
             ((VsiViciHolder) holder).mCategoryTitle.setText(categoryTitle);
 
@@ -89,15 +105,13 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             ((VsiViciHolder_preberiVec)holder).mCategoryTitle.setText(categoryTitle);
             ((VsiViciHolder_preberiVec)holder).mJokeContent.setText(contentText.substring(0, 450) + " ...");
             if(addedByUser == true)
-                ((VsiViciHolder_preberiVec)holder).mVicDodalText.setText(parseUser);
+                ((VsiViciHolder_preberiVec)holder).mVicDodalText.setText(parseUserString);
 
             ((VsiViciHolder_preberiVec) holder).mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
 
 
 
         }
-
-
 
     }
 
@@ -115,6 +129,72 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             return TYPE_USUAL;
 
     }
+
+    /**
+     *  My Methods:
+     */
+
+
+    private boolean checkIfAlreadyLiked(String currentJokeID) {
+
+        boolean alreadyLiked = false;
+
+        String likesString = getPrefs();
+        String[] likes = likesString.split(",");
+
+
+
+        for(int i=0; i<likes.length; i++){
+            if(likes[i].equals(currentJokeID)){
+                alreadyLiked = true;
+                break;
+            }
+
+        }
+
+        return alreadyLiked;
+    }
+
+    private String getPrefs(){
+
+        SharedPreferences prefs = mContext.getSharedPreferences("likes2", 0);
+        String likesList = (prefs.getString("likes2", ""));
+        if(likesList.length() == 0)
+            Toast.makeText(mContext, "empty list", Toast.LENGTH_LONG).show();
+
+
+        return likesList;
+
+    }
+
+
+    private void saveToPrefs(String string){
+
+
+        SharedPreferences prefs = mContext.getSharedPreferences("likes2", 0);
+        SharedPreferences.Editor editor = prefs.edit();
+        String wholeString = prefs.getString("likes2", "");
+        if(wholeString.length() > 0)
+            wholeString = wholeString + "," + string;
+        else
+            wholeString = string;
+
+        editor.putString("likes2", wholeString);
+
+        editor.commit();
+
+
+    }
+
+
+
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Holder 1
+     */
 
     class VsiViciHolder extends RecyclerView.ViewHolder{
 
@@ -150,6 +230,13 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         }
     }
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    /**
+     * Holder 2
+     */
 
     class VsiViciHolder_preberiVec extends RecyclerView.ViewHolder{
 

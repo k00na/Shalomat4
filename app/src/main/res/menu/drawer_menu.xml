@@ -22,12 +22,15 @@
         android:id="@+id/policaji_navigation"
         android:title="@string/policajiNav"></item>
 
+
+        <!--
     <item
         android:icon="@drawable/ic_send_black_24dp"
 
         android:id="@+id/tvojamama_navigation"
         android:title="@string/tvojaMamaNav"></item>
 
+-->
     <item
         android:icon="@drawable/ic_send_black_24dp"
         android:id="@+id/gostilniske_navigation"
