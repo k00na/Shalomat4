@@ -56,4 +56,5 @@
     <string name="registracijaBTN">Registriraj</string>
     <string name="ustvariNovRacun">Ustvari nov račun</string>
     <string name="nimasRacuna">Še nimaš svojega računa?</string>
+    <string name="facebook_app_id">EmptyForNow</string>
 </resources>

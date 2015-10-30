@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.util.Log;
 
+import com.facebook.FacebookSdk;
 import com.flurry.android.FlurryAgent;
 import com.parse.Parse;
 import com.parse.ParseClassName;
@@ -50,12 +51,19 @@ public class GlobalState extends Application {
     public void onCreate() {
         super.onCreate();
 
+        // Flurry
         setupFlurry();
 
 
         // Parse part
         ParseObject.registerSubclass(VsiVici.class);
         Parse.initialize(this, Constants.PARSE_KEY, Constants.PARSE_CLIENT);
+
+        // Facebook
+
+        FacebookSdk.sdkInitialize(getApplicationContext());
+
+
 
 
     }

@@ -14,12 +14,25 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 
+    <provider android:authorities="com.facebook.app.FacebookContentProvider762848033858826"
+              android:name="com.facebook.FacebookContentProvider"
+              android:exported="true" />
+
     <application
         android:name="org.development.k00na_.shalomat66.Model.GlobalState"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+
+        <activity android:name="com.facebook.FacebookActivity"
+                  android:configChanges=
+                      "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+                  android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                  android:label="@string/app_name" />
+
         <activity
             android:name="org.development.k00na_.shalomat66.MainActivity"
             android:label="@string/app_name" >
