@@ -175,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
     private void printOutHashKey(){
         try {
             PackageInfo info = getPackageManager().getPackageInfo(
-                    "com.facebook.samples.hellofacebook",
+                    "org.development.k00na_.shalomat66",
                     PackageManager.GET_SIGNATURES);
             for (Signature signature : info.signatures) {
                 MessageDigest md = MessageDigest.getInstance("SHA");

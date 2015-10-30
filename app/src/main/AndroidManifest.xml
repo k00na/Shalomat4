@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 
-    <provider android:authorities="com.facebook.app.FacebookContentProvider762848033858826"
+    <provider android:authorities="com.facebook.app.FacebookContentProvider516771428501564"
               android:name="com.facebook.FacebookContentProvider"
               android:exported="true" />
 
