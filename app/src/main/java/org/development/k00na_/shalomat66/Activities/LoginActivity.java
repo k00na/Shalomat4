@@ -4,11 +4,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -33,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText mUser_ET, mPassword_ET;
     private Button mLogin_BTN, mRegisterBTN;
+    private LoginButton loginButton;
+    private CallbackManager callbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +48,39 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.login_activity);
         setupViews();
+
+        // facebook login stuff
+
+        loginButton = (LoginButton)findViewById(R.id.login_button_FB);
+        loginButton.setReadPermissions("user_friends", "email", "public_profile");
+        callbackManager = CallbackManager.Factory.create();
+
+
+
+        // Callback registration
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                // App code
+                Log.d("fb", "onSuccess");
+            }
+
+            @Override
+            public void onCancel() {
+                // App code
+                Log.d("fb", "onCancel");
+            }
+
+
+            @Override
+            public void onError(FacebookException exception) {
+                // App code
+                Log.d("fb", "onError");
+            }
+        });
+
+
+        // <-- END OF facebook login stuff
 
 
         mLogin_BTN.setOnClickListener(new View.OnClickListener() {
@@ -91,5 +132,12 @@ public class LoginActivity extends AppCompatActivity {
         mPassword_ET = (EditText)findViewById(R.id.enterPassword_ET);
         mLogin_BTN = (Button)findViewById(R.id.vpis_BTN);
         mRegisterBTN = (Button)findViewById(R.id.novRacun_BTN);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 }

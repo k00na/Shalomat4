@@ -32,8 +32,16 @@
         android:text="@string/vpisiBtn"
         android:id="@+id/vpis_BTN"/>
 
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button_FB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp" />
 
-   <TextView
+
+    <TextView
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
        android:text="@string/nimasRacuna"
