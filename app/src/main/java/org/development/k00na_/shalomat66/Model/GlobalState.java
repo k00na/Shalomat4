@@ -9,6 +9,7 @@ import com.facebook.FacebookSdk;
 import com.flurry.android.FlurryAgent;
 import com.parse.Parse;
 import com.parse.ParseClassName;
+import com.parse.ParseFacebookUtils;
 import com.parse.ParseObject;
 
 import org.development.k00na_.shalomat66.Parse.VsiVici;
@@ -57,7 +58,9 @@ public class GlobalState extends Application {
 
         // Parse part
         ParseObject.registerSubclass(VsiVici.class);
+
         Parse.initialize(this, Constants.PARSE_KEY, Constants.PARSE_CLIENT);
+        ParseFacebookUtils.initialize(getApplicationContext());
 
         // Facebook
 

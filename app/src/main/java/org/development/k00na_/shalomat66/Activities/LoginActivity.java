@@ -1,15 +1,19 @@
 package org.development.k00na_.shalomat66.Activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -17,10 +21,13 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
+import com.parse.ParseFacebookUtils;
 import com.parse.ParseUser;
 
 import org.development.k00na_.shalomat66.MainActivity;
 import org.development.k00na_.shalomat66.R;
+
+import java.util.ArrayList;
 
 /**
  * Created by k00na_ on 29.10.2015.
@@ -41,18 +48,26 @@ public class LoginActivity extends AppCompatActivity {
     private Button mLogin_BTN, mRegisterBTN;
     private LoginButton loginButton;
     private CallbackManager callbackManager;
+    private ArrayList<String> permissions = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.login_activity);
+        setContentView(R.layout.login_sourcey);
+
+        /*
         setupViews();
 
         // facebook login stuff
 
+        permissions.add("user_friends");
+        permissions.add("email");
+        permissions.add("public_profile");
+
+
         loginButton = (LoginButton)findViewById(R.id.login_button_FB);
-        loginButton.setReadPermissions("user_friends", "email", "public_profile");
+        loginButton.setReadPermissions(permissions);
         callbackManager = CallbackManager.Factory.create();
 
 
@@ -63,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onSuccess(LoginResult loginResult) {
                 // App code
                 Log.d("fb", "onSuccess");
+
+                loginWithParseFacebook();
             }
 
             @Override
@@ -87,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                loginWithParse();
+                loginWithRegularParse();
             }
         });
 
@@ -100,14 +117,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
+*/
     }
 
     /**
      *  CUSTOM METHODS DOWN-BELLOW:
      */
 
-    private void loginWithParse(){
+    private void loginWithRegularParse(){
 
         String uName = mUser_ET.getText().toString();
         String pass = mPassword_ET.getText().toString();
@@ -115,16 +132,82 @@ public class LoginActivity extends AppCompatActivity {
         ParseUser.logInInBackground(uName, pass, new LogInCallback() {
             @Override
             public void done(ParseUser parseUser, ParseException e) {
-                if(parseUser != null){
+                if (parseUser != null) {
                     Toast.makeText(LoginActivity.this, "Prijava uspešna!", Toast.LENGTH_LONG).show();
                     Intent backToMain = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(backToMain);
-                }
-                else
+                } else
                     Toast.makeText(LoginActivity.this, "Prijava neuspešna, poizkusite ponovno.", Toast.LENGTH_LONG).show();
             }
         });
     }
+
+    private void loginWithParseFacebook(){
+
+
+        ParseFacebookUtils.logInWithReadPermissionsInBackground(LoginActivity.this, permissions, new LogInCallback() {
+            @Override
+            public void done(ParseUser parseUser, ParseException e) {
+
+                if (parseUser == null) { // cancel button pressed
+
+                    Log.d("fb parse", "cancel");
+                } else if (parseUser.isNew()) { // new user
+                    Log.d("fb parse", "new user");
+
+                    materialDialogUsername(parseUser);
+                    Intent backToMain = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(backToMain);
+
+                    // parseUser.setUsername();
+                } else // old user
+                    Log.d("fb parse", "old user");
+
+
+            }
+        });
+
+    }
+
+    private void alertDialogEnterUsername(final ParseUser pUser) {
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        final EditText edittext = new EditText(LoginActivity.this);
+        alert.setMessage("Vnesite psevdonim, ki bo prikazan pod vici, ki jih boste dodali.");
+        alert.setTitle("Uporabniško ime");
+        alert.setIcon(R.drawable.smiley_icon2);
+
+        alert.setView(edittext);
+
+        alert.setPositiveButton("Končaj", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                //What ever you want to do with the value
+                String newUserName = edittext.getText().toString();
+                pUser.setUsername(newUserName);
+                pUser.saveInBackground();
+            }
+        });
+
+        alert.show();
+    }
+
+    private void materialDialogUsername(final ParseUser pUser){
+
+        new MaterialDialog.Builder(this)
+                .title("Uporabniško ime")
+                .content("Vnesite poljubno ime s katerim se boste podpisovali pod svoje vice.")
+                .inputRangeRes(2, 16, R.color.error_color)
+                .inputType(InputType.TYPE_CLASS_TEXT)
+                .input(" ... ", "", new MaterialDialog.InputCallback() {
+                    @Override
+                    public void onInput(MaterialDialog dialog, CharSequence input) {
+                        // Do something
+                        pUser.setUsername(input.toString());
+                        pUser.saveInBackground();
+                    }
+                }).show();
+    }
+
 
     private void setupViews(){
 
@@ -139,5 +222,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         callbackManager.onActivityResult(requestCode, resultCode, data);
+        ParseFacebookUtils.onActivityResult(requestCode, resultCode, data);
     }
 }

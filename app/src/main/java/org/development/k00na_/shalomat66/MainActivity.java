@@ -1,5 +1,6 @@
 package org.development.k00na_.shalomat66;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -171,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * MainActivity custom methods:
      */
+
 
     private void printOutHashKey(){
         try {
@@ -366,6 +368,7 @@ public class MainActivity extends AppCompatActivity {
         String mSelectedCat = "VsiVici";
         private List<VsiVici> trenutniVici_List;
         private RecyclerView fragmentRecycler;
+        ProgressDialog progressDialog;
         private CollapsingToolbarLayout mCollapsingToolbarLayout;
 
         // variables for getAllObjects method
@@ -404,6 +407,9 @@ public class MainActivity extends AppCompatActivity {
             fragmentRecycler.setLayoutManager(llm);
 
 
+            progressDialog = new ProgressDialog(getActivity());
+            progressDialog.setMessage("Nalagam vice...");
+
 
             parseQuery.setLimit(1000);
           //  parseQuery.whereEqualTo(Constants.PARSE_CATEGORY_COLUMN, mSelectedCat);
@@ -414,7 +420,6 @@ public class MainActivity extends AppCompatActivity {
                 parseQuery.orderByDescending(Constants.PARSE_NUMOFLIKES_COL);
 
 
-            // A ni tak, da je to
             if(!mSelectedCat.equals("VsiVici"))
                 parseQuery.whereContains("category", mSelectedCat);
 
@@ -441,20 +446,22 @@ public class MainActivity extends AppCompatActivity {
                             parseQuery.setSkip(skip);
                             parseQuery.setLimit(limit);
                             parseQuery.findInBackground(getAllObjects());
-
+                            progressDialog.show();
                         }
                         else {
-
+                            progressDialog.dismiss();
                             if(mTabNum == 0)
                                 Collections.shuffle(trenutniVici_List);
                             Toast.makeText(getActivity(), "getAllObjects listSize = " + trenutniVici_List.size(), Toast.LENGTH_LONG).show();
 
                             VsiViciAdapter vsiViciAdapter = new VsiViciAdapter(getActivity(), trenutniVici_List);
                             fragmentRecycler.setAdapter(vsiViciAdapter);
+
                         }
 
                     } else {
-                        Toast.makeText(getActivity(), "Nešto vent narobe.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Nešto vent narobe." + e.toString(), Toast.LENGTH_LONG).show();
+                        progressDialog.cancel();
 
                     }
 
