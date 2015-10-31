@@ -29,6 +29,8 @@ import org.development.k00na_.shalomat66.R;
 
 import java.util.ArrayList;
 
+import mehdi.sakout.fancybuttons.FancyButton;
+
 /**
  * Created by k00na_ on 29.10.2015.
  *
@@ -45,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private EditText mUser_ET, mPassword_ET;
-    private Button mLogin_BTN, mRegisterBTN;
+    private FancyButton mLogin_BTN, mRegisterBTN;
     private LoginButton loginButton;
     private CallbackManager callbackManager;
     private ArrayList<String> permissions = new ArrayList<>();
@@ -213,8 +215,8 @@ public class LoginActivity extends AppCompatActivity {
 
         mUser_ET = (EditText)findViewById(R.id.enterUsername_ET);
         mPassword_ET = (EditText)findViewById(R.id.enterPassword_ET);
-        mLogin_BTN = (Button)findViewById(R.id.vpis_BTN);
-        mRegisterBTN = (Button)findViewById(R.id.novRacun_BTN);
+        mLogin_BTN = (FancyButton)findViewById(R.id.vpis_BTN);
+        mRegisterBTN = (FancyButton)findViewById(R.id.novRacun_BTN);
     }
 
     @Override

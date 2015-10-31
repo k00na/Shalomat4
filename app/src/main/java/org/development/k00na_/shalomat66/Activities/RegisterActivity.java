@@ -15,13 +15,15 @@ import com.parse.SignUpCallback;
 import org.development.k00na_.shalomat66.MainActivity;
 import org.development.k00na_.shalomat66.R;
 
+import mehdi.sakout.fancybuttons.FancyButton;
+
 /**
  * Created by k00na_ on 30.10.2015.
  */
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText mRegUser_ET, mRegPass_ET, mRegPassCheck_ET;
-    private Button mRegister_BTN;
+    private FancyButton mRegister_BTN;
 
 
     @Override
@@ -44,12 +46,14 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this, "Vnesite podatke v vsa polja", Toast.LENGTH_LONG).show();
                 else if (!pass1.equals(pass2))
                     Toast.makeText(RegisterActivity.this, "Vnešeni gesli se ne ujemata", Toast.LENGTH_LONG).show();
-                else {
+                else if (userName.length() < 2 || userName.length() > 16)
+                    Toast.makeText(RegisterActivity.this, "Uporabniško ime mora vsebovati vsaj 2 znaka in ne več kot 16 znakov.", Toast.LENGTH_LONG).show();
+                else
                     newParseUser(userName, pass1);
-                }
-
-
             }
+
+
+
         });
 
     }
@@ -79,6 +83,6 @@ public class RegisterActivity extends AppCompatActivity {
         mRegUser_ET = (EditText)findViewById(R.id.registrationUsername_ET);
         mRegPass_ET= (EditText)findViewById(R.id.registrationPassword_ET);
         mRegPassCheck_ET = (EditText)findViewById(R.id.registrationPasswordDoubleCheck_ET);
-        mRegister_BTN = (Button)findViewById(R.id.registracija_BTN);
+        mRegister_BTN = (FancyButton)findViewById(R.id.registracija_BTN);
     }
 }
