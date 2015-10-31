@@ -12,6 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
+import org.development.k00na_.shalomat66.MainActivity;
 import org.development.k00na_.shalomat66.Parse.VsiVici;
 import org.development.k00na_.shalomat66.R;
 import org.development.k00na_.shalomat66.Util.Constants;
@@ -47,10 +51,17 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             VsiViciHolder_preberiVec vsiViciHolder_preberiVec = new VsiViciHolder_preberiVec(v);
             return vsiViciHolder_preberiVec;
         }
-        else {
+        else if(viewType == TYPE_USUAL) {
             v = LayoutInflater.from(mContext).inflate(R.layout.vsi_vici_holder, parent, false);
             VsiViciHolder vsiViciHolder = new VsiViciHolder(v);
             return vsiViciHolder;
+        }
+
+        else {
+            v = LayoutInflater.from(mContext).inflate(R.layout.adview_layout, parent, false);
+            AdHolder adHolder = new AdHolder(v);
+            return adHolder;
+
         }
 
 
@@ -101,15 +112,13 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         }
 
-        else {
+        else if(holder instanceof VsiViciHolder_preberiVec) {
             ((VsiViciHolder_preberiVec)holder).mCategoryTitle.setText(categoryTitle);
             ((VsiViciHolder_preberiVec)holder).mJokeContent.setText(contentText.substring(0, 450) + " ...");
             if(addedByUser == true)
                 ((VsiViciHolder_preberiVec)holder).mVicDodalText.setText(parseUserString);
 
             ((VsiViciHolder_preberiVec) holder).mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
-
-
 
         }
 
@@ -125,6 +134,8 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         if(mVsiViciList.get(position).getContent().length() > 450)
             return TYPE_PREBERIVEC;
+        else if(position % 7 == 0 && position != 0)
+            return TYPE_REKLAMA;
         else
             return TYPE_USUAL;
 
@@ -254,6 +265,24 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             mCategoryTitle = (TextView)itemView.findViewById(R.id.categoryTitle_TV_preberiVec);
 
             mPreberiVecBTN = (Button)itemView.findViewById(R.id.preberiVec_BTN_preberiVec);
+        }
+    }
+
+    class AdHolder extends RecyclerView.ViewHolder{
+
+
+        private AdView mAdView;
+
+        public AdHolder(View itemView) {
+            super(itemView);
+
+            mAdView = (AdView)itemView.findViewById(R.id.adView2);
+
+            AdRequest adRequest = new AdRequest.Builder()
+                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                    .build()
+                    ;
+            mAdView.loadAd(adRequest);
         }
     }
 

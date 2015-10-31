@@ -88,30 +88,22 @@
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="2dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
 
 
-        <com.google.android.gms.ads.AdView
-            android:layout_marginTop="6dp"
-           android:layout_gravity = "center_horizontal|bottom"
-            android:id="@+id/adViewYoYo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            ads:adUnitId="ca-app-pub-8869325879758697/8536299960"
-            ads:adSize="BANNER"
-            ></com.google.android.gms.ads.AdView>
 
         <android.support.design.widget.FloatingActionButton
+            android:id="@+id/FAB_xml"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:layout_margin="16dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:src="@drawable/ic_add_black_48dp"
+            app:backgroundTint="#FF5722"
+
 
             ></android.support.design.widget.FloatingActionButton>
 

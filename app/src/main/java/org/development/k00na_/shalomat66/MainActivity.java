@@ -38,6 +38,7 @@ import org.development.k00na_.shalomat66.Adapters.VsiViciAdapter;
 import org.development.k00na_.shalomat66.Parse.VsiVici;
 import org.development.k00na_.shalomat66.Util.Constants;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -83,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private ViewPager mViewPager;
     private ViewPagerAdapter mTabsAdapter;
+    public FloatingActionButton FAB;
 
     private AdView adView;
 
@@ -103,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
         mDrawerLayout = (DrawerLayout)findViewById(R.id.ourDrawerLayout);
         mNavigationView = (NavigationView)findViewById(R.id.navigationView);
         mToolbar = (Toolbar) findViewById(R.id.app_bar);
+        FAB = (FloatingActionButton)findViewById(R.id.FAB_xml);
+
         setSupportActionBar(mToolbar);
 
 
@@ -132,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
         setupDrawerToggle();
 
+        
 
     } // <-- END of onCreate()
 
@@ -313,7 +318,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupAdView() {
-
+/*
         adView = (AdView) this.findViewById(R.id.adViewYoYo);
 
         AdRequest adRequest = new AdRequest.Builder()
@@ -321,6 +326,7 @@ public class MainActivity extends AppCompatActivity {
                 .build()
                 ;
         adView.loadAd(adRequest);
+        */
     }
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
