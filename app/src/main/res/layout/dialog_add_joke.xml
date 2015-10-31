@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:id="@+id/dialogRecycler"
+        ></android.support.v7.widget.RecyclerView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Izbrana kategorija: "/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" / "
+            android:id="@+id/izbranaKategorija_TV"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/myWidget48"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <ScrollView
+            android:id="@+id/myScrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+            <LinearLayout
+                android:id="@+id/widget37"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <EditText
+                    android:id="@+id/txtNotes"
+                    android:hint="Vnesite vic ... "
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:scrollbars="vertical"
+                    android:textSize="18sp"
+                    android:scrollHorizontally="false"
+                    android:gravity="left"
+                    android:layout_marginTop="10dip"
+                    android:inputType="text|textMultiLine"
+                    android:singleLine="false"
+                    android:maxLines ="4"
+                    android:maxLength ="2000"
+
+                    >
+                </EditText>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

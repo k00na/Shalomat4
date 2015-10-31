@@ -33,8 +33,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import org.development.k00na_.shalomat66.Activities.AddJokeActivity;
 import org.development.k00na_.shalomat66.Activities.LoginActivity;
 import org.development.k00na_.shalomat66.Adapters.VsiViciAdapter;
+import org.development.k00na_.shalomat66.Fragments.AddJokeDialog;
 import org.development.k00na_.shalomat66.Parse.VsiVici;
 import org.development.k00na_.shalomat66.Util.Constants;
 
@@ -89,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
     private AdView adView;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +110,17 @@ public class MainActivity extends AppCompatActivity {
         mNavigationView = (NavigationView)findViewById(R.id.navigationView);
         mToolbar = (Toolbar) findViewById(R.id.app_bar);
         FAB = (FloatingActionButton)findViewById(R.id.FAB_xml);
+
+
+        FAB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this, AddJokeActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         setSupportActionBar(mToolbar);
 
@@ -136,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
         setupDrawerToggle();
 
-        
+
 
     } // <-- END of onCreate()
 

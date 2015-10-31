@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:title="Blondinke"
+        android:id="@+id/blondinke_categories_list"/>
+
+    <item
+        android:title="Opolzki"
+        android:id="@+id/Opolzki_categories_list"/>
+
+    <item
+        android:title="Policaji"
+        android:id="@+id/Policaji_categories_list"/>
+    <item
+        android:title="Gostilniski"
+        android:id="@+id/Gostilniski_categories_list"/>
+
+
+    <item
+        android:title="Janezek"
+        android:id="@+id/Janezek_categories_list"/>
+
+    <item
+        android:title="Črni Humor"
+        android:id="@+id/Crnihumor_categories_list"/>
+
+    <item
+        android:title="Yugo Vici"
+        android:id="@+id/yugovici_categories_list"/>
+
+    <item
+        android:title="Črnogorci"
+        android:id="@+id/Crnogorci_categories_list"/>
+
+    <item
+        android:title="Mujo in Haso"
+        android:id="@+id/mujohaso_categories_list"/>
+
+
+</menu>
