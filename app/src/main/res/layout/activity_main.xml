@@ -111,6 +111,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:layout_margin="16dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
             ></android.support.design.widget.FloatingActionButton>
 
 

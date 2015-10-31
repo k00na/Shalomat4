@@ -1,6 +1,7 @@
 package org.development.k00na_.shalomat66;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -8,6 +9,7 @@ import android.content.pm.Signature;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -21,6 +23,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
 import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -473,8 +476,6 @@ public class MainActivity extends AppCompatActivity {
     } // < --- END OF FRAGMENT THINGY
 
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 
 
