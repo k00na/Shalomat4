@@ -48,6 +48,8 @@ dependencies {
     // Material Dialogs
     compile('com.github.afollestad.material-dialogs:core:0.8.5.0@aar') {
         transitive = true
+    // Fancy Buttons
+    compile 'com.github.medyo:fancybuttons:1.5@aar'
     }
 
 

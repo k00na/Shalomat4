@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.login_sourcey);
 
-        /*
+
         setupViews();
 
         // facebook login stuff
@@ -117,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-*/
+
     }
 
     /**

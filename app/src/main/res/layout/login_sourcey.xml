@@ -24,11 +24,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/username_ET_sourcey"
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:inputType="text"
-                      android:hint="Up. Ime" />
+            <EditText
+                android:id="@+id/enterUsername_ET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Up. Ime" />
         </android.support.design.widget.TextInputLayout>
 
         <!--  Password Label -->
@@ -37,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/password_ET_sourcey"
+            <EditText android:id="@+id/enterPassword_ET"
                       android:layout_width="match_parent"
                       android:layout_height="wrap_content"
                       android:inputType="textPassword"
@@ -45,45 +46,54 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_login"
+            android:id="@+id/vpis_BTN"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:layout_marginBottom="36dp"
+            android:layout_marginBottom="16dp"
             android:padding="12dp"
             android:text="Vpiši me s šalomatom"/>
 
         <TextView
-                  android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_marginBottom="2dp"
-                  android:text="Vpišeš se lahko tudi s FB računom "
-                  android:gravity="center"
-                  android:textSize="16dip"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nimasRacuna"
+            android:layout_margin="16dp"
+            android:textSize="16sp"
+            android:autoLink="web"
+
+            />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/novRacun_BTN"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="16dp"
+            android:padding="12dp"
+            android:text="Ustvari nov račun"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vpisFB"
+            android:layout_margin="16dp"
+            android:textSize="16sp"
+            android:autoLink="web"
+
+            />
 
         <com.facebook.login.widget.LoginButton
             android:id="@+id/login_button_FB"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="34dp" />
 
-        <TextView android:id="@+id/link_signup"
-                  android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
-                  android:text="Še nimaš računa za Šalomat?"
-                  android:gravity="center"
-                  android:textSize="16dip"/>
 
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_signup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:layout_marginBottom="12dp"
-            android:padding="12dp"
-            android:text="Ustvari nov račun"/>
+
+
 
     </LinearLayout>
 </ScrollView>

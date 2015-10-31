@@ -452,7 +452,6 @@ public class MainActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                             if(mTabNum == 0)
                                 Collections.shuffle(trenutniVici_List);
-                            Toast.makeText(getActivity(), "getAllObjects listSize = " + trenutniVici_List.size(), Toast.LENGTH_LONG).show();
 
                             VsiViciAdapter vsiViciAdapter = new VsiViciAdapter(getActivity(), trenutniVici_List);
                             fragmentRecycler.setAdapter(vsiViciAdapter);
