@@ -1,26 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:fancy="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:background="@color/accentColor"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
 
+    <ImageView android:src="@drawable/smiley_icon2"
+               android:layout_width="wrap_content"
+               android:layout_height="72dp"
+               android:layout_marginBottom="14dp"
+               android:layout_marginTop="26dp"
+               android:layout_gravity="center_horizontal" />
 
-
-
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:id="@+id/dialogRecycler"
-        ></android.support.v7.widget.RecyclerView>
-
-
-    <Button
+    <TextView
+        android:layout_margin="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Dodaj vic: "
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textStyle="bold"/>
+
+
+    <mehdi.sakout.fancybuttons.FancyButton
         android:id="@+id/addCategory_BTN"
-        android:text="Izberi kategorijo."/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        fancy:fb_defaultColor="#7ab800"
+        fancy:fb_focusColor="#9bd823"
+        fancy:fb_fontIconResource="&#xf0ca;"
+        fancy:fb_iconPosition="left"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="Izberi kategorijo"
+        fancy:fb_textColor="#FFFFFF" />
 
 
     <LinearLayout
@@ -34,13 +55,16 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Izbrana kategorija: "/>
+            android:visibility="invisible"
+            android:text="Izbrana kategorija: "
+            android:id="@+id/izbranaKategorija1_TV"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" / "
-            android:id="@+id/izbranaKategorija_TV"
+            android:visibility="invisible"
+            android:id="@+id/izbranaKategorija2_TV"
             />
 
     </LinearLayout>
@@ -51,6 +75,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_margin="16dp"
         >
         <ScrollView
             android:id="@+id/myScrollView"
