@@ -7,13 +7,6 @@
               android:layout_height="match_parent">
 
 
-    <ImageView android:src="@drawable/smiley_icon2"
-               android:layout_width="wrap_content"
-               android:layout_height="72dp"
-               android:layout_marginBottom="14dp"
-               android:layout_marginTop="26dp"
-               android:layout_gravity="center_horizontal" />
-
     <TextView
         android:layout_margin="16dp"
         android:layout_width="wrap_content"

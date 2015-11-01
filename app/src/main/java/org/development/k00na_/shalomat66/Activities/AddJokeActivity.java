@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import org.development.k00na_.shalomat66.R;
 
+import mehdi.sakout.fancybuttons.FancyButton;
+
 /**
  * Created by k00na_ on 31.10.2015.
  */
@@ -22,7 +24,7 @@ public class AddJokeActivity extends AppCompatActivity {
     private TextView mIzbranaKategorija2_TV, mIzbranaKategorija1_TV;
     private String mSelectedCategory;
 
-    private Button mIzberiKategorijo_BTN;
+    private FancyButton mIzberiKategorijo_BTN;
 
 
 
@@ -34,7 +36,7 @@ public class AddJokeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_joke);
 
         categoriesRecycler = (RecyclerView)findViewById(R.id.dialogRecycler);
-        mIzberiKategorijo_BTN = (Button)findViewById(R.id.addCategory_BTN);
+        mIzberiKategorijo_BTN = (FancyButton)findViewById(R.id.addCategory_BTN);
         mIzbranaKategorija1_TV = (TextView)findViewById(R.id.izbranaKategorija1_TV);
         mIzbranaKategorija2_TV = (TextView)findViewById(R.id.izbranaKategorija_TV);
 
