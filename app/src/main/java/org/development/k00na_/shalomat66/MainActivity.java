@@ -40,6 +40,7 @@ import org.development.k00na_.shalomat66.Fragments.AddJokeDialog;
 import org.development.k00na_.shalomat66.Parse.VsiVici;
 import org.development.k00na_.shalomat66.Util.Constants;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -116,8 +117,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this, AddJokeActivity.class);
-                startActivity(intent);
+                // If the user is signed in, take him to the AddJokeActivity
+                // If the user is not signed in show him a MaterialDialog that promts him to go to the LoginActivity
+
+                if(ParseUser.getCurrentUser() != null){
+                    Intent intent = new Intent(MainActivity.this, AddJokeActivity.class);
+                    startActivity(intent);
+                } else {
+                   new MaterialDialog.Builder(MainActivity.this)
+                            .title("Prijava")
+                            .content("Za dodajanje vicev v Šalomatu je potrebno ustvariti uporabniški račun.")
+                            .positiveText("Ustvari")
+                            .negativeText("Opusti")
+                           .onPositive(new MaterialDialog.SingleButtonCallback() {
+                               @Override
+                               public void onClick(MaterialDialog materialDialog, DialogAction dialogAction) {
+                                   Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                                   startActivity(intent);
+                               }
+                           })
+                            .show();
+
+
+                }
+
             }
         });
 
@@ -443,7 +466,7 @@ public class MainActivity extends AppCompatActivity {
             if(mTabNum == 2)
                 parseQuery.orderByDescending(Constants.PARSE_NUMOFLIKES_COL);
 
-
+            // TODO: might have to change "VsiVici" to "Vici"
             if(!mSelectedCat.equals("VsiVici"))
                 parseQuery.whereContains("category", mSelectedCat);
 

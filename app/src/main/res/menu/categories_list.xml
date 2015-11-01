@@ -7,6 +7,10 @@
         android:id="@+id/blondinke_categories_list"/>
 
     <item
+        android:title="Črni Humor"
+        android:id="@+id/crnihumor_categories_list"/>
+
+    <item
         android:title="Opolzki"
         android:id="@+id/Opolzki_categories_list"/>
 
@@ -14,7 +18,7 @@
         android:title="Policaji"
         android:id="@+id/Policaji_categories_list"/>
     <item
-        android:title="Gostilniski"
+        android:title="Gostilniški"
         android:id="@+id/Gostilniski_categories_list"/>
 
 
@@ -22,21 +26,50 @@
         android:title="Janezek"
         android:id="@+id/Janezek_categories_list"/>
 
-    <item
-        android:title="Črni Humor"
-        android:id="@+id/Crnihumor_categories_list"/>
 
     <item
-        android:title="Yugo Vici"
-        android:id="@+id/yugovici_categories_list"/>
+        android:title="Yugo"
+        android:id="@+id/yugo_categories_list"/>
+
+    <item
+        android:title="Mujo in Haso"
+        android:id="@+id/mujoinhaso_categories_list"/>
+
+    <item
+    android:title="Slovenci"
+    android:id="@+id/slovenci_categories_list"/>
+
+    <item
+        android:title="Srbi"
+        android:id="@+id/srbi_categories_list"/>
+
+    <item
+        android:title="Hrvati"
+        android:id="@+id/hrvati_categories_list"/>
 
     <item
         android:title="Črnogorci"
         android:id="@+id/Crnogorci_categories_list"/>
 
+
     <item
-        android:title="Mujo in Haso"
-        android:id="@+id/mujohaso_categories_list"/>
+        android:title="Yo momma"
+        android:id="@+id/yomomma_categories_list"/>
+
+    <item
+        android:title="Sex related"
+        android:id="@+id/sexrelated_categories_list"/>
+
+    <item
+        android:title="Blondes"
+        android:id="@+id/blondes_categories_list"/>
+
+
+    <item
+        android:title="Wordplay"
+        android:id="@+id/wordplay_categories_list"/>
+
+
 
 
 </menu>

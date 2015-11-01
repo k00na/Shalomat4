@@ -24,10 +24,10 @@
         android:layout_marginBottom="10dp"
         android:layout_marginRight="50dp"
         android:layout_marginLeft="50dp"
-        android:paddingBottom="10dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="10dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
         fancy:fb_defaultColor="#7ab800"
         fancy:fb_focusColor="#9bd823"
         fancy:fb_fontIconResource="&#xf0ca;"
@@ -49,12 +49,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="invisible"
-            android:text="Izbrana kategorija: "
+            android:textStyle="bold"
+            android:text="Kategorija: "
             android:id="@+id/izbranaKategorija1_TV"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text=" / "
             android:visibility="invisible"
             android:id="@+id/izbranaKategorija2_TV"
@@ -82,9 +84,14 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 >
-
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/TextLabel"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp">
                 <EditText
-                    android:id="@+id/txtNotes"
+                    android:id="@+id/jokeText_ET"
                     android:hint="Vnesite vic ... "
                     android:layout_width="match_parent"
                     android:layout_height="250dp"
@@ -100,9 +107,32 @@
 
                     >
                 </EditText>
+
+                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:id="@+id/addJoke_BTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="16dp"
+        android:layout_gravity="end"
+        android:paddingBottom="3dp"
+        android:paddingLeft="7dp"
+        android:paddingRight="7dp"
+        android:paddingTop="3dp"
+        fancy:fb_defaultColor="#7ab800"
+        fancy:fb_focusColor="#9bd823"
+        fancy:fb_fontIconResource="&#xf196;"
+        fancy:fb_iconPosition="left"
+        fancy:fb_radius="30dp"
+        fancy:fb_text="Dodaj vic"
+        fancy:fb_textColor="#FFFFFF" />
 
 
 </LinearLayout>

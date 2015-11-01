@@ -9,7 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.parse.ParseException;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
+
+import org.development.k00na_.shalomat66.Parse.VsiVici;
 import org.development.k00na_.shalomat66.R;
 
 import mehdi.sakout.fancybuttons.FancyButton;
@@ -25,6 +31,8 @@ public class AddJokeActivity extends AppCompatActivity {
     private String mSelectedCategory;
 
     private FancyButton mIzberiKategorijo_BTN;
+    private FancyButton mDodajVic_BTN;
+    private EditText jokeContentET;
 
 
 
@@ -38,7 +46,9 @@ public class AddJokeActivity extends AppCompatActivity {
         categoriesRecycler = (RecyclerView)findViewById(R.id.dialogRecycler);
         mIzberiKategorijo_BTN = (FancyButton)findViewById(R.id.addCategory_BTN);
         mIzbranaKategorija1_TV = (TextView)findViewById(R.id.izbranaKategorija1_TV);
-        mIzbranaKategorija2_TV = (TextView)findViewById(R.id.izbranaKategorija_TV);
+        mIzbranaKategorija2_TV = (TextView)findViewById(R.id.izbranaKategorija2_TV);
+        mDodajVic_BTN = (FancyButton)findViewById(R.id.addJoke_BTN);
+        jokeContentET = (EditText)findViewById(R.id.jokeText_ET);
 
 
         mIzberiKategorijo_BTN.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +59,44 @@ public class AddJokeActivity extends AppCompatActivity {
         });
 
 
+        mDodajVic_BTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String jokeContent = jokeContentET.getText().toString();
 
+                if(jokeContent == null || jokeContent.length() < 15){
+                    Toast.makeText(AddJokeActivity.this, "Vic mora vsebovati vsaj 15 znakov", Toast.LENGTH_LONG).show();
+                } else if (jokeContent.length() > 2500)
+                    Toast.makeText(AddJokeActivity.this, "Največja možna dolžina vica presežena", Toast.LENGTH_LONG).show();
+                else{
+
+                    if(mSelectedCategory == null)
+                        Toast.makeText(AddJokeActivity.this, "Za vic morate izbrati kategorijo", Toast.LENGTH_LONG).show();
+                    else{
+                        VsiVici vsiVici = new VsiVici();
+                        vsiVici.setUser(ParseUser.getCurrentUser().getUsername().toString());
+                        vsiVici.setCategoryTitle(mSelectedCategory);
+                        vsiVici.setContent(jokeContent);
+                        vsiVici.saveInBackground(new SaveCallback() {
+                            @Override
+                            public void done(ParseException e) {
+                                if(e == null){
+                                    Toast.makeText(AddJokeActivity.this, "Vic uspešno dodan!", Toast.LENGTH_LONG).show();
+                                    finish();
+
+                                } else {
+                                    Toast.makeText(AddJokeActivity.this, "Prišlo je do napake!", Toast.LENGTH_LONG).show();
+
+                                }
+                            }
+                        });
+                    }
+
+
+                }
+
+            }
+        });
 
 
 
@@ -70,10 +117,10 @@ public class AddJokeActivity extends AppCompatActivity {
         // Setup menu item selection
         popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
+                /*switch (item.getItemId()) {
                     case R.id.blondinke_categories_list:
-                        mSelectedCategory = "Blondinke";
-                        setupCategoryNameText();
+
+                        setupCategoryNameText(item);
                         return true;
                     case R.id.Crnogorci_categories_list:
                         mSelectedCategory = "Črnogorci";
@@ -81,7 +128,9 @@ public class AddJokeActivity extends AppCompatActivity {
                         return true;
                     default:
                         return false;
-                }
+                }*/
+                setupCategoryNameText(item);
+                return true;
             }
         });
         // Handle dismissal with: popup.setOnDismissListener(...);
@@ -90,8 +139,8 @@ public class AddJokeActivity extends AppCompatActivity {
     }
 
 
-    private void setupCategoryNameText(){
-
+    private void setupCategoryNameText(MenuItem item){
+        mSelectedCategory = item.getTitle().toString();
         mIzbranaKategorija1_TV.setVisibility(View.VISIBLE);
         mIzbranaKategorija2_TV.setVisibility(View.VISIBLE);
         mIzbranaKategorija2_TV.setText(mSelectedCategory);

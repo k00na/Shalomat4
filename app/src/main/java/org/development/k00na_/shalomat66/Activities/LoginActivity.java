@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -23,6 +24,7 @@ import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseFacebookUtils;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 import org.development.k00na_.shalomat66.MainActivity;
 import org.development.k00na_.shalomat66.R;
@@ -51,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
     private LoginButton loginButton;
     private CallbackManager callbackManager;
     private ArrayList<String> permissions = new ArrayList<>();
+    private View positiveAction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,8 +161,7 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d("fb parse", "new user");
 
                     materialDialogUsername(parseUser);
-                    Intent backToMain = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(backToMain);
+
 
                     // parseUser.setUsername();
                 } else // old user
@@ -195,7 +197,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private void materialDialogUsername(final ParseUser pUser){
 
-        new MaterialDialog.Builder(this)
+        final String[] userName = {""};
+
+        MaterialDialog materialDialog = new MaterialDialog.Builder(this)
                 .title("Uporabniško ime")
                 .content("Vnesite poljubno ime s katerim se boste podpisovali pod svoje vice.")
                 .inputRangeRes(2, 16, R.color.error_color)
@@ -204,10 +208,27 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onInput(MaterialDialog dialog, CharSequence input) {
                         // Do something
-                        pUser.setUsername(input.toString());
-                        pUser.saveInBackground();
+                        userName[0] = input.toString();
+
                     }
-                }).show();
+                })
+                .positiveText("OK")
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(MaterialDialog materialDialog, DialogAction dialogAction) {
+                        if (userName[0].length() > 1 && userName[0].length() < 17) {
+                            materialDialog.dismiss();
+                            Toast.makeText(LoginActivity.this, "Yo, shit is ok!", Toast.LENGTH_LONG).show();
+                        } else {
+                            Toast.makeText(LoginActivity.this, "Yo, shit is NOT ok!", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                })
+                .show();
+
+
+
+
     }
 
 
