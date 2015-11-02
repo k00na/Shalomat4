@@ -167,6 +167,10 @@ public class LoginActivity extends AppCompatActivity {
                 } else { // old user
                     Log.d("fb parse", "old user");
 
+                    Toast.makeText(LoginActivity.this, "Prijava uspešna!", Toast.LENGTH_LONG).show();
+                    Intent backToMain = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(backToMain);
+
 
                 }
 
@@ -200,9 +204,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void materialDialogUsername(final ParseUser pUser){
 
-        final String[] userName = {""};
 
-        MaterialDialog materialDialog = new MaterialDialog.Builder(this)
+        new MaterialDialog.Builder(this)
                 .title("Določite svoje uporabniško ime")
                 .content("Vnesite poljubno ime s katerim se boste podpisovali pod svoje vice.")
                 .inputRangeRes(2, 16, R.color.error_color)
@@ -231,8 +234,6 @@ public class LoginActivity extends AppCompatActivity {
                 })
                 .positiveText("OK")
                 .show();
-
-
 
 
     }

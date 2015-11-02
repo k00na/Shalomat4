@@ -67,8 +67,12 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     }
 
+
+    // I should re-think this approach of implementing onClick listeners inside the onBindViewHolder
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
+
+
 
         String contentText = mVsiViciList.get(position).getContent();
         String parseUserString = mVsiViciList.get(position).getUser();
@@ -82,6 +86,7 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
 
         // If statement for two types of Holders
+        // first one is the case, when the joke is short enough to be shown fully in the ViewHolder
         if(holder instanceof VsiViciHolder){
             ((VsiViciHolder) holder).mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
             ((VsiViciHolder) holder).mJokeContent.setText(jokeContent);
@@ -104,6 +109,26 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
                 }
             });
+            // DISLIKE BTN FUNCTIONALITY
+            ((VsiViciHolder) holder).mDislikeIcon.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(checkIfAlreadyLiked(jokeID) == false){
+                        saveToPrefs(jokeID);
+                        mVsiViciList.get(position).increment(Constants.PARSE_NUMOFLIKES_COL, -1);
+                        mVsiViciList.get(position).saveInBackground();
+
+                        ((VsiViciHolder) holder).mNumOfLikes.setText("" + mVsiViciList.get(position).getNumOfLikes());
+
+                    }else
+                        Toast.makeText(mContext, "Ta vic ste že ocenili", Toast.LENGTH_LONG).show();
+
+                }
+            });
+            
+
+
+
 
             if(addedByUser == true)
                 ((VsiViciHolder) holder).mVicDodalParseUser.setText(parseUserString);
@@ -112,6 +137,7 @@ public class VsiViciAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         }
 
+        // if the joke is too long to be shown fully, a different type of ViewHolder is used
         else if(holder instanceof VsiViciHolder_preberiVec) {
             ((VsiViciHolder_preberiVec)holder).mCategoryTitle.setText(categoryTitle);
             ((VsiViciHolder_preberiVec)holder).mJokeContent.setText(contentText.substring(0, 450) + " ...");
