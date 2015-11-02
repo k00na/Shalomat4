@@ -462,7 +462,7 @@ public class MainActivity extends AppCompatActivity {
           //  parseQuery.whereEqualTo(Constants.PARSE_CATEGORY_COLUMN, mSelectedCat);
 
             if(mTabNum == 1)
-                parseQuery.orderByAscending(Constants.PARSE_CREATEDAT_COL);
+                parseQuery.orderByDescending(Constants.PARSE_CREATEDAT_COL);
             if(mTabNum == 2)
                 parseQuery.orderByDescending(Constants.PARSE_NUMOFLIKES_COL);
 

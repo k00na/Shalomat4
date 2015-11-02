@@ -54,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
     private CallbackManager callbackManager;
     private ArrayList<String> permissions = new ArrayList<>();
     private View positiveAction;
+    private String inputUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,8 +140,8 @@ public class LoginActivity extends AppCompatActivity {
             public void done(ParseUser parseUser, ParseException e) {
                 if (parseUser != null) {
                     Toast.makeText(LoginActivity.this, "Prijava uspešna!", Toast.LENGTH_LONG).show();
-                    Intent backToMain = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(backToMain);
+
+
                 } else
                     Toast.makeText(LoginActivity.this, "Prijava neuspešna, poizkusite ponovno.", Toast.LENGTH_LONG).show();
             }
@@ -159,13 +160,15 @@ public class LoginActivity extends AppCompatActivity {
                     Log.d("fb parse", "cancel");
                 } else if (parseUser.isNew()) { // new user
                     Log.d("fb parse", "new user");
-
                     materialDialogUsername(parseUser);
 
 
                     // parseUser.setUsername();
-                } else // old user
+                } else { // old user
                     Log.d("fb parse", "old user");
+
+
+                }
 
 
             }
@@ -200,30 +203,33 @@ public class LoginActivity extends AppCompatActivity {
         final String[] userName = {""};
 
         MaterialDialog materialDialog = new MaterialDialog.Builder(this)
-                .title("Uporabniško ime")
+                .title("Določite svoje uporabniško ime")
                 .content("Vnesite poljubno ime s katerim se boste podpisovali pod svoje vice.")
                 .inputRangeRes(2, 16, R.color.error_color)
                 .inputType(InputType.TYPE_CLASS_TEXT)
                 .input(" ... ", "", new MaterialDialog.InputCallback() {
+
                     @Override
                     public void onInput(MaterialDialog dialog, CharSequence input) {
                         // Do something
-                        userName[0] = input.toString();
 
+                        inputUsername = input.toString();
+                        pUser.setUsername(input.toString());
+                        pUser.saveInBackground(new SaveCallback() {
+                            @Override
+                            public void done(ParseException e) {
+
+                                if (e == null) {
+                                    Intent backToMain = new Intent(LoginActivity.this, MainActivity.class);
+                                    startActivity(backToMain);
+                                } else
+                                    Toast.makeText(LoginActivity.this, "Nekaj je narobe znotraj pUser.saveinbackground", Toast.LENGTH_LONG).show();
+
+                            }
+                        });
                     }
                 })
                 .positiveText("OK")
-                .onPositive(new MaterialDialog.SingleButtonCallback() {
-                    @Override
-                    public void onClick(MaterialDialog materialDialog, DialogAction dialogAction) {
-                        if (userName[0].length() > 1 && userName[0].length() < 17) {
-                            materialDialog.dismiss();
-                            Toast.makeText(LoginActivity.this, "Yo, shit is ok!", Toast.LENGTH_LONG).show();
-                        } else {
-                            Toast.makeText(LoginActivity.this, "Yo, shit is NOT ok!", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                })
                 .show();
 
 
